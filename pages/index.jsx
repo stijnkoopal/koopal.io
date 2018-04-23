@@ -15,6 +15,6 @@ const IndexPage = () => (
   <WebApp>
     <Container>Welcome to <p className={myStyle}>next.js!</p></Container>
   </WebApp>
-);
+)
 
 export default IndexPage;

@@ -13,27 +13,29 @@
     "react-emotion": "^9.1.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.2",
+    "@storybook/addon-links": "^3.4.2",
+    "@storybook/addons": "^3.4.2",
+    "@storybook/react": "^3.4.2",
+    "@zeit/next-bundle-analyzer": "^0.1.1",
+    "babel-core": "^6.26.0",
+    "babel-plugin-emotion": "^9.1.2",
+    "babel-runtime": "^6.26.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "jest": "^22.4.3",
-    "@storybook/react": "^3.4.2",
-    "@storybook/addon-actions": "^3.4.2",
-    "@storybook/addon-links": "^3.4.2",
-    "@storybook/addons": "^3.4.2",
-    "babel-core": "^6.26.0",
-    "babel-runtime": "^6.26.0"
+    "jest": "^22.4.3"
   },
-  "jest": {
-  },
+  "jest": {},
   "scripts": {
     "build": "next build && next export",
+    "build:analyze": "BUNDLE_ANALYZE=browser yarn build",
     "dev": "next",
     "lint": "eslint . --fix --ext js,jsx --ignore-path .gitignore",
     "start": "next start",
-    "test": "jest --coverage",
+    "test": "NODE_ENV=test jest --coverage",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   }
