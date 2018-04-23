@@ -11,10 +11,10 @@ const myStyle = css`
   font-weight: bold;
 `
 
-const IndexPage = () => (
+const HomePage = () => (
   <WebApp>
     <Container>Welcome to <p className={myStyle}>next.js!</p></Container>
   </WebApp>
 )
 
-export default IndexPage;
+export default HomePage;

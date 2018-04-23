@@ -1,4 +1,4 @@
-describe('index page', () => {
+describe('HomePage', () => {
   test('should', () => {
     expect(true).toBe(true)
   })
