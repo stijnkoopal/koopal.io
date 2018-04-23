@@ -1,6 +1,6 @@
 import React from 'react'
-import WebApp from '../components/web-app'
 import styled, { css } from 'react-emotion'
+import WebApp from '../components/web-app'
 
 const Container = styled('container')`
   background: #EEE;
@@ -11,8 +11,10 @@ const myStyle = css`
   font-weight: bold;
 `
 
-export default () => (
+const IndexPage = () => (
   <WebApp>
     <Container>Welcome to <p className={myStyle}>next.js!</p></Container>
   </WebApp>
 );
+
+export default IndexPage;
