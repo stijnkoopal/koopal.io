@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2018-04-30'
+
+Transform: 'AWS::Serverless-2018-04-30'
+
+Resources:
+  FetchMediumPosts:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      CodeUri: medium/
+      Handler: index.handler
+      Runtime: nodejs8.10
+      Description: 'Fetches medium posts'
