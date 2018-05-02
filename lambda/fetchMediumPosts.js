@@ -1,6 +1,6 @@
 const request = require('request')
 
-const mediumUsername = 'stijn.koopal'
+const mediumUsername = 'stijn.koopal1'
 
 const handler = (event, context, callback) => {
   const url = `https://medium.com/@${mediumUsername}/latest?format=json`
