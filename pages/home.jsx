@@ -1,27 +1,26 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
 import WebApp from '../components/web-app'
-
-const Container = styled('container')`
-  background: #EEE;
-`
-
-const myStyle = css`
-  color: rebeccapurple;
-  font-weight: bold;
-`
+import LatestBlogPosts from '../components/latest-blog-posts'
 
 class HomePage extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      posts: [],
+    }
+  }
   componentDidMount() {
     fetch('/.netlify/functions/fetchMediumPosts')
-      .then(console.log)
+      .then(response => response.json())
+      .then(posts => this.setState({ posts }))
       .catch(console.error)
   }
 
   render() {
     return (
       <WebApp>
-        <Container>Welcome to <p className={myStyle}>next.js!</p></Container>
+        <LatestBlogPosts posts={ this.state.posts } />
       </WebApp>
     )
   }
