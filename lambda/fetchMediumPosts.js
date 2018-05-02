@@ -1,5 +1,5 @@
 const request = require('request')
-//
+
 const mediumUsername = 'stijn.koopal'
 //
 // const handler = (event, context, callback) => {
