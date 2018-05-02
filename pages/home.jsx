@@ -11,10 +11,20 @@ const myStyle = css`
   font-weight: bold;
 `
 
-const HomePage = () => (
-  <WebApp>
-    <Container>Welcome to <p className={myStyle}>next.js!</p></Container>
-  </WebApp>
-)
+class HomePage extends React.Component {
+  componentDidMount() {
+    fetch('/.netlify/functions/fetchMediuMposts')
+      .then(console.log)
+      .catch(console.error)
+  }
+
+  render() {
+    return (
+      <WebApp>
+        <Container>Welcome to <p className={myStyle}>next.js!</p></Container>
+      </WebApp>
+    )
+  }
+}
 
 export default HomePage;

@@ -55,7 +55,7 @@ const styles = {
 }
 
 const LinkWrap = (props) => {
-  const {style, ...filteredProps} = props
+  const { style, ...filteredProps } = props
   return (<Link {...filteredProps}>{filteredProps.children}</Link>)
 }
 
@@ -65,7 +65,6 @@ const menuItem = css`
 `
 
 class WebApp extends React.Component {
-
   constructor() {
     super()
     this.state = {

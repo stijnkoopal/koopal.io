@@ -10,14 +10,14 @@ module.exports = function () {
 
     tests: [
       'pages/**.test.js',
-      'components/**.test.js'
+      'components/**.test.js',
     ],
 
     env: {
       type: 'node',
-      runner: 'node'
+      runner: 'node',
     },
 
-    testFramework: 'jest'
+    testFramework: 'jest',
   };
 };

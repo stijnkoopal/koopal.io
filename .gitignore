@@ -6,3 +6,4 @@ out
 *.log
 coverage
 bundles
+functions
