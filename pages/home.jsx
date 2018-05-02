@@ -13,7 +13,7 @@ const myStyle = css`
 
 class HomePage extends React.Component {
   componentDidMount() {
-    fetch('/.netlify/functions/fetchMediuMposts')
+    fetch('/.netlify/functions/fetchMediumPosts')
       .then(console.log)
       .catch(console.error)
   }
