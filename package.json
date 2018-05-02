@@ -38,10 +38,10 @@
   "jest": {},
   "scripts": {
     "build": "NODE_ENV=production next build && next export && yarn build:lambda",
-    "build:lambda": "netlify-lambda build lambda",
+    "build:lambda": "netlify-lambda build lambda-src",
     "build:analyze": "BUNDLE_ANALYZE=browser yarn build",
     "dev": "NODE_ENV=development concurrently \"node server.js\" \"yarn dev:lambda\"",
-    "dev:lambda": "netlify-lambda serve lambda",
+    "dev:lambda": "netlify-lambda serve lambda-src",
     "lint": "eslint . --fix --ext js,jsx --ignore-path .gitignore",
     "test": "NODE_ENV=test jest --coverage",
     "storybook": "start-storybook -p 6006"
