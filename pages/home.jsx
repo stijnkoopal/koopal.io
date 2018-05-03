@@ -1,11 +1,10 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
-import WebApp from '../components/web-app'
-import {LatestBlogPosts, BlogPost, EmptyBlogPost} from '../components/latest-blog-posts'
+import { LatestBlogPosts, BlogPost, EmptyBlogPost } from '../components/LatestBlogPosts'
 
 const uid = () => Math.random().toString(36).substring(2);
 
-class HomePage extends React.Component {
+class Home extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -26,13 +25,11 @@ class HomePage extends React.Component {
       : this.state.posts.map(post => <BlogPost key={post.id} post={post} />)
 
     return (
-      <WebApp>
-        <LatestBlogPosts>
-          {posts}
-        </LatestBlogPosts>
-      </WebApp>
+      <LatestBlogPosts>
+        {posts}
+      </LatestBlogPosts>
     )
   }
 }
 
-export default HomePage;
+export default Home

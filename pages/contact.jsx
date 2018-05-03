@@ -1,10 +1,7 @@
-import React from 'react'
-import WebApp from '../components/web-app'
+import React, { Fragment } from 'react'
 
-const ContactPage = () => (
-  <WebApp>
-    <Container>Welcome to <p>next.js!</p></Container>
-  </WebApp>
+const Contact = () => (
+  <div>Contact!</div>
 )
 
-export default ContactPage;
+export default Contact;

@@ -1,10 +1,7 @@
-import React from 'react'
-import WebApp from '../components/web-app'
+import React, { Fragment } from 'react'
 
-const WallPage = () => (
-  <WebApp>
-    <Container>Welcome to <p>next.js!</p></Container>
-  </WebApp>
+const Wall = () => (
+  <div>Wall!</div>
 )
 
-export default WallPage;
+export default Wall;
