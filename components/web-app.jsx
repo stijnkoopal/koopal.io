@@ -99,11 +99,11 @@ class WebApp extends React.Component {
         <div id="outer-container" style={{ height: '100%' }}>
 
           <Menu styles={styles} pageWrapId="page-wrap" outerContainerId="outer-container">
-            <LinkWrap prefetch href="/home"><a href className={menuItem}>Home</a></LinkWrap>
-            <LinkWrap prefetch href="/about"><a href className={menuItem}>About</a></LinkWrap>
-            <LinkWrap prefetch href="/cv"><a href className={menuItem}>CV</a></LinkWrap>
-            <LinkWrap prefetch href="/wall"><a href className={menuItem}>Wall</a></LinkWrap>
-            <LinkWrap prefetch href="/contact"><a href className={menuItem}>Contact</a></LinkWrap>
+            <LinkWrap prefetch href="/home"><a className={menuItem}>Home</a></LinkWrap>
+            <LinkWrap prefetch href="/about"><a className={menuItem}>About</a></LinkWrap>
+            <LinkWrap prefetch href="/cv"><a className={menuItem}>CV</a></LinkWrap>
+            <LinkWrap prefetch href="/wall"><a className={menuItem}>Wall</a></LinkWrap>
+            <LinkWrap prefetch href="/contact"><a className={menuItem}>Contact</a></LinkWrap>
           </Menu>
 
           <main id="page-wrap">

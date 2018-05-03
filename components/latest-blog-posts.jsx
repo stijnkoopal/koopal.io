@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Facebook } from 'react-content-loader'
+
+export const EmptyBlogPost = () => <Facebook />
 
 const blogPostPropType = PropTypes.shape({
   id: PropTypes.string,
@@ -15,7 +18,7 @@ const blogPostPropType = PropTypes.shape({
   imageUrl: PropTypes.string,
 })
 
-const blogPostLink = ({blogUrl}) => blogUrl
+const blogPostLink = ({ blogUrl }) => blogUrl
 const blogPostDateTime = ({ updatedAt }) => {
   const date = new Date(updatedAt)
   return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
@@ -30,7 +33,7 @@ BlogImage.propTypes = {
   imageUrl: PropTypes.string.isRequired,
 }
 
-const BlogPost = ({ post }) => (
+export const BlogPost = ({ post }) => (
   <a href={blogPostLink(post)} target="_blank">
     <BlogImage title={post.title} imageUrl={post.imageUrl} />
     [{blogPostDateTime(post)}]
@@ -43,16 +46,14 @@ BlogPost.propTypes = {
   post: blogPostPropType.isRequired,
 }
 
-const LatestBlogPosts = ({ posts }) => (
+export const LatestBlogPosts = ({ children }) => (
   <ul>
     {
-      posts.map(post => <li key={ post.id }><BlogPost post={post} /></li>)
+      React.Children.map(children, child => <li>{ child }</li>, {})
     }
   </ul>
 )
 
 LatestBlogPosts.propTypes = {
-  posts: PropTypes.arrayOf(blogPostPropType).isRequired,
+  children: PropTypes.arrayOf(PropTypes.node).isRequired,
 }
-
-export default LatestBlogPosts
