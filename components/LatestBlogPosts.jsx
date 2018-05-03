@@ -34,7 +34,7 @@ BlogImage.propTypes = {
 }
 
 export const BlogPost = ({ post }) => (
-  <a href={blogPostLink(post)} target="_blank">
+  <a href={blogPostLink(post)} target="_blank" rel="noopener">
     <BlogImage title={post.title} imageUrl={post.imageUrl} />
     [{blogPostDateTime(post)}]
     {post.title}
