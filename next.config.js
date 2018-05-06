@@ -1,5 +1,4 @@
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
-require('webpack-bundle-analyzer');
 
 module.exports = withBundleAnalyzer({
   exportPathMap() {

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { css } from 'react-emotion'
 import PropTypes from 'prop-types'
 
+// Set the styles ourselves though
 const menuItem = css`
   outline: 0;
   display: block;
@@ -44,7 +45,9 @@ const styles = {
   },
 }
 
+// react-burger-menu sets `style` on its direct children. That gives a prop-types validation error
 const LinkWrap = (props) => {
+  // eslint-disable-next-line react/prop-types
   const { style, ...filteredProps } = props
   return (<Link {...filteredProps}>{filteredProps.children}</Link>)
 }

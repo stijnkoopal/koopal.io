@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 const About = () => (
   <div>Hoi!</div>
 )
 
-export default About;
+export default About

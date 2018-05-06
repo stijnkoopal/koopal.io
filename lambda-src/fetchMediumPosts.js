@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import fetch from 'isomorphic-fetch'
 
 const mediumUsername = 'stijn.koopal'
@@ -5,7 +6,7 @@ const mediumUserBase = `https://medium.com/@${mediumUsername}`
 const latestBlogPostsUrl = `${mediumUserBase}/latest?format=json`
 
 const blogPostUrl = ({ uniqueSlug }) => `${mediumUserBase}/${uniqueSlug}`
-const blogImageUrl = ({ virtuals: { previewImage: { imageId }}}) => `https://cdn-images-1.medium.com/max/800/${imageId}`
+const blogImageUrl = ({ virtuals: { previewImage: { imageId } } }) => `https://cdn-images-1.medium.com/max/800/${imageId}`
 
 const respond = (statusCode, jsonBody) => ({
   statusCode,
@@ -26,7 +27,7 @@ export const handler = async () => {
     .map(post => ({
       ...post,
       blogUrl: post.mediumUrl || blogPostUrl(post),
-      imageUrl: blogImageUrl(post)
+      imageUrl: blogImageUrl(post),
     }))
 
   return respond(200, posts)

@@ -2,7 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Facebook } from 'react-content-loader'
 
-export const EmptyBlogPost = () => <Facebook />
+export const EmptyBlogPost = ({ uniqueKey }) => <Facebook uniquekey={uniqueKey} />
+EmptyBlogPost.propTypes = {
+  uniqueKey: PropTypes.string.isRequired,
+}
 
 const blogPostPropType = PropTypes.shape({
   id: PropTypes.string,
