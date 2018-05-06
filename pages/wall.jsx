@@ -8,6 +8,7 @@ class Wall extends React.Component {
     this.state = {
       posts: [],
       isLoading: true,
+      error: false,
     }
   }
 
@@ -16,19 +17,30 @@ class Wall extends React.Component {
       .then(posts => this.setState({
         posts,
         isLoading: false,
+        error: false,
+      }))
+      .catch(() => this.setState({
+        posts: [],
+        isLoading: false,
+        error: true,
       }))
   }
 
   render() {
-    const keys = Array(3).fill(0).map((_, i) => String.fromCharCode(65 + i))
+    const { posts, isLoading, error } = this.state;
 
-    const posts = this.state.isLoading
+    if (error) {
+      return (<div>Show link to medium here</div>)
+    }
+
+    const keys = Array(3).fill(0).map((_, i) => String.fromCharCode(65 + i))
+    const blogPosts = isLoading
       ? keys.map(key => <EmptyBlogPost key={key} uniqueKey={key} />)
-      : this.state.posts.map(post => <BlogPost key={post.id} post={post} />)
+      : posts.map(post => <BlogPost key={post.id} post={post} />)
 
     return (
       <LatestBlogPosts>
-        {posts}
+        {blogPosts}
       </LatestBlogPosts>
     )
   }

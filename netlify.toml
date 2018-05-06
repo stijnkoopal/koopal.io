@@ -2,3 +2,9 @@
   Publish = "out"
   Functions = "lambda"
   Command = "yarn build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true

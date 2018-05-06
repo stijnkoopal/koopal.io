@@ -1,10 +1,10 @@
-import fetch from 'isomorphic-fetch'
 import window from 'global'
+import fetchWithTimeout from './fetch-with-timeout'
 
 const baseUrl = () => window.location.origin
 
 const fetchMediumPosts = async () => {
-  const response = await fetch(`${baseUrl()}/.netlify/functions/fetchMediumPosts`)
+  const response = await fetchWithTimeout(`${baseUrl()}/.netlify/functions/fetchMediumPosts`)
   return response.json()
 }
 
