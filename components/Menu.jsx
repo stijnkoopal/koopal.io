@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 const menuItem = css`
   outline: 0;
   display: block;
+  color: white;
 `
 
 const styles = {
@@ -52,24 +53,31 @@ const LinkWrap = (props) => {
   return (<Link {...filteredProps}>{filteredProps.children}</Link>)
 }
 
-const Menu = ({ pageWrapId, outerContainerId, open }) => (
-  <RotateMenu styles={styles} pageWrapId={pageWrapId} outerContainerId={outerContainerId} open={open}>
-    <LinkWrap prefetch href="/home"><a className={menuItem}>Home</a></LinkWrap>
-    <LinkWrap prefetch href="/about"><a className={menuItem}>About</a></LinkWrap>
-    <LinkWrap prefetch href="/resume"><a className={menuItem}>Resume</a></LinkWrap>
-    <LinkWrap prefetch href="/wall"><a className={menuItem}>Wall</a></LinkWrap>
-    <LinkWrap prefetch href="/contact"><a className={menuItem}>Contact</a></LinkWrap>
+const menuItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/resume', label: 'Resume' },
+  { href: '/wall', label: 'Wall' },
+  { href: '/contact', label: 'Contact' },
+]
+
+const Menu = ({ pageWrapId, outerContainerId, isOpen }) => (
+  <RotateMenu styles={styles} pageWrapId={pageWrapId} outerContainerId={outerContainerId} isOpen={isOpen}>
+    {
+      menuItems.map(({ href, label }) =>
+        <LinkWrap key={href} prefetch href={href}><a className={menuItem}>{label}</a></LinkWrap>)
+    }
   </RotateMenu>
 )
 
 Menu.propTypes = {
   pageWrapId: PropTypes.string.isRequired,
   outerContainerId: PropTypes.string.isRequired,
-  open: PropTypes.bool,
+  isOpen: PropTypes.bool,
 }
 
 Menu.defaultProps = {
-  open: false,
+  isOpen: false,
 }
 
 export default Menu
