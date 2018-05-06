@@ -1,5 +1,5 @@
 import window from 'global'
-import fetchWithTimeout from './fetch-with-timeout'
+import fetchWithTimeout from './fetchWithTimeout'
 
 const baseUrl = () => window.location.origin
 
