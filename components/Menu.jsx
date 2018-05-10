@@ -62,7 +62,7 @@ const menuItems = [
 ]
 
 const Menu = ({ pageWrapId, outerContainerId, isOpen }) => (
-  <RotateMenu styles={styles} pageWrapId={pageWrapId} outerContainerId={outerContainerId} isOpen={isOpen}>
+  <RotateMenu width="100%" right styles={styles} pageWrapId={pageWrapId} outerContainerId={outerContainerId} isOpen={isOpen}>
     {
       menuItems.map(({ href, label }) =>
         <LinkWrap key={href} prefetch href={href}><a className={menuItem}>{label}</a></LinkWrap>)
