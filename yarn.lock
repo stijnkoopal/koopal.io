@@ -635,11 +635,11 @@
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.6.3.tgz#65682e68a82701c70eefb38d7f941a2c0bfa90de"
 
-"@storybook/addon-actions@3.4.3", "@storybook/addon-actions@^3.4.2":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.3.tgz#27ac798cb0085c9588c4fd0a1c4cbfa32ce3bd54"
+"@storybook/addon-actions@3.4.4", "@storybook/addon-actions@^3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.4.tgz#03cc675977b6c6ce44a4dd7e2d36a910848af85f"
   dependencies:
-    "@storybook/components" "3.4.3"
+    "@storybook/components" "3.4.4"
     babel-runtime "^6.26.0"
     deep-equal "^1.0.1"
     glamor "^2.20.40"
@@ -650,52 +650,52 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
-"@storybook/addon-links@3.4.3", "@storybook/addon-links@^3.4.2":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.3.tgz#93bb28e10830b1b230be8b1710265d5d06453bde"
+"@storybook/addon-links@3.4.4", "@storybook/addon-links@^3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.4.tgz#ff2a7c810c97fe465b25e417752eeebb5322ed9c"
   dependencies:
-    "@storybook/components" "3.4.3"
+    "@storybook/components" "3.4.4"
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addons@3.4.3", "@storybook/addons@^3.4.2":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.3.tgz#537311d621cb3d582d581a160813608d6b27e4bd"
+"@storybook/addons@3.4.4", "@storybook/addons@^3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.4.tgz#5f3203791df83499247a8bc4034788943500ff16"
 
-"@storybook/channel-postmessage@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.4.3.tgz#0e9e9860b00d927ddd184e5aaf26d101f5f7ccf6"
+"@storybook/channel-postmessage@3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.4.4.tgz#96ead79c7752c747c355f297f4f344a44763600b"
   dependencies:
-    "@storybook/channels" "3.4.3"
+    "@storybook/channels" "3.4.4"
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.4.3.tgz#045fc72787b38dd71210b5fb20c9daa739a2f601"
+"@storybook/channels@3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.4.4.tgz#a0492404d21231dcbe12716707472dd4549fb37a"
 
-"@storybook/client-logger@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.4.3.tgz#72ea30e23e05a4dc13b3b1970665e40407368ffe"
+"@storybook/client-logger@3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.4.4.tgz#e76a457e7a19ba7a66fae9cce91bf52e6ece3f6e"
 
-"@storybook/components@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.3.tgz#d21a9eb63c61529cfbb802d96ceaa67fb7fd50b0"
+"@storybook/components@3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.4.tgz#272bcbdb2ac28583de049f75352f9eec76835641"
   dependencies:
     glamor "^2.20.40"
     glamorous "^4.12.1"
     prop-types "^15.6.1"
 
-"@storybook/core@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-3.4.3.tgz#40375ad652e3b22e2c3373e05cb9cff0456f3865"
+"@storybook/core@3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-3.4.4.tgz#4335974772bcdf858b5ccbc7f89d9cd6090e7889"
   dependencies:
-    "@storybook/addons" "3.4.3"
-    "@storybook/channel-postmessage" "3.4.3"
-    "@storybook/client-logger" "3.4.3"
-    "@storybook/node-logger" "3.4.3"
-    "@storybook/ui" "3.4.3"
+    "@storybook/addons" "3.4.4"
+    "@storybook/channel-postmessage" "3.4.4"
+    "@storybook/client-logger" "3.4.4"
+    "@storybook/node-logger" "3.4.4"
+    "@storybook/ui" "3.4.4"
     autoprefixer "^7.2.6"
     babel-runtime "^6.26.0"
     chalk "^2.3.2"
@@ -727,9 +727,9 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
-"@storybook/node-logger@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-3.4.3.tgz#d8014cfbaca0e6b5bbeb05f419ba08363c3aa5f6"
+"@storybook/node-logger@3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-3.4.4.tgz#f4378e63d3fb6addc76f9a8baaf5be4dae7811f4"
   dependencies:
     npmlog "^4.1.2"
 
@@ -765,18 +765,18 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@^3.4.2":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.3.tgz#d5b17921eb0a0910415f8624f145d940456b47f4"
+"@storybook/react@^3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.4.tgz#53c9c8f50283ee9bdc8bfcb882cbf74b0658a4f1"
   dependencies:
-    "@storybook/addon-actions" "3.4.3"
-    "@storybook/addon-links" "3.4.3"
-    "@storybook/addons" "3.4.3"
-    "@storybook/channel-postmessage" "3.4.3"
-    "@storybook/client-logger" "3.4.3"
-    "@storybook/core" "3.4.3"
-    "@storybook/node-logger" "3.4.3"
-    "@storybook/ui" "3.4.3"
+    "@storybook/addon-actions" "3.4.4"
+    "@storybook/addon-links" "3.4.4"
+    "@storybook/addons" "3.4.4"
+    "@storybook/channel-postmessage" "3.4.4"
+    "@storybook/client-logger" "3.4.4"
+    "@storybook/core" "3.4.4"
+    "@storybook/node-logger" "3.4.4"
+    "@storybook/ui" "3.4.4"
     airbnb-js-shims "^1.4.1"
     babel-loader "^7.1.4"
     babel-plugin-macros "^2.2.0"
@@ -809,11 +809,11 @@
     webpack "^3.11.0"
     webpack-hot-middleware "^2.22.1"
 
-"@storybook/ui@3.4.3":
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.4.3.tgz#8f3f43da32290abab2e4293d2567316b2d2ce91a"
+"@storybook/ui@3.4.4":
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.4.4.tgz#2bb8ba4cdb7711695e018c2cc2db0a7e1c48a09a"
   dependencies:
-    "@storybook/components" "3.4.3"
+    "@storybook/components" "3.4.4"
     "@storybook/mantra-core" "^1.7.2"
     "@storybook/podda" "^1.2.3"
     "@storybook/react-komposer" "^2.0.3"
@@ -3012,9 +3012,9 @@ create-emotion-styled@^9.1.2:
   dependencies:
     "@emotion/is-prop-valid" "^0.6.1"
 
-create-emotion@^9.1.2:
-  version "9.1.2"
-  resolved "https://registry.yarnpkg.com/create-emotion/-/create-emotion-9.1.2.tgz#a4227ac0c1bd9f07160f1e87161bffdb1732e148"
+create-emotion@^9.1.3:
+  version "9.1.3"
+  resolved "https://registry.yarnpkg.com/create-emotion/-/create-emotion-9.1.3.tgz#a2e570415eb3e1ec7c42489ba55b2361baf0ed3f"
   dependencies:
     "@emotion/hash" "^0.6.2"
     "@emotion/memoize" "^0.6.1"
@@ -3522,12 +3522,12 @@ emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
 
-emotion@^9.1.2:
-  version "9.1.2"
-  resolved "https://registry.yarnpkg.com/emotion/-/emotion-9.1.2.tgz#b89ff80c8449a2eb146a4a0fc87f3e1aefedd253"
+emotion@^9.1.3:
+  version "9.1.3"
+  resolved "https://registry.yarnpkg.com/emotion/-/emotion-9.1.3.tgz#e9b3e897ba3d5c0aff5628b0008a8993fa9c0937"
   dependencies:
     babel-plugin-emotion "^9.1.2"
-    create-emotion "^9.1.2"
+    create-emotion "^9.1.3"
 
 encodeurl@~1.0.1, encodeurl@~1.0.2:
   version "1.0.2"
@@ -3757,9 +3757,9 @@ eslint-plugin-jsx-a11y@^6.0.3:
     emoji-regex "^6.1.0"
     jsx-ast-utils "^2.0.0"
 
-eslint-plugin-react@^7.7.0:
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.7.0.tgz#f606c719dbd8a1a2b3d25c16299813878cca0160"
+eslint-plugin-react@^7.8.2:
+  version "7.8.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.8.2.tgz#e95c9c47fece55d2303d1a67c9d01b930b88a51d"
   dependencies:
     doctrine "^2.0.2"
     has "^1.0.1"
@@ -6204,9 +6204,9 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-next@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/next/-/next-6.0.0.tgz#700489ff9d93c36f3ade0b474d08b9b0dd9ef7b3"
+next@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/next/-/next-6.0.2.tgz#d72525eb725ed1aa85129bd2c1e67226e2690d5c"
   dependencies:
     "@babel/core" "7.0.0-beta.42"
     "@babel/plugin-proposal-class-properties" "7.0.0-beta.42"
@@ -6242,16 +6242,17 @@ next@^6.0.0:
     path-to-regexp "2.1.0"
     prop-types "15.6.0"
     prop-types-exact "1.1.1"
-    react-hot-loader "4.1.1"
+    react-hot-loader "4.1.3"
     recursive-copy "2.0.6"
     resolve "1.5.0"
     send "0.16.1"
+    source-map "0.5.7"
     strip-ansi "3.0.1"
     styled-jsx "2.2.6"
     touch "3.1.0"
     uglifyjs-webpack-plugin "1.1.6"
     unfetch "3.0.0"
-    update-check "1.3.2"
+    update-check "1.4.0"
     url "0.11.0"
     uuid "3.1.0"
     walk "2.3.9"
@@ -7304,9 +7305,9 @@ react-burger-menu@^2.4.4:
     prop-types "^15.6.1"
     snapsvg-cjs "0.0.6"
 
-react-content-loader@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-3.1.1.tgz#4121cdf1bbf58387bfd031fd4569d0617c0de69d"
+react-content-loader@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-3.1.2.tgz#98230b4604b4b744eaa2d3fc88917dd988df6766"
 
 react-dev-utils@^5.0.0:
   version "5.0.1"
@@ -7352,9 +7353,9 @@ react-dom@^16.3.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-emotion@^9.1.2:
-  version "9.1.2"
-  resolved "https://registry.yarnpkg.com/react-emotion/-/react-emotion-9.1.2.tgz#fca18bcb827809de2a5d73fb996b717ed4fada02"
+react-emotion@^9.1.3:
+  version "9.1.3"
+  resolved "https://registry.yarnpkg.com/react-emotion/-/react-emotion-9.1.3.tgz#299c29731d12d6236e33277845f5692ec8ba92d6"
   dependencies:
     babel-plugin-emotion "^9.1.2"
     create-emotion-styled "^9.1.2"
@@ -7372,15 +7373,15 @@ react-fuzzy@^0.5.2:
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
-react-hot-loader@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.1.1.tgz#693499a6414b6dc6880287e254322a9d3155e944"
+react-hot-loader@4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.1.3.tgz#b4ceca7961cc08451f8199a24a5753a749edd9ce"
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
     hoist-non-react-statics "^2.5.0"
     prop-types "^15.6.1"
-    react-lifecycles-compat "^2.0.0"
+    react-lifecycles-compat "^3.0.2"
     shallowequal "^1.0.2"
 
 react-html-attributes@^1.4.2:
@@ -7406,13 +7407,13 @@ react-inspector@^2.2.2:
     babel-runtime "^6.26.0"
     is-dom "^1.0.9"
 
-react-lifecycles-compat@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-2.0.2.tgz#00a23160eec17a43b94dd74f95d44a1a2c3c5ec1"
-
 react-lifecycles-compat@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.2.tgz#7279047275bd727a912e25f734c0559527e84eff"
+
+react-lifecycles-compat@^3.0.2:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
 react-modal@^3.3.2:
   version "3.4.4"
@@ -8207,7 +8208,7 @@ source-map-url@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
 
-source-map@0.5.x, source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.0, source-map@~0.5.1:
+source-map@0.5.7, source-map@0.5.x, source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.0, source-map@~0.5.1:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
@@ -8852,9 +8853,9 @@ upath@^1.0.0:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/upath/-/upath-1.0.5.tgz#02cab9ecebe95bbec6d5fc2566325725ab6d1a73"
 
-update-check@1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/update-check/-/update-check-1.3.2.tgz#460f9e9ab24820367f3edbeb4d4142d9936ff171"
+update-check@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/update-check/-/update-check-1.4.0.tgz#800235ba1bd1ace324e646eb055799a09aed8b28"
   dependencies:
     registry-auth-token "3.3.2"
     registry-url "3.1.0"
