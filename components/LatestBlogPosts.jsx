@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import { Facebook } from 'react-content-loader'
 
@@ -37,12 +37,14 @@ BlogImage.propTypes = {
 }
 
 export const BlogPost = ({ post }) => (
-  <a href={blogPostLink(post)} target="_blank" rel="noopener">
-    <BlogImage title={post.title} imageUrl={post.imageUrl} />
-    [{blogPostDateTime(post)}]
-    {post.title}
-    {post.virtuals.totalClapCount}
-  </a>
+  <Fragment>
+    <a href={blogPostLink(post)} target="_blank" rel="noopener">
+      <BlogImage title={post.title} imageUrl={post.imageUrl} />
+      [{blogPostDateTime(post)}]
+      {post.title}
+    </a>
+    <img src="/static/medium-claps.png" alt="Claps" title={`${post.virtuals.totalClapCount} claps received!`} /> {post.virtuals.totalClapCount}
+  </Fragment>
 )
 
 BlogPost.propTypes = {
