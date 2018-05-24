@@ -1,3 +1,3 @@
-import Index from './home'
+import Index from './under-construction'
 
 export default Index
