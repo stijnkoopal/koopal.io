@@ -4,10 +4,6 @@ module.exports = withBundleAnalyzer({
   exportPathMap() {
     return {
       '/': { page: '/' },
-      '/about': { page: '/about' },
-      '/contact': { page: '/contact' },
-      '/resume': { page: '/resume' },
-      '/wall': { page: '/wall' },
     };
   },
   analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
