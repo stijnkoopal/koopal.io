@@ -1,6 +1,7 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Facebook } from 'react-content-loader'
+import styled from 'react-emotion'
 
 export const EmptyBlogPost = ({ uniqueKey }) => <Facebook uniquekey={uniqueKey} />
 EmptyBlogPost.propTypes = {
@@ -51,12 +52,16 @@ BlogPost.propTypes = {
   post: blogPostPropType.isRequired,
 }
 
+const List = styled('ul')`
+  margin: 0;
+`
+
 export const LatestBlogPosts = ({ children }) => (
-  <ul>
+  <List>
     {
       React.Children.map(children, child => <li>{ child }</li>, {})
     }
-  </ul>
+  </List>
 )
 
 LatestBlogPosts.propTypes = {
