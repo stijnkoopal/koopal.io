@@ -1,9 +1,16 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
+import { extractCritical } from 'emotion-server'
 
 const GA_TRACKING_ID = process.env.NODE_ENV === 'production' ? 'UA-119842493-1' : null;
 
 class MyDocument extends Document {
+  static getInitialProps ({ renderPage }) {
+    const page = renderPage()
+    const styles = extractCritical(page.html)
+    return { ...page, ...styles }
+  }
+
   render() {
     const scripts = !GA_TRACKING_ID || GA_TRACKING_ID.length === 0
       ? null
@@ -30,6 +37,8 @@ class MyDocument extends Document {
       <html lang="en">
         <Head>
           {scripts}
+
+          <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
         </Head>
         <body>
           <Main />
