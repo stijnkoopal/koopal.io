@@ -28,7 +28,9 @@ class MyApp extends App {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <Component {...pageProps} />
+        <React.StrictMode>
+          <Component {...pageProps} />
+        </React.StrictMode>
       </Container>
     )
   }
