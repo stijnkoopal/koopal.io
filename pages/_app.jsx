@@ -26,10 +26,10 @@ class MyApp extends App {
             integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
             crossOrigin="anonymous"
           />
-          <Metas />
           <Manifest />
         </Head>
         <Layout>
+          <Metas />
           <React.StrictMode>
             <Component {...pageProps} />
           </React.StrictMode>

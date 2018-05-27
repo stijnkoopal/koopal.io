@@ -65,5 +65,5 @@ export const LatestBlogPosts = ({ children }) => (
 )
 
 LatestBlogPosts.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.node).isRequired,
+  children: PropTypes.node.isRequired,
 }
