@@ -23,6 +23,10 @@ class MyApp extends App {
             integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
             crossOrigin="anonymous"
           />
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
         </Head>
         <Component {...pageProps} />
       </Container>

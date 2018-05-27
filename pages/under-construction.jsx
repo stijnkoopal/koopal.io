@@ -3,15 +3,15 @@ import styled from 'react-emotion'
 
 const CenteredSection = styled('section')`
   position: absolute;
-  left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
+  transform: translate(0, -50%);
+  width: 100%;
   padding: 20px;  
   background: rgba(31,199,255,0.24);
   color: #444;
   text-align: center;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 `
 
 const UnderConstruction = () => (
