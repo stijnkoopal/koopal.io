@@ -2,6 +2,8 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import Head from 'next/head'
 import Manifest from 'next-manifest/manifest'
+import Metas from '../components/Metas';
+import Layout from '../components/Layout'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -24,11 +26,14 @@ class MyApp extends App {
             integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w"
             crossOrigin="anonymous"
           />
+          <Metas />
           <Manifest />
         </Head>
-        <React.StrictMode>
-          <Component {...pageProps} />
-        </React.StrictMode>
+        <Layout>
+          <React.StrictMode>
+            <Component {...pageProps} />
+          </React.StrictMode>
+        </Layout>
       </Container>
     )
   }
