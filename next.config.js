@@ -22,7 +22,7 @@ const workboxConfig = {
     registerSW: true,
     importWorkboxFrom: 'local',
     precacheManifest: true,
-  }
+  },
 };
 
 const manifestConfig = {
@@ -38,6 +38,10 @@ module.exports = withManifest(withWorkbox(withBundleAnalyzer({
   exportPathMap() {
     return {
       '/': { page: '/' },
+      '/about': { page: '/about' },
+      '/contact': { page: '/contact' },
+      '/resume': { page: '/resume' },
+      '/wall': { page: '/wall' },
     };
   },
   ...bundleAnalyzerConfig,
