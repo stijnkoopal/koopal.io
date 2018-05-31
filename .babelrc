@@ -3,13 +3,15 @@
     "development": {
       "presets": ["next/babel"],
       "plugins": [
-        ["emotion", { "sourceMap": true, "autoLabel": true }]
+        ["emotion", { "sourceMap": true, "autoLabel": true }],
+        ["inline-import", {"extensions": [".css"]}]
       ]
     },
     "production": {
       "presets": ["next/babel"],
       "plugins": [
-        ["emotion", { "hoist": true }]
+        ["emotion", { "hoist": true }],
+        ["inline-import", {"extensions": [".css"]}]
       ]
     },
     "test": {
