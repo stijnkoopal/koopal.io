@@ -8,3 +8,5 @@ coverage
 bundles
 functions
 lambda
+static/manifest
+static/workbox

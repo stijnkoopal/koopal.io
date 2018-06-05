@@ -39,6 +39,7 @@
     "http-proxy-middleware": "^0.18.0",
     "jest": "^22.4.3",
     "netlify-lambda": "^0.4.0",
+    "next-manifest": "^1.5.0",
     "next-workbox": "^1.4.1"
   },
   "jest": {},
