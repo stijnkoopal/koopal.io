@@ -34,7 +34,10 @@ app
     }
 
     // Default catch-all handler to allow Next.js to handle all other routes
-    server.all('*', (req, res) => handle(req, res))
+    server.all('*', (req, res) => {
+      if (req.path === '/static/workbox/sw.js') res.setHeader('Service-Worker-Allowed', '/')
+      handle(req, res)
+    })
 
     server.listen(port, (err) => {
       if (err) {
