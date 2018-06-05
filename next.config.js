@@ -1,6 +1,7 @@
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+const withWorkbox = require('next-workbox')
 
-module.exports = withBundleAnalyzer({
+module.exports = withWorkbox(withBundleAnalyzer({
   exportPathMap() {
     return {
       '/': { page: '/' },
@@ -18,4 +19,9 @@ module.exports = withBundleAnalyzer({
       reportFilename: '../bundles/client.html',
     },
   },
-});
+  workbox: {
+    registerSW: true,
+    importWorkboxFrom: 'local',
+    precacheManifest: true,
+  },
+}));
