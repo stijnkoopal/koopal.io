@@ -10,3 +10,4 @@ functions
 lambda
 static/manifest
 static/workbox
+.DS_Store
