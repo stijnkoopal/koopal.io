@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
 
-const Metas = () => (
+const MetaTags = () => (
   <Fragment>
     <Head>
       <meta name="description" content="" />
@@ -28,4 +28,4 @@ const Metas = () => (
   </Fragment>
 )
 
-export default Metas
+export default MetaTags

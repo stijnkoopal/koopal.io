@@ -2,8 +2,9 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import Head from 'next/head'
 import Manifest from 'next-manifest/manifest'
-import Metas from '../components/Metas';
+import MetaTags from '../components/MetaTags';
 import Layout from '../components/Layout'
+import curiousLittleMouse from '../util/curious-little-mouse';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -15,6 +16,10 @@ class MyApp extends App {
     return {}
   }
 
+  componentDidMount() {
+    curiousLittleMouse();
+  }
+
   render() {
     const { Component, pageProps } = this.props
     return (
@@ -23,7 +28,7 @@ class MyApp extends App {
           <Manifest />
         </Head>
         <Layout>
-          <Metas />
+          <MetaTags />
           <React.StrictMode>
             <Component {...pageProps} />
           </React.StrictMode>

@@ -6,7 +6,7 @@ import pureCss from 'purecss/build/base-min.css'
 const GA_TRACKING_ID = process.env.NODE_ENV === 'production' ? 'UA-119842493-1' : null;
 
 class MyDocument extends Document {
-  static getInitialProps ({ renderPage }) {
+  static getInitialProps({ renderPage }) {
     const page = renderPage()
     const styles = extractCritical(page.html)
 
