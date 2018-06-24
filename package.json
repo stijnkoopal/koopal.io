@@ -11,6 +11,7 @@
     "global": "^4.3.2",
     "isomorphic-fetch": "^2.2.1",
     "next": "^6.0.2",
+    "next-manifest": "^1.5.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.0",
     "react-burger-menu": "^2.4.4",
@@ -39,7 +40,6 @@
     "http-proxy-middleware": "^0.18.0",
     "jest": "^22.4.3",
     "netlify-lambda": "^0.4.0",
-    "next-manifest": "^1.5.0",
     "next-workbox": "^1.4.1"
   },
   "jest": {},
@@ -47,8 +47,9 @@
     "build": "NODE_ENV=production next build && next export && yarn build:lambda",
     "build:lambda": "netlify-lambda build lambda-src",
     "build:analyze": "BUNDLE_ANALYZE=browser yarn build",
-    "dev": "NODE_ENV=development concurrently \"node server.js\" \"yarn dev:lambda\"",
-    "dev:lambda": "netlify-lambda serve lambda-src",
+    "dev": "concurrently \"yarn dev:app\" \"yarn dev:lambda\"",
+    "dev:app": "NODE_ENV=development node server.js",
+    "dev:lambda": "NODE_ENV=development netlify-lambda serve lambda-src",
     "lint": "eslint . --fix --ext js,jsx --ignore-path .gitignore",
     "test": "NODE_ENV=test jest --coverage",
     "storybook": "start-storybook -p 6006"

@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
+import PropTypes from 'prop-types'
+import resume from '../static/resume.json'
 
 const CenteredSection = styled('section')`
   position: absolute;
@@ -14,21 +16,33 @@ const CenteredSection = styled('section')`
   box-sizing: border-box;
 `
 
-const UnderConstruction = () => (
+const SingleProfile = ({ url, icon, network }) => (
+  <a href={url} target="_blank" rel="noopener noreferrer">
+    <img src={icon} alt={network} title={`Check out my ${network}`} />
+  </a>
+)
+
+SingleProfile.propTypes = {
+  url: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  network: PropTypes.string.isRequired,
+}
+
+const UnderConstruction = ({ profiles }) => (
   <CenteredSection>
     <h1>Under construction</h1>
     <h2>But find me here:</h2>
 
-    <a href="https://github.com/stijnkoopal" target="_blank" rel="noopener noreferrer">
-      <img src="/static/github-logo.png" alt="Github" title="Check out my Github" />
-    </a>
-    <a href="https://medium.com/@stijn.koopal" target="_blank" rel="noopener noreferrer">
-      <img src="/static/medium-logo.png" alt="Medium" title="Checkout my Medium" />
-    </a>
-    <a href="https://www.linkedin.com/in/stijnkoopal" target="_blank" rel="noopener noreferrer">
-      <img src="/static/linkedin-logo.png" alt="Linkedin" title="Checkout my Linkedin" />
-    </a>
+    { profiles.map(profile => <SingleProfile key={profile.key} {...profile} />) }
   </CenteredSection>
 )
+
+UnderConstruction.propTypes = {
+  profiles: PropTypes.arrayOf(PropTypes.object).isRequired,
+}
+
+UnderConstruction.defaultProps = {
+  profiles: resume.basics.profiles,
+}
 
 export default UnderConstruction

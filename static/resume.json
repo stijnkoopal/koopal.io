@@ -1,0 +1,133 @@
+{
+  "basics": {
+    "name": "Stijn Koopal",
+    "label": "Full-Stack Software Engineer",
+    "image": "",
+    "email": "stijn@koopal.me",
+    "phone": "06 349 50 752",
+    "url": "https://koopal.me",
+    "summary": "",
+    "location": {
+      "address": "Wethouder D.M. Plompstraat 22",
+      "postalCode": "3555 BT",
+      "city": "Utrecht",
+      "countryCode": "NL",
+      "region": "Utrecht"
+    },
+    "profiles": [
+      {
+        "key": "github",
+        "network": "Github",
+        "username": "stijn.koopal",
+        "url": "https://github.com/stijnkoopal",
+        "icon": "/static/github-logo.png"
+      },
+      {
+        "key": "linkedin",
+        "network": "LinkedIn",
+        "username": "stijnkoopal",
+        "url": "https://www.linkedin.com/in/stijnkoopal",
+        "icon": "/static/medium-logo.png"
+      },
+      {
+        "key": "medium",
+        "network": "Medium",
+        "username": "stijn.koopal",
+        "url": "https://medium.com/@stijn.koopal",
+        "icon": "/static/linkedin-logo.png"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Xebia",
+      "location": "Hilversum",
+      "description": "",
+      "position": "",
+      "url": "",
+      "startDate": "2017-05-01",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+
+      ]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Eindhoven University of Technology",
+      "area": "",
+      "studyType": "Bachelor",
+      "startDate": "2006-09-01",
+      "endDate": "",
+      "gpa": "",
+      "courses": [
+      ]
+    }
+  ],
+  "awards": [],
+  "publications": [
+    {
+      "name": "An Experimental Evaluation of Various Approximate Watershed Algorithms on Triangulated Terrains",
+      "publisher": "TU/e",
+      "releaseDate": "2013-03-08",
+      "url": "http://alexandria.tue.nl/extra1/afstversl/wsk-i/koopal2013.pdf",
+      "summary": ""
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Dutch",
+      "fluency": "Mothertongue"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
+  "interests": [
+    {
+      "name": "",
+      "keywords": [
+
+      ]
+    }
+  ],
+  "references": [
+
+  ],
+  "projects": [
+    {
+      "name": "Domino",
+      "description": "",
+      "highlights": [
+      ],
+      "keywords": [
+      ],
+      "startDate": "2016-08-24",
+      "endDate": "2016-08-24",
+      "url": "",
+      "roles": [
+      ],
+      "entity": "Smoogle",
+      "type": "application"
+    }
+  ],
+  "meta": {
+    "canonical": "https://koopal.me/resume.json",
+    "version": "1.0.0",
+    "lastModified": "2018-06-24T18:18:00"
+  }
+}

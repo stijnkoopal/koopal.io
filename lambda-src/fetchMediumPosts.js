@@ -1,7 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 import fetch from 'isomorphic-fetch'
+import resume from '../static/resume.json'
 
-const mediumUsername = 'stijn.koopal'
+const findMediumProfile = profile => profile.network === 'Medium'
+const mediumUsername = resume.basics.profiles.filter(findMediumProfile)[0].username
 const mediumUserBase = `https://medium.com/@${mediumUsername}`
 const latestBlogPostsUrl = `${mediumUserBase}/latest?format=json`
 
