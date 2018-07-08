@@ -26,8 +26,6 @@ class MyApp extends App {
       <Container>
         <Head>
           <Manifest />
-
-          {/* TODO: https://www.netguru.co/codestories/few-tips-that-will-make-your-pwa-on-ios-feel-like-native */}
         </Head>
         <Layout>
           <MetaTags />

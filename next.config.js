@@ -28,7 +28,7 @@ const workboxConfig = {
 const manifestConfig = {
   manifest: {
     icons: {
-      src: './src/static/pwa-icons/pwa-icon.png',
+      src: './static/pwa-icon.png',
       cache: true,
     },
   },

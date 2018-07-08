@@ -1,6 +1,6 @@
 [build]
-  Publish = "src/out"
-  Functions = "src/lambda"
+  Publish = "out"
+  Functions = "lambda"
   Command = "yarn build"
 
 [[headers]]

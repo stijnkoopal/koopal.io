@@ -3,14 +3,14 @@ import React from 'react'
 const About = () => (
   <div>
     <p>
-      I&#39;ve always had a profound interest for computers and math; be it games, programming, messing around or just searching the great internet.
+      I've always had a profound interest for computers and math; be it games, programming, messing around or just searching the great internet.
       While gaming eventually went away, the rest was there to stay. Computer technology excite me, especially things related to the web.
     </p>
 
     <p>
       After finishing my master in computer science, things started to get less theoretical real fast.
       I started out as technical engineer in the Java stack.
-      Currently, I have experience in both front- and backend; there aren&#39;t a whole lot of languages/platforms/paradigms that I didn&#39;t touch.
+      Currently, I have experience in both front- and backend; there aren't a whole lot of languages/platforms/paradigms that I didn't touch.
     </p>
 
     <p>
