@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Manifest from 'next-manifest/manifest'
 import MetaTags from './_components/MetaTags';
 import Layout from './_components/Layout'
-import curiousLittleMouse from './_services/curious-little-mouse';
+import curiousLittleMouse from './_services/curiousLittleMouse';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
