@@ -3,13 +3,10 @@ import { LatestBlogPosts, BlogPost, EmptyBlogPost } from '../components/LatestBl
 import fetchMediumPosts from '../api/fetchMediumPosts.api'
 
 class Wall extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      posts: [],
-      isLoading: true,
-      error: false,
-    }
+  state = {
+    posts: [],
+    isLoading: true,
+    error: false,
   }
 
   componentDidMount() {
