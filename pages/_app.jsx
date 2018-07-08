@@ -2,9 +2,9 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import Head from 'next/head'
 import Manifest from 'next-manifest/manifest'
-import MetaTags from '../components/MetaTags';
-import Layout from '../components/Layout'
-import curiousLittleMouse from '../util/curious-little-mouse';
+import MetaTags from './_components/MetaTags';
+import Layout from './_components/Layout'
+import curiousLittleMouse from './_services/curious-little-mouse';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

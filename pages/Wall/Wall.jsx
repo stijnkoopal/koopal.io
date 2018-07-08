@@ -1,6 +1,6 @@
 import React from 'react'
-import { LatestBlogPosts, BlogPost, EmptyBlogPost } from '../components/LatestBlogPosts'
-import fetchMediumPosts from '../api/fetchMediumPosts.api'
+import { LatestBlogPosts, BlogPost, EmptyBlogPost } from './components/LatestBlogPosts'
+import fetchMediumPosts from './services/fetchMediumPosts.api'
 
 class Wall extends React.Component {
   constructor() {

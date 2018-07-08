@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import resume from '../static/resume.json'
+import resume from '../../static/resume.json'
 
 const SingleProfile = ({ url, icon, network }) => (
   <a href={url} target="_blank" rel="noopener noreferrer">

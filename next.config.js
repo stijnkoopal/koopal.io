@@ -38,10 +38,10 @@ module.exports = withManifest(withWorkbox(withBundleAnalyzer({
   exportPathMap() {
     return {
       '/': { page: '/' },
-      '/about': { page: '/about' },
-      '/contact': { page: '/contact' },
-      '/resume': { page: '/resume' },
-      '/wall': { page: '/wall' },
+      '/about': { page: '/About' },
+      '/contact': { page: '/Contact' },
+      '/resume': { page: '/Resume' },
+      '/wall': { page: '/Wall' },
     };
   },
   ...bundleAnalyzerConfig,
