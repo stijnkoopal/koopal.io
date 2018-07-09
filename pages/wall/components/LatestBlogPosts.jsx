@@ -1,26 +1,14 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Facebook } from 'react-content-loader'
 import styled from 'react-emotion'
+import { Flex } from 'grid-styled/emotion'
+import { blogPostShape } from '../prop-types'
 
 export const EmptyBlogPost = ({ uniqueKey }) => <Facebook uniquekey={uniqueKey} />
 EmptyBlogPost.propTypes = {
   uniqueKey: PropTypes.string.isRequired,
 }
-
-const blogPostPropType = PropTypes.shape({
-  id: PropTypes.string,
-  title: PropTypes.string,
-  uniqueSlug: PropTypes.string,
-  updatedAt: PropTypes.number,
-  virtuals: PropTypes.shape({
-    wordCount: PropTypes.number,
-    readingTime: PropTypes.number,
-    totalClapCount: PropTypes.number,
-  }),
-  blogUrl: PropTypes.string,
-  imageUrl: PropTypes.string,
-})
 
 const blogPostLink = ({ blogUrl }) => blogUrl
 const blogPostDateTime = ({ updatedAt }) => {
@@ -38,28 +26,34 @@ BlogImage.propTypes = {
 }
 
 export const BlogPost = ({ post }) => (
-  <Fragment>
-    <a href={blogPostLink(post)} target="_blank" rel="noopener">
+  <Flex>
+    <a href={blogPostLink(post)} target="_blank" rel="noopener noreferrer">
       <BlogImage title={post.title} imageUrl={post.imageUrl} />
-      [{blogPostDateTime(post)}]
+      {blogPostDateTime(post)}
       {post.title}
     </a>
-    <img src="/static/medium-claps.png" alt="Claps" title={`${post.virtuals.totalClapCount} claps received!`} /> {post.virtuals.totalClapCount}
-  </Fragment>
+    <img src="/static/medium-claps.png" alt="Claps" title={`${post.virtuals.totalClapCount} claps received!`} />
+    {post.virtuals.totalClapCount}
+  </Flex>
 )
 
 BlogPost.propTypes = {
-  post: blogPostPropType.isRequired,
+  post: blogPostShape.isRequired,
 }
 
 const List = styled('ul')`
   margin: 0;
+  list-style: none;
 `
 
 export const LatestBlogPosts = ({ children }) => (
   <List>
     {
-      React.Children.map(children, child => <li>{ child }</li>, {})
+      React.Children.map(children, child => (
+        <li>
+          { child }
+        </li>
+      ), {})
     }
   </List>
 )

@@ -21,7 +21,7 @@ const Contact = ({ profiles }) => (
 )
 
 Contact.propTypes = {
-  profiles: PropTypes.arrayOf(PropTypes.object).isRequired,
+  profiles: PropTypes.arrayOf(PropTypes.object),
 }
 
 Contact.defaultProps = {

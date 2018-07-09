@@ -3,34 +3,30 @@ import { LatestBlogPosts, BlogPost, EmptyBlogPost } from './components/LatestBlo
 import fetchMediumPosts from './services/fetchMediumPosts.api'
 
 class Wall extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      posts: [],
-      isLoading: true,
-      error: false,
-    }
+  state = {
+    posts: [],
+    isLoading: true,
+    error: false,
   }
 
-  componentDidMount() {
-    return fetchMediumPosts()
-      .then(posts => this.setState({
-        posts,
-        isLoading: false,
-        error: false,
-      }))
-      .catch(() => this.setState({
-        posts: [],
-        isLoading: false,
-        error: true,
-      }))
+  async componentDidMount() {
+    try {
+      const posts = await fetchMediumPosts()
+      this.setState({ posts, isLoading: false, error: false })
+    } catch (_) {
+      this.setState({ posts: [], isLoading: false, error: true })
+    }
   }
 
   render() {
     const { posts, isLoading, error } = this.state;
 
     if (error) {
-      return (<div>Show link to medium here</div>)
+      return (
+        <div>
+          Show link to medium here
+        </div>
+      )
     }
 
     const keys = Array(3).fill(0).map((_, i) => String.fromCharCode(65 + i))

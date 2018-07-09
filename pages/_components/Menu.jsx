@@ -50,7 +50,11 @@ const styles = {
 const LinkWrap = (props) => {
   // eslint-disable-next-line react/prop-types
   const { style, className, ...filteredProps } = props
-  return (<Link {...filteredProps}>{filteredProps.children}</Link>)
+  return (
+    <Link {...filteredProps}>
+      {filteredProps.children}
+    </Link>
+  )
 }
 
 const menuItems = [
@@ -64,8 +68,13 @@ const menuItems = [
 const Menu = ({ pageWrapId, outerContainerId, isOpen }) => (
   <RotateMenu width="100%" right styles={styles} pageWrapId={pageWrapId} outerContainerId={outerContainerId} isOpen={isOpen}>
     {
-      menuItems.map(({ href, label }) =>
-        <LinkWrap key={href} prefetch href={href}><a className={menuItem}>{label}</a></LinkWrap>)
+      menuItems.map(({ href, label }) => (
+        <LinkWrap key={href} prefetch href={href}>
+          <a className={menuItem}>
+            {label}
+          </a>
+        </LinkWrap>
+      ))
     }
   </RotateMenu>
 )

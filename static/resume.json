@@ -130,8 +130,9 @@
         "Akka",
         "Java",
         "Kotlin",
+        "Rust",
         "Microservices",
-        "Rust"
+        "Kafka"
       ]
     },
     {
@@ -186,6 +187,7 @@
       "highlights": [
       ],
       "keywords": [
+        "Scala", "Akka", "Lagom", "React", "Angular", "Kubernetes"
       ],
       "startDate": "2018-07-01",
       "endDate": "",
@@ -201,11 +203,13 @@
       "highlights": [
       ],
       "keywords": [
+        "Polymer", "Scala", "Spark", "Docker", "Openshift", "Gitlab CI"
       ],
       "startDate": "2017-05-01",
       "endDate": "2018-06-30",
       "url": "",
       "roles": [
+        "Developer"
       ],
       "entity": "ING",
       "type": "application"
@@ -216,11 +220,13 @@
       "highlights": [
       ],
       "keywords": [
+        "Java 8", "JEE2", "JBPM", "Jenkins 2", "Docker", "AngularJS", "Cucumber"
       ],
       "startDate": "2016-05-01",
       "endDate": "2017-04-30",
       "url": "",
       "roles": [
+        "Scrum master", "Developer"
       ],
       "entity": "Alphabet",
       "type": "application"
@@ -231,11 +237,13 @@
       "highlights": [
       ],
       "keywords": [
+        "Java 8", "JBoss Fuse", "JBoss EAP"
       ],
       "startDate": "2015-07-01",
       "endDate": "2016-04-30",
       "url": "",
       "roles": [
+        "Team lead", "Developer"
       ],
       "entity": "Travelcard",
       "type": "application"
@@ -251,6 +259,7 @@
       "endDate": "2015-06-31",
       "url": "",
       "roles": [
+        "Developer", "Operations"
       ],
       "entity": "Malmberg",
       "type": "application"
@@ -266,6 +275,7 @@
       "endDate": "2014-05-31",
       "url": "",
       "roles": [
+        "Developer", "Operations", "On-call duty"
       ],
       "entity": "RWE",
       "type": "application"
