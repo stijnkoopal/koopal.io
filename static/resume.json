@@ -50,7 +50,7 @@
       "summary": "",
       "highlights": [],
       "tech": [
-        "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust"
+        "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust", "Lagom", "Golang"
       ]
     },
     {
@@ -119,7 +119,9 @@
         "React",
         "Angular",
         "Polymer",
-        "CSS + preprocessors"
+        "CSS + preprocessors",
+        "Webpack",
+        "SSR"
       ]
     },
     {
@@ -132,7 +134,9 @@
         "Kotlin",
         "Rust",
         "Microservices",
-        "Kafka"
+        "Kafka",
+        "Lagom",
+        "Golang"
       ]
     },
     {
@@ -150,8 +154,6 @@
       "name": "Cloud",
       "level": "Intermediate",
       "keywords": [
-        "Kubernetes",
-        "Openshift",
         "Git",
         "GC",
         "AWS",
@@ -171,7 +173,37 @@
   ],
   "interests": [
     {
-      "name": "",
+      "name": "Snorkling / Diving",
+      "keywords": [
+
+      ]
+    },
+    {
+      "name": "Snowboarding",
+      "keywords": [
+
+      ]
+    },
+    {
+      "name": "Football",
+      "keywords": [
+
+      ]
+    },
+    {
+      "name": "Cycling",
+      "keywords": [
+
+      ]
+    },
+    {
+      "name": "Beach",
+      "keywords": [
+
+      ]
+    },
+    {
+      "name": "Socializing, friends, beer",
       "keywords": [
 
       ]
@@ -187,11 +219,11 @@
       "highlights": [
       ],
       "keywords": [
-        "Scala", "Akka", "Lagom", "React", "Angular", "Kubernetes"
+        "Scala", "Akka", "Lagom", "React", "Angular", "Kubernetes", "Golang", "Rust"
       ],
       "startDate": "2018-07-01",
-      "endDate": "",
-      "url": "",
+      "endDate": "2018-09-01",
+      "url": "https://blockport.io/",
       "roles": [
       ],
       "entity": "Blockport",
@@ -199,7 +231,7 @@
     },
     {
       "name": "Domino",
-      "description": "",
+      "description": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financials institution. The project Stijn worked was started by the innovation department of ING, and it did just that. Stijn was part of the team that constructed a web-app and it’s infrastructure.",
       "highlights": [
       ],
       "keywords": [
@@ -216,7 +248,7 @@
     },
     {
       "name": "New Alphabet Platform",
-      "description": "",
+      "description": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Stijn was a full-stack developer in a scrum team that was implementing features. Last few months he was part time Scrum master. ",
       "highlights": [
       ],
       "keywords": [
@@ -233,7 +265,7 @@
     },
     {
       "name": "Tankpas.nl",
-      "description": "",
+      "description": "Travelcard launched a concept that required a website that interfaced with their legacy landscape. The project was pressurized massively by time. Initially Stijn was a backend developer, but eventually he was responsible for the team. Few members of the team were juniors, or trainees even, he assisted and guided them where possible. ",
       "highlights": [
       ],
       "keywords": [
@@ -250,10 +282,11 @@
     },
     {
       "name": "BigData Platform",
-      "description": "",
+      "description": "Malmberg is transforming from a publisher of traditional educational books into a publisher of electronic educational methods. Stijn started implementing a POC to setup Analytics within the organization: a solution based on Hadoop. Afterwards Stijn was part of a scrum team that implemented shared components using Vert.x",
       "highlights": [
       ],
       "keywords": [
+        "Hadoop", "Java 8", "Vert.x"
       ],
       "startDate": "2014-06-01",
       "endDate": "2015-06-31",
