@@ -5,6 +5,7 @@
   "license": "MIT",
   "author": "Stijn Koopal",
   "dependencies": {
+    "babel-core": "7.0.0-bridge.0",
     "d3-color": "^1.2.0",
     "d3-selection": "^1.3.0",
     "d3-shape": "^1.2.0",
