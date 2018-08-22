@@ -1,7 +1,9 @@
 import React from 'react'
+import PieChart from './components/PieChart'
 
 const About = () => (
   <div>
+    <PieChart />
     <p>
       I&apos;ve always had a profound interest for computers and math; be it games, programming,
       messing around or just searching the great internet.
