@@ -42,6 +42,8 @@ class MyDocument extends Document {
 
           <style dangerouslySetInnerHTML={{ __html: pureCss }} />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+
+          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         </Head>
         <body>
           <Main />

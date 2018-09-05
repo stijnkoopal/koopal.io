@@ -5,6 +5,10 @@ import Menu from './Menu'
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
+  
   html, 
   body, 
   body > div:first-child,

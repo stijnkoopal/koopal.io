@@ -1,9 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { withFauxDOM } from 'react-faux-dom'
 import { pie } from 'd3-shape'
 import { hsl } from 'd3-color'
 import { select } from 'd3-selection'
 import * as transition from 'd3-transition'
+import responsiveChart from './responsiveChart.jsx'
 
 const moveTo = (x, y) => `M ${x} ${y}`
 const lineTo = (x, y) => `L ${x} ${y}`
@@ -61,23 +63,6 @@ class PieCalculations {
       closePath(),
     ].join(' ')
   }
-
-  inner(d) {
-    const startAngle = Math.max(d.startAngle, Math.PI)
-    const endAngle = Math.max(d.endAngle, Math.PI)
-
-    const {
-      startX, startY, endX, endY,
-    } = this.calcXY(startAngle, endAngle, this.innerRadius)
-
-    return [
-      moveTo(startX, startY),
-      arc(this.innerRadius * (this.width + 0.5), this.innerRadius * (this.height + 0.5), 0, 0, 1, endX, endY),
-      lineTo(endX, this.depth + endY),
-      arc(this.innerRadius * (this.width + 0.5), this.innerRadius * (this.height + 0.5), 0, 0, 0, startX, this.depth + startY),
-      closePath(),
-    ].join(' ')
-  }
 }
 
 const randomData = () => {
@@ -92,34 +77,40 @@ const randomData = () => {
   return salesData.map(d => ({ label: d.label, value: 1000 * Math.random(), color: d.color }));
 }
 
-class PieChart extends React.Component {
+class PieChart extends React.PureComponent {
   componentDidMount() {
-    const { connectFauxDOM, animateFauxDOM } = this.props
-    const faux = connectFauxDOM('div', 'chart')
-
-    const svg = select(faux)
-      .append('svg')
-      .attr('width', 700)
-      .attr('height', 300)
-
-    const group = svg.append('g')
-      .attr('id', 'pie');
+    const group = this.newFauxSvgGroup()
 
     this.draw(group, randomData())
 
+    const { animateFauxDOM } = this.props
     animateFauxDOM(800)
   }
 
   render() {
     const { chart } = this.props
+
     return chart
   }
 
+  newFauxSvgGroup() {
+    const { connectFauxDOM } = this.props
+
+    const faux = connectFauxDOM('div', 'chart')
+
+    const svg = select(faux)
+      .append('svg')
+      .attr('width', this.props.containerWidth)
+      .attr('height', this.props.containerWidth)
+
+    return svg.append('g')
+  }
+
   draw(group, data) {
-    const x = 150
-    const y = 150
-    const width = 130
-    const height = 100
+    const x = this.props.containerWidth / 2
+    const y = 300
+    const width = this.props.containerWidth / 2
+    const height = this.props.containerWidth / 10
     const depth = 20
     const innerRadius = 0
 
@@ -130,14 +121,6 @@ class PieChart extends React.Component {
       .append('g')
       .attr('transform', `translate(${x}, ${y})`)
       .attr('class', 'slices');
-
-    slices.selectAll('.innerSlice')
-      .data(pieData)
-      .enter()
-      .append('path')
-      .attr('class', 'innerSlice')
-      .style('fill', d => hsl(d.data.color).darker(0.7))
-      .attr('d', d => pieCalculations.inner(d))
 
     slices.selectAll('.topSlice')
       .data(pieData)
@@ -156,11 +139,11 @@ class PieChart extends React.Component {
       .style('fill', d => hsl(d.data.color).darker(0.7))
       .attr('d', d => pieCalculations.outer(d))
 
-    slices.selectAll('.percent')
+    slices.selectAll('.text')
       .data(pieData)
       .enter()
       .append('text')
-      .attr('class', 'percent')
+      .attr('class', 'text')
       .attr('x', d => 0.6 * width * Math.cos(0.5 * (d.startAngle + d.endAngle)))
       .attr('y', d => 0.6 * height * Math.sin(0.5 * (d.startAngle + d.endAngle)))
       .text('test')
@@ -169,6 +152,15 @@ class PieChart extends React.Component {
 
 PieChart.defaultProps = {
   chart: 'loading',
+  containerWidth: 300,
 }
 
-export default withFauxDOM(PieChart)
+PieChart.propTypes = {
+  chart: PropTypes.string,
+  containerWidth: PropTypes.number,
+  animateFauxDOM: PropTypes.func.isRequired,
+  connectFauxDOM: PropTypes.func.isRequired,
+}
+
+
+export default responsiveChart(withFauxDOM(PieChart))

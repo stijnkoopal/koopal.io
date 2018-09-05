@@ -20,21 +20,21 @@
         "network": "Github",
         "username": "stijn.koopal",
         "url": "https://github.com/stijnkoopal",
-        "icon": "/static/github-logo.png"
+        "icon": "/static/social/github-logo.png"
       },
       {
         "key": "linkedin",
         "network": "LinkedIn",
         "username": "stijnkoopal",
         "url": "https://www.linkedin.com/in/stijnkoopal",
-        "icon": "/static/medium-logo.png"
+        "icon": "/static/social/medium-logo.png"
       },
       {
         "key": "medium",
         "network": "Medium",
         "username": "stijn.koopal",
         "url": "https://medium.com/@stijn.koopal",
-        "icon": "/static/linkedin-logo.png"
+        "icon": "/static/social/linkedin-logo.png"
       }
     ]
   },
@@ -227,6 +227,7 @@
       "roles": [
       ],
       "entity": "Blockport",
+      "entityIconUrl": "/static/logos/blockport.svg",
       "type": "application"
     },
     {
@@ -244,6 +245,7 @@
         "Developer"
       ],
       "entity": "ING",
+      "entityIconUrl": "/static/logos/ING.svg",
       "type": "application"
     },
     {
@@ -261,6 +263,7 @@
         "Scrum master", "Developer"
       ],
       "entity": "Alphabet",
+      "entityIconUrl": "/static/logos/alphabet.png",
       "type": "application"
     },
     {
@@ -273,11 +276,12 @@
       ],
       "startDate": "2015-07-01",
       "endDate": "2016-04-30",
-      "url": "",
+      "url": "https://tankpas.nl",
       "roles": [
         "Team lead", "Developer"
       ],
       "entity": "Travelcard",
+      "entityIconUrl": "/static/logos/travelcard.svg",
       "type": "application"
     },
     {
@@ -295,6 +299,7 @@
         "Developer", "Operations"
       ],
       "entity": "Malmberg",
+      "entityIconUrl": "/static/logos/malmberg.svg",
       "type": "application"
     },
     {
@@ -311,6 +316,7 @@
         "Developer", "Operations", "On-call duty"
       ],
       "entity": "RWE",
+      "entityIconUrl": "/static/logos/rwe.svg",
       "type": "application"
     }
   ],
