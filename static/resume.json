@@ -214,6 +214,23 @@
   ],
   "projects": [
     {
+      "name": "Floriday",
+      "description": "",
+      "highlights": [
+      ],
+      "keywords": [
+        "Java 10", "Axon Framework", "CQRS", "AWS"
+      ],
+      "startDate": "2018-09-01",
+      "endDate": "",
+      "url": "",
+      "roles": [
+      ],
+      "entity": "Royal FloraHolland",
+      "entityIconUrl": "/static/logos/royal-flora-holland.png",
+      "type": "application"
+    },
+    {
       "name": "Productionize Blockport",
       "description": "",
       "highlights": [
