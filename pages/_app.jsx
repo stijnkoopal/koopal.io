@@ -1,10 +1,12 @@
 import App, { Container } from 'next/app'
 import React from 'react'
 import Head from 'next/head'
+import { ThemeProvider } from 'emotion-theming'
 import Manifest from 'next-manifest/manifest'
 import MetaTags from './_components/MetaTags';
 import Layout from './_components/Layout'
 import curiousLittleMouse from './_services/curiousLittleMouse';
+import theme from './theme';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -27,12 +29,14 @@ class MyApp extends App {
         <Head>
           <Manifest />
         </Head>
-        <Layout>
-          <MetaTags />
-          <React.StrictMode>
-            <Component {...pageProps} />
-          </React.StrictMode>
-        </Layout>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <MetaTags />
+            <React.StrictMode>
+              <Component {...pageProps} />
+            </React.StrictMode>
+          </Layout>
+        </ThemeProvider>
       </Container>
     )
   }

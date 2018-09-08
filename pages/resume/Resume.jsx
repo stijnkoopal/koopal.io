@@ -4,7 +4,7 @@ import resume from '../../static/resume.json'
 const Projects = () => (
   <ul>
     {resume.projects.map(project => (
-      <li>
+      <li key={project.name}>
         { project.name }
         {' '}
         { project.startDate }

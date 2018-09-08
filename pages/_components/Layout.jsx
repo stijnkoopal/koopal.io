@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { injectGlobal } from 'emotion'
+import styled from 'react-emotion'
 import Menu from './Menu'
 
 // eslint-disable-next-line no-unused-expressions
@@ -19,13 +20,21 @@ injectGlobal`
   }
 `
 
+const OuterContainer = styled('div')`
+  background-color: ${({ theme: { palette: { background } } }) => background.default};
+  display: block;
+  height: 100%;
+`
+
+const Main = styled('div')``
+
 const Layout = ({ children }) => (
-  <outer-container id="outer-container" style={{ display: 'block', height: '100%' }}>
+  <OuterContainer id="outer-container">
     <Menu pageWrapId="page-wrap" outerContainerId="outer-container" />
-    <main id="page-wrap">
+    <Main id="page-wrap">
       { children }
-    </main>
-  </outer-container>
+    </Main>
+  </OuterContainer>
 )
 
 Layout.propTypes = {
