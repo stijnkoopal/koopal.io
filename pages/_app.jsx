@@ -7,6 +7,7 @@ import MetaTags from './_components/MetaTags';
 import Layout from './_components/Layout'
 import curiousLittleMouse from './_services/curiousLittleMouse';
 import theme from './theme';
+import GlobalStyles from './_components/GlobalStyles'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -31,6 +32,7 @@ class MyApp extends App {
         </Head>
         <ThemeProvider theme={theme}>
           <Layout>
+            <GlobalStyles theme={theme} />
             <MetaTags />
             <React.StrictMode>
               <Component {...pageProps} />

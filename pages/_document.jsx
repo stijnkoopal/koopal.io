@@ -13,8 +13,8 @@ class MyDocument extends Document {
     return { ...page, ...styles }
   }
 
-  render() {
-    const scripts = !GA_TRACKING_ID || GA_TRACKING_ID.length === 0
+  renderGoogleAnalytics() {
+    return !GA_TRACKING_ID || GA_TRACKING_ID.length === 0
       ? null
       : (
         <React.Fragment>
@@ -34,16 +34,16 @@ class MyDocument extends Document {
           />
         </React.Fragment>
       )
+  }
 
+  render() {
     return (
       <html lang="en">
         <Head>
-          {scripts}
+          {this.renderGoogleAnalytics()}
 
           <style dangerouslySetInnerHTML={{ __html: pureCss }} />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
-
-          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
         </Head>
         <body>
           <Main />

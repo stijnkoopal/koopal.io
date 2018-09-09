@@ -1,24 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
 import Menu from './Menu'
-
-// eslint-disable-next-line no-unused-expressions
-injectGlobal`
-  * {
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  html, 
-  body, 
-  body > div:first-child,
-  #__next {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-`
 
 const OuterContainer = styled('div')`
   background-color: ${({ theme: { palette: { background } } }) => background.default};
