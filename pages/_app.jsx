@@ -32,7 +32,7 @@ class MyApp extends App {
         </Head>
         <ThemeProvider theme={theme}>
           <Layout>
-            <GlobalStyles theme={theme} />
+            <GlobalStyles />
             <MetaTags />
             <React.StrictMode>
               <Component {...pageProps} />

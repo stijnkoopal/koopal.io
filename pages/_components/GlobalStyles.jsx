@@ -1,8 +1,10 @@
 import React from 'react'
 import { injectGlobal } from 'emotion'
 import Head from 'next/head'
+import { withTheme } from 'emotion-theming'
 
 const GlobalStyles = ({ theme: { typography } }) => {
+  // eslint-disable-next-line no-unused-expressions
   injectGlobal`
     * {
       font-family: ${typography.fontFamily};
@@ -35,4 +37,4 @@ const GlobalStyles = ({ theme: { typography } }) => {
   )
 }
 
-export default GlobalStyles
+export default withTheme(GlobalStyles)

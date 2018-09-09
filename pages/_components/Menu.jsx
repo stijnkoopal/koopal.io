@@ -1,17 +1,19 @@
 import React from 'react'
 import RotateMenu from 'react-burger-menu/lib/menus/pushRotate'
 import Link from 'next/link'
-import { css } from 'react-emotion'
+import styled from 'react-emotion'
 import PropTypes from 'prop-types'
+import { withTheme } from 'emotion-theming'
 
 // Set the styles ourselves though
-const menuItem = css`
+const MenuItem = styled('a')`
   outline: 0;
   display: block;
   color: white;
+  cursor: pointer;
 `
 
-const styles = {
+const styles = ({ palette: { primary: { main }, grey } }) => ({
   bmBurgerButton: {
     position: 'fixed',
     width: '36px',
@@ -20,31 +22,21 @@ const styles = {
     top: '36px',
   },
   bmBurgerBars: {
-    background: '#373a47',
+    background: main,
   },
   bmCrossButton: {
     height: '24px',
     width: '24px',
   },
   bmCross: {
-    background: '#bdc3c7',
+    background: main,
   },
   bmMenu: {
-    background: '#373a47',
+    background: grey[800],
     padding: '2.5em 1.5em 0',
     fontSize: '1.15em',
   },
-  bmMorphShape: {
-    fill: '#373a47',
-  },
-  bmItemList: {
-    color: '#b8b7ad',
-    padding: '0.8em',
-  },
-  bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)',
-  },
-}
+})
 
 // react-burger-menu sets `style` on its direct children. That gives a prop-types validation error
 const LinkWrap = (props) => {
@@ -65,14 +57,16 @@ const menuItems = [
   { href: '/contact', label: 'Contact' },
 ]
 
-const Menu = ({ pageWrapId, outerContainerId, isOpen }) => (
-  <RotateMenu width="100%" right styles={styles} pageWrapId={pageWrapId} outerContainerId={outerContainerId} isOpen={isOpen}>
+const Menu = ({
+  pageWrapId, outerContainerId, isOpen, theme,
+}) => (
+  <RotateMenu width="100%" right styles={styles(theme)} pageWrapId={pageWrapId} outerContainerId={outerContainerId} isOpen={isOpen}>
     {
       menuItems.map(({ href, label }) => (
         <LinkWrap key={href} prefetch href={href}>
-          <a className={menuItem}>
+          <MenuItem>
             {label}
-          </a>
+          </MenuItem>
         </LinkWrap>
       ))
     }
@@ -89,4 +83,4 @@ Menu.defaultProps = {
   isOpen: false,
 }
 
-export default Menu
+export default withTheme(Menu)

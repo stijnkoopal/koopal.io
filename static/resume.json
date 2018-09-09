@@ -27,14 +27,14 @@
         "network": "LinkedIn",
         "username": "stijnkoopal",
         "url": "https://www.linkedin.com/in/stijnkoopal",
-        "icon": "/static/social/medium-logo.png"
+        "icon": "/static/social/linkedin-logo.png"
       },
       {
         "key": "medium",
         "network": "Medium",
         "username": "stijn.koopal",
         "url": "https://medium.com/@stijn.koopal",
-        "icon": "/static/social/linkedin-logo.png"
+        "icon": "/static/social/medium-logo.png"
       }
     ]
   },
