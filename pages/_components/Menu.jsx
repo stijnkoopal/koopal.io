@@ -5,15 +5,26 @@ import styled from 'react-emotion'
 import PropTypes from 'prop-types'
 import { withTheme } from 'emotion-theming'
 
-// Set the styles ourselves though
 const MenuItem = styled('a')`
-  outline: 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  height: calc(100% / 5);
+  max-width: 600px;
+  margin: 0 auto;
   color: white;
   cursor: pointer;
 `
 
-const styles = ({ palette: { primary: { main }, grey } }) => ({
+const MenuItemText = styled('span')`
+  text-align: center;
+  display: block;
+  width: 100%;
+`
+
+const transitionDuration = '.4s';
+const burgerMenuStyles = ({ palette: { primary: { main }, grey } }) => ({
   bmBurgerButton: {
     position: 'fixed',
     width: '36px',
@@ -25,16 +36,31 @@ const styles = ({ palette: { primary: { main }, grey } }) => ({
     background: main,
   },
   bmCrossButton: {
-    height: '24px',
-    width: '24px',
+    height: '64px',
+    width: '64px',
+    left: '14px',
   },
   bmCross: {
     background: main,
+    height: '64px',
   },
   bmMenu: {
     background: grey[800],
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em',
+    fontSize: '2em',
+  },
+  bmItemList: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    padding: '8% 0',
+    boxSizing: 'border-box',
+  },
+  bmOverlay: {
+    transitionDuration: `${transitionDuration} !important`,
+  },
+  bmMenuWrap: {
+    transitionDuration: `${transitionDuration} !important`,
   },
 })
 
@@ -60,12 +86,14 @@ const menuItems = [
 const Menu = ({
   pageWrapId, outerContainerId, isOpen, theme,
 }) => (
-  <RotateMenu width="100%" right styles={styles(theme)} pageWrapId={pageWrapId} outerContainerId={outerContainerId} isOpen={isOpen}>
+  <RotateMenu width="100%" right styles={burgerMenuStyles(theme)} pageWrapId={pageWrapId} outerContainerId={outerContainerId} isOpen={isOpen}>
     {
       menuItems.map(({ href, label }) => (
         <LinkWrap key={href} prefetch href={href}>
           <MenuItem>
-            {label}
+            <MenuItemText>
+              {label}
+            </MenuItemText>
           </MenuItem>
         </LinkWrap>
       ))

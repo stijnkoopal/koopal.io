@@ -9,7 +9,11 @@ const OuterContainer = styled('div')`
   height: 100%;
 `
 
-const Main = styled('div')``
+const Main = styled('div')`
+  width: 30%;
+  height: 100%;
+  margin: 0 auto;
+`
 
 const Layout = ({ children }) => (
   <OuterContainer id="outer-container">

@@ -3,7 +3,7 @@ import PieChart from './components/PieChart'
 
 const About = () => (
   <div style={{width: '100%', border: '1px solid black'}}>
-    <PieChart/>
+    <PieChart />
     <p>
       I&apos;ve always had a profound interest for computers and math; be it games, programming,
       messing around or just searching the great internet.
