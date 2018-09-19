@@ -20,21 +20,21 @@
         "network": "Github",
         "username": "stijn.koopal",
         "url": "https://github.com/stijnkoopal",
-        "icon": "/static/social/github-logo.png"
+        "icon": "/static/logos/github.png"
       },
       {
         "key": "linkedin",
         "network": "LinkedIn",
         "username": "stijnkoopal",
         "url": "https://www.linkedin.com/in/stijnkoopal",
-        "icon": "/static/social/linkedin-logo.png"
+        "icon": "/static/logos/linkedin.png"
       },
       {
         "key": "medium",
         "network": "Medium",
         "username": "stijn.koopal",
         "url": "https://medium.com/@stijn.koopal",
-        "icon": "/static/social/medium-logo.png"
+        "icon": "/static/logos/medium.png"
       }
     ]
   },
@@ -48,9 +48,11 @@
       "startDate": "2017-05-01",
       "endDate": "",
       "summary": "",
-      "highlights": [],
+      "highlights": [
+        "Proving value to customers using state-of-the-art tech"
+      ],
       "tech": [
-        "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust", "Lagom", "Golang"
+        "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust", "Lagom", "Golang", "Axon Framework"
       ]
     },
     {
@@ -136,7 +138,8 @@
         "Microservices",
         "Kafka",
         "Lagom",
-        "Golang"
+        "Golang",
+        "Axon Framework"
       ]
     },
     {
@@ -215,7 +218,7 @@
   "projects": [
     {
       "name": "Floriday",
-      "description": "",
+      "description": "The Floriday platform connects growers to retail. Part of API developement using ES/CQRS",
       "highlights": [
       ],
       "keywords": [
@@ -223,8 +226,9 @@
       ],
       "startDate": "2018-09-01",
       "endDate": "",
-      "url": "",
+      "url": "https://floriday.io",
       "roles": [
+        "Backend developer"
       ],
       "entity": "Royal FloraHolland",
       "entityIconUrl": "/static/logos/royal-flora-holland.png",
@@ -234,6 +238,8 @@
       "name": "Productionize Blockport",
       "description": "",
       "highlights": [
+        "Scalable crypto deposits",
+        "Integrate KYC provider"
       ],
       "keywords": [
         "Scala", "Akka", "Lagom", "React", "Angular", "Kubernetes", "Golang", "Rust"
@@ -242,6 +248,7 @@
       "endDate": "2018-09-01",
       "url": "https://blockport.io/",
       "roles": [
+        "Backend developer"
       ],
       "entity": "Blockport",
       "entityIconUrl": "/static/logos/blockport.svg",
@@ -251,6 +258,9 @@
       "name": "Domino",
       "description": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financials institution. The project Stijn worked was started by the innovation department of ING, and it did just that. Stijn was part of the team that constructed a web-app and it’s infrastructure.",
       "highlights": [
+        "Complete overhaul of Polymer frontend to very Scalable (in terms of development) app",
+        "Connecting users to the Domino app",
+        "Knowledge sharing of state of the art frontends",
       ],
       "keywords": [
         "Polymer", "Scala", "Spark", "Docker", "Openshift", "Gitlab CI"
@@ -259,7 +269,7 @@
       "endDate": "2018-06-30",
       "url": "",
       "roles": [
-        "Developer"
+        "Full Stack Developer"
       ],
       "entity": "ING",
       "entityIconUrl": "/static/logos/ING.svg",
@@ -287,6 +297,8 @@
       "name": "Tankpas.nl",
       "description": "Travelcard launched a concept that required a website that interfaced with their legacy landscape. The project was pressurized massively by time. Initially Stijn was a backend developer, but eventually he was responsible for the team. Few members of the team were juniors, or trainees even, he assisted and guided them where possible. ",
       "highlights": [
+        "Connected new platform to legacy backend",
+        "Coaching of 2 juniors"
       ],
       "keywords": [
         "Java 8", "JBoss Fuse", "JBoss EAP"
