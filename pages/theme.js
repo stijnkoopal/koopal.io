@@ -26,9 +26,9 @@ const theme = {
       contrastText: '#fff',
     },
     secondary: {
-      main: 'rgb(225, 0, 80)',
-      light: 'rgb(231, 51, 115)',
-      dark: 'rgb(157, 0, 56)',
+      main: '#e10050',
+      light: '#e73373',
+      dark: '#9d0038',
       contrastText: '#fff',
     },
     error: {

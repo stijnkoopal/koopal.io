@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
+import { withTheme } from 'emotion-theming'
 
-const MetaTags = () => (
+const MetaTags = ({ theme: { palette } }) => (
   <Fragment>
     <Head>
       <meta name="description" content="" />
@@ -22,10 +23,12 @@ const MetaTags = () => (
       <meta property="og:url" content="" />
       <meta property="og:image" content="" />
 
-      <link rel="canonical" href="" />
+      <meta name="theme-color" content={palette.primary.main} />
+
+      <link rel="canonical" href="https://koopal.me" />
       <meta property="author" content="Stijn Koopal" />
     </Head>
   </Fragment>
 )
 
-export default MetaTags
+export default withTheme(MetaTags)
