@@ -260,7 +260,7 @@
       "highlights": [
         "Complete overhaul of Polymer frontend to very Scalable (in terms of development) app",
         "Connecting users to the Domino app",
-        "Knowledge sharing of state of the art frontends",
+        "Knowledge sharing of state of the art frontends"
       ],
       "keywords": [
         "Polymer", "Scala", "Spark", "Docker", "Openshift", "Gitlab CI"
