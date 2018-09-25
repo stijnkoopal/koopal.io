@@ -5,30 +5,19 @@ import { withTheme } from 'emotion-theming'
 
 const GlobalStyles = ({ theme: { typography } }) => {
   // eslint-disable-next-line no-unused-expressions
-  injectGlobal`
-    * {
-      font-family: ${typography.fontFamily};
-      font-size: ${typography.fontSize};
-      font-weight: ${typography.fontWeightRegular};
-    }
-    
-    html, 
-    body, 
-    body > div:first-child,
-    #__next {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-    }
-    
-    body {
-      font-family: ${typography.body1.fontFamily};
-      font-size: ${typography.body1.fontSize};
-      line-height: ${typography.body1.lineHeight};
-      color: ${typography.body1.color};
-      font-weight: ${typography.body1.fontWeight};
-    }
-  `
+  injectGlobal({
+    '*': {
+      ...typography,
+    },
+    'html, body, body > div:first-child, #__next': {
+      width: '100%',
+      height: '100%',
+      margin: 0,
+    },
+    body: {
+      ...typography.body1,
+    },
+  })
 
   return (
     <Head>
