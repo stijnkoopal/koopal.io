@@ -4,6 +4,7 @@ import Link from 'next/link'
 import styled from 'react-emotion'
 import PropTypes from 'prop-types'
 import { withTheme } from 'emotion-theming'
+import Router from 'next/router'
 import MenuBurgerIcon from './MenuBurgerIcon'
 
 const MenuItem = styled('a')`
@@ -18,20 +19,21 @@ const MenuItem = styled('a')`
   cursor: pointer;
 `
 
-const MenuItemText = styled('span')`
-  text-align: center;
-  display: block;
-  width: 100%;
-`
+const MenuItemText = styled('span')(({ theme: { typography, palette } }) => ({
+  textAlign: 'center',
+  display: 'block',
+  width: '100%',
+  ...typography.headline,
+  color: palette.primary.contrastText,
+}))
 
-const transitionDuration = '.4s';
-const burgerMenuStyles = ({ palette: { primary: { main }, grey } }) => ({
+const menuStyles = ({ transitions, palette: { primary: { main }, grey } }) => ({
   bmBurgerButton: {
     position: 'fixed',
-    width: '36px',
-    height: '30px',
-    left: '36px',
-    top: '36px',
+    width: '100px',
+    height: '100px',
+    left: '32px',
+    top: '32px',
     zIndex: 1200,
   },
   bmBurgerBars: {
@@ -58,11 +60,11 @@ const burgerMenuStyles = ({ palette: { primary: { main }, grey } }) => ({
     padding: '8% 0',
     boxSizing: 'border-box',
   },
-  bmOverlay: {
-    transitionDuration: `${transitionDuration} !important`,
-  },
   bmMenuWrap: {
-    transitionDuration: `${transitionDuration} !important`,
+    transitionDuration: `${transitions.duration.enteringScreen}ms !important`,
+  },
+  bmOverlay: {
+    transitionDuration: `${transitions.duration.enteringScreen}ms !important`,
   },
 })
 
@@ -93,7 +95,17 @@ class Menu extends React.PureComponent {
     }
   }
 
+  componentDidMount() {
+    Router.events.on('routeChangeStart', this.closeMenu)
+  }
+
+  componentWillUnmount() {
+    Router.events.off('routeChangeStart', this.closeMenu)
+  }
+
   handleMenuStateChange = ({ isOpen }) => this.setState({ menuOpen: isOpen })
+
+  closeMenu = () => this.setState({ menuOpen: false })
 
   toggleMenu = () => {
     const { menuOpen } = this.state;
@@ -110,7 +122,7 @@ class Menu extends React.PureComponent {
       <RotateMenu
         width="100%"
         right
-        styles={burgerMenuStyles(theme)}
+        styles={menuStyles(theme)}
         pageWrapId={pageWrapId}
         outerContainerId={outerContainerId}
         isOpen={menuOpen}

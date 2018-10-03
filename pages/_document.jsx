@@ -5,6 +5,27 @@ import pureCss from 'purecss/build/base-min.css'
 
 const GA_TRACKING_ID = process.env.NODE_ENV === 'production' ? 'UA-119842493-1' : null;
 
+const renderGoogleAnalytics = () => (!GA_TRACKING_ID || GA_TRACKING_ID.length === 0
+  ? null
+  : (
+    <React.Fragment>
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}');
+              `,
+        }}
+      />
+    </React.Fragment>
+  ))
+
 class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     const page = renderPage()
@@ -13,34 +34,11 @@ class MyDocument extends Document {
     return { ...page, ...styles }
   }
 
-  renderGoogleAnalytics() {
-    return !GA_TRACKING_ID || GA_TRACKING_ID.length === 0
-      ? null
-      : (
-        <React.Fragment>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_TRACKING_ID}');
-              `,
-            }}
-          />
-        </React.Fragment>
-      )
-  }
-
   render() {
     return (
       <html lang="en">
         <Head>
-          {this.renderGoogleAnalytics()}
+          {renderGoogleAnalytics()}
 
           <style dangerouslySetInnerHTML={{ __html: pureCss }} />
           <style dangerouslySetInnerHTML={{ __html: this.props.css }} />

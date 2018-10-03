@@ -6,8 +6,10 @@ import Manifest from 'next-manifest/manifest'
 import MetaTags from './_components/MetaTags';
 import Layout from './_components/Layout'
 import curiousLittleMouse from './_services/curiousLittleMouse';
+import logSource from './_services/logSource'
 import theme from './theme';
 import GlobalStyles from './_components/GlobalStyles'
+import withEnvironment from './_components/withEnvironment'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -20,7 +22,10 @@ class MyApp extends App {
   }
 
   componentDidMount() {
-    curiousLittleMouse();
+    if (this.props.isProduction) {
+      curiousLittleMouse()
+      logSource()
+    }
   }
 
   render() {
@@ -34,9 +39,9 @@ class MyApp extends App {
           <Layout>
             <GlobalStyles />
             <MetaTags />
-            <React.StrictMode>
+            {/*<React.StrictMode>*/}
               <Component {...pageProps} />
-            </React.StrictMode>
+            {/*</React.StrictMode>*/}
           </Layout>
         </ThemeProvider>
       </Container>
@@ -44,4 +49,4 @@ class MyApp extends App {
   }
 }
 
-export default MyApp
+export default withEnvironment(MyApp)
