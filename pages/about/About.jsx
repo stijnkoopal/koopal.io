@@ -2,7 +2,7 @@ import React from 'react'
 import PieChart from './components/PieChart'
 
 const About = () => (
-  <div style={{width: '100%', border: '1px solid black'}}>
+  <div style={{ width: '100%', border: '1px solid black' }}>
     <PieChart />
     <p>
       I&apos;ve always had a profound interest for computers and math; be it games, programming,

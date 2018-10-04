@@ -88,29 +88,19 @@ const menuItems = [
 ]
 
 class Menu extends React.PureComponent {
-  constructor() {
-    super();
-    this.state = {
-      menuOpen: false,
-    }
+  state = {
+    menuOpen: false,
   }
 
-  componentDidMount() {
-    Router.router.events.on('routeChangeStart', this.closeMenu)
-  }
+  componentDidMount = () => Router.router.events.on('routeChangeStart', this.closeMenu)
 
-  componentWillUnmount() {
-    Router.router.events.off('routeChangeStart', this.closeMenu)
-  }
+  componentWillUnmount = () => Router.router.events.off('routeChangeStart', this.closeMenu)
 
   handleMenuStateChange = ({ isOpen }) => this.setState({ menuOpen: isOpen })
 
   closeMenu = () => this.setState({ menuOpen: false })
 
-  toggleMenu = () => {
-    const { menuOpen } = this.state;
-    this.setState({ menuOpen: !menuOpen })
-  }
+  toggleMenu = () => this.setState(({ menuOpen }) => ({ menuOpen: !menuOpen }))
 
   render() {
     const {

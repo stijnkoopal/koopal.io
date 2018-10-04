@@ -9,7 +9,7 @@ class Wall extends React.Component {
     error: false,
   }
 
-  async componentDidMount() {
+  componentDidMount = async () => {
     try {
       const posts = await fetchMediumPosts()
       this.setState({ posts, isLoading: false, error: false })

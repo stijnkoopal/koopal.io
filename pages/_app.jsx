@@ -21,7 +21,7 @@ class MyApp extends App {
     return {}
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     if (this.props.isProduction) {
       curiousLittleMouse()
       logSource()

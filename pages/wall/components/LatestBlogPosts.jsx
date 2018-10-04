@@ -16,10 +16,7 @@ const blogPostDateTime = ({ updatedAt }) => {
   return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
 }
 
-const BlogImage = ({ title, imageUrl }) => (
-  <img title={title} alt="Preview" src={imageUrl} />
-)
-
+const BlogImage = ({ title, imageUrl }) => <img title={title} alt="Preview" src={imageUrl} />
 BlogImage.propTypes = {
   title: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
@@ -41,7 +38,7 @@ BlogPost.propTypes = {
   post: blogPostShape.isRequired,
 }
 
-const List = styled('ul')`
+const List = styled.ul`
   margin: 0;
   list-style: none;
 `
