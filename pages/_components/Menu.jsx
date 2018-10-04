@@ -96,11 +96,11 @@ class Menu extends React.PureComponent {
   }
 
   componentDidMount() {
-    Router.events.on('routeChangeStart', this.closeMenu)
+    Router.router.events.on('routeChangeStart', this.closeMenu)
   }
 
   componentWillUnmount() {
-    Router.events.off('routeChangeStart', this.closeMenu)
+    Router.router.events.off('routeChangeStart', this.closeMenu)
   }
 
   handleMenuStateChange = ({ isOpen }) => this.setState({ menuOpen: isOpen })
