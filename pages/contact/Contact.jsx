@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import resume from '../../static/resume.json'
+import withResume from '../_components/withResume'
 
 const SingleProfile = ({ url, icon, network }) => (
   <a href={url} target="_blank" rel="noopener noreferrer">
@@ -14,18 +14,22 @@ SingleProfile.propTypes = {
   network: PropTypes.string.isRequired,
 }
 
-const Contact = ({ profiles }) => (
+const Contact = ({ resume }) => (
   <div>
-    { profiles.map(profile => <SingleProfile key={profile.key} {...profile} />) }
+    { resume.basics.profiles.map(profile => <SingleProfile key={profile.key} {...profile} />) }
   </div>
 )
 
 Contact.propTypes = {
-  profiles: PropTypes.arrayOf(PropTypes.object),
+  resume: PropTypes.object,
 }
 
 Contact.defaultProps = {
-  profiles: resume.basics.profiles,
+  resume: {
+    basics: {
+      profiles: [],
+    },
+  },
 }
 
-export default Contact
+export default withResume(Contact)

@@ -1,10 +1,13 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
 import { withTheme } from 'emotion-theming'
+import withResume from './withResume'
 
-const MetaTags = ({ theme: { palette } }) => (
+const MetaTags = ({ resume, theme: { palette } }) => (
   <Fragment>
     <Head>
+      <title>{`${resume.basics.name} | ${resume.basics.label}`}</title>
+
       <meta name="description" content="" />
       <meta name="keywords" content="" />
 
@@ -31,4 +34,4 @@ const MetaTags = ({ theme: { palette } }) => (
   </Fragment>
 )
 
-export default withTheme(MetaTags)
+export default withResume(withTheme(MetaTags))

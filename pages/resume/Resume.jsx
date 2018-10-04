@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
-import resume from '../../static/resume.json'
+import withResume from '../_components/withResume'
 
 const EntityLogoImg = styled('img')`
   width: 130px
@@ -25,14 +25,14 @@ const ProjectItem = ({ project }) => (
   </li>
 )
 
-const Projects = () => (
+const Projects = ({ projects }) => (
   <ProjectList>
-    {resume.projects.map(project => <ProjectItem key={project.name} project={project} />)}
+    { projects.map(project => <ProjectItem key={project.name} project={project} />) }
   </ProjectList>
 )
 
-const Resume = () => (
-  <Projects />
+const Resume = ({ resume }) => (
+  <Projects projects={resume.projects} />
 )
 
-export default Resume
+export default withResume(Resume)
