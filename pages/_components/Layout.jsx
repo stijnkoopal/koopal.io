@@ -5,7 +5,7 @@ import { Box } from '@rebass/grid/emotion'
 import Menu from './Menu'
 
 const OuterContainer = styled.div`
-  background-color: ${({ theme: { palette: { background } } }) => background.default};
+  background: ${({ theme: { palette: { background } } }) => background.default};
   display: block;
   height: 100%;
 `
