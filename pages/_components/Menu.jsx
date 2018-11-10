@@ -27,7 +27,7 @@ const MenuItemText = styled('span')(({ theme: { typography, palette } }) => ({
   color: palette.primary.contrastText,
 }))
 
-const menuStyles = ({ transitions, palette: { primary: { main }, grey } }) => ({
+const menuStyles = ({ transitions, palette: { background, primary: { main }, grey } }) => ({
   bmBurgerButton: {
     position: 'fixed',
     width: '100px',
@@ -49,7 +49,7 @@ const menuStyles = ({ transitions, palette: { primary: { main }, grey } }) => ({
     height: '64px',
   },
   bmMenu: {
-    background: grey[800],
+    background: background.alternative,
     fontSize: '2em',
   },
   bmItemList: {

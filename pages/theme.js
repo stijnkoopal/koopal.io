@@ -63,7 +63,8 @@ const theme = {
     },
     divider: 'rgba(0, 0, 0, 0.12)',
     background: {
-      default: 'radial-gradient(ellipse at bottom, #023836 0%, #090a0f 100%)',
+      default: 'radial-gradient(ellipse at bottom, #074836 0%, #090a0f 100%)',
+      alternative: 'radial-gradient(ellipse at bottom, #095856 0%, #090a0f 150%)',
     },
     action: {
       active: 'rgba(0, 0, 0, 0.54)',

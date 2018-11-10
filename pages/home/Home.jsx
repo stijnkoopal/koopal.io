@@ -5,17 +5,16 @@ import styled, { keyframes } from 'react-emotion'
 import Typist from 'react-typist';
 import MiniMe from './components/MiniMe'
 
-const Container = styled(Flex)`
-  height: 100%;
-`
-
-const Inner = styled(Box)({
+const Container = styled(Flex)({
+  height: '100%',
   textAlign: 'center',
-});
+  padding: '0.5em',
+})
 
 const ConstrainedMiniMe = styled(MiniMe)({
   marginTop: '24px',
   height: '302px',
+  display: 'block',
 })
 
 const blink = keyframes`
@@ -24,10 +23,10 @@ const blink = keyframes`
 `
 
 const TypeWriter = styled(Typist)(({ theme: { typography } }) => ({
-  ...typography.display2,
+  ...typography.display1,
   '.Cursor': {
     display: 'inline-block',
-    fontSize: `calc(${typography.display2.fontSize} * 1.25)`,
+    fontSize: `calc(${typography.display1.fontSize} * 1.25)`,
     '&--blinking': {
       opacity: 0,
       animation: `${blink} 1s linear infinite`,
@@ -36,20 +35,18 @@ const TypeWriter = styled(Typist)(({ theme: { typography } }) => ({
 }))
 
 const Home = () => (
-  <Container alignItems="center" justifyContent="center">
-    <Inner>
-      <TypeWriter>
-        Hi!
-        <br />
-        My name is Stijn,
+  <Container flexDirection="column" alignItems="center">
+    <TypeWriter>
+      Hi!
+      <br />
+      My name is Stijn,
 
-        <br />
+      <br />
 
-        I'm a Full Stack Software Enthusiast.
-      </TypeWriter>
+      I'm a Full-Stack Freelance Software Engineer.
+    </TypeWriter>
 
-      <ConstrainedMiniMe />
-    </Inner>
+    <ConstrainedMiniMe />
   </Container>
 )
 
