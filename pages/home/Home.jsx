@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box } from '@rebass/grid/emotion'
+import { Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
 import styled, { keyframes } from 'react-emotion'
 import Typist from 'react-typist';
@@ -23,6 +23,7 @@ const blink = keyframes`
 `
 
 const TypeWriter = styled(Typist)(({ theme: { typography } }) => ({
+  height: '5em',
   ...typography.display1,
   '.Cursor': {
     display: 'inline-block',
@@ -35,7 +36,7 @@ const TypeWriter = styled(Typist)(({ theme: { typography } }) => ({
 }))
 
 const Home = () => (
-  <Container flexDirection="column" alignItems="center">
+  <Container flexDirection="column" alignItems="center" justifyContent="center">
     <TypeWriter>
       Hi!
       <br />
@@ -43,7 +44,7 @@ const Home = () => (
 
       <br />
 
-      I'm a Full-Stack Freelance Software Engineer.
+      I'm a Full-Stack Software Engineer.
     </TypeWriter>
 
     <ConstrainedMiniMe />
