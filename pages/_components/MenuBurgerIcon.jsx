@@ -8,7 +8,6 @@ const Path = styled.path(({ theme: { transitions, palette } }) => `
     stroke-dashoffset ${transitions.duration.enteringScreen}ms ${transitions.easing.sharp}, 
     stroke-dasharray ${transitions.duration.enteringScreen}ms ${transitions.easing.sharp}; 
   stroke-width: 40px; 
-  stroke-linecap: round; 
   stroke: ${palette.primary.main}; 
 `)
 
@@ -24,12 +23,12 @@ const MiddlePath = styled(Path)(({ isOpen }) => `
 
 const BurgerMenuButton = ({ isOpen }) => (
   <svg viewBox="0 0 800 600" className={css`transform: translate3d(0, 0, 0)`}>
-    <OuterPath isOpen={isOpen} d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" />
-    <MiddlePath isOpen={isOpen} d="M300,320 L540,320" />
+    <OuterPath isOpen={isOpen} d="M0,20 C0,20 220,20 240,20 C440,20 340,340 220,220 C140,140 0,0 0,0" />
+    <MiddlePath isOpen={isOpen} d="M0,120 L240,120" />
     <OuterPath
       isOpen={isOpen}
-      d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
-      transform="translate(480, 320) scale(1, -1) translate(-480, -318)"
+      d="M0,10 C0,10 220,10 240,10 C440,10 340,330 220,210 C140,130 0,-10 0,-10"
+      transform="translate(180, 120) scale(1, -1) translate(-180, -118)"
     />
   </svg>
 )

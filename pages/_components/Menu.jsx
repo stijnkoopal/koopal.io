@@ -27,11 +27,10 @@ const MenuItemText = styled('span')(({ theme: { typography, palette } }) => ({
   color: palette.primary.contrastText,
 }))
 
-const menuStyles = ({ transitions, palette: { background, primary: { main }, grey } }) => ({
+const menuStyles = ({ transitions, palette: { background, primary: { main } } }) => ({
   bmBurgerButton: {
     position: 'fixed',
     width: '100px',
-    height: '100px',
     left: '32px',
     top: '32px',
     zIndex: 1200,
