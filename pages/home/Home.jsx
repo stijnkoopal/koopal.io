@@ -38,9 +38,7 @@ const TypeWriter = styled(Typist)(({ theme: { typography } }) => ({
 const Home = () => (
   <Container flexDirection="column" alignItems="center" justifyContent="center">
     <TypeWriter>
-      Hi!
-      <br />
-      My name is Stijn,
+      Hi! My name is Stijn.
 
       <br />
 
