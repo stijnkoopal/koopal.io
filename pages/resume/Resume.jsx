@@ -127,4 +127,6 @@ const Resume = ({ resume }) => {
   )
 }
 
+Resume.pageTitle = 'Resume'
+
 export default withResume(Resume)

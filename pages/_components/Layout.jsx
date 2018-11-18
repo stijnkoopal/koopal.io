@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'react-emotion'
 import { Box } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
+import { withRouter } from 'next/router'
 import Menu from './Menu'
 
 const OuterContainer = styled.div`
@@ -11,13 +12,22 @@ const OuterContainer = styled.div`
 `
 
 const Header = styled.div(({ theme: { spacing } }) => ({
+  display: 'flex',
   height: 10 * spacing.unit,
+  justifyContent: 'space-around',
 }))
 
-const Layout = ({ children }) => (
+const CurrentPage = styled.div(({ theme: { typography }}) => ({
+  ...typography.display1,
+}))
+
+const Layout = ({ children, router }) => (
   <OuterContainer id="outer-container">
     <Header>
       <Menu pageWrapId="page-wrap" outerContainerId="outer-container" />
+      <CurrentPage>
+        { router.asPath }
+      </CurrentPage>
     </Header>
     <Box
       mx="auto"
@@ -38,4 +48,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default withTheme(Layout)
+export default withRouter(withTheme(Layout))
