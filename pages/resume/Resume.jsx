@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 import withResume from '../_components/withResume'
 
 const formatDate = date => (date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present');
@@ -8,43 +8,24 @@ const Logo = styled('img')({
   width: '100%',
 })
 
-const ProjectDates = styled.div(({ color, left }) => ({
+const ProjectDates = styled.div(({ color, odd, theme: { spacing } }) => ({
   color,
   boxSizing: 'border-box',
-  padding: '0 20px',
-  textAlign: left ? 'right' : 'left',
+  padding: `0 ${2 * spacing.unit}px`,
+  textAlign: odd ? 'right' : 'left',
 }))
 
-const ProjectWrapper = styled.div(({ left, theme: { spacing } }) => ({
+const ProjectWrapper = styled.div(({ odd, theme: { spacing } }) => ({
   height: '20vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-around',
-  flexDirection: left ? 'row' : 'row-reverse',
+  flexDirection: odd ? 'row' : 'row-reverse',
   '& > :nth-child(1), & > :nth-child(3)': {
     width: `calc((100% - ${spacing.unit * 2}px) / 2)`,
   },
   marginTop: spacing.unit,
 }))
-
-const Project = ({ project, left, color }) => (
-  <ProjectWrapper left={left}>
-    <ProjectDates color={color} left={left}>
-      { formatDate(project.startDate) }
-      {' '}
-      -
-      {' '}
-      { formatDate(project.endDate) }
-    </ProjectDates>
-    <Chevron color={color} />
-    <ProjectDescription left={left}>
-      <ConnectionLine color={color} />
-      <Circle color={color}>
-        <Logo src={project.entityIconUrl} alt={`${project.entity} logo`} />
-      </Circle>
-    </ProjectDescription>
-  </ProjectWrapper>
-)
 
 const ConnectionLine = styled.div(({ color }) => ({
   height: '2px',
@@ -55,10 +36,10 @@ const ConnectionLine = styled.div(({ color }) => ({
   zIndex: 1,
 }))
 
-const ProjectDescription = styled.div(({ left }) => ({
+const ProjectDescription = styled.div(({ odd }) => ({
   position: 'relative',
   display: 'flex',
-  justifyContent: left ? 'flex-end' : 'flex-start',
+  justifyContent: odd ? 'flex-end' : 'flex-start',
   height: '100%',
 }))
 
@@ -103,6 +84,25 @@ const Chevron = styled.div(({ theme: { spacing }, color }) => ({
   },
 }))
 
+const Project = ({ project, odd, color }) => (
+  <ProjectWrapper odd={odd}>
+    <ProjectDates color={color} odd={odd}>
+      { formatDate(project.startDate) }
+      {' '}
+      -
+      {' '}
+      { formatDate(project.endDate) }
+    </ProjectDates>
+    <Chevron color={color} />
+    <ProjectDescription odd={odd}>
+      <ConnectionLine color={color} />
+      <Circle color={color}>
+        <Logo src={project.entityIconUrl} alt={`${project.entity} logo`} />
+      </Circle>
+    </ProjectDescription>
+  </ProjectWrapper>
+)
+
 const ProjectList = styled.div(({ theme: { spacing } }) => ({
   paddingTop: spacing.unit,
 }))
@@ -122,7 +122,7 @@ const Resume = ({ resume }) => {
 
   return (
     <ProjectList>
-      { projects.map((project, index) => <Project left={index % 2} key={project.name} project={project} color={colors[index]} />) }
+      { projects.map((project, index) => <Project odd={index % 2} key={project.name} project={project} color={colors[index]} />)}
     </ProjectList>
   )
 }
