@@ -231,7 +231,7 @@
         "Backend developer"
       ],
       "entity": "Royal FloraHolland",
-      "entityIconUrl": "/static/logos/royal-flora-holland.png",
+      "entityIconUrl": "/static/logos/royal-flora-holland.svg",
       "type": "application"
     },
     {
@@ -290,7 +290,7 @@
         "Scrum master", "Developer"
       ],
       "entity": "Alphabet",
-      "entityIconUrl": "/static/logos/alphabet.png",
+      "entityIconUrl": "/static/logos/alphabet.svg",
       "type": "application"
     },
     {
