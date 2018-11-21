@@ -15,6 +15,32 @@ const ProjectDates = styled.div(({ color, odd, theme: { spacing } }) => ({
   textAlign: odd ? 'right' : 'left',
 }))
 
+const ConnectionLine = styled.div(({ color }) => ({
+  height: '2px',
+  width: '100%',
+  position: 'absolute',
+  top: '50%',
+  backgroundColor: color,
+  zIndex: 1,
+}))
+
+const Circle = styled.div(({ color, theme: { spacing, transitions } }) => ({
+  display: 'flex',
+  borderRadius: '50%',
+  width: '20vh',
+  height: '20vh',
+  backgroundColor: color,
+  boxSizing: 'border-box',
+  zIndex: 2,
+  padding: spacing.unit * 2,
+  transition: `all ${transitions.duration.short}ms linear`,
+  '&:hover': {
+    width: '25vh',
+    marginTop: '-2.5vh',
+    height: '25vh',
+  },
+}))
+
 const ProjectWrapper = styled.div(({ odd, theme: { spacing } }) => ({
   height: '20vh',
   display: 'flex',
@@ -27,15 +53,6 @@ const ProjectWrapper = styled.div(({ odd, theme: { spacing } }) => ({
   marginTop: spacing.unit,
 }))
 
-const ConnectionLine = styled.div(({ color }) => ({
-  height: '2px',
-  width: '100%',
-  position: 'absolute',
-  top: '50%',
-  backgroundColor: color,
-  zIndex: 1,
-}))
-
 const ProjectDescription = styled.div(({ odd }) => ({
   position: 'relative',
   display: 'flex',
@@ -43,16 +60,7 @@ const ProjectDescription = styled.div(({ odd }) => ({
   height: '100%',
 }))
 
-const Circle = styled.div(({ color, theme: { spacing } }) => ({
-  display: 'flex',
-  borderRadius: '50%',
-  width: '20vh',
-  height: '20vh',
-  backgroundColor: color,
-  boxSizing: 'border-box',
-  zIndex: 2,
-  padding: spacing.unit * 2,
-}))
+
 
 const Chevron = styled.div(({ theme: { spacing }, color }) => ({
   position: 'relative',

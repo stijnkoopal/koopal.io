@@ -5,21 +5,20 @@ import styled from 'react-emotion'
 import PropTypes from 'prop-types'
 import { withTheme } from 'emotion-theming'
 import Router from 'next/router'
-import MenuBurgerIcon from './MenuBurgerIcon'
 
-const MenuItem = styled('a')`
-  display: flex;
-  align-items: center;
-  text-align: center;
-  width: 90%;
-  height: calc(100% / 5);
-  max-width: 600px;
-  margin: 0 auto;
-  color: white;
-  cursor: pointer;
-`
+const MenuItem = styled.a({
+  display: 'flex',
+  alignItems: 'center',
+  textAlign: 'center',
+  width: '90%',
+  height: 'calc(100% / 5)',
+  maxWidth: '600px',
+  margin: '0 auto',
+  color: 'white',
+  cursor: 'pointer',
+})
 
-const MenuItemText = styled('span')(({ theme: { typography, palette } }) => ({
+const MenuItemText = styled.span(({ theme: { typography, palette } }) => ({
   textAlign: 'center',
   display: 'block',
   width: '100%',
@@ -27,25 +26,15 @@ const MenuItemText = styled('span')(({ theme: { typography, palette } }) => ({
   color: palette.primary.contrastText,
 }))
 
-const menuStyles = ({ transitions, palette: { background, primary: { main } } }) => ({
+const menuStyles = ({ palette: { background } }) => ({
   bmBurgerButton: {
-    position: 'fixed',
-    width: '100px',
-    left: '32px',
-    top: '32px',
+    position: 'relative',
+    width: '64px',
+    height: '64px',
     zIndex: 1200,
   },
-  bmBurgerBars: {
-    background: main,
-  },
-  bmCrossButton: {
-    height: '64px',
-    width: '64px',
-    left: '14px',
-  },
-  bmCross: {
-    background: main,
-    height: '64px',
+  bmBurgerIcon: {
+    display: 'none',
   },
   bmMenu: {
     background: background.alternative,
@@ -60,10 +49,7 @@ const menuStyles = ({ transitions, palette: { background, primary: { main } } })
     boxSizing: 'border-box',
   },
   bmMenuWrap: {
-    transitionDuration: `${transitions.duration.enteringScreen}ms !important`,
-  },
-  bmOverlay: {
-    transitionDuration: `${transitions.duration.enteringScreen}ms !important`,
+    top: 0,
   },
 })
 
@@ -86,26 +72,17 @@ const menuItems = [
   { href: '/contact', label: 'Contact' },
 ]
 
-class Menu extends React.PureComponent {
-  state = {
-    menuOpen: false,
-  }
-
+class Menu extends React.Component {
   componentDidMount = () => Router.router.events.on('routeChangeStart', this.closeMenu)
 
   componentWillUnmount = () => Router.router.events.off('routeChangeStart', this.closeMenu)
 
-  handleMenuStateChange = ({ isOpen }) => this.setState({ menuOpen: isOpen })
-
-  closeMenu = () => this.setState({ menuOpen: false })
-
-  toggleMenu = () => this.setState(({ menuOpen }) => ({ menuOpen: !menuOpen }))
+  closeMenu = () => this.props.onStateChange({ isOpen: false })
 
   render() {
     const {
-      pageWrapId, outerContainerId, theme,
-    } = this.props;
-    const { menuOpen } = this.state;
+      pageWrapId, outerContainerId, theme, isOpen, onStateChange,
+    } = this.props
 
     return (
       <RotateMenu
@@ -114,21 +91,21 @@ class Menu extends React.PureComponent {
         styles={menuStyles(theme)}
         pageWrapId={pageWrapId}
         outerContainerId={outerContainerId}
-        isOpen={menuOpen}
-        onStateChange={this.handleMenuStateChange}
-        customBurgerIcon={<MenuBurgerIcon isOpen={menuOpen} onClick={this.toggleMenu} />}
+        isOpen={isOpen}
+        onStateChange={onStateChange}
+        customBurgerIcon={undefined}
         customCrossIcon={false}
       >
         {
-            menuItems.map(({ href, label }) => (
-              <LinkWrap key={href} prefetch href={href}>
-                <MenuItem>
-                  <MenuItemText>
-                    {label}
-                  </MenuItemText>
-                </MenuItem>
-              </LinkWrap>
-            ))
+          menuItems.map(({href, label}) => (
+            <LinkWrap key={href} prefetch href={href}>
+              <MenuItem>
+                <MenuItemText>
+                  {label}
+                </MenuItemText>
+              </MenuItem>
+            </LinkWrap>
+          ))
         }
       </RotateMenu>
     )
@@ -138,9 +115,13 @@ class Menu extends React.PureComponent {
 Menu.propTypes = {
   pageWrapId: PropTypes.string.isRequired,
   outerContainerId: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool,
+  onStateChange: PropTypes.func,
 }
 
 Menu.defaultProps = {
+  isOpen: false,
+  onStateChange: () => undefined,
 }
 
 export default withTheme(Menu)
