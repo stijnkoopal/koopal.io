@@ -1,4 +1,5 @@
 import React from 'react'
+import { Flex, Box } from '@rebass/grid/emotion'
 import RotateMenu from 'react-burger-menu/lib/menus/pushRotate'
 import Link from 'next/link'
 import styled from 'react-emotion'
@@ -6,8 +7,7 @@ import PropTypes from 'prop-types'
 import { withTheme } from 'emotion-theming'
 import Router from 'next/router'
 
-const MenuItem = styled.a({
-  display: 'flex',
+const MenuItem = styled(Flex)({
   alignItems: 'center',
   textAlign: 'center',
   width: '90%',
@@ -16,9 +16,9 @@ const MenuItem = styled.a({
   margin: '0 auto',
   color: 'white',
   cursor: 'pointer',
-})
+}).withComponent('a')
 
-const MenuItemText = styled.span(({ theme: { typography, palette } }) => ({
+const MenuItemText = styled(Flex)(({ theme: { typography, palette } }) => ({
   textAlign: 'center',
   display: 'block',
   width: '100%',

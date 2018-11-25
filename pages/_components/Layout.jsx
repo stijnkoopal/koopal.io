@@ -7,10 +7,9 @@ import { withRouter } from 'next/router'
 import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
 
-const OuterContainer = styled.div`
-  display: block;
-  height: 100vh;
-`
+const OuterContainer = styled(Box)({
+  height: '100vh',
+})
 
 const headerHeight = spacing => 10 * spacing.unit;
 

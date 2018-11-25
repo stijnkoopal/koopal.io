@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { Flex, Box } from '@rebass/grid/emotion'
 import withResume from '../_components/withResume'
 
 const formatDate = date => (date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present');
 
-const Logo = styled('img')({
+const Logo = styled.img({
   width: '100%',
 })
 
-const ProjectDates = styled.div(({ color, odd, theme: { spacing } }) => ({
+const ProjectDates = styled(Box)(({ color, odd, theme: { spacing } }) => ({
   color,
-  boxSizing: 'border-box',
   padding: `0 ${2 * spacing.unit}px`,
   textAlign: odd ? 'right' : 'left',
 }))
@@ -24,13 +24,11 @@ const ConnectionLine = styled.div(({ color }) => ({
   zIndex: 1,
 }))
 
-const Circle = styled.div(({ color, theme: { spacing, transitions } }) => ({
-  display: 'flex',
+const Circle = styled(Flex)(({ color, theme: { spacing, transitions } }) => ({
   borderRadius: '50%',
   width: '20vh',
   height: '20vh',
   backgroundColor: color,
-  boxSizing: 'border-box',
   zIndex: 2,
   padding: spacing.unit * 2,
   transition: `all ${transitions.duration.short}ms linear`,
@@ -41,9 +39,8 @@ const Circle = styled.div(({ color, theme: { spacing, transitions } }) => ({
   },
 }))
 
-const ProjectWrapper = styled.div(({ odd, theme: { spacing } }) => ({
+const ProjectWrapper = styled(Flex)(({ odd, theme: { spacing } }) => ({
   height: '20vh',
-  display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-around',
   flexDirection: odd ? 'row' : 'row-reverse',
@@ -53,21 +50,19 @@ const ProjectWrapper = styled.div(({ odd, theme: { spacing } }) => ({
   marginTop: spacing.unit,
 }))
 
-const ProjectDescription = styled.div(({ odd }) => ({
+const ProjectDescription = styled(Flex)(({ odd }) => ({
   position: 'relative',
-  display: 'flex',
   justifyContent: odd ? 'flex-end' : 'flex-start',
   height: '100%',
 }))
 
-const Chevron = styled.div(({ theme: { spacing }, color }) => ({
+const Chevron = styled(Box)(({ theme: { spacing }, color }) => ({
   position: 'relative',
   textAlign: 'center',
   paddingLeft: spacing.unit,
   paddingRight: spacing.unit,
   width: 0,
   height: '100%',
-  boxSizing: 'border-box',
   ':before': {
     content: '""',
     position: 'absolute',

@@ -1,8 +1,9 @@
 import React from 'react'
 import PieChart from './components/PieChart'
+import { Box } from '@rebass/grid/emotion'
 
 const About = () => (
-  <div style={{ width: '100%', border: '1px solid black' }}>
+  <Box>
     <PieChart />
     <p>
       I&apos;ve always had a profound interest for computers and math; be it games, programming,
@@ -37,7 +38,7 @@ const About = () => (
         Basically, it comes to this: I can help you!
       </li>
     </ul>
-  </div>
+  </Box>
 )
 
 export default About

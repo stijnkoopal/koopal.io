@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'react-emotion'
+import { Box, Flex } from '@rebass/grid/emotion'
 
-const CircleContainer = styled.div({
-  display: 'inline-block',
+const CircleContainer = styled(Box)({
   position: 'relative',
   width: '64px',
   height: '64px',
@@ -12,13 +12,12 @@ const CircleContainer = styled.div({
   borderRadius: '50%',
 })
 
-const BarsContainer = styled.div({
+const BarsContainer = styled(Flex)({
   position: 'absolute',
   top: 0,
   bottom: 0,
   left: 0,
   right: 0,
-  display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   padding: '10%',
@@ -37,16 +36,16 @@ const barShared = ({ isOpen, theme: { transitions: { duration: { short: duration
   margin: isOpen ? 0 : '4px 0',
 })
 
-const Bar1 = styled.div(barShared, ({ isOpen }) => ({
+const Bar1 = styled(Box)(barShared, ({ isOpen }) => ({
   transform: isOpen ? 'rotate(-45deg)' : '',
   top: `${barHeight}px`,
 }))
 
-const Bar2 = styled.div(barShared, ({ isOpen }) => ({
+const Bar2 = styled(Box)(barShared, ({ isOpen }) => ({
   opacity: isOpen ? 0 : 1,
 }))
 
-const Bar3 = styled.div(barShared, ({ isOpen }) => ({
+const Bar3 = styled(Box)(barShared, ({ isOpen }) => ({
   transform: isOpen ? 'rotate(45deg)' : '',
   top: `-${barHeight}px`,
 }))

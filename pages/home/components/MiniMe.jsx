@@ -1,7 +1,7 @@
 import React from 'react'
 
-const MiniMe = ({ className }) => (
-  <img src="static/mini-me.svg" alt="Mini me" className={className} />
+const MiniMe = props => (
+  <img src="static/mini-me.svg" alt="Mini me" {...props} />
 )
 
 export default MiniMe

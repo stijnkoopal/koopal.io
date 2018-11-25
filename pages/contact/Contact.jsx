@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Box } from '@rebass/grid/emotion'
 import withResume from '../_components/withResume'
 
 const SingleProfile = ({ url, icon, network }) => (
@@ -15,9 +16,9 @@ SingleProfile.propTypes = {
 }
 
 const Contact = ({ resume }) => (
-  <div>
+  <Box>
     { resume.basics.profiles.map(profile => <SingleProfile key={profile.key} {...profile} />) }
-  </div>
+  </Box>
 )
 
 Contact.propTypes = {
