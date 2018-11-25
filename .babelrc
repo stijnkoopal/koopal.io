@@ -13,14 +13,6 @@
         ["emotion", { "hoist": true }],
         ["inline-import", {"extensions": [".css"]}]
       ]
-    },
-    "test": {
-      "presets": [
-        [
-          "next/babel",
-          { "@babel/preset-env": { "modules": "commonjs" } }
-        ]
-      ]
     }
   },
   "plugins": ["transform-class-properties"]
