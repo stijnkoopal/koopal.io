@@ -7,10 +7,6 @@ import { withRouter } from 'next/router'
 import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
 
-const OuterContainer = styled(Box)({
-  height: '100vh',
-})
-
 const headerHeight = spacing => 10 * spacing.unit;
 
 const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
@@ -48,11 +44,11 @@ class Layout extends React.Component {
     const { menuOpen } = this.state
 
     return (
-      <OuterContainer id="outer-container">
+      <>
         <Header showOnlyMenuIcon={menuOpen} px={[3, 7]}>
           <MenuIcon isOpen={menuOpen} onClick={this.toggleMenuOpened} />
         </Header>
-        <Menu pageWrapId="page-wrap" outerContainerId="outer-container" isOpen={menuOpen} onStateChange={this.setMenuOpened} />
+        <Menu pageWrapId="page-wrap" outerContainerId="__next" isOpen={menuOpen} onStateChange={this.setMenuOpened} />
         <Main
           mx="auto"
           width={[1, 1 / 2]}
@@ -61,7 +57,7 @@ class Layout extends React.Component {
         >
           {children}
         </Main>
-      </OuterContainer>
+      </>
     )
   }
 }
