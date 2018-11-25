@@ -12,21 +12,17 @@ const OuterContainer = styled.div`
   height: 100%;
 `
 
-const Header = styled(Flex)(({ openedMenu, theme: { spacing, shadows } }) => ({
-  height: 10 * spacing.unit,
+const headerHeight = spacing => 10 * spacing.unit;
+
+const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
+  height: headerHeight(spacing),
   justifyContent: 'space-between',
   alignItems: 'center',
-  boxShadow: shadows[24],
   top: 0,
   width: '100%',
-  position: openedMenu ? 'relative' : 'sticky',
-  zIndex: openedMenu ? 'unset' : 1200,
-  background: 'black',
-}))
-
-const CurrentPage = styled.div(({ theme: { typography }}) => ({
-  ...typography.display1,
-}))
+  position: showOnlyMenuIcon ? 'relative' : 'sticky',
+  zIndex: showOnlyMenuIcon ? 'unset' : 1200,
+})).withComponent('header')
 
 const MenuIcon = styled(MenuBurgerIcon)({
   width: '48px',
@@ -34,40 +30,38 @@ const MenuIcon = styled(MenuBurgerIcon)({
   zIndex: 1200,
 })
 
+const Main = styled(Box)(({ theme: { spacing } }) => ({
+  maxWidth: '1400px',
+  height: `calc(100% - ${headerHeight(spacing)}px)`,
+})).withComponent('main')
+
 class Layout extends React.Component {
   state = {
     menuOpen: false,
   }
 
-  toggleMenu = () => this.setState(({ menuOpen }) => ({ menuOpen: !menuOpen }))
+  toggleMenuOpened = () => this.setState(({ menuOpen }) => ({ menuOpen: !menuOpen }))
 
-  setMenuState = ({ isOpen }) => this.setState(() => ({ menuOpen: isOpen }))
+  setMenuOpened = ({ isOpen }) => this.setState(() => ({ menuOpen: isOpen }))
 
   render() {
-    const { router, children } = this.props
+    const { children } = this.props
     const { menuOpen } = this.state
 
     return (
       <OuterContainer id="outer-container">
-        <Header openedMenu={menuOpen} px={[3, 7]}>
-          <MenuIcon isOpen={menuOpen} onClick={this.toggleMenu} />
-          <CurrentPage>
-            {router.asPath}
-          </CurrentPage>
+        <Header showOnlyMenuIcon={menuOpen} px={[3, 7]}>
+          <MenuIcon isOpen={menuOpen} onClick={this.toggleMenuOpened} />
         </Header>
-        <Menu pageWrapId="page-wrap" outerContainerId="outer-container" isOpen={menuOpen} onStateChange={this.setMenuState} />
-        <Box
+        <Menu pageWrapId="page-wrap" outerContainerId="outer-container" isOpen={menuOpen} onStateChange={this.setMenuOpened} />
+        <Main
           mx="auto"
           width={[1, 1 / 2]}
           p="3"
-          css={{
-            maxWidth: '1400px',
-            height: '100%',
-          }}
           id="page-wrap"
         >
           {children}
-        </Box>
+        </Main>
       </OuterContainer>
     )
   }

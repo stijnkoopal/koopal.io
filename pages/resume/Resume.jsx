@@ -60,8 +60,6 @@ const ProjectDescription = styled.div(({ odd }) => ({
   height: '100%',
 }))
 
-
-
 const Chevron = styled.div(({ theme: { spacing }, color }) => ({
   position: 'relative',
   textAlign: 'center',
@@ -113,6 +111,7 @@ const Project = ({ project, odd, color }) => (
 
 const ProjectList = styled.div(({ theme: { spacing } }) => ({
   paddingTop: spacing.unit,
+  paddingBottom: spacing.unit * 3,
 }))
 
 const colors = [
