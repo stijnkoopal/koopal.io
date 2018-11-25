@@ -9,7 +9,7 @@ import MenuBurgerIcon from './MenuBurgerIcon'
 
 const OuterContainer = styled.div`
   display: block;
-  height: 100%;
+  height: 100vh;
 `
 
 const headerHeight = spacing => 10 * spacing.unit;

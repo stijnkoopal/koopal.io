@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import { withTheme } from 'emotion-theming'
 import withResume from './withResume'
 
 const MetaTags = ({ resume, theme: { palette } }) => (
-  <Fragment>
+  <>
     <Head>
       <title>{`${resume.basics.name} | ${resume.basics.label}`}</title>
 
@@ -31,7 +31,7 @@ const MetaTags = ({ resume, theme: { palette } }) => (
       <link rel="canonical" href="https://koopal.me" />
       <meta property="author" content="Stijn Koopal" />
     </Head>
-  </Fragment>
+  </>
 )
 
 export default withResume(withTheme(MetaTags))

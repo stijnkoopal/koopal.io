@@ -14,7 +14,7 @@ const GlobalStyles = ({ theme: { typography, palette: { background } } }) => {
       height: '100%',
       margin: 0,
     },
-    body: {
+    html: {
       ...typography.body1,
       background: background.default,
       backgroundAttachment: 'fixed',

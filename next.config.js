@@ -15,7 +15,7 @@ const bundleAnalyzerConfig = {
       reportFilename: '../bundles/client.html',
     },
   },
-};
+}
 
 const workboxConfig = {
   workbox: {
@@ -23,7 +23,7 @@ const workboxConfig = {
     importWorkboxFrom: 'local',
     precacheManifest: true,
   },
-};
+}
 
 const manifestConfig = {
   manifest: {
@@ -32,9 +32,9 @@ const manifestConfig = {
       cache: true,
     },
   },
-};
+}
 
-module.exports = withManifest(withWorkbox(withBundleAnalyzer({
+const nextConfig = {
   exportPathMap() {
     return {
       '/': { page: '/' },
@@ -44,7 +44,13 @@ module.exports = withManifest(withWorkbox(withBundleAnalyzer({
       '/wall': { page: '/wall' },
     };
   },
+}
+
+const config = {
+  ...nextConfig,
   ...bundleAnalyzerConfig,
   ...workboxConfig,
   ...manifestConfig,
-})));
+}
+
+module.exports = withManifest(withWorkbox(withBundleAnalyzer(config)));

@@ -56,7 +56,11 @@ const menuStyles = ({ palette: { background } }) => ({
 // react-burger-menu sets `style` on its direct children. That gives a prop-types validation error
 const LinkWrap = (props) => {
   // eslint-disable-next-line react/prop-types
-  const { style, className, ...filteredProps } = props
+  const unknownProperties = ['style', 'class', 'className', '__source']
+  const filteredProps = Object.keys(props)
+    .filter(key => !unknownProperties.includes(key))
+    .reduce((acc, val) => ({ ...acc, [val]: props[val] }), {})
+
   return (
     <Link {...filteredProps}>
       {filteredProps.children}
