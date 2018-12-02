@@ -20,8 +20,8 @@ const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
 })).withComponent('header')
 
 const MenuIcon = styled(MenuBurgerIcon)({
-  width: '48px',
-  height: '48px',
+  width: '42px',
+  height: '42px',
   zIndex: 1200,
 })
 

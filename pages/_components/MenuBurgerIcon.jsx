@@ -25,11 +25,11 @@ const BarsContainer = styled(Flex)({
 
 const barHeight = 3;
 
-const barShared = ({ isOpen, theme: { transitions: { duration: { short: duration } } } }) => css({
+const barShared = ({ isOpen, theme: { palette, transitions: { duration: { short: duration } } } }) => css({
   position: 'relative',
   width: '100%',
   height: `${barHeight}px`,
-  background: '#333',
+  background: palette.colors.primary,
   transition: isOpen
     ? `margin ${duration}ms, opacity ${duration}ms, transform ${duration}ms ${duration}ms`
     : `transform ${duration}ms, opacity ${duration}ms ${duration}ms, margin ${duration}ms ${duration}ms`,

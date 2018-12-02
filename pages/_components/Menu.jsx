@@ -23,7 +23,6 @@ const MenuItemText = styled(Flex)(({ theme: { typography, palette } }) => ({
   display: 'block',
   width: '100%',
   ...typography.headline,
-  color: palette.primary.contrastText,
 }))
 
 const menuStyles = ({ palette: { background } }) => ({
@@ -37,7 +36,7 @@ const menuStyles = ({ palette: { background } }) => ({
     display: 'none',
   },
   bmMenu: {
-    background: background.alternative,
+    background: background.default,
     fontSize: '2em',
   },
   bmItemList: {

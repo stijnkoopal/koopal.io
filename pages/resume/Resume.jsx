@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 import { Flex, Box } from '@rebass/grid/emotion'
+import { withTheme } from 'emotion-theming'
 import withResume from '../_components/withResume'
 
 const formatDate = date => (date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present');
@@ -39,6 +40,10 @@ const Circle = styled(Flex)(({ color, theme: { spacing, transitions } }) => ({
   },
 }))
 
+const ProjectDescription = styled(Flex)({
+  position: 'relative',
+})
+
 const ProjectWrapper = styled(Flex)(({ odd, theme: { spacing } }) => ({
   height: '20vh',
   alignItems: 'center',
@@ -48,13 +53,10 @@ const ProjectWrapper = styled(Flex)(({ odd, theme: { spacing } }) => ({
     width: `calc((100% - ${spacing.unit * 2}px) / 2)`,
   },
   marginTop: spacing.unit,
-}))
-
-const ProjectDescription = styled(Flex)(({ odd }) => ({
-  position: 'relative',
-  justifyContent: odd ? 'flex-end' : 'flex-start',
-  height: '100%',
-}))
+  [ProjectDescription]: {
+    justifyContent: odd ? 'flex-end' : 'flex-start',
+  },
+})).withComponent('section')
 
 const Chevron = styled(Box)(({ theme: { spacing }, color }) => ({
   position: 'relative',
@@ -109,26 +111,16 @@ const ProjectList = styled.div(({ theme: { spacing } }) => ({
   paddingBottom: spacing.unit * 3,
 }))
 
-const colors = [
-  '#f5a34c',
-  '#f27074',
-  '#47adb9',
-  '#a1b973',
-  '#7f7f7f',
-  '#bbdd31',
-  '#1b89e1',
-]
-
-const Resume = ({ resume }) => {
+const Resume = ({ resume, theme: { palette: { colors } } }) => {
   const projects = resume.projects.sort((a, b) => (a.startDate < b.startDate ? 1 : -1))
 
   return (
     <ProjectList>
-      { projects.map((project, index) => <Project odd={index % 2} key={project.name} project={project} color={colors[index]} />)}
+      { projects.map((project, index) => <Project odd={index % 2} key={project.name} project={project} color={colors.visualizations[index]} />)}
     </ProjectList>
   )
 }
 
 Resume.pageTitle = 'Resume'
 
-export default withResume(Resume)
+export default withTheme(withResume(Resume))

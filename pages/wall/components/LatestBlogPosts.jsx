@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Facebook } from 'react-content-loader'
 import styled from 'react-emotion'
+import { Box, Flex } from '@rebass/grid/emotion'
 import { blogPostShape } from '../prop-types'
 
 export const EmptyBlogPost = ({ uniqueKey }) => <Facebook uniquekey={uniqueKey} />
@@ -11,63 +12,113 @@ EmptyBlogPost.propTypes = {
 
 const formatDateTime = (dateTime) => {
   const date = new Date(dateTime)
-  return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
+  return date.toLocaleString('en', {
+    month: 'long', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit',
+  })
 }
 
-const BlogImage = ({ title, imageUrl }) => <img title={title} alt="Preview" src={imageUrl} style={{width: '100%'}} />
-BlogImage.propTypes = {
-  title: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
-}
+const BlogImage = styled(Box)(() => ({
+  width: '100%',
+})).withComponent('img')
 
-const BlogDateTime = ({ dateTime }) => (
-  <>
-    {formatDateTime(dateTime)}
-  </>
-)
-
-const ClapsIcon = ({ numberOfClapsReceived, className }) => (
-  <img src="/static/medium-claps.svg" className={className} alt="Claps" title={`${numberOfClapsReceived} claps on medium!`} />
-)
-
-const StyledClapsIcon = styled(ClapsIcon)({
-  width: '33px',
-  height: '33px',
-})
-
-const Claps = ({ numberOfClapsReceived} ) => (
-  <>
-    <StyledClapsIcon numberOfClapsReceived={numberOfClapsReceived} />
-    {numberOfClapsReceived}
-  </>
-)
-
-const BlogAnchor = styled.a(({ theme: { typography } }) => ({
-  ...typography.subheading,
+const PublishingDate = styled(Box)(({ theme: { typography } }) => ({
+  ...typography.caption,
 }))
 
+const Claps = styled(({ numberOfClaps, className }) => (
+  <Flex className={className}>
+    <img src="/static/medium-claps.svg" alt="Claps" title={`${numberOfClaps} claps on medium!`} />
+    {' '}
+    {numberOfClaps}
+  </Flex>
+))(({ theme: { palette, spacing } }) => ({
+  alignItems: 'center',
+  color: palette.colors.primary,
+  '& img': {
+    width: `${4 * spacing.unit}px`,
+    height: `${4 * spacing.unit}px`,
+    marginRight: `${spacing.unit}px`
+  },
+}))
+
+const Container = styled(Flex)(({ theme: { spacing } }) => ({
+  flexDirection: 'column',
+  border: `${spacing.unit / 4}px solid black`,
+  background: 'white',
+})).withComponent('article')
+
+const Title = styled.h2(({ theme: { palette, typography } }) => ({
+  ...typography.heading,
+  color: palette.text.contrast,
+}))
+
+const Summary = styled.div(({ theme: { palette, typography } }) => ({
+  ...typography.body1,
+  color: palette.text.contrast,
+})).withComponent('section')
+
+const Footer = styled(Flex)(({ theme: { spacing } }) => ({
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  marginTop: spacing.unit,
+})).withComponent('section')
+
+const Content = styled(Flex)(({ theme: { spacing } }) => ({
+  flexDirection: 'column',
+  padding: `${spacing.unit}px`,
+})).withComponent('section')
+
+const TellMeMore = styled(Box)(({ theme: { palette, typography } }) => ({
+  ...typography.button,
+  background: palette.colors.primary,
+})).withComponent('button')
+
 export const BlogPost = ({ post }) => (
-  <BlogAnchor href={post.blogUrl} target="_blank" rel="noopener noreferrer">
-    <BlogImage title={post.title} imageUrl={post.imageUrl} />
-    <BlogDateTime dateTime={post.updatedAt} />
-    <Claps numberOfClapsReceived={post.virtuals.totalClapCount} />
-    {post.title}
-  </BlogAnchor>
+  <Container href={post.blogUrl} target="_blank" rel="noopener noreferrer">
+    <BlogImage title={post.title} alt="Header image" src={post.imageUrl} />
+    <Content>
+      <Title>
+        {post.title}
+      </Title>
+      <PublishingDate>
+        {formatDateTime(post.updatedAt)}
+      </PublishingDate>
+      <Summary>
+        {post.content.subtitle}
+      </Summary>
+      <Footer>
+        <Claps numberOfClaps={post.virtuals.totalClapCount} />
+        <TellMeMore>
+          Tell me more!
+        </TellMeMore>
+      </Footer>
+    </Content>
+  </Container>
 )
 
 BlogPost.propTypes = {
   post: blogPostShape.isRequired,
 }
 
-const BlogList = styled.ul`
-  margin: 0;
-  padding: 0 2%;
-  box-sizing: border-box;
-  list-style: none;
-`
+const BlogList = styled(Box)(({ theme: { spacing }}) => ({
+  margin: 0,
+  padding: '0 2%',
+  boxSizing: 'border-box',
+  listStyle: 'none',
+  '> *': {
+    marginBottom: `${spacing.unit}px`,
+  },
+})).withComponent('ul')
 
 export const LatestBlogPosts = ({ children }) => (
   <BlogList>
+    {
+      React.Children.map(children, child => (
+        <li>
+          { child }
+        </li>
+      ), {})
+    }
     {
       React.Children.map(children, child => (
         <li>
