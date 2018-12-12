@@ -27,6 +27,7 @@ const workboxConfig = {
 
 const manifestConfig = {
   manifest: {
+    themeColor: '#00413c',
     icons: {
       src: './static/pwa-icon.png',
       cache: true,
