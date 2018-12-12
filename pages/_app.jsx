@@ -33,7 +33,7 @@ class MyApp extends App {
     return (
       <Container>
         <Head>
-          <Manifest />
+          <Manifest themeColor={theme.palette.colors.primary} />
         </Head>
         <ThemeProvider theme={theme}>
           <Layout>

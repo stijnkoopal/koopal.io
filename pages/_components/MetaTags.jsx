@@ -26,8 +26,6 @@ const MetaTags = ({ resume, theme: { palette } }) => (
       <meta property="og:url" content="" />
       <meta property="og:image" content="" />
 
-      {/*<meta name="theme-color" content="#BBB" />*/}
-
       <link rel="canonical" href="https://koopal.me" />
       <meta property="author" content="Stijn Koopal" />
     </Head>
