@@ -27,8 +27,8 @@ const colors = {
 }
 
 const text = {
-  primary: colors.grey['300'],
-  secondary: colors.grey['200'],
+  primary: colors.grey['200'],
+  secondary: colors.grey['400'],
   contrast: colors.grey['900'],
 }
 
@@ -54,7 +54,7 @@ const theme = {
       letterSpacing: '-.04em',
       lineHeight: '1.14286em',
       marginLeft: '-.04em',
-      color: text.secondary,
+      color: text.primary,
     },
     display3: {
       fontSize: '3.5rem',
@@ -63,7 +63,7 @@ const theme = {
       letterSpacing: '-.02em',
       lineHeight: '1.30357em',
       marginLeft: '-.02em',
-      color: text.secondary,
+      color: text.primary,
     },
     display2: {
       fontSize: '2.8125rem',
@@ -71,14 +71,14 @@ const theme = {
       fontFamily,
       lineHeight: '1.13333em',
       marginLeft: '-.02em',
-      color: text.secondary,
+      color: text.primary,
     },
     display1: {
       fontSize: '2.125rem',
       fontWeight: 400,
       fontFamily,
       lineHeight: '1.20588em',
-      color: text.secondary,
+      color: text.primary,
     },
     headline: {
       fontSize: '1.5rem',
@@ -124,7 +124,7 @@ const theme = {
     },
     button: {
       fontSize: '0.875rem',
-      textTransform: 'uppercase',
+      textTransform: 'lowercase',
       fontWeight: 500,
       fontFamily,
       color: text.primary,

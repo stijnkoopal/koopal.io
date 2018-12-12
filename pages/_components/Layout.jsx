@@ -6,6 +6,7 @@ import { withTheme } from 'emotion-theming'
 import { withRouter } from 'next/router'
 import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
+import Stars from './Stars'
 
 const headerHeight = spacing => 10 * spacing.unit;
 
@@ -49,6 +50,11 @@ class Layout extends React.Component {
           <MenuIcon isOpen={menuOpen} onClick={this.toggleMenuOpened} />
         </Header>
         <Menu pageWrapId="page-wrap" outerContainerId="__next" isOpen={menuOpen} onStateChange={this.setMenuOpened} />
+
+        <Stars numberOfStars={200} speed="fast" starSize="small" />
+        <Stars numberOfStars={200} speed="medium" starSize="medium" />
+        <Stars numberOfStars={20} speed="slow" starSize="big" />
+
         <Main
           mx="auto"
           width={[1, 1 / 2]}

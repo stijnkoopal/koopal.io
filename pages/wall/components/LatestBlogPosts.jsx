@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Facebook } from 'react-content-loader'
-import styled from 'react-emotion'
+import styled, { css } from 'react-emotion'
 import { Box, Flex } from '@rebass/grid/emotion'
+import { withTheme } from 'emotion-theming'
 import { blogPostShape } from '../prop-types'
 
 export const EmptyBlogPost = ({ uniqueKey }) => <Facebook uniquekey={uniqueKey} />
@@ -21,25 +22,39 @@ const BlogImage = styled(Box)(() => ({
   width: '100%',
 })).withComponent('img')
 
-const PublishingDate = styled(Box)(({ theme: { typography } }) => ({
-  ...typography.caption,
-}))
+const PublishingDate = withTheme(({ children, theme: { spacing, typography } }) => (
+  <Flex css={{ ...typography.caption, alignItems: 'flex-end' }}>
+    <img
+      src="/static/agenda.svg"
+      alt="Agenda"
+      css={{
+        width: `${spacing.unit * 2}px`,
+        height: `${spacing.unit * 2}px`,
+        marginRight: `${spacing.unit}px`
+      }}
+    />
+    { ' ' }
+    { children }
+  </Flex>
+))
 
-const Claps = styled(({ numberOfClaps, className }) => (
-  <Flex className={className}>
+const Claps = withTheme(({ numberOfClaps, theme: { typography, palette, spacing } }) => (
+  <Flex css={{
+    ...typography.body1,
+    alignItems: 'center',
+    color: palette.colors.primary,
+    '& img': {
+      width: `${4 * spacing.unit}px`,
+      height: `${4 * spacing.unit}px`,
+      marginRight: `${spacing.unit}px`,
+    },
+  }}
+  >
     <img src="/static/medium-claps.svg" alt="Claps" title={`${numberOfClaps} claps on medium!`} />
     {' '}
     {numberOfClaps}
   </Flex>
-))(({ theme: { palette, spacing } }) => ({
-  alignItems: 'center',
-  color: palette.colors.primary,
-  '& img': {
-    width: `${4 * spacing.unit}px`,
-    height: `${4 * spacing.unit}px`,
-    marginRight: `${spacing.unit}px`
-  },
-}))
+))
 
 const Container = styled(Flex)(({ theme: { spacing } }) => ({
   flexDirection: 'column',
@@ -68,13 +83,17 @@ const Content = styled(Flex)(({ theme: { spacing } }) => ({
   padding: `${spacing.unit}px`,
 })).withComponent('section')
 
-const TellMeMore = styled(Box)(({ theme: { palette, typography } }) => ({
+const TellMeMore = styled(Flex)(({ theme: { palette, typography } }) => ({
   ...typography.button,
   background: palette.colors.primary,
-})).withComponent('button')
+  border: 'none',
+  borderRadius: '4px',
+  alignItems: 'center',
+  textDecoration: 'none',
+})).withComponent('a')
 
 export const BlogPost = ({ post }) => (
-  <Container href={post.blogUrl} target="_blank" rel="noopener noreferrer">
+  <Container>
     <BlogImage title={post.title} alt="Header image" src={post.imageUrl} />
     <Content>
       <Title>
@@ -88,7 +107,7 @@ export const BlogPost = ({ post }) => (
       </Summary>
       <Footer>
         <Claps numberOfClaps={post.virtuals.totalClapCount} />
-        <TellMeMore>
+        <TellMeMore px={2} href={post.blogUrl} target="_blank" rel="noopener noreferrer">
           Tell me more!
         </TellMeMore>
       </Footer>
@@ -100,7 +119,7 @@ BlogPost.propTypes = {
   post: blogPostShape.isRequired,
 }
 
-const BlogList = styled(Box)(({ theme: { spacing }}) => ({
+const BlogList = styled(Box)(({ theme: { spacing } }) => ({
   margin: 0,
   padding: '0 2%',
   boxSizing: 'border-box',
