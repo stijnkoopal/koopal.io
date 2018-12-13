@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 import { Flex, Box } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
+import Color from 'color'
 import withResume from '../_components/withResume'
 
 const formatDate = date => (date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present');
@@ -87,6 +88,23 @@ const Chevron = styled(Box)(({ theme: { spacing }, color }) => ({
   },
 }))
 
+const VerticalChevronText = styled(Box)(({ color }) => ({
+  transform: 'rotate(90deg)',
+  top: 'calc(50% - 30px)',
+  color: 'white',
+  position: 'relative',
+  zIndex: 1,
+  color,
+}))
+
+const darkenColor = color => Color(color).darken(0.4).rgb().toString()
+
+const ChevronWithText = ({ children, color }) => (
+  <Chevron color={color}>
+    <VerticalChevronText color={darkenColor(color)}>{ children }</VerticalChevronText>
+  </Chevron>
+)
+
 const Project = ({ project, odd, color }) => (
   <ProjectWrapper odd={odd}>
     <ProjectDates color={color} odd={odd}>
@@ -96,7 +114,9 @@ const Project = ({ project, odd, color }) => (
       {' '}
       { formatDate(project.endDate) }
     </ProjectDates>
-    <Chevron color={color} />
+    <ChevronWithText color={color}>
+      {project.via}
+    </ChevronWithText>
     <ProjectDescription odd={odd}>
       <ConnectionLine color={color} />
       <Circle color={color}>

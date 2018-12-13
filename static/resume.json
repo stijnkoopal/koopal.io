@@ -232,6 +232,7 @@
       ],
       "entity": "Royal FloraHolland",
       "entityIconUrl": "/static/logos/royal-flora-holland.svg",
+      "via": "Xebia",
       "type": "application"
     },
     {
@@ -252,6 +253,7 @@
       ],
       "entity": "Blockport",
       "entityIconUrl": "/static/logos/blockport.svg",
+      "via": "Xebia",
       "type": "application"
     },
     {
@@ -273,6 +275,7 @@
       ],
       "entity": "ING",
       "entityIconUrl": "/static/logos/ING.svg",
+      "via": "Xebia",
       "type": "application"
     },
     {
@@ -291,6 +294,7 @@
       ],
       "entity": "Alphabet",
       "entityIconUrl": "/static/logos/alphabet.svg",
+      "via": "Ciber",
       "type": "application"
     },
     {
@@ -311,6 +315,7 @@
       ],
       "entity": "Travelcard",
       "entityIconUrl": "/static/logos/travelcard.svg",
+      "via": "Ciber",
       "type": "application"
     },
     {
@@ -329,6 +334,7 @@
       ],
       "entity": "Malmberg",
       "entityIconUrl": "/static/logos/malmberg.svg",
+      "via": "Ciber",
       "type": "application"
     },
     {
@@ -346,6 +352,7 @@
       ],
       "entity": "RWE",
       "entityIconUrl": "/static/logos/rwe.svg",
+      "via": "Ciber",
       "type": "application"
     }
   ],
