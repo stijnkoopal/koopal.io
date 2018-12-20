@@ -29,7 +29,7 @@ const manifestConfig = {
   manifest: {
     themeColor: '#00413c',
     icons: {
-      src: './static/pwa-icon.png',
+      src: './static/koopal.me.png',
       cache: true,
     },
   },
