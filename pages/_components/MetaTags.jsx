@@ -35,7 +35,9 @@ const MetaTags = ({ resume, theme: { palette } }) => (
       <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color={palette.colors.primary} />
       <meta name="apple-mobile-web-app-title" content="Stijn Koopal" />
       <meta name="application-name" content="Stijn Koopal" />
+      <meta name="msapplication-TileImage" content="/static/favicon/mstile-144x144.png" />
       <meta name="msapplication-TileColor" content={palette.colors.primary} />
+      <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
       <meta name="theme-color" content={palette.colors.primary} />
     </Head>
   </>
