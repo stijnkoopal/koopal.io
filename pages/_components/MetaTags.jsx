@@ -19,12 +19,12 @@ const MetaTags = ({ resume, theme: { palette } }) => (
 
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
-      <meta property="og:locale" content="en_US" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="" />
-      <meta property="og:type" content="" />
-      <meta property="og:url" content="" />
-      <meta property="og:image" content="" />
+      <meta property="og:image:width" content="279" />
+      <meta property="og:image:height" content="279" />
+      <meta property="og:description" content="Full Stack Software Engineer" />
+      <meta property="og:title" content="Stijn Koopal" />
+      <meta property="og:url" content="http://koopal.me" />
+      <meta property="og:image" content="https://dev.koopal.me/static/social/og-image.jpg" />
 
       <link rel="canonical" href="https://koopal.me" />
       <meta property="author" content="Stijn Koopal" />
