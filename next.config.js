@@ -28,6 +28,8 @@ const workboxConfig = {
 const manifestConfig = {
   manifest: {
     themeColor: '#00413c',
+    name: 'Stijn Koopal',
+    short_name: 'Stijn Koopal',
     icons: {
       src: './static/koopal.me.png',
       cache: true,
