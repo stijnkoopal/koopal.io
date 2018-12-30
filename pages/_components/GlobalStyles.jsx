@@ -18,6 +18,7 @@ const GlobalStyles = ({ theme: { typography, palette: { background } } }) => {
       ...typography.body1,
       background: background.default,
       backgroundAttachment: 'fixed',
+      minHeight: '100vh',
     },
   })
 

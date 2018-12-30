@@ -138,13 +138,6 @@ export const LatestBlogPosts = ({ children }) => (
         </li>
       ), {})
     }
-    {
-      React.Children.map(children, child => (
-        <li>
-          { child }
-        </li>
-      ), {})
-    }
   </BlogList>
 )
 
