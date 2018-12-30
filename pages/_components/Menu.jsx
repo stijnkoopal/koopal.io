@@ -50,6 +50,9 @@ const menuStyles = ({ palette: { background } }) => ({
   bmMenuWrap: {
     top: 0,
   },
+  bmOverlay: {
+    top: 0,
+  },
 })
 
 // react-burger-menu sets `style` on its direct children. That gives a prop-types validation error

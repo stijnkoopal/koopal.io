@@ -8,7 +8,9 @@ import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
 import Stars from './Stars'
 
-const headerHeight = spacing => 10 * spacing.unit;
+const headerHeight = spacing => 10 * spacing.unit
+const menuZIndex = 1200
+const iconsSize = '42px';
 
 const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
   height: headerHeight(spacing),
@@ -17,19 +19,51 @@ const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
   top: 0,
   width: '100%',
   position: showOnlyMenuIcon ? 'relative' : 'sticky',
-  zIndex: showOnlyMenuIcon ? 'unset' : 1200,
+  zIndex: showOnlyMenuIcon ? 'unset' : menuZIndex,
 })).withComponent('header')
 
 const MenuIcon = styled(MenuBurgerIcon)({
-  width: '42px',
-  height: '42px',
-  zIndex: 1200,
+  width: iconsSize,
+  height: iconsSize,
+  zIndex: menuZIndex,
 })
 
 const Main = styled(Box)(({ theme: { spacing } }) => ({
   maxWidth: '1400px',
   height: `calc(100% - ${headerHeight(spacing)}px)`,
 })).withComponent('main')
+
+const KoopalMeLogo = styled.img({
+  width: iconsSize,
+  height: iconsSize,
+})
+
+KoopalMeLogo.defaultProps = {
+  src: '/static/koopal.me.svg',
+}
+
+const LogoText = styled(Box)(({ theme: { palette, typography } }) => ({
+  ...typography.headline,
+  color: palette.secondary,
+  overflow: 'hidden',
+}))
+
+const StijnKoopalAnchor = styled(Flex)(({ theme: { palette, spacing } }) => ({
+  // zIndex: menuZIndex,
+  justifyContent: 'flex-end',
+  alignItems: 'center',
+  textDecoration: 'none',
+  color: palette.text.primary,
+  width: 18 * spacing.unit,
+})).withComponent('a')
+
+const StijnKoopal = () => (
+  <StijnKoopalAnchor href="/">
+    <LogoText width={[0, 0, 0, 1]}>Stijn</LogoText>
+    <KoopalMeLogo />
+    <LogoText width={[0, 0, 0, 1]}>oopal</LogoText>
+  </StijnKoopalAnchor>
+)
 
 class Layout extends React.Component {
   state = {
@@ -46,8 +80,9 @@ class Layout extends React.Component {
 
     return (
       <>
-        <Header showOnlyMenuIcon={menuOpen} px={[3, 7]}>
+        <Header showOnlyMenuIcon={menuOpen} px={[3, 4]}>
           <MenuIcon isOpen={menuOpen} onClick={this.toggleMenuOpened} />
+          <StijnKoopal />
         </Header>
         <Menu pageWrapId="page-wrap" outerContainerId="__next" isOpen={menuOpen} onStateChange={this.setMenuOpened} />
 
