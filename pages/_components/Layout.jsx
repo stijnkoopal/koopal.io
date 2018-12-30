@@ -59,9 +59,9 @@ const StijnKoopalAnchor = styled(Flex)(({ theme: { palette, spacing } }) => ({
 
 const StijnKoopal = () => (
   <StijnKoopalAnchor href="/">
-    <LogoText width={[0, 0, 0, 1]}>Stijn</LogoText>
+    <LogoText width={[0, 1]}>Stijn</LogoText>
     <KoopalMeLogo />
-    <LogoText width={[0, 0, 0, 1]}>oopal</LogoText>
+    <LogoText width={[0, 1]}>oopal</LogoText>
   </StijnKoopalAnchor>
 )
 
