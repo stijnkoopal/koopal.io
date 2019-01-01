@@ -9,7 +9,6 @@ import MenuBurgerIcon from './MenuBurgerIcon'
 import Stars from './Stars'
 
 const headerHeight = spacing => 10 * spacing.unit
-const menuZIndex = 1200
 const iconsSize = '42px';
 
 const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
@@ -19,13 +18,12 @@ const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
   top: 0,
   width: '100%',
   position: showOnlyMenuIcon ? 'relative' : 'sticky',
-  zIndex: showOnlyMenuIcon ? 'unset' : menuZIndex,
 })).withComponent('header')
 
 const MenuIcon = styled(MenuBurgerIcon)({
   width: iconsSize,
   height: iconsSize,
-  zIndex: menuZIndex,
+  zIndex: 1200,
 })
 
 const Main = styled(Box)(({ theme: { spacing } }) => ({
