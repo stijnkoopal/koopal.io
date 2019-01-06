@@ -56,6 +56,7 @@ const theme = {
       lineHeight: '1.14286em',
       marginLeft: '-.04em',
       color: text.primary,
+      fill: text.primary,
     },
     display3: {
       fontSize: '3.5rem',
@@ -65,6 +66,7 @@ const theme = {
       lineHeight: '1.30357em',
       marginLeft: '-.02em',
       color: text.primary,
+      fill: text.primary,
     },
     display2: {
       fontSize: '2.8125rem',
@@ -73,6 +75,7 @@ const theme = {
       lineHeight: '1.13333em',
       marginLeft: '-.02em',
       color: text.primary,
+      fill: text.primary,
     },
     display1: {
       fontSize: '2.125rem',
@@ -80,6 +83,7 @@ const theme = {
       fontFamily,
       lineHeight: '1.20588em',
       color: text.primary,
+      fill: text.primary,
     },
     headline: {
       fontSize: '1.5rem',
@@ -87,6 +91,7 @@ const theme = {
       fontFamily,
       lineHeight: '1.35417em',
       color: text.primary,
+      fill: text.primary,
     },
     title: {
       fontSize: '1.3125rem',
@@ -94,6 +99,7 @@ const theme = {
       fontFamily,
       lineHeight: '1.16667em',
       color: text.primary,
+      fill: text.primary,
     },
     subheading: {
       fontSize: '1rem',
@@ -101,6 +107,7 @@ const theme = {
       fontFamily,
       lineHeight: '1.5em',
       color: text.primary,
+      fill: text.primary,
     },
     body2: {
       fontSize: '0.875rem',
@@ -108,6 +115,7 @@ const theme = {
       fontFamily,
       lineHeight: '1.71429em',
       color: text.primary,
+      fill: text.primary,
     },
     body1: {
       fontSize: '0.875rem',
@@ -115,6 +123,7 @@ const theme = {
       fontFamily,
       lineHeight: '1.46429em',
       color: text.primary,
+      fill: text.primary,
     },
     caption: {
       fontSize: '0.75rem',
@@ -122,6 +131,7 @@ const theme = {
       fontFamily,
       lineHeight: '1.375em',
       color: text.secondary,
+      fill: text.secondary,
     },
     button: {
       fontSize: '0.875rem',
@@ -129,6 +139,7 @@ const theme = {
       fontWeight: 500,
       fontFamily,
       color: text.primary,
+      fill: text.primary,
     },
   },
   spacing: {
