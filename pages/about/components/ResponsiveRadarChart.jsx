@@ -5,34 +5,13 @@ import {
 import { withTheme } from 'emotion-theming'
 import styled from 'react-emotion'
 
-const data = [
-  {
-    subject: 'Math', value: 120, fullMark: 150,
-  },
-  {
-    subject: 'Chinese', value: 98, fullMark: 150,
-  },
-  {
-    subject: 'English', value: 86, fullMark: 150,
-  },
-  {
-    subject: 'Geography', value: 99, fullMark: 150,
-  },
-  {
-    subject: 'Physics', value: 85, fullMark: 150,
-  },
-  {
-    subject: 'History', value: 65, fullMark: 150,
-  },
-];
-
 const Styled = styled(ResponsiveContainer)(({ theme: { typography } }) => ({
   tspan: {
     ...typography.body2,
   },
 }))
 
-const ResponsiveRadarChart = ({ theme: { palette } }) => (
+const ResponsiveRadarChart = ({ data, theme: { palette } }) => (
   <Styled with="100%" height="100%">
     <RadarChart data={data}>
       <PolarGrid />
@@ -41,5 +20,9 @@ const ResponsiveRadarChart = ({ theme: { palette } }) => (
     </RadarChart>
   </Styled>
 )
+
+ResponsiveRadarChart.defaultProps = {
+  data: [],
+}
 
 export default withTheme(ResponsiveRadarChart)
