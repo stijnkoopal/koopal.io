@@ -1,15 +1,16 @@
 import { keyframes } from 'emotion'
 import styled from 'react-emotion'
 import { Box } from '@rebass/grid/dist/emotion'
+import seedrandom from 'seedrandom'
 
 const starsKeyframe = keyframes`
   from { transform: translateY(0px) }
   to { transform: translateY(-2000px) }
 `
 
-const starsBoxShadow = (n, starColor = '#FFF') => new Array(n)
+const starsBoxShadow = (rng, n, starColor = '#FFF') => new Array(n)
   .fill(0)
-  .map(_ => `${Math.ceil(Math.random() * 2000)}px ${Math.ceil(Math.random() * 2000)}px ${starColor}`)
+  .map(_ => `${Math.ceil(rng() * 2000)}px ${Math.ceil(rng() * 2000)}px ${starColor}`)
   .join(', ')
 
 const starAnimationSpeeds = {
@@ -29,9 +30,10 @@ export default styled(Box)(({ numberOfStars = 20, speed = 'fast', starSize = 'sm
   position: 'absolute',
   left: 0,
   top: 0,
+  borderRadius: '50%',
   width: `${starPixelSizes[starSize]}px`,
   height: `${starPixelSizes[starSize]}px`,
   background: 'transparent',
-  boxShadow: starsBoxShadow(numberOfStars, 'rgba(255, 255, 255, 0.6)'),
+  boxShadow: starsBoxShadow(seedrandom(new Date().getMinutes()), numberOfStars, 'rgba(255, 255, 255, 0.6)'),
   animation: `${starsKeyframe} ${starAnimationSpeeds[speed]}s linear infinite`,
 }))
