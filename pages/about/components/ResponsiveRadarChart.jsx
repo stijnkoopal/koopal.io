@@ -3,7 +3,7 @@ import {
   ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis,
 } from 'recharts'
 import { withTheme } from 'emotion-theming'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 
 const Styled = styled(ResponsiveContainer)(({ theme: { typography } }) => ({
   tspan: {

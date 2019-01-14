@@ -1,5 +1,5 @@
-import { keyframes } from 'emotion'
-import styled from 'react-emotion'
+import { keyframes } from '@emotion/core'
+import styled from '@emotion/styled'
 import { Box } from '@rebass/grid/dist/emotion'
 import seedrandom from 'seedrandom'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
 import { withRouter } from 'next/router'

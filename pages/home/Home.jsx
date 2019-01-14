@@ -1,7 +1,7 @@
 import React from 'react'
 import { Flex } from '@rebass/grid/emotion'
-import { withTheme } from 'emotion-theming'
-import styled, { keyframes } from 'react-emotion'
+import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 import Typist from 'react-typist';
 import MiniMe from './components/MiniMe'
 
@@ -50,4 +50,4 @@ const Home = () => (
   </Container>
 )
 
-export default withTheme(Home)
+export default Home

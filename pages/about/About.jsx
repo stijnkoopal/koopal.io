@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Flex } from '@rebass/grid/emotion'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import ResponsiveRadarChart from './components/ResponsiveRadarChart'
 
 const PageIndicator = styled(Box)(({ active, theme: { palette, spacing } }) => ({

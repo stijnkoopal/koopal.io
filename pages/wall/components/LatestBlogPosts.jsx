@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Facebook } from 'react-content-loader'
-import styled, { css } from 'react-emotion'
+import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
 import { blogPostShape } from '../prop-types'
@@ -30,7 +30,7 @@ const PublishingDate = withTheme(({ children, theme: { spacing, typography } }) 
       css={{
         width: `${spacing.unit * 2}px`,
         height: `${spacing.unit * 2}px`,
-        marginRight: `${spacing.unit}px`
+        marginRight: `${spacing.unit}px`,
       }}
     />
     { ' ' }

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { Flex, Box } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
 import Color from 'color'
@@ -50,7 +50,7 @@ const ProjectWrapper = styled(Flex)(({ odd, theme: { spacing } }) => ({
   alignItems: 'center',
   justifyContent: 'space-around',
   flexDirection: odd ? 'row' : 'row-reverse',
-  '& > :nth-child(1), & > :nth-child(3)': {
+  '& > *:nth-of-type(1), & > *:nth-of-type(3)': {
     width: `calc((100% - ${spacing.unit * 2}px) / 2)`,
   },
   marginTop: spacing.unit,
@@ -91,7 +91,6 @@ const Chevron = styled(Box)(({ theme: { spacing }, color }) => ({
 const VerticalChevronText = styled(Box)(({ color }) => ({
   transform: 'rotate(90deg)',
   top: 'calc(50% - 30px)',
-  color: 'white',
   position: 'relative',
   zIndex: 1,
   color,
@@ -143,4 +142,4 @@ const Resume = ({ resume, theme: { palette: { colors } } }) => {
 
 Resume.pageTitle = 'Resume'
 
-export default withTheme(withResume(Resume))
+export default withResume(withTheme(Resume))
