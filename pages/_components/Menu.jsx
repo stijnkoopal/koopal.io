@@ -58,7 +58,7 @@ const menuStyles = ({ palette: { background } }) => ({
 // react-burger-menu sets `style` on its direct children. That gives a prop-types validation error
 const LinkWrap = (props) => {
   // eslint-disable-next-line react/prop-types
-  const unknownProperties = ['style', 'class', 'className', '__source']
+  const unknownProperties = ['style', 'class', 'className', '__source', 'tabIndex']
   const filteredProps = Object.keys(props)
     .filter(key => !unknownProperties.includes(key))
     .reduce((acc, val) => ({ ...acc, [val]: props[val] }), {})
@@ -103,7 +103,7 @@ class Menu extends React.Component {
         customCrossIcon={false}
       >
         {
-          menuItems.map(({href, label}) => (
+          menuItems.map(({ href, label }) => (
             <LinkWrap key={href} prefetch href={href}>
               <MenuItem>
                 <MenuItemText>
