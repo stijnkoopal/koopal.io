@@ -26,7 +26,7 @@ const starPixelSizes = {
   big: 3,
 }
 
-export default styled(Box)(({ numberOfStars = 20, speed = 'fast', starSize = 'small' }) => ({
+export default styled(Box)(({ numberOfStars = 20, speed = 'fast', starSize = 'small', seed }) => ({
   position: 'absolute',
   left: 0,
   top: 0,
@@ -34,6 +34,6 @@ export default styled(Box)(({ numberOfStars = 20, speed = 'fast', starSize = 'sm
   width: `${starPixelSizes[starSize]}px`,
   height: `${starPixelSizes[starSize]}px`,
   background: 'transparent',
-  boxShadow: starsBoxShadow(seedrandom(new Date().getMinutes()), numberOfStars, 'rgba(255, 255, 255, 0.6)'),
+  boxShadow: starsBoxShadow(seedrandom(seed), numberOfStars, 'rgba(255, 255, 255, 0.6)'),
   animation: `${starsKeyframe} ${starAnimationSpeeds[speed]}s linear infinite`,
 }))

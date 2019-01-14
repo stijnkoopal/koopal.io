@@ -84,9 +84,9 @@ class Layout extends React.Component {
         </Header>
         <Menu pageWrapId="page-wrap" outerContainerId="__next" isOpen={menuOpen} onStateChange={this.setMenuOpened} />
 
-        <Stars numberOfStars={200} speed="fast" starSize="small" />
-        <Stars numberOfStars={200} speed="medium" starSize="medium" />
-        <Stars numberOfStars={20} speed="slow" starSize="big" />
+        <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small" />
+        <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium" starSize="medium" />
+        <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="big" />
 
         <Main
           mx="auto"
