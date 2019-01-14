@@ -2,10 +2,11 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { extractCritical } from 'emotion-server'
 import pureCss from 'purecss/build/base-min.css'
+import ServiceWorker from 'next-workbox/service-worker'
 
 const GA_TRACKING_ID = 'UA-119842493-1'
 
-class MyDocument extends Document {
+export default class extends Document {
   static getInitialProps({ renderPage }) {
     const page = renderPage()
     const styles = extractCritical(page.html)
@@ -13,7 +14,7 @@ class MyDocument extends Document {
     return { ...page, ...styles }
   }
 
-  renderGoogleAnalytics = (isProduction) => !isProduction
+  renderGoogleAnalytics = isProduction => (!isProduction
     ? null
     : (
       <React.Fragment>
@@ -32,7 +33,7 @@ class MyDocument extends Document {
           }}
         />
       </React.Fragment>
-    )
+    ))
 
   render() {
     const { isProduction } = this.props
@@ -47,10 +48,13 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <ServiceWorker
+            src="/static/workbox/sw.js"
+            scope="/"
+            unregister={process.env.NODE_ENV !== 'production'}
+          />
         </body>
       </html>
     )
   }
 }
-
-export default MyDocument

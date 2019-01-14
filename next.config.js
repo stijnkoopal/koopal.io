@@ -19,7 +19,6 @@ const bundleAnalyzerConfig = {
 
 const workboxConfig = {
   workbox: {
-    registerSW: true,
     importWorkboxFrom: 'local',
     precacheManifest: true,
   },
