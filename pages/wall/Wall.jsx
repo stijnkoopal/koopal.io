@@ -18,9 +18,9 @@ class Wall extends React.Component {
     }
   }
 
-  renderError = (error) => (
-      <div>{[error.message]}</div>
-    )
+  renderError = error => (
+    <div>{[error.message]}</div>
+  )
 
   render() {
     const { posts, isLoading, error } = this.state;

@@ -15,7 +15,6 @@ const ConstrainedMiniMe = styled(MiniMe)({
   marginTop: '24px',
   height: '302px',
   display: 'block',
-  position: 'relative',
 })
 
 const blink = keyframes`

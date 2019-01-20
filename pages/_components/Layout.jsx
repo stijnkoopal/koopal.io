@@ -29,6 +29,8 @@ const MenuIcon = styled(MenuBurgerIcon)({
 const Main = styled(Box)(({ theme: { spacing } }) => ({
   maxWidth: '1400px',
   height: `calc(100% - ${headerHeight(spacing)}px)`,
+  position: 'relative',
+  zIndex: 1,
 })).withComponent('main')
 
 const KoopalMeLogo = styled.img({
