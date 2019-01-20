@@ -8,7 +8,6 @@ import Layout from './_components/Layout'
 import curiousLittleMouse from './_services/curiousLittleMouse';
 import logSource from './_services/logSource'
 import theme from './theme';
-import GlobalStyles from './_components/GlobalStyles'
 import withEnvironment from './_components/withEnvironment'
 
 class MyApp extends App {
@@ -37,7 +36,6 @@ class MyApp extends App {
         </Head>
         <ThemeProvider theme={theme}>
           <Layout>
-            <GlobalStyles />
             <MetaTags />
             {/*<React.StrictMode>*/}
               <Component {...pageProps} />

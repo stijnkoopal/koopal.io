@@ -4,6 +4,8 @@ import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
 import { withRouter } from 'next/router'
+import { Global, css } from '@emotion/core'
+import Head from 'next/head'
 import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
 import Stars from './Stars'
@@ -49,7 +51,6 @@ const LogoText = styled(Box)(({ theme: { palette, typography } }) => ({
 }))
 
 const StijnKoopalAnchor = styled(Flex)(({ theme: { palette, spacing } }) => ({
-  // zIndex: menuZIndex,
   justifyContent: 'flex-end',
   alignItems: 'center',
   textDecoration: 'none',
@@ -65,6 +66,24 @@ const StijnKoopal = () => (
   </StijnKoopalAnchor>
 )
 
+const globalStyles = ({ typography, palette }) => css({
+  '*': {
+    ...typography,
+  },
+  'html, body, body > div:first-of-type, #__next': {
+    width: '100%',
+    height: '100%',
+    margin: 0,
+  },
+  html: {
+    ...typography.body1,
+    background: palette.background.default,
+    backgroundAttachment: 'fixed',
+    minHeight: '100vh',
+    transform: 'translate3d(0,0,0)',
+},
+})
+
 class Layout extends React.Component {
   state = {
     menuOpen: false,
@@ -75,11 +94,16 @@ class Layout extends React.Component {
   setMenuOpened = ({ isOpen }) => this.setState(() => ({ menuOpen: isOpen }))
 
   render() {
-    const { children } = this.props
+    const { children, theme } = this.props
     const { menuOpen } = this.state
 
     return (
       <>
+        <Head>
+          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+          <Global styles={globalStyles(theme)} />
+        </Head>
+
         <Header showOnlyMenuIcon={menuOpen} px={[3, 4]}>
           <MenuIcon isOpen={menuOpen} onClick={this.toggleMenuOpened} />
           <StijnKoopal />
