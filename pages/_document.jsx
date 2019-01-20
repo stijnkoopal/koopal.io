@@ -6,11 +6,6 @@ import ServiceWorker from 'next-workbox/service-worker'
 const GA_TRACKING_ID = 'UA-119842493-1'
 
 export default class extends Document {
-  static getInitialProps({ renderPage }) {
-    const page = renderPage()
-    return { ...page }
-  }
-
   renderGoogleAnalytics = isProduction => (!isProduction
     ? null
     : (
