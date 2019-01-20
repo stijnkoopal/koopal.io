@@ -36,7 +36,6 @@ const Circle = styled(Flex)(({ color, theme: { spacing, transitions } }) => ({
   transition: `all ${transitions.duration.short}ms linear`,
   '&:hover': {
     width: '25vh',
-    marginTop: '-2.5vh',
     height: '25vh',
   },
 }))
