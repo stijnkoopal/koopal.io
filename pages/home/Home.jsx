@@ -37,7 +37,7 @@ const TypeWriter = styled(Typist)(({ theme: { typography } }) => ({
 
 const Home = () => (
   <Container flexDirection="column" alignItems="center" justifyContent="center">
-    <TypeWriter>
+    <TypeWriter avgTypingDelay={30} stdTypingDelay={0}>
       Hi! My name is Stijn.
 
       <br />
