@@ -17,7 +17,9 @@ SingleProfile.propTypes = {
 
 const Contact = ({ resume }) => (
   <Box>
-    { resume.basics.profiles.map(profile => <SingleProfile key={profile.key} {...profile} />) }
+    {resume.basics.profiles.map(profile => (
+      <SingleProfile key={profile.key} {...profile} />
+    ))}
   </Box>
 )
 

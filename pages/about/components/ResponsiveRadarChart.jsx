@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis,
-} from 'recharts'
+import { ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts'
 import { withTheme } from 'emotion-theming'
 import styled from '@emotion/styled'
 

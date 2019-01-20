@@ -8,10 +8,11 @@ const starsKeyframe = keyframes`
   to { transform: translateY(-2000px) }
 `
 
-const starsBoxShadow = (rng, n, starColor = '#FFF') => new Array(n)
-  .fill(0)
-  .map(_ => `${Math.ceil(rng() * 2000)}px ${Math.ceil(rng() * 2000)}px ${starColor}`)
-  .join(', ')
+const starsBoxShadow = (rng, n, starColor = '#FFF') =>
+  new Array(n)
+    .fill(0)
+    .map(_ => `${Math.ceil(rng() * 2000)}px ${Math.ceil(rng() * 2000)}px ${starColor}`)
+    .join(', ')
 
 const starAnimationSpeeds = {
   no: 999999,
@@ -26,9 +27,7 @@ const starPixelSizes = {
   big: 3,
 }
 
-export default styled(Box)(({
-  numberOfStars = 20, speed = 'fast', starSize = 'small', seed,
-}) => ({
+export default styled(Box)(({ numberOfStars = 20, speed = 'fast', starSize = 'small', seed }) => ({
   position: 'absolute',
   left: 0,
   top: 0,

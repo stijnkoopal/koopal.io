@@ -3,11 +3,11 @@ import React from 'react'
 import Head from 'next/head'
 import { ThemeProvider } from 'emotion-theming'
 import Manifest from 'next-manifest/manifest'
-import MetaTags from './_components/MetaTags';
+import MetaTags from './_components/MetaTags'
 import Layout from './_components/Layout'
-import curiousLittleMouse from './_services/curiousLittleMouse';
+import curiousLittleMouse from './_services/curiousLittleMouse'
 import logSource from './_services/logSource'
-import theme from './theme';
+import theme from './theme'
 import withEnvironment from './_components/withEnvironment'
 
 class MyApp extends App {
@@ -37,9 +37,9 @@ class MyApp extends App {
         <ThemeProvider theme={theme}>
           <Layout>
             <MetaTags />
-            {/*<React.StrictMode>*/}
-              <Component {...pageProps} />
-            {/*</React.StrictMode>*/}
+            {/* <React.StrictMode> */}
+            <Component {...pageProps} />
+            {/* </React.StrictMode> */}
           </Layout>
         </ThemeProvider>
       </Container>

@@ -14,15 +14,7 @@ const colors = {
     999: '#111',
     black: '#000',
   },
-  visualizations: [
-    '#b2e000',
-    '#cac100',
-    '#fd7f63',
-    '#ff7eb1',
-    '#3242e8',
-    '#00a4dd',
-    '#00d37f',
-  ],
+  visualizations: ['#b2e000', '#cac100', '#fd7f63', '#ff7eb1', '#3242e8', '#00a4dd', '#00d37f'],
   primary: '#00413c',
   secondary: '#00a4dd',
 }
@@ -164,4 +156,4 @@ const theme = {
   },
 }
 
-export default theme;
+export default theme

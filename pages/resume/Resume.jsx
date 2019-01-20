@@ -5,7 +5,8 @@ import { withTheme } from 'emotion-theming'
 import Color from 'color'
 import withResume from '../_components/withResume'
 
-const formatDate = date => (date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present');
+const formatDate = date =>
+  date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
 
 const Logo = styled.img({
   width: '100%',
@@ -95,26 +96,24 @@ const VerticalChevronText = styled(Box)(({ color }) => ({
   color,
 }))
 
-const darkenColor = color => Color(color).darken(0.4).rgb().toString()
+const darkenColor = color =>
+  Color(color)
+    .darken(0.4)
+    .rgb()
+    .toString()
 
 const ChevronWithText = ({ children, color }) => (
   <Chevron color={color}>
-    <VerticalChevronText color={darkenColor(color)}>{ children }</VerticalChevronText>
+    <VerticalChevronText color={darkenColor(color)}>{children}</VerticalChevronText>
   </Chevron>
 )
 
 const Project = ({ project, odd, color }) => (
   <ProjectWrapper odd={odd}>
     <ProjectDates color={color} odd={odd}>
-      { formatDate(project.startDate) }
-      {' '}
-      -
-      {' '}
-      { formatDate(project.endDate) }
+      {formatDate(project.startDate)} - {formatDate(project.endDate)}
     </ProjectDates>
-    <ChevronWithText color={color}>
-      {project.via}
-    </ChevronWithText>
+    <ChevronWithText color={color}>{project.via}</ChevronWithText>
     <ProjectDescription odd={odd}>
       <ConnectionLine color={color} />
       <Circle color={color}>
@@ -129,12 +128,19 @@ const ProjectList = styled.div(({ theme: { spacing } }) => ({
   paddingBottom: spacing.unit * 3,
 }))
 
-const Resume = ({ resume, theme: { palette: { colors } } }) => {
+const Resume = ({
+  resume,
+  theme: {
+    palette: { colors },
+  },
+}) => {
   const projects = resume.projects.sort((a, b) => (a.startDate < b.startDate ? 1 : -1))
 
   return (
     <ProjectList>
-      { projects.map((project, index) => <Project odd={index % 2} key={project.name} project={project} color={colors.visualizations[index]} />)}
+      {projects.map((project, index) => (
+        <Project odd={index % 2} key={project.name} project={project} color={colors.visualizations[index]} />
+      ))}
     </ProjectList>
   )
 }

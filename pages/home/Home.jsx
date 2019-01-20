@@ -2,7 +2,7 @@ import React from 'react'
 import { Flex } from '@rebass/grid/emotion'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
-import Typist from 'react-typist';
+import Typist from 'react-typist'
 import MiniMe from './components/MiniMe'
 
 const Container = styled(Flex)({
@@ -39,9 +39,7 @@ const Home = () => (
   <Container flexDirection="column" alignItems="center" justifyContent="center">
     <TypeWriter avgTypingDelay={30} stdTypingDelay={0}>
       Hi! My name is Stijn.
-
       <br />
-
       I'm a Full-Stack Software Engineer.
     </TypeWriter>
 

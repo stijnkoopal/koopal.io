@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import theme from '../theme'
 
 export const blogPostShape = PropTypes.shape({
   id: PropTypes.string,
@@ -12,4 +13,8 @@ export const blogPostShape = PropTypes.shape({
   }),
   blogUrl: PropTypes.string,
   imageUrl: PropTypes.string,
+})
+
+export const themeShape = PropTypes.shape({
+  palette: PropTypes.instanceOf(theme),
 })

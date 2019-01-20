@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import {withTheme} from 'emotion-theming'
+import { withTheme } from 'emotion-theming'
 import withResume from './withResume'
 
 const MetaTags = ({ resume, theme: { palette } }) => (

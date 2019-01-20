@@ -47,16 +47,15 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "concurrently": "^4.1.0",
     "eslint": "^5.12.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.12.3",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "express": "^4.16.4",
     "http-proxy-middleware": "^0.19.1",
     "jest": "^23.6.0",
     "netlify-lambda": "^1.2.0",
     "next-workbox": "^1.4.1",
-    "npm-check-updates": "^2.15.0"
+    "npm-check-updates": "^2.15.0",
+    "prettier": "^1.15.3"
   },
   "jest": {},
   "scripts": {

@@ -24,39 +24,50 @@ const PageSelectors = styled(Flex)(({ theme: { spacing } }) => ({
 const chartData = {
   skills: [
     {
-      subject: 'Backend', value: 120,
+      subject: 'Backend',
+      value: 120,
     },
     {
-      subject: 'Frontend', value: 98,
+      subject: 'Frontend',
+      value: 98,
     },
     {
-      subject: 'Cloud', value: 86,
+      subject: 'Cloud',
+      value: 86,
     },
     {
-      subject: 'CI/CD', value: 99,
+      subject: 'CI/CD',
+      value: 99,
     },
     {
-      subject: 'Agile', value: 85,
+      subject: 'Agile',
+      value: 85,
     },
   ],
   personal: [
     {
-      subject: 'Test', value: 12,
+      subject: 'Test',
+      value: 12,
     },
     {
-      subject: 't', value: 10,
+      subject: 't',
+      value: 10,
     },
     {
-      subject: '233', value: 190,
+      subject: '233',
+      value: 190,
     },
     {
-      subject: 'CI/CsdD', value: 44,
+      subject: 'CI/CsdD',
+      value: 44,
     },
     {
-      subject: 'bla', value: 23,
+      subject: 'bla',
+      value: 23,
     },
     {
-      subject: '3434d', value: 23,
+      subject: '3434d',
+      value: 23,
     },
   ],
 }
@@ -64,7 +75,7 @@ const chartData = {
 const Arrow = styled(Box)(({ right, theme: { spacing, palette } }) => {
   const arrowSize = spacing.unit * 2
   const arrowColor = palette.colors.grey[500]
-  return ({
+  return {
     position: 'absolute',
     right: right ? 0 : '',
     left: right ? '' : 0,
@@ -77,7 +88,7 @@ const Arrow = styled(Box)(({ right, theme: { spacing, palette } }) => {
     borderLeft: right ? `${arrowSize}px solid ${arrowColor}` : 'unset',
     borderRight: right ? 'unset' : `${arrowSize}px solid ${arrowColor}`,
     background: 'transparent',
-  })
+  }
 }).withComponent('button')
 
 class About extends React.Component {
@@ -87,7 +98,8 @@ class About extends React.Component {
 
   changeActiveChart = type => this.setState(() => ({ activeChart: type }))
 
-  nextActiveChart = () => this.setState(({ activeChart }) => ({ activeChart: activeChart === 'skills' ? 'personal' : 'skills' }))
+  nextActiveChart = () =>
+    this.setState(({ activeChart }) => ({ activeChart: activeChart === 'skills' ? 'personal' : 'skills' }))
 
   render() {
     const { activeChart } = this.state
@@ -99,15 +111,9 @@ class About extends React.Component {
         <Arrow onClick={this.nextActiveChart} />
 
         <PageSelectors>
-          {
-            ['skills', 'personal'].map(type => (
-              <PageIndicator
-                key={type}
-                active={activeChart === type}
-                onClick={() => this.changeActiveChart(type)}
-              />
-            ))
-          }
+          {['skills', 'personal'].map(type => (
+            <PageIndicator key={type} active={activeChart === type} onClick={() => this.changeActiveChart(type)} />
+          ))}
         </PageSelectors>
 
         <Arrow right onClick={this.nextActiveChart} />

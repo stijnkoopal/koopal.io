@@ -1,11 +1,12 @@
 import React from 'react'
-import { Flex, Box } from '@rebass/grid/emotion'
+import { Flex } from '@rebass/grid/emotion'
 import RotateMenu from 'react-burger-menu/lib/menus/pushRotate'
 import Link from 'next/link'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import { withTheme } from 'emotion-theming'
 import Router from 'next/router'
+import { themeShape } from '../wall/prop-types'
 
 const MenuItem = styled(Flex)({
   alignItems: 'center',
@@ -18,7 +19,7 @@ const MenuItem = styled(Flex)({
   cursor: 'pointer',
 }).withComponent('a')
 
-const MenuItemText = styled(Flex)(({ theme: { typography, palette } }) => ({
+const MenuItemText = styled(Flex)(({ theme: { typography } }) => ({
   textAlign: 'center',
   display: 'block',
   width: '100%',
@@ -56,18 +57,14 @@ const menuStyles = ({ palette: { background } }) => ({
 })
 
 // react-burger-menu sets `style` on its direct children. That gives a prop-types validation error
-const LinkWrap = (props) => {
+const LinkWrap = props => {
   // eslint-disable-next-line react/prop-types
   const unknownProperties = ['style', 'class', 'className', '__source', 'tabIndex']
   const filteredProps = Object.keys(props)
     .filter(key => !unknownProperties.includes(key))
     .reduce((acc, val) => ({ ...acc, [val]: props[val] }), {})
 
-  return (
-    <Link {...filteredProps}>
-      {filteredProps.children}
-    </Link>
-  )
+  return <Link {...filteredProps}>{filteredProps.children}</Link>
 }
 
 const menuItems = [
@@ -86,9 +83,7 @@ class Menu extends React.Component {
   closeMenu = () => this.props.onStateChange({ isOpen: false })
 
   render() {
-    const {
-      pageWrapId, outerContainerId, theme, isOpen, onStateChange,
-    } = this.props
+    const { pageWrapId, outerContainerId, theme, isOpen, onStateChange } = this.props
 
     return (
       <RotateMenu
@@ -102,17 +97,13 @@ class Menu extends React.Component {
         customBurgerIcon={undefined}
         customCrossIcon={false}
       >
-        {
-          menuItems.map(({ href, label }) => (
-            <LinkWrap key={href} prefetch href={href}>
-              <MenuItem>
-                <MenuItemText>
-                  {label}
-                </MenuItemText>
-              </MenuItem>
-            </LinkWrap>
-          ))
-        }
+        {menuItems.map(({ href, label }) => (
+          <LinkWrap key={href} prefetch href={href}>
+            <MenuItem>
+              <MenuItemText>{label}</MenuItemText>
+            </MenuItem>
+          </LinkWrap>
+        ))}
       </RotateMenu>
     )
   }
@@ -123,6 +114,7 @@ Menu.propTypes = {
   outerContainerId: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   onStateChange: PropTypes.func,
+  theme: themeShape.isRequired,
 }
 
 Menu.defaultProps = {

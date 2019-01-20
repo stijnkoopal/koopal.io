@@ -9,9 +9,10 @@ import Head from 'next/head'
 import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
 import Stars from './Stars'
+import { themeShape } from '../wall/prop-types'
 
 const headerHeight = spacing => 10 * spacing.unit
-const iconsSize = '42px';
+const iconsSize = '42px'
 
 const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
   height: headerHeight(spacing),
@@ -66,20 +67,21 @@ const StijnKoopal = () => (
   </StijnKoopalAnchor>
 )
 
-const globalStyles = ({ typography, palette }) => css({
-  '*': {
-    ...typography,
-  },
-  'html, body, body > div:first-of-type, #__next': {
-    width: '100%',
-    height: '100%',
-    margin: 0,
-  },
-  html: {
-    ...typography.body1,
-    minHeight: '100vh',
-  },
-})
+const globalStyles = ({ typography }) =>
+  css({
+    '*': {
+      ...typography,
+    },
+    'html, body, body > div:first-of-type, #__next': {
+      width: '100%',
+      height: '100%',
+      margin: 0,
+    },
+    html: {
+      ...typography.body1,
+      minHeight: '100vh',
+    },
+  })
 
 // By: https://www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property/
 const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
@@ -131,12 +133,7 @@ class Layout extends React.Component {
         <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium" starSize="medium" />
         <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="big" />
 
-        <Main
-          mx="auto"
-          width={[1, 1 / 2]}
-          p="3"
-          id="page-wrap"
-        >
+        <Main mx="auto" width={[1, 1 / 2]} p="3" id="page-wrap">
           {children}
         </Main>
       </>
@@ -146,6 +143,7 @@ class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  theme: themeShape.isRequired,
 }
 
 export default withRouter(withTheme(Layout))

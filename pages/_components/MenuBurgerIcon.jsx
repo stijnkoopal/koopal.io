@@ -24,18 +24,27 @@ const BarsContainer = styled(Flex)({
   padding: '10%',
 })
 
-const barHeight = 3;
+const barHeight = 3
 
-const barShared = ({ isOpen, theme: { palette, transitions: { duration: { short: duration } } } }) => css({
-  position: 'relative',
-  width: '100%',
-  height: `${barHeight}px`,
-  background: palette.colors.primary,
-  transition: isOpen
-    ? `margin ${duration}ms, opacity ${duration}ms, transform ${duration}ms ${duration}ms`
-    : `transform ${duration}ms, opacity ${duration}ms ${duration}ms, margin ${duration}ms ${duration}ms`,
-  margin: isOpen ? 0 : '4px 0',
-})
+const barShared = ({
+  isOpen,
+  theme: {
+    palette,
+    transitions: {
+      duration: { short: duration },
+    },
+  },
+}) =>
+  css({
+    position: 'relative',
+    width: '100%',
+    height: `${barHeight}px`,
+    background: palette.colors.primary,
+    transition: isOpen
+      ? `margin ${duration}ms, opacity ${duration}ms, transform ${duration}ms ${duration}ms`
+      : `transform ${duration}ms, opacity ${duration}ms ${duration}ms, margin ${duration}ms ${duration}ms`,
+    margin: isOpen ? 0 : '4px 0',
+  })
 
 const Bar1 = styled(Box)(barShared, ({ isOpen }) => ({
   transform: isOpen ? 'rotate(-45deg)' : '',
