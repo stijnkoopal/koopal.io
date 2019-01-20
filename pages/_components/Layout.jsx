@@ -77,11 +77,19 @@ const globalStyles = ({ typography, palette }) => css({
   },
   html: {
     ...typography.body1,
-    background: palette.background.default,
-    backgroundAttachment: 'fixed',
     minHeight: '100vh',
   },
 })
+
+const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
+  background: palette.background.default,
+  backgroundAttachment: 'fixed',
+  backgroundSize: 'cover',
+  width: '100%',
+  height: '100%',
+  zIndex: -1,
+  position: 'fixed',
+}))
 
 class Layout extends React.Component {
   state = {
@@ -103,6 +111,7 @@ class Layout extends React.Component {
           <Global styles={globalStyles(theme)} />
         </Head>
 
+        <FixedBackground />
         <Header showOnlyMenuIcon={menuOpen} px={[3, 4]}>
           <MenuIcon isOpen={menuOpen} onClick={this.toggleMenuOpened} />
           <StijnKoopal />
