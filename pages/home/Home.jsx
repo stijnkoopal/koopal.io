@@ -9,7 +9,7 @@ const Container = styled(Flex)({
   height: '100%',
   textAlign: 'center',
   padding: '0.5em',
-}).withComponent('container')
+})
 
 const ConstrainedMiniMe = styled(MiniMe)({
   marginTop: '24px',
