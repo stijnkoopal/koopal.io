@@ -80,8 +80,7 @@ const globalStyles = ({ typography, palette }) => css({
     background: palette.background.default,
     backgroundAttachment: 'fixed',
     minHeight: '100vh',
-    transform: 'translate3d(0,0,0)',
-},
+  },
 })
 
 class Layout extends React.Component {

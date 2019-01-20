@@ -26,7 +26,9 @@ const starPixelSizes = {
   big: 3,
 }
 
-export default styled(Box)(({ numberOfStars = 20, speed = 'fast', starSize = 'small', seed }) => ({
+export default styled(Box)(({
+  numberOfStars = 20, speed = 'fast', starSize = 'small', seed,
+}) => ({
   position: 'absolute',
   left: 0,
   top: 0,
@@ -36,4 +38,4 @@ export default styled(Box)(({ numberOfStars = 20, speed = 'fast', starSize = 'sm
   background: 'transparent',
   boxShadow: starsBoxShadow(seedrandom(seed), numberOfStars, 'rgba(255, 255, 255, 0.6)'),
   animation: `${starsKeyframe} ${starAnimationSpeeds[speed]}s linear infinite`,
-}))
+})).withComponent('stars')
