@@ -81,14 +81,23 @@ const globalStyles = ({ typography, palette }) => css({
   },
 })
 
+// By: https://www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property/
 const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
-  background: palette.background.default,
-  backgroundAttachment: 'fixed',
-  backgroundSize: 'cover',
-  width: '100%',
-  height: '100%',
   zIndex: -1,
-  position: 'fixed',
+  position: 'relative',
+  overflow: 'hidden',
+  '&::before': {
+    content: '" "',
+    position: 'fixed',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    left: 0,
+    background: palette.background.default,
+    backgroundSize: 'cover',
+    willChange: 'transform',
+    zIndex: -1,
+  },
 }))
 
 class Layout extends React.Component {
