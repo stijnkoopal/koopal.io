@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
 import Typist from 'react-typist'
 import MiniMe from './components/MiniMe'
+import {themeShape} from '../wall/prop-types'
 
 const Container = styled(Flex)({
   height: '100%',
@@ -34,6 +35,10 @@ const TypeWriter = styled(Typist)(({ theme: { typography } }) => ({
     },
   },
 }))
+
+TypeWriter.propTypes = {
+  theme: themeShape,
+}
 
 const Home = () => (
   <Container flexDirection="column" alignItems="center" justifyContent="center">

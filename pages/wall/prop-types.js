@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import theme from '../theme'
 
 export const blogPostShape = PropTypes.shape({
   id: PropTypes.string,
@@ -16,5 +15,5 @@ export const blogPostShape = PropTypes.shape({
 })
 
 export const themeShape = PropTypes.shape({
-  palette: PropTypes.instanceOf(theme),
+  palette: PropTypes.shape({ colors: PropTypes.object }),
 })

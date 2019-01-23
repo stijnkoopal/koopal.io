@@ -131,7 +131,7 @@ class Layout extends React.Component {
 
         <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small" />
         <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium" starSize="medium" />
-        <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="big" />
+        <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="large" />
 
         <Main mx="auto" width={[1, 1 / 2]} p="3" id="page-wrap">
           {children}

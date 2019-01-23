@@ -102,17 +102,15 @@ class About extends React.Component {
     this.setState(({ activeChart }) => ({ activeChart: activeChart === 'skills' ? 'personal' : 'skills' }))
 
   render() {
-    const { activeChart } = this.state
-
     return (
       <>
-        <ResponsiveRadarChart data={chartData[activeChart]} />
+        <ResponsiveRadarChart data={chartData[this.state.activeChart]} />
 
         <Arrow onClick={this.nextActiveChart} />
 
         <PageSelectors>
           {['skills', 'personal'].map(type => (
-            <PageIndicator key={type} active={activeChart === type} onClick={() => this.changeActiveChart(type)} />
+            <PageIndicator key={type} active={this.state.activeChart === type} onClick={() => this.changeActiveChart(type)} />
           ))}
         </PageSelectors>
 

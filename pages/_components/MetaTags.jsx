@@ -1,7 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Head from 'next/head'
 import { withTheme } from 'emotion-theming'
 import withResume from './withResume'
+import {themeShape} from '../wall/prop-types'
 
 const MetaTags = ({ resume, theme: { palette } }) => (
   <>
@@ -42,5 +44,10 @@ const MetaTags = ({ resume, theme: { palette } }) => (
     </Head>
   </>
 )
+
+MetaTags.propTypes = {
+  resume: PropTypes.object.isRequired,
+  theme: themeShape.isRequired,
+}
 
 export default withResume(withTheme(MetaTags))
