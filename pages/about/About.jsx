@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex } from '@rebass/grid/emotion'
 import styled from '@emotion/styled'
-import ResponsiveRadarChart from './components/ResponsiveRadarChart'
+import ThreeDBarChart from './components/ThreeDBarChart'
 
 const PageIndicator = styled(Box)(({ active, theme: { palette, spacing } }) => ({
   borderRadius: '50%',
@@ -104,7 +104,7 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <ResponsiveRadarChart data={chartData[this.state.activeChart]} />
+        <ThreeDBarChart />
 
         <Arrow onClick={this.nextActiveChart} />
 
