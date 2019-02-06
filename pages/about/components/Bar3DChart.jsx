@@ -110,8 +110,8 @@ class Bar3DChart extends React.Component {
     // Middle of svg is the point we want to rotate around
     const rotateAround = [INITIAL_SVG_WIDTH / 2, INITIAL_SVG_HEIGHT / 2]
 
-    const numberOfColumns = rowsOfBars * (GRID_OFFSET + barWidth / GRID_SIZE) + 1
-    const numberOfRows = numberOfBarsPerRow * (GRID_OFFSET + barDepth / GRID_SIZE) + 1
+    const numberOfColumns = rowsOfBars * (GRID_OFFSET + spaceBetweenBarsZ + barDepth)
+    const numberOfRows = numberOfBarsPerRow * (GRID_OFFSET + spaceBetweenBarsX + barWidth) - 2
     const gridData = this.buildGridData(numberOfColumns, numberOfRows, GRID_SIZE, PLANE_Z)
 
     const cubesData = this.buildCubesData(
@@ -283,7 +283,7 @@ class Bar3DChart extends React.Component {
   render() {
     // We need a container element for responsiveness, svg's size is updated with window.on('resize')
     return (
-      <container style={{ width: '100%', height: '100%', display: 'block' }} ref={elem => (this.container = elem)}>
+      <container style={{ width: '100%', height: '100%', display: 'block', cursor: 'grab' }} ref={elem => (this.container = elem)}>
         <svg
           width={INITIAL_SVG_WIDTH}
           height={INITIAL_SVG_HEIGHT}
