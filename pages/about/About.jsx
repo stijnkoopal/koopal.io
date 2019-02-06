@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex } from '@rebass/grid/emotion'
 import styled from '@emotion/styled'
-import ThreeDBarChart from './components/ThreeDBarChart'
+import Bar3DChart from './components/Bar3DChart'
 
 const PageIndicator = styled(Box)(({ active, theme: { palette, spacing } }) => ({
   borderRadius: '50%',
@@ -104,7 +104,7 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <ThreeDBarChart />
+        <Bar3DChart />
 
         <Arrow onClick={this.nextActiveChart} />
 
