@@ -22,54 +22,54 @@ const PageSelectors = styled(Flex)(({ theme: { spacing } }) => ({
 }))
 
 const chartData = {
-  skills: [
+  skills: [[
     {
-      subject: 'Backend',
+      label: 'Backend',
       value: 120,
     },
     {
-      subject: 'Frontend',
+      label: 'Frontend',
       value: 98,
     },
     {
-      subject: 'Cloud',
+      label: 'Cloud',
       value: 86,
     },
     {
-      subject: 'CI/CD',
+      label: 'CI/CD',
       value: 99,
     },
     {
-      subject: 'Agile',
+      label: 'Agile',
       value: 85,
     },
-  ],
-  personal: [
+  ]],
+  personal: [[
     {
-      subject: 'Test',
+      label: 'Test',
       value: 12,
     },
     {
-      subject: 't',
+      label: 't',
       value: 10,
     },
     {
-      subject: '233',
+      label: '233',
       value: 190,
     },
     {
-      subject: 'CI/CsdD',
+      label: 'CI/CsdD',
       value: 44,
     },
     {
-      subject: 'bla',
+      label: 'bla',
       value: 23,
     },
     {
-      subject: '3434d',
+      label: '3434d',
       value: 23,
     },
-  ],
+  ]],
 }
 
 const Arrow = styled(Box)(({ right, theme: { spacing, palette } }) => {

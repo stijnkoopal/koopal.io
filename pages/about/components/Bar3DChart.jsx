@@ -2,18 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { _3d } from 'd3-3d'
 import { drag } from 'd3-drag'
-import { randomUniform } from 'd3-random'
 import { select, event } from 'd3-selection'
 import 'd3-transition'
 import { withTheme } from 'emotion-theming'
 
 const INITIAL_SVG_WIDTH = 960
 const INITIAL_SVG_HEIGHT = 500
-const MAX_BAR_HEIGHT = 25
+const MAX_BAR_HEIGHT = 20
+const PLANE_Z = MAX_BAR_HEIGHT / 1.8
 
 class Bar3DChart extends React.Component {
   // We will use d3 for rendering and stuff
-  shouldComponentUpdate = () => false
+  // shouldComponentUpdate = () => false
 
   containerRect = () =>
     select(this.container)
@@ -39,7 +39,18 @@ class Bar3DChart extends React.Component {
     return gridData
   }
 
-  buildCubesData = (numberOfBarsPerRow, rowsOfBars, barWidth, barDepth, spaceBetweenBarsX, spaceBetweenBarsZ) => {
+  normalizeData = (data) => {
+    const maxValue = data.reduce((acc, rows) => Math.max(acc, ...rows.map(({value}) => value)), 0)
+
+    return data.map(rows => rows.map(({label, value}) => ({
+      value: value/ maxValue * MAX_BAR_HEIGHT,
+      label,
+    })))
+  }
+
+  maxNumberOfRows = (data) => data.reduce((acc, rows) => Math.max(acc, rows.length), 0)
+
+  buildCubesData = (data, colors, barWidth, barDepth, spaceBetweenBarsX, spaceBetweenBarsZ) => {
     const makeCube = (h, x, z) => {
       const halfWidth = barWidth / 2
       const halfDepth = barDepth / 2
@@ -56,29 +67,31 @@ class Bar3DChart extends React.Component {
       ]
     }
 
-    const cubesData = []
-    for (let z = -rowsOfBars / 2; z < rowsOfBars / 2; z++) {
-      for (let x = -numberOfBarsPerRow / 2; x < numberOfBarsPerRow / 2; x++) {
+    const result = []
+    for (let z = 0; z < data.length; z++) {
+      for (let x = 0; x < data[z].length; x++) {
         const cube = makeCube(
-          -randomUniform(MAX_BAR_HEIGHT / 5, MAX_BAR_HEIGHT)(),
-          (x + 0.5) * (spaceBetweenBarsX + barWidth),
-          (z + 0.5) * (spaceBetweenBarsZ + barDepth),
+          -data[z][x].value,
+          (x - data[z].length / 2 + 0.5) * (spaceBetweenBarsX + barWidth),
+          (z - data.length / 2 + 0.5) * (spaceBetweenBarsZ + barDepth)
         )
-        cube.id = cubesData.length
-        cubesData.push(cube)
+        cube.label = data[z][x].label
+        cube.id = result.length
+        cube.color = colors[result.length]
+        result.push(cube)
       }
     }
-    return cubesData
+    return result
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.resize)
-  }
+  componentWillUnmount = () => window.removeEventListener('resize', this.resize)
 
   componentDidMount = () => {
     window.addEventListener('resize', this.resize)
     this.resize()
+  }
 
+  componentDidUpdate = () => {
     const {
       theme: { palette },
       barWidth,
@@ -95,23 +108,18 @@ class Bar3DChart extends React.Component {
     // Aspect ratio is very different on mobile/desktop, so account for that
     // Note that this value is not updated on resize, full rerender is required
     const SCALE = 30 + (aspectRatio < 0.7 ? 15 : 0)
-    const GRID_OFFSET = 2
-    const GRID_SIZE = barWidth / 2
-    const PLANE_Z = MAX_BAR_HEIGHT / 3
-
-    const rowsOfBars = 1
-    const numberOfBarsPerRow = 5
+    const gridSize = barWidth / 2
 
     // Middle of svg is the point we want to rotate around
     const rotateAround = [INITIAL_SVG_WIDTH / 2, INITIAL_SVG_HEIGHT / 2]
 
-    const numberOfColumns = rowsOfBars * (GRID_OFFSET + spaceBetweenBarsZ + barDepth)
-    const numberOfRows = numberOfBarsPerRow * (GRID_OFFSET + spaceBetweenBarsX + barWidth) - 2
-    const gridData = this.buildGridData(numberOfColumns, numberOfRows, GRID_SIZE, PLANE_Z)
+    const numberOfColumns = data.length * (2 + spaceBetweenBarsZ + barDepth)
+    const numberOfRows = this.maxNumberOfRows(data) * (2 + spaceBetweenBarsX + barWidth) - 2
+    const gridData = this.buildGridData(numberOfColumns, numberOfRows, gridSize, PLANE_Z)
 
     const cubesData = this.buildCubesData(
-      numberOfBarsPerRow,
-      rowsOfBars,
+      this.normalizeData(data),
+      palette.colors.visualizations,
       barWidth,
       barDepth,
       spaceBetweenBarsX,
@@ -147,7 +155,7 @@ class Bar3DChart extends React.Component {
           const beta = ((event.x - mx + mouseX) * Math.PI) / 230
           const alpha = (((event.y - my + mouseY) * Math.PI) / 230) * -1
 
-          updateFn(0, alpha, beta)
+          updateFn(alpha, beta)
         })
         .on('start', () => {
           mx = event.x
@@ -182,7 +190,7 @@ class Bar3DChart extends React.Component {
       gridSelection.exit().remove()
     }
 
-    const constructBars = (processedCubesData, transitionDuration) => selection => {
+    const constructBars = processedCubesData => selection => {
       const cubes = selection
         .select('.cubes')
         .selectAll('g.cube')
@@ -192,7 +200,7 @@ class Bar3DChart extends React.Component {
         .enter()
         .append('g')
         .attr('class', 'cube')
-        .attr('fill', d => palette.colors.visualizations[d.id])
+        .attr('fill', d => d.color)
         .attr('stroke', 'white')
         .classed('_3d', true)
         .merge(cubes)
@@ -214,8 +222,6 @@ class Bar3DChart extends React.Component {
         .attr('fill-opacity', 0.95)
         .classed('_3d', true)
         .merge(faces)
-        .transition()
-        .duration(transitionDuration)
         .attr('d', cubes3D.draw)
 
       faces.exit().remove()
@@ -227,7 +233,7 @@ class Bar3DChart extends React.Component {
         .selectAll('text.text')
         .data(d => {
           const topFace = d.faces.find(d => d.face === 'top')
-          return [{ height: d.height, centroid: topFace.centroid }]
+          return [{ label: d.label, centroid: topFace.centroid }]
         })
 
       texts
@@ -249,7 +255,7 @@ class Bar3DChart extends React.Component {
         .attr('style', 'font-size: 2rem')
         .attr('x', d => rotateAround[0] + SCALE * d.centroid.x)
         .attr('y', d => rotateAround[1] + SCALE * d.centroid.y)
-        .text('Scala')
+        .text(d => d.label)
 
       texts.exit().remove()
 
@@ -261,7 +267,6 @@ class Bar3DChart extends React.Component {
     const svg = select('svg')
 
     const processUpdate = (svg, gridData, cubesData, startAngle) => (
-      transitionDuration = 1000,
       alpha = 0,
       beta = 0,
     ) => {
@@ -269,7 +274,7 @@ class Bar3DChart extends React.Component {
       const processedGridData = grid3D.rotateY(beta + startAngle.y).rotateX(alpha + startAngle.x)(gridData)
 
       svg.call(constructGrid(processedGridData))
-      svg.call(constructBars(processedCubesData, transitionDuration))
+      svg.call(constructBars(processedCubesData))
     }
 
     svg.call(draggingTrait(processUpdate(svg, gridData, cubesData, startAngle)))
