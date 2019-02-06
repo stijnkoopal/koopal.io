@@ -104,13 +104,17 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <Bar3DChart />
+        <Bar3DChart data={chartData[this.state.activeChart]} />
 
         <Arrow onClick={this.nextActiveChart} />
 
         <PageSelectors>
           {['skills', 'personal'].map(type => (
-            <PageIndicator key={type} active={this.state.activeChart === type} onClick={() => this.changeActiveChart(type)} />
+            <PageIndicator
+              key={type}
+              active={this.state.activeChart === type}
+              onClick={() => this.changeActiveChart(type)}
+            />
           ))}
         </PageSelectors>
 

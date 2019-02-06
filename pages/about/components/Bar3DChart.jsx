@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { _3d } from 'd3-3d'
 import { drag } from 'd3-drag'
-import { interpolateNumber } from 'd3-interpolate'
 import { randomUniform } from 'd3-random'
 import { select, event } from 'd3-selection'
 import 'd3-transition'
@@ -41,11 +40,11 @@ class Bar3DChart extends React.Component {
   }
 
   buildCubesData = (numberOfBarsPerRow, rowsOfBars, barWidth, barDepth, spaceBetweenBarsX, spaceBetweenBarsZ) => {
-    const makeCube = (h, x, z, id) => {
+    const makeCube = (h, x, z) => {
       const halfWidth = barWidth / 2
       const halfDepth = barDepth / 2
 
-      const result = [
+      return [
         { x: x - halfWidth, y: h, z: z + halfDepth }, // FRONT TOP LEFT
         { x: x - halfWidth, y: 0, z: z + halfDepth }, // FRONT BOTTOM LEFT
         { x: x + halfWidth, y: 0, z: z + halfDepth }, // FRONT BOTTOM RIGHT
@@ -55,23 +54,18 @@ class Bar3DChart extends React.Component {
         { x: x + halfWidth, y: 0, z: z - halfDepth }, // BACK  BOTTOM RIGHT
         { x: x + halfWidth, y: h, z: z - halfDepth }, // BACK  TOP RIGHT
       ]
-
-      result.height = h
-      result.id = id
-      return result
     }
 
     const cubesData = []
     for (let z = -rowsOfBars / 2; z < rowsOfBars / 2; z++) {
       for (let x = -numberOfBarsPerRow / 2; x < numberOfBarsPerRow / 2; x++) {
-        cubesData.push(
-          makeCube(
-            -randomUniform(MAX_BAR_HEIGHT / 5, MAX_BAR_HEIGHT)(),
-            (x + 0.5) * (spaceBetweenBarsX + barWidth),
-            (z + 0.5) * (spaceBetweenBarsZ + barDepth),
-            cubesData.length,
-          ),
+        const cube = makeCube(
+          -randomUniform(MAX_BAR_HEIGHT / 5, MAX_BAR_HEIGHT)(),
+          (x + 0.5) * (spaceBetweenBarsX + barWidth),
+          (z + 0.5) * (spaceBetweenBarsZ + barDepth),
         )
+        cube.id = cubesData.length
+        cubesData.push(cube)
       }
     }
     return cubesData
@@ -92,6 +86,7 @@ class Bar3DChart extends React.Component {
       spaceBetweenBarsX,
       spaceBetweenBarsZ,
       startAngle,
+      data
     } = this.props
 
     const { width: containerWidth, height: containerHeight } = this.containerRect()
@@ -161,6 +156,9 @@ class Bar3DChart extends React.Component {
         .on('end', () => {
           mouseX = event.x - mx + mouseX
           mouseY = event.y - my + mouseY
+        })
+        .touchable(function() {
+          return 'ontouchstart' in this
         })
     }
 
@@ -237,22 +235,21 @@ class Bar3DChart extends React.Component {
         .append('text')
         .attr('class', 'text')
         .attr('dy', '-.7em')
-        .attr('text-anchor', 'middle')
+        .attr('text-anchor', 'start')
         .attr('x', d => rotateAround[0] + SCALE * d.centroid.x)
         .attr('y', d => rotateAround[1] + SCALE * d.centroid.y)
         .classed('_3d', true)
         .merge(texts)
-        .transition()
-        .duration(transitionDuration)
-        .attr('fill', 'black')
+        .attr('fill', 'white')
         .attr('stroke', 'none')
+        .attr(
+          'transform',
+          d => `rotate(315, ${rotateAround[0] + SCALE * d.centroid.x}, ${rotateAround[1] + SCALE * d.centroid.y})`,
+        )
+        .attr('style', 'font-size: 2rem')
         .attr('x', d => rotateAround[0] + SCALE * d.centroid.x)
         .attr('y', d => rotateAround[1] + SCALE * d.centroid.y)
-        .transition()
-        .tween('text', function(d) {
-          const i = interpolateNumber(+select(this).text(), Math.abs(d.height))
-          return t => select(this).text(i(t).toFixed(1))
-        })
+        .text('Scala')
 
       texts.exit().remove()
 
@@ -283,7 +280,10 @@ class Bar3DChart extends React.Component {
   render() {
     // We need a container element for responsiveness, svg's size is updated with window.on('resize')
     return (
-      <container style={{ width: '100%', height: '100%', display: 'block', cursor: 'grab' }} ref={elem => (this.container = elem)}>
+      <container
+        style={{ width: '100%', height: '100%', display: 'block', cursor: 'grab' }}
+        ref={elem => (this.container = elem)}
+      >
         <svg
           width={INITIAL_SVG_WIDTH}
           height={INITIAL_SVG_HEIGHT}
