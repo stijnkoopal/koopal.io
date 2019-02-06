@@ -196,6 +196,7 @@ class Bar3DChart extends React.Component {
         .attr('class', 'cube')
         .attr('fill', d => palette.colors.visualizations[d.id])
         .attr('stroke', 'white')
+        .classed('_3d', true)
         .merge(cubes)
         .sort(cubes3D.sort)
 
@@ -213,6 +214,7 @@ class Bar3DChart extends React.Component {
         .append('path')
         .attr('class', 'face')
         .attr('fill-opacity', 0.95)
+        .classed('_3d', true)
         .merge(faces)
         .transition()
         .duration(transitionDuration)
@@ -238,6 +240,7 @@ class Bar3DChart extends React.Component {
         .attr('text-anchor', 'middle')
         .attr('x', d => rotateAround[0] + SCALE * d.centroid.x)
         .attr('y', d => rotateAround[1] + SCALE * d.centroid.y)
+        .classed('_3d', true)
         .merge(texts)
         .transition()
         .duration(transitionDuration)
