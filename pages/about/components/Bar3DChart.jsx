@@ -89,6 +89,7 @@ class Bar3DChart extends React.Component {
   componentDidMount = () => {
     window.addEventListener('resize', this.resize)
     this.resize()
+    this.componentDidUpdate()
   }
 
   componentDidUpdate = () => {
