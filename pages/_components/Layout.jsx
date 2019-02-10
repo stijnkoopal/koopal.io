@@ -86,7 +86,6 @@ const globalStyles = ({ typography }) =>
 const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
   zIndex: -1,
   position: 'relative',
-  overflow: 'hidden',
   '&::before': {
     content: '" "',
     position: 'fixed',
