@@ -72,14 +72,13 @@ const globalStyles = ({ typography }) =>
     '*': {
       ...typography,
     },
-    'html, body, body > div:first-of-type, #__next': {
+    'body, body > div:first-of-type, #__next': {
       width: '100%',
-      height: '100%',
+      height: '100vh',
       margin: 0,
     },
     html: {
       ...typography.body1,
-      minHeight: '100vh',
     },
   })
 
