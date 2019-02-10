@@ -74,7 +74,7 @@ const globalStyles = ({ typography }) =>
     },
     'body, body > div:first-of-type, #__next': {
       width: '100%',
-      height: '100vh',
+      height: 'calc(100vh - 60px)',
       margin: 0,
     },
     html: {
