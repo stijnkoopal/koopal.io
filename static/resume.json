@@ -134,7 +134,6 @@
         "Akka",
         "Java",
         "Kotlin",
-        "Rust",
         "Microservices",
         "Kafka",
         "Lagom",
@@ -154,13 +153,23 @@
       ]
     },
     {
-      "name": "Cloud",
+      "name": "Cloud / Devops",
       "level": "Intermediate",
       "keywords": [
         "Git",
         "GC",
         "AWS",
         "Netlify"
+      ]
+    },
+    {
+      "name": "Agile",
+      "level": "Intermediate",
+      "keywords": [
+        "Scrum",
+        "Lean",
+        "Less",
+        "MVP"
       ]
     }
   ],
