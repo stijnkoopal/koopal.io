@@ -114,64 +114,14 @@
     }
   ],
   "skills": [
-    {
-      "name": "Frontend Development",
-      "level": "Master",
-      "keywords": [
-        "React",
-        "Angular",
-        "Polymer",
-        "CSS + preprocessors",
-        "Webpack",
-        "SSR"
-      ]
-    },
-    {
-      "name": "Backend Development",
-      "level": "Master",
-      "keywords": [
-        "Scala",
-        "Akka",
-        "Java",
-        "Kotlin",
-        "Microservices",
-        "Kafka",
-        "Lagom",
-        "Golang",
-        "Axon Framework"
-      ]
-    },
-    {
-      "name": "CI/CD",
-      "level": "Intermediate",
-      "keywords": [
-        "Docker",
-        "Gitlab CI",
-        "Jenkins",
-        "Kubernetes",
-        "Git"
-      ]
-    },
-    {
-      "name": "Cloud / Devops",
-      "level": "Intermediate",
-      "keywords": [
-        "Git",
-        "GC",
-        "AWS",
-        "Netlify"
-      ]
-    },
-    {
-      "name": "Agile",
-      "level": "Intermediate",
-      "keywords": [
-        "Scrum",
-        "Lean",
-        "Less",
-        "MVP"
-      ]
-    }
+    {"name":  "Java / Kotlin / Scala", "level": "Master", "value": 83},
+    {"name":  "Golang", "level": "Master", "value": 52},
+    {"name":  "ES / CQRS / Microservices", "level": "Master", "value": 87},
+    {"name":  "Javascript / Typescript", "level": "Master", "value": 95},
+    {"name":  "React", "level": "Master", "value": 91},
+    {"name":  "AWS / GC", "level": "Master", "value": 59},
+    {"name":  "Netlify", "level": "Master", "value": 60},
+    {"name":  "K8s", "level": "Master", "value": 70}
   ],
   "languages": [
     {
@@ -184,42 +134,12 @@
     }
   ],
   "interests": [
-    {
-      "name": "Snorkling / Diving",
-      "keywords": [
-
-      ]
-    },
-    {
-      "name": "Snowboarding",
-      "keywords": [
-
-      ]
-    },
-    {
-      "name": "Football",
-      "keywords": [
-
-      ]
-    },
-    {
-      "name": "Cycling",
-      "keywords": [
-
-      ]
-    },
-    {
-      "name": "Beach",
-      "keywords": [
-
-      ]
-    },
-    {
-      "name": "Socializing, friends, beer",
-      "keywords": [
-
-      ]
-    }
+    {"name": "Snorkling / Diving", "value": 58},
+    {"name": "Snowboarding", "value": 99},
+    {"name": "Football", "value": 75},
+    {"name": "Cycling", "value": 32},
+    {"name": "Beach", "value": 100},
+    {"name": "Socializing, friends, beer", "value": 78}
   ],
   "references": [
 

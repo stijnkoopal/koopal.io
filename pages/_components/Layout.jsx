@@ -49,7 +49,6 @@ const Main = styled(Box)(({ theme: { spacing } }) => ({
 
 const KoopalMeLogo = styled.img({
   width: iconsSize,
-  height: iconsSize,
 })
 
 KoopalMeLogo.defaultProps = {

@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Flex } from '@rebass/grid/emotion'
 import styled from '@emotion/styled'
 import Bar3DChart from './components/Bar3DChart'
+import withResume from '../_components/withResume'
 
 const PageIndicator = styled(Box)(({ active, theme: { palette, spacing } }) => ({
   borderRadius: '50%',
@@ -21,55 +22,9 @@ const PageSelectors = styled(Flex)(({ theme: { spacing } }) => ({
   marginLeft: -50,
 }))
 
-const chartData = {
-  skills: [[
-    {
-      label: 'Backend',
-      value: 120,
-    },
-    {
-      label: 'Frontend',
-      value: 98,
-    },
-    {
-      label: 'Cloud',
-      value: 86,
-    },
-    {
-      label: 'CI/CD',
-      value: 99,
-    },
-    {
-      label: 'Agile',
-      value: 85,
-    },
-  ]],
-  personal: [[
-    {
-      label: 'Test',
-      value: 12,
-    },
-    {
-      label: 't',
-      value: 10,
-    },
-    {
-      label: '233',
-      value: 190,
-    },
-    {
-      label: 'CI/CsdD',
-      value: 44,
-    },
-    {
-      label: 'bla',
-      value: 23,
-    },
-    {
-      label: '3434d',
-      value: 23,
-    },
-  ]],
+const chartData = (resume, type) => {
+  if (type === 'skills') return [resume.skills.map(({name, value}) => ({label: name, value}))]
+  return [resume.interests.map(({name, value}) => ({label: name, value}))]
 }
 
 const Arrow = styled(Box)(({ right, theme: { spacing, palette } }) => {
@@ -104,7 +59,7 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <Bar3DChart data={chartData[this.state.activeChart]} />
+        <Bar3DChart data={chartData(this.props.resume, this.state.activeChart)} />
 
         <Arrow onClick={this.nextActiveChart} />
 
@@ -158,4 +113,4 @@ class About extends React.Component {
   }
 }
 
-export default About
+export default withResume(About)

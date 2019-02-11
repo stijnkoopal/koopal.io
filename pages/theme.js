@@ -14,7 +14,19 @@ const colors = {
     999: '#111',
     black: '#000',
   },
-  visualizations: ['#b2e000', '#cac100', '#fd7f63', '#ff7eb1', '#3242e8', '#00a4dd', '#00d37f'],
+  visualizations: [
+    '#b2e000',
+    '#00796f',
+    '#fd7f63',
+    '#4c5092',
+    '#ff7eb1',
+    '#3242e8',
+    '#cac100',
+    '#00a4dd',
+    '#85bed3',
+    '#00d37f',
+    '#e9b36b'
+  ],
   primary: '#00413c',
   secondary: '#00a4dd',
 }
