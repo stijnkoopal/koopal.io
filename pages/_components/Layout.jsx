@@ -11,17 +11,15 @@ import MenuBurgerIcon from './MenuBurgerIcon'
 import Stars from './Stars'
 import { themeShape } from '../wall/prop-types'
 
+// `vh` unit on mobile devices include the url bar. This is unwanted behaviour, fix it with:
+// https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 if (typeof window !== 'undefined') {
-  console.log(window)
-  let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-  window.addEventListener('resize', () => {
-    // We execute the same script as before
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
+  const setVh = () => {
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }
+  window.addEventListener('resize', setVh)
+  setVh()
 }
 
 const headerHeight = spacing => 10 * spacing.unit
