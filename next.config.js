@@ -30,7 +30,7 @@ const manifestConfig = {
     name: 'Stijn Koopal',
     short_name: 'Stijn Koopal',
     icons: {
-      src: './static/koopal.me.png',
+      src: './static/koopal.io.png',
       cache: true,
     },
   },

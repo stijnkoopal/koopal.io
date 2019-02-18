@@ -52,7 +52,7 @@ const KoopalMeLogo = styled.img({
 })
 
 KoopalMeLogo.defaultProps = {
-  src: '/static/koopal.me.svg',
+  src: '/static/koopal.io.svg',
 }
 
 const LogoText = styled(Box)(({ theme: { palette, typography } }) => ({

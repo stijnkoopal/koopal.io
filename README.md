@@ -1,5 +1,5 @@
-# koopal.me
-Source code for my [personal website](https://koopal.me).
+# koopal.io
+Source code for my [personal website](https://koopal.io).
 
 ## Install
 ```bash

@@ -25,10 +25,10 @@ const MetaTags = ({ resume, theme: { palette } }) => (
       <meta property="og:image:height" content="279" />
       <meta property="og:description" content="Full Stack Software Engineer" />
       <meta property="og:title" content="Stijn Koopal" />
-      <meta property="og:url" content="http://koopal.me" />
-      <meta property="og:image" content="https://dev.koopal.me/static/social/og-image.jpg" />
+      <meta property="og:url" content="http://koopal.io" />
+      <meta property="og:image" content="https://dev.koopal.io/static/social/og-image.jpg" />
 
-      <link rel="canonical" href="https://koopal.me" />
+      <link rel="canonical" href="https://koopal.io" />
       <meta property="author" content="Stijn Koopal" />
 
       <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png" />

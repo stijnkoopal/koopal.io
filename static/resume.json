@@ -2,10 +2,10 @@
   "basics": {
     "name": "Stijn Koopal",
     "label": "Full Stack Software Enthusiast",
-    "image": "https://koopal.me/static/profile-picture.jpg",
-    "email": "stijn@koopal.me",
+    "image": "https://koopal.io/static/profile-picture.jpg",
+    "email": "stijn@koopal.io",
     "phone": "+31 (0)6 349 50 752",
-    "url": "https://koopal.me",
+    "url": "https://koopal.io",
     "summary": "I'm an experienced software enthusiast with hands-on experience in various languages, frameworks and platforms. Highly analytical in nature, with good communicative skills. A supportive and enthusiastic team player that thinks highly of quality, but can be pragmatic if required. I tend to use the most simple solution best fit for the situation, and try to learn as much as possible from it.\n\nThe thought of a fast, highly scalable service architecture makes me happy, as does an elegant implementation. A very well designed and maintainable frontend is key. I mostly enjoy working in a team, and building an awesome application together is very important to me.\n\nThe beautiful city of Utrecht is my home, and I tend to socialise there with friends a lot. I enjoy being outside, especially when exercising.\n\nInterested? Drop me a line!",
     "location": {
       "address": "Wethouder D.M. Plompstraat 22",
@@ -286,7 +286,7 @@
     }
   ],
   "meta": {
-    "canonical": "https://koopal.me/static/resume.json",
+    "canonical": "https://koopal.io/static/resume.json",
     "version": "1.0.0",
     "lastModified": "2018-06-24T18:18:00"
   }
