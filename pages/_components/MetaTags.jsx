@@ -14,6 +14,7 @@ const MetaTags = ({ resume, theme: { palette } }) => (
       <meta name="keywords" content="" />
 
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="manifest" href="/static/manifest/manifest.json" />
 
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 

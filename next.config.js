@@ -1,6 +1,5 @@
-const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 const withWorkbox = require('next-workbox')
-const withManifest = require('next-manifest')
 
 const bundleAnalyzerConfig = {
   analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
@@ -24,18 +23,6 @@ const workboxConfig = {
   },
 }
 
-const manifestConfig = {
-  manifest: {
-    themeColor: '#00413c',
-    name: 'Stijn Koopal',
-    short_name: 'Stijn Koopal',
-    icons: {
-      src: './static/koopal.io.png',
-      cache: true,
-    },
-  },
-}
-
 const nextConfig = {
   exportPathMap() {
     return {
@@ -44,7 +31,7 @@ const nextConfig = {
       '/contact': { page: '/contact' },
       '/resume': { page: '/resume' },
       '/wall': { page: '/wall' },
-    };
+    }
   },
 }
 
@@ -52,7 +39,6 @@ const config = {
   ...nextConfig,
   ...bundleAnalyzerConfig,
   ...workboxConfig,
-  ...manifestConfig,
 }
 
-module.exports = withManifest(withWorkbox(withBundleAnalyzer(config)));
+module.exports = withWorkbox(withBundleAnalyzer(config))

@@ -1,8 +1,6 @@
 import App, { Container } from 'next/app'
 import React from 'react'
-import Head from 'next/head'
 import { ThemeProvider } from 'emotion-theming'
-import Manifest from 'next-manifest/manifest'
 import MetaTags from './_components/MetaTags'
 import Layout from './_components/Layout'
 import curiousLittleMouse from './_services/curiousLittleMouse'
@@ -31,9 +29,6 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <Container>
-        <Head>
-          <Manifest themeColor={theme.palette.colors.primary} />
-        </Head>
         <ThemeProvider theme={theme}>
           <Layout>
             <MetaTags />
