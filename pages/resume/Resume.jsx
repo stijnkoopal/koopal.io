@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import { Flex, Box } from '@rebass/grid/emotion'
+import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
 import Color from 'color'
 import withResume from '../_components/withResume'
@@ -27,21 +27,23 @@ const ConnectionLine = styled.div(({ color }) => ({
   zIndex: 1,
 }))
 
-const Circle = styled(Flex)(({ color, theme: { spacing, transitions } }) => ({
-  borderRadius: '50%',
-  width: '20vh',
-  height: '20vh',
-  backgroundColor: color,
+const ProjectVisualization = styled(Flex)(({ isOpen, backgroundColor, theme: { spacing, transitions } }) => ({
+  flexDirection: isOpen ? 'column' : 'row',
+  borderRadius: isOpen ? '5%' : '50%',
+  width: isOpen ? '30vh' : '20vh',
+  height: isOpen ? '30vh' : '20vh',
+  backgroundColor,
   zIndex: 2,
-  padding: spacing.unit * 2,
+  padding: (isOpen ? 1 : 2) * spacing.unit,
+  cursor: 'pointer',
   transition: `all ${transitions.duration.short}ms linear`,
-  '&:hover': {
+  [isOpen ? '' : '&:hover']: {
     width: '25vh',
     height: '25vh',
   },
 }))
 
-const ProjectDescription = styled(Flex)({
+const ProjectVisualizationContainer = styled(Flex)({
   position: 'relative',
 })
 
@@ -54,7 +56,7 @@ const ProjectWrapper = styled(Flex)(({ odd, theme: { spacing } }) => ({
     width: `calc((100% - ${spacing.unit * 2}px) / 2)`,
   },
   marginTop: spacing.unit,
-  [ProjectDescription]: {
+  [ProjectVisualizationContainer]: {
     justifyContent: odd ? 'flex-end' : 'flex-start',
   },
 })).withComponent('section')
@@ -108,20 +110,37 @@ const ChevronWithText = ({ children, color }) => (
   </Chevron>
 )
 
-const Project = ({ project, odd, color }) => (
-  <ProjectWrapper odd={odd}>
-    <ProjectDates color={color} odd={odd}>
-      {formatDate(project.startDate)} - {formatDate(project.endDate)}
-    </ProjectDates>
-    <ChevronWithText color={color}>{project.via}</ChevronWithText>
-    <ProjectDescription odd={odd}>
-      <ConnectionLine color={color} />
-      <Circle color={color}>
-        <Logo src={project.entityIconUrl} alt={`${project.entity} logo`} />
-      </Circle>
-    </ProjectDescription>
-  </ProjectWrapper>
-)
+const ProjectDescription = ({ project }) => {
+  console.log(project)
+  return (
+    <>
+      <h2>{project.name}{project.via && ` via ${project.via}`}</h2>
+      <div>{project.description}</div>
+    </>
+  )
+}
+
+const Project = ({ project, odd, color, isOpen, onClick }) => {
+  const visualization = (
+    <ProjectVisualization backgroundColor={color} onClick={onClick} isOpen={isOpen}>
+      {!isOpen && <Logo src={project.entityIconUrl} alt={`${project.entity} logo`}/>}
+      {isOpen && <ProjectDescription project={project}/>}
+    </ProjectVisualization>
+  )
+
+  return (
+    <ProjectWrapper odd={odd}>
+      <ProjectDates color={color} odd={odd}>
+        {formatDate(project.startDate)} - {formatDate(project.endDate)}
+      </ProjectDates>
+      <ChevronWithText color={color}>{project.via}</ChevronWithText>
+      <ProjectVisualizationContainer odd={odd}>
+        <ConnectionLine color={color}/>
+        {visualization}
+      </ProjectVisualizationContainer>
+    </ProjectWrapper>
+  )
+}
 
 const ProjectList = styled.div(({ theme: { spacing } }) => ({
   paddingTop: spacing.unit,
@@ -129,17 +148,25 @@ const ProjectList = styled.div(({ theme: { spacing } }) => ({
 }))
 
 const Resume = ({
-  resume,
-  theme: {
-    palette: { colors },
-  },
-}) => {
+                  resume,
+                  theme: {
+                    palette: { colors },
+                  },
+                }) => {
   const projects = resume.projects.sort((a, b) => (a.startDate < b.startDate ? 1 : -1))
+  const [selectedProject, selectProject] = useState(undefined)
 
   return (
     <ProjectList>
       {projects.map((project, index) => (
-        <Project odd={index % 2} key={project.name} project={project} color={colors.visualizations[index]} />
+        <Project
+          onClick={() => selectProject(selectedProject === project ? undefined : project)}
+          odd={index % 2}
+          key={project.name}
+          isOpen={selectedProject === project}
+          project={project}
+          color={colors.visualizations[index]}
+        />
       ))}
     </ProjectList>
   )
