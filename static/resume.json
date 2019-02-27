@@ -20,21 +20,21 @@
         "network": "Github",
         "username": "stijn.koopal",
         "url": "https://github.com/stijnkoopal",
-        "icon": "/static/logos/github.png"
+        "icon": "/static/logos/github.svg"
       },
       {
         "key": "linkedin",
         "network": "LinkedIn",
         "username": "stijnkoopal",
         "url": "https://www.linkedin.com/in/stijnkoopal",
-        "icon": "/static/logos/linkedin.png"
+        "icon": "/static/logos/linkedin.svg"
       },
       {
         "key": "medium",
         "network": "Medium",
         "username": "stijn.koopal",
         "url": "https://medium.com/@stijn.koopal",
-        "icon": "/static/logos/medium.png"
+        "icon": "/static/logos/medium.svg"
       }
     ]
   },

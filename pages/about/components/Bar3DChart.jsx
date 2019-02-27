@@ -2,14 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { _3d } from 'd3-3d'
 import { drag } from 'd3-drag'
-import { select, event } from 'd3-selection'
+import { event, select } from 'd3-selection'
 import 'd3-transition'
 import { withTheme } from 'emotion-theming'
+import styled from '@emotion/styled'
+import { Box } from '@rebass/grid/emotion'
 
 const INITIAL_SVG_WIDTH = 960
 const INITIAL_SVG_HEIGHT = 500
 const MAX_BAR_HEIGHT = 20
 const PLANE_Z = MAX_BAR_HEIGHT / 1.8
+
+const Container = styled(Box)({
+  width: '100%',
+  height: '100%',
+  display: 'block',
+  cursor: 'grab',
+})
 
 class Bar3DChart extends React.Component {
   // We will use d3 for rendering and stuff
@@ -39,16 +48,18 @@ class Bar3DChart extends React.Component {
     return gridData
   }
 
-  normalizeData = (data) => {
-    const maxValue = data.reduce((acc, rows) => Math.max(acc, ...rows.map(({value}) => value)), 0)
+  normalizeData = data => {
+    const maxValue = data.reduce((acc, rows) => Math.max(acc, ...rows.map(({ value }) => value)), 0)
 
-    return data.map(rows => rows.map(({label, value}) => ({
-      value: value/ maxValue * MAX_BAR_HEIGHT,
-      label,
-    })))
+    return data.map(rows =>
+      rows.map(({ label, value }) => ({
+        value: (value / maxValue) * MAX_BAR_HEIGHT,
+        label,
+      })),
+    )
   }
 
-  maxNumberOfRows = (data) => data.reduce((acc, rows) => Math.max(acc, rows.length), 0)
+  maxNumberOfRows = data => data.reduce((acc, rows) => Math.max(acc, rows.length), 0)
 
   buildCubesData = (data, colors, barWidth, barDepth, spaceBetweenBarsX, spaceBetweenBarsZ) => {
     const makeCube = (h, x, z) => {
@@ -73,7 +84,7 @@ class Bar3DChart extends React.Component {
         const cube = makeCube(
           -data[z][x].value,
           (x - data[z].length / 2 + 0.5) * (spaceBetweenBarsX + barWidth),
-          (z - data.length / 2 + 0.5) * (spaceBetweenBarsZ + barDepth)
+          (z - data.length / 2 + 0.5) * (spaceBetweenBarsZ + barDepth),
         )
         cube.label = data[z][x].label
         cube.id = result.length
@@ -100,7 +111,7 @@ class Bar3DChart extends React.Component {
       spaceBetweenBarsX,
       spaceBetweenBarsZ,
       startAngle,
-      data
+      data,
     } = this.props
 
     const { width: containerWidth, height: containerHeight } = this.containerRect()
@@ -267,10 +278,7 @@ class Bar3DChart extends React.Component {
 
     const svg = select('svg')
 
-    const processUpdate = (svg, gridData, cubesData, startAngle) => (
-      alpha = 0,
-      beta = 0,
-    ) => {
+    const processUpdate = (svg, gridData, cubesData, startAngle) => (alpha = 0, beta = 0) => {
       const processedCubesData = cubes3D.rotateY(beta + startAngle.y).rotateX(alpha + startAngle.x)(cubesData)
       const processedGridData = grid3D.rotateY(beta + startAngle.y).rotateX(alpha + startAngle.x)(gridData)
 
@@ -286,10 +294,7 @@ class Bar3DChart extends React.Component {
   render() {
     // We need a container element for responsiveness, svg's size is updated with window.on('resize')
     return (
-      <container
-        style={{ width: '100%', height: '100%', display: 'block', cursor: 'grab' }}
-        ref={elem => (this.container = elem)}
-      >
+      <Container ref={elem => (this.container = elem)}>
         <svg
           width={INITIAL_SVG_WIDTH}
           height={INITIAL_SVG_HEIGHT}
@@ -297,10 +302,10 @@ class Bar3DChart extends React.Component {
           ref={elem => (this.svg = elem)}
           preserveAspectRatio="xMidYMid meet"
         >
-          <g className="grid" />
-          <g className="cubes" />
+          <g className="grid"/>
+          <g className="cubes"/>
         </svg>
-      </container>
+      </Container>
     )
   }
 }
