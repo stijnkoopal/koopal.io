@@ -50,6 +50,7 @@ const ContactContainer = styled(Flex)(() => ({
 
 const Header = styled(Flex)(() => ({
   alignSelf: 'center',
+  marginTop: 0,
 })).withComponent('h1')
 
 const SubHeader = Header.withComponent('h2')
