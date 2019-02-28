@@ -58,7 +58,7 @@ const ProjectWrapper = styled(Flex)(({ chevronPosition, odd, theme: { spacing, t
   flexDirection: odd ? 'row' : 'row-reverse',
   [`& > *:nth-of-type(${odd ? 1 : 3})`]: {
     transition: `all ${transitions.duration.short}ms linear`,
-    width: `calc((100% - ${spacing.unit * 2}px) / ${chevronPosition === 'left' ? 2.3 : chevronPosition === 'right' ? 1.7 : 2})`,
+    width: `calc((100% - ${spacing.unit * 2}px) / ${chevronPosition === 'left' ? 2.5 : chevronPosition === 'right' ? 1.5 : 2})`,
   },
   [`& > *:nth-of-type(${odd ? 3 : 1})`]: {
     flex: 1,
