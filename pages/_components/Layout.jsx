@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
 import { withRouter } from 'next/router'
-import { Global, css } from '@emotion/core'
+import { css, Global } from '@emotion/core'
 import Head from 'next/head'
 import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
@@ -72,7 +72,7 @@ const StijnKoopalAnchor = styled(Flex)(({ theme: { palette, spacing } }) => ({
 const StijnKoopal = () => (
   <StijnKoopalAnchor href="/">
     <LogoText width={[0, 1]}>Stijn</LogoText>
-    <KoopalMeLogo />
+    <KoopalMeLogo/>
     <LogoText width={[0, 1]}>oopal</LogoText>
   </StijnKoopalAnchor>
 )
@@ -126,22 +126,24 @@ class Layout extends React.Component {
     return (
       <>
         <Head>
-          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-          <Global styles={globalStyles(theme)} />
+          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+          <Global styles={globalStyles(theme)}/>
         </Head>
 
-        <FixedBackground />
+        <FixedBackground/>
         <Header showOnlyMenuIcon={menuOpen} px={[3, 4]}>
-          <MenuIcon isOpen={menuOpen} onClick={this.toggleMenuOpened} />
-          <StijnKoopal />
+          <MenuIcon isOpen={menuOpen} onClick={this.toggleMenuOpened}/>
+          <StijnKoopal/>
         </Header>
-        <Menu pageWrapId="page-wrap" outerContainerId="__next" isOpen={menuOpen} onStateChange={this.setMenuOpened} />
+        <Menu pageWrapId="page-wrap" outerContainerId="__next" isOpen={menuOpen}
+              onStateChange={this.setMenuOpened}/>
 
-        <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small" />
-        <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium" starSize="medium" />
-        <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="large" />
+        <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small"/>
+        <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium"
+               starSize="medium"/>
+        <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="large"/>
 
-        <Main mx="auto" width={[1, 1 / 2]} p="3" id="page-wrap">
+        <Main mx="auto" width={[1, 1 / 2]} p={[2, 3]} id="page-wrap">
           {children}
         </Main>
       </>
