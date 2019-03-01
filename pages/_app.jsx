@@ -6,7 +6,9 @@ import Layout from './_components/Layout'
 import curiousLittleMouse from './_services/curiousLittleMouse'
 import logSource from './_services/logSource'
 import theme from './theme'
-import withEnvironment from './_components/withEnvironment'
+
+const environment = process.env.NODE_ENV
+const isProduction = process.env.NODE_ENV === 'production'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -42,4 +44,9 @@ class MyApp extends App {
   }
 }
 
-export default withEnvironment(MyApp)
+MyApp.defaultProps = {
+  environment,
+  isProduction
+}
+
+export default MyApp

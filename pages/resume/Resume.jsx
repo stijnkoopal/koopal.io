@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
 import Color from 'color'
-import withResume from '../_components/withResume'
+import useResume from '../_components/useResume'
 
 const formatDate = date =>
   date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
@@ -58,7 +58,9 @@ const ProjectWrapper = styled(Flex)(({ chevronPosition, odd, theme: { spacing, t
   flexDirection: odd ? 'row' : 'row-reverse',
   [`& > *:nth-of-type(${odd ? 1 : 3})`]: {
     transition: `all ${transitions.duration.short}ms linear`,
-    width: `calc((100% - ${spacing.unit * 2}px) / ${chevronPosition === 'left' ? 2.5 : chevronPosition === 'right' ? 1.5 : 2})`,
+    width: `calc((100% - ${spacing.unit * 2}px) / ${
+      chevronPosition === 'left' ? 2.5 : chevronPosition === 'right' ? 1.5 : 2
+    })`,
   },
   [`& > *:nth-of-type(${odd ? 3 : 1})`]: {
     flex: 1,
@@ -131,8 +133,8 @@ const ProjectDescription = ({ project }) => (
 const Project = ({ chevronPosition, project, odd, color, isOpen, onClick }) => {
   const visualization = (
     <ProjectVisualization odd={odd} backgroundColor={color} onClick={onClick} isOpen={isOpen}>
-      {!isOpen && <Logo src={project.entityIconUrl} alt={`${project.entity} logo`}/>}
-      {isOpen && <ProjectDescription project={project}/>}
+      {!isOpen && <Logo src={project.entityIconUrl} alt={`${project.entity} logo`} />}
+      {isOpen && <ProjectDescription project={project} />}
     </ProjectVisualization>
   )
 
@@ -143,7 +145,7 @@ const Project = ({ chevronPosition, project, odd, color, isOpen, onClick }) => {
       </ProjectDates>
       <ChevronWithText color={color}>{project.via}</ChevronWithText>
       <ProjectVisualizationContainer odd={odd}>
-        <ConnectionLine color={color}/>
+        <ConnectionLine color={color} />
         {visualization}
       </ProjectVisualizationContainer>
     </ProjectWrapper>
@@ -156,14 +158,15 @@ const ProjectList = styled.div(({ theme: { spacing } }) => ({
 }))
 
 const Resume = ({
-                  resume,
-                  theme: {
-                    palette: { colors },
-                  },
-                }) => {
+  theme: {
+    palette: { colors },
+  },
+}) => {
+  const resume = useResume()
   const projects = resume.projects.sort((a, b) => (a.startDate < b.startDate ? 1 : -1))
   const [selectedProjectIndex, selectProject] = useState(undefined)
-  const chevronPosition = selectedProjectIndex === undefined ? 'center' : selectedProjectIndex % 2 === 0 ? 'right' : 'left'
+  const chevronPosition =
+    selectedProjectIndex === undefined ? 'center' : selectedProjectIndex % 2 === 0 ? 'right' : 'left'
 
   return (
     <ProjectList>
@@ -184,4 +187,4 @@ const Resume = ({
 
 Resume.pageTitle = 'Resume'
 
-export default withResume(withTheme(Resume))
+export default withTheme(Resume)

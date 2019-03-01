@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 import { Box, Flex } from '@rebass/grid/emotion'
-import withResume from '../_components/withResume'
+import useResume from '../_components/useResume'
 
 const ContactMethods = styled(Flex)(() => ({
   justifyContent: 'space-around',
@@ -61,37 +61,40 @@ const VerticallyCenter = styled(Flex)({
   height: '100%',
 })
 
-const Contact = ({ theme: { palette } }) => (
-  <VerticallyCenter>
-    <ContactContainer>
-      <Header>Awesomeness</Header>
-      <SubHeader mt={[2, 3]}>in just a click away.</SubHeader>
+const Contact = ({ theme: { palette } }) => {
+  const resume = useResume()
+  return (
+    <VerticallyCenter>
+      <ContactContainer>
+        <Header>Awesomeness</Header>
+        <SubHeader mt={[2, 3]}>in just a click away.</SubHeader>
 
-      <ContactMethods mt={[4, 5]}>
-        <ContactMethod as="a" href="mailto:stijn@koopal.io" title="Mail me!">
-          <Icon src="/static/logos/envelope.svg" alt="Email"
-                backgroundColor={palette.colors.visualizations[1]}/>
-          <Title>Email</Title>
-          <Value>stijn@koopal.io</Value>
-        </ContactMethod>
+        <ContactMethods mt={[4, 5]}>
+          <ContactMethod as="a" href="mailto:stijn@koopal.io" title="Mail me!">
+            <Icon src="/static/logos/envelope.svg" alt="Email"
+                  backgroundColor={palette.colors.visualizations[1]}/>
+            <Title>Email</Title>
+            <Value>stijn@koopal.io</Value>
+          </ContactMethod>
 
-        <ContactMethod as="a" href="tel:+31634950752" title="Call me!">
-          <Icon src="/static/logos/telephone.svg" alt="Telephone"
-                backgroundColor={palette.colors.visualizations[2]}/>
-          <Title>Phone</Title>
-          <Value>+31 6 349 50 752</Value>
-        </ContactMethod>
+          <ContactMethod as="a" href="tel:+31634950752" title="Call me!">
+            <Icon src="/static/logos/telephone.svg" alt="Telephone"
+                  backgroundColor={palette.colors.visualizations[2]}/>
+            <Title>Phone</Title>
+            <Value>+31 6 349 50 752</Value>
+          </ContactMethod>
 
-        <ContactMethod>
-          <Icon src="/static/logos/home-location.svg" alt="Home"
-                backgroundColor={palette.colors.visualizations[0]}/>
-          <Title>KVK</Title>
-          <Value>???????</Value>
-        </ContactMethod>
-      </ContactMethods>
-    </ContactContainer>
-  </VerticallyCenter>
-)
+          <ContactMethod>
+            <Icon src="/static/logos/home-location.svg" alt="Home"
+                  backgroundColor={palette.colors.visualizations[0]}/>
+            <Title>KVK</Title>
+            <Value>???????</Value>
+          </ContactMethod>
+        </ContactMethods>
+      </ContactContainer>
+    </VerticallyCenter>
+  )
+}
 
 Contact.propTypes = {
   resume: PropTypes.object,
@@ -105,4 +108,4 @@ Contact.defaultProps = {
   },
 }
 
-export default withTheme(withResume(Contact))
+export default withTheme(Contact)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Flex } from '@rebass/grid/emotion'
 import RotateMenu from 'react-burger-menu/lib/menus/pushRotate'
 import Link from 'next/link'
@@ -75,38 +75,35 @@ const menuItems = [
   { href: '/contact', label: 'Contact' },
 ]
 
-class Menu extends React.Component {
-  componentDidMount = () => Router.router.events.on('routeChangeStart', this.closeMenu)
+const Menu = ({ pageWrapId, outerContainerId, theme, isOpen, onStateChange }) => {
+  useEffect(() => {
+    const closeMenu = () => onStateChange({ isOpen: false })
 
-  componentWillUnmount = () => Router.router.events.off('routeChangeStart', this.closeMenu)
+    Router.router.events.on('routeChangeStart', closeMenu)
+    return () => Router.router.events.off('routeChangeStart', closeMenu)
+  })
 
-  closeMenu = () => this.props.onStateChange({ isOpen: false })
-
-  render() {
-    const { pageWrapId, outerContainerId, theme, isOpen, onStateChange } = this.props
-
-    return (
-      <RotateMenu
-        width="100%"
-        right
-        styles={menuStyles(theme)}
-        pageWrapId={pageWrapId}
-        outerContainerId={outerContainerId}
-        isOpen={isOpen}
-        onStateChange={onStateChange}
-        customBurgerIcon={undefined}
-        customCrossIcon={false}
-      >
-        {menuItems.map(({ href, label }) => (
-          <LinkWrap key={href} prefetch href={href}>
-            <MenuItem>
-              <MenuItemText>{label}</MenuItemText>
-            </MenuItem>
-          </LinkWrap>
-        ))}
-      </RotateMenu>
-    )
-  }
+  return (
+    <RotateMenu
+      width="100%"
+      right
+      styles={menuStyles(theme)}
+      pageWrapId={pageWrapId}
+      outerContainerId={outerContainerId}
+      isOpen={isOpen}
+      onStateChange={onStateChange}
+      customBurgerIcon={undefined}
+      customCrossIcon={false}
+    >
+      {menuItems.map(({ href, label }) => (
+        <LinkWrap key={href} prefetch href={href}>
+          <MenuItem>
+            <MenuItemText>{label}</MenuItemText>
+          </MenuItem>
+        </LinkWrap>
+      ))}
+    </RotateMenu>
+  )
 }
 
 Menu.propTypes = {

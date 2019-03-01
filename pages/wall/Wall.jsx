@@ -1,41 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { LatestBlogPosts, BlogPost, EmptyBlogPost } from './components/LatestBlogPosts'
 import fetchMediumPosts from './services/fetchMediumPosts.api'
 
-class Wall extends React.Component {
-  state = {
-    posts: [],
-    isLoading: true,
-    error: undefined,
+const renderError = error => <div>{[error.message]}</div>
+
+const Wall = () => {
+  const [{posts, isLoading, error}, setFetchState] = useState({posts: [], isLoading: true, error: undefined})
+
+  useEffect(() => {
+    fetchMediumPosts()
+      .then(posts => setFetchState({posts, isLoading: false, error: undefined}))
+      .catch(e => setFetchState({posts: [], isLoading: false, error: e}))
+  })
+
+  if (error) {
+    return renderError(error)
   }
 
-  componentDidMount = async () => {
-    try {
-      const posts = await fetchMediumPosts()
-      this.setState({ posts, isLoading: false, error: undefined })
-    } catch (e) {
-      this.setState({ posts: [], isLoading: false, error: e })
-    }
-  }
+  const keys = Array(3)
+    .fill(0)
+    .map((_, i) => String.fromCharCode(65 + i))
+  const blogPosts = isLoading
+    ? keys.map(key => <EmptyBlogPost key={key} uniqueKey={key} />)
+    : posts.map(post => <BlogPost key={post.id} post={post} />)
 
-  renderError = error => <div>{[error.message]}</div>
-
-  render() {
-    const { posts, isLoading, error } = this.state
-
-    if (error) {
-      return this.renderError(error)
-    }
-
-    const keys = Array(3)
-      .fill(0)
-      .map((_, i) => String.fromCharCode(65 + i))
-    const blogPosts = isLoading
-      ? keys.map(key => <EmptyBlogPost key={key} uniqueKey={key} />)
-      : posts.map(post => <BlogPost key={post.id} post={post} />)
-
-    return <LatestBlogPosts>{blogPosts}</LatestBlogPosts>
-  }
+  return <LatestBlogPosts>{blogPosts}</LatestBlogPosts>
 }
 
 export default Wall

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
@@ -110,45 +110,33 @@ const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
   },
 }))
 
-class Layout extends React.Component {
-  state = {
-    menuOpen: false,
-  }
+const Layout = ({ children, theme }) => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  return (
+    <>
+      <Head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+        <Global styles={globalStyles(theme)}/>
+      </Head>
 
-  toggleMenuOpened = () => this.setState(({ menuOpen }) => ({ menuOpen: !menuOpen }))
+      <FixedBackground/>
+      <Header showOnlyMenuIcon={menuOpen} px={[3, 4]}>
+        <MenuIcon isOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}/>
+        <StijnKoopal/>
+      </Header>
+      <Menu pageWrapId="page-wrap" outerContainerId="__next" isOpen={menuOpen}
+            onStateChange={({ isOpen }) => setMenuOpen(isOpen)}/>
 
-  setMenuOpened = ({ isOpen }) => this.setState(() => ({ menuOpen: isOpen }))
+      <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small"/>
+      <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium"
+             starSize="medium"/>
+      <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="large"/>
 
-  render() {
-    const { children, theme } = this.props
-    const { menuOpen } = this.state
-
-    return (
-      <>
-        <Head>
-          <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-          <Global styles={globalStyles(theme)}/>
-        </Head>
-
-        <FixedBackground/>
-        <Header showOnlyMenuIcon={menuOpen} px={[3, 4]}>
-          <MenuIcon isOpen={menuOpen} onClick={this.toggleMenuOpened}/>
-          <StijnKoopal/>
-        </Header>
-        <Menu pageWrapId="page-wrap" outerContainerId="__next" isOpen={menuOpen}
-              onStateChange={this.setMenuOpened}/>
-
-        <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small"/>
-        <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium"
-               starSize="medium"/>
-        <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="large"/>
-
-        <Main mx="auto" width={[1, 1 / 2]} p={[2, 3]} id="page-wrap">
-          {children}
-        </Main>
-      </>
-    )
-  }
+      <Main mx="auto" width={[1, 1 / 2]} p={[2, 3]} id="page-wrap">
+        {children}
+      </Main>
+    </>
+  )
 }
 
 Layout.propTypes = {

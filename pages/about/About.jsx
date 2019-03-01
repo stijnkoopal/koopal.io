@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Box, Flex } from '@rebass/grid/emotion'
 import styled from '@emotion/styled'
 import Bar3DChart from './components/Bar3DChart'
-import withResume from '../_components/withResume'
+import useResume from '../_components/useResume'
 
 const PageIndicator = styled(Box)(({ active, theme: { palette, spacing } }) => ({
   borderRadius: '50%',
@@ -52,8 +52,10 @@ const AboutContainer = styled(Flex)(() => ({
   height: '100%',
 }))
 
-const About = ({ resume }) => {
+const About = () => {
   const [activeChart, setActiveChart] = useState('skills')
+  const resume = useResume()
+
   return (
     <AboutContainer>
       <Bar3DChart data={chartData(resume, activeChart)}/>
@@ -73,4 +75,4 @@ const About = ({ resume }) => {
   )
 }
 
-export default withResume(About)
+export default About
