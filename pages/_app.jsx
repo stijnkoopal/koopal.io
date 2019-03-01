@@ -46,7 +46,7 @@ class MyApp extends App {
 
 MyApp.defaultProps = {
   environment,
-  isProduction
+  isProduction,
 }
 
 export default MyApp
