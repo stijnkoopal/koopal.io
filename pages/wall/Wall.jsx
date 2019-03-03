@@ -11,7 +11,7 @@ const Wall = () => {
     fetchMediumPosts()
       .then(posts => setFetchState({posts, isLoading: false, error: undefined}))
       .catch(e => setFetchState({posts: [], isLoading: false, error: e}))
-  })
+  }, [])
 
   if (error) {
     return renderError(error)

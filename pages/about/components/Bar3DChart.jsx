@@ -256,10 +256,10 @@ class Bar3DChart extends React.Component {
         .attr('text-anchor', 'start')
         .attr('x', d => rotateAround[0] + SCALE * d.centroid.x)
         .attr('y', d => rotateAround[1] + SCALE * d.centroid.y)
-        .classed('_3d', true)
         .merge(texts)
         .attr('fill', 'white')
         .attr('stroke', 'none')
+        .classed('_3d', true)
         .attr(
           'transform',
           d => `rotate(315, ${rotateAround[0] + SCALE * d.centroid.x}, ${rotateAround[1] + SCALE * d.centroid.y})`,
