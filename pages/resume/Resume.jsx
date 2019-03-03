@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
+import { Transition } from 'react-transition-group'
 import Color from 'color'
 import useResume from '../_components/useResume'
 
@@ -9,12 +10,14 @@ const formatDate = date =>
   date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
 
 const Logo = styled.img({
-  width: '100%',
+  width: '80%',
+  left: '50%',
+  top: '50%',
+  transform: 'translate(-50%, -50%)',
 })
 
-const ProjectDates = styled(Box)(({ color, odd, theme: { spacing } }) => ({
+const ProjectDates = styled(Box)(({ color, odd }) => ({
   color,
-  padding: `0 ${2 * spacing.unit}px`,
   textAlign: odd ? 'right' : 'left',
 }))
 
@@ -24,26 +27,24 @@ const ConnectionLine = styled.div(({ color }) => ({
   position: 'absolute',
   top: '50%',
   backgroundColor: color,
-  zIndex: 1,
 }))
 
 const ProjectVisualization = styled(Flex)(({ isOpen, odd, backgroundColor, theme: { spacing, transitions } }) => ({
-  flexDirection: isOpen ? 'column' : 'row',
+  position: 'relative',
   borderRadius: isOpen ? '5%' : '50%',
-  width: isOpen ? '100%' : '25vw',
-  maxWidth: isOpen ? '99999px' : '200px',
-  height: isOpen ? 'unset' : '25vw',
-  maxHeight: isOpen ? '99999px' : '200px',
-  flex: isOpen ? 1 : 'unset',
+  maxWidth: isOpen ? '9999px' : '200px',
   margin: odd ? `0 0 0 ${spacing.unit}px` : `0 ${spacing.unit}px 0 0`,
   backgroundColor,
-  zIndex: 2,
   padding: (isOpen ? 1 : 2) * spacing.unit,
   cursor: 'pointer',
   transition: `all ${transitions.duration.short}ms linear`,
-  [isOpen ? '' : '&:hover']: {
-    width: '25vh',
-    height: '25vh',
+  '&:before': {
+    content: '""',
+    display: 'block',
+    paddingTop: '100%',
+  },
+  '& > img': {
+    position: 'absolute',
   },
 }))
 
@@ -74,11 +75,9 @@ const ProjectWrapper = styled(Flex)(({ chevronPosition, odd, theme: { spacing, t
 const Chevron = styled(Box)(({ theme: { spacing }, color }) => ({
   position: 'relative',
   textAlign: 'center',
-  paddingLeft: spacing.unit,
-  paddingRight: spacing.unit,
   width: 0,
   height: '100%',
-  ':before': {
+  '&:before': {
     content: '""',
     position: 'absolute',
     top: 0,
@@ -88,7 +87,7 @@ const Chevron = styled(Box)(({ theme: { spacing }, color }) => ({
     background: color,
     transform: 'skew(0deg, -50deg)',
   },
-  ':after': {
+  '&:after': {
     content: '""',
     position: 'absolute',
     top: 0,
@@ -115,32 +114,37 @@ const darkenColor = color =>
     .toString()
 
 const ChevronWithText = ({ children, color }) => (
-  <Chevron color={color}>
+  <Chevron color={color} px={2}>
     <VerticalChevronText color={darkenColor(color)}>{children}</VerticalChevronText>
   </Chevron>
 )
 
 const ProjectDescription = ({ project }) => (
-  <>
+  <Flex flexDirection="column" p={3}>
     <h2>
       {project.name}
       {project.via && ` via ${project.via}`}
     </h2>
     <div>{project.description}</div>
-  </>
+  </Flex>
 )
 
-const Project = ({ chevronPosition, project, odd, color, isOpen, onClick }) => {
+const Project = ({ theme: { transitions }, chevronPosition, project, odd, color, isOpen, onClick }) => {
   const visualization = (
-    <ProjectVisualization odd={odd} backgroundColor={color} onClick={onClick} isOpen={isOpen}>
-      {!isOpen && <Logo src={project.entityIconUrl} alt={`${project.entity} logo`} />}
-      {isOpen && <ProjectDescription project={project} />}
+    <ProjectVisualization odd={odd} backgroundColor={color} onClick={onClick} isOpen={isOpen} width={['75%', '100%']}>
+      <Transition in={!isOpen} timeout={transitions.duration.short}>
+        {state => {
+          if (state === 'exited') return <ProjectDescription project={project} />
+          else if (state === 'entered') return <Logo src={project.entityIconUrl} alt={`${project.entity} logo`} />
+          return null
+        }}
+      </Transition>
     </ProjectVisualization>
   )
 
   return (
     <ProjectWrapper odd={odd} chevronPosition={chevronPosition}>
-      <ProjectDates color={color} odd={odd}>
+      <ProjectDates color={color} odd={odd} px={2}>
         {formatDate(project.startDate)} - {formatDate(project.endDate)}
       </ProjectDates>
       <ChevronWithText color={color}>{project.via}</ChevronWithText>
@@ -157,11 +161,7 @@ const ProjectList = styled.div(({ theme: { spacing } }) => ({
   paddingBottom: spacing.unit * 3,
 }))
 
-const Resume = ({
-  theme: {
-    palette: { colors },
-  },
-}) => {
+const Resume = ({ theme }) => {
   const resume = useResume()
   const projects = resume.projects.sort((a, b) => (a.startDate < b.startDate ? 1 : -1))
   const [selectedProjectIndex, selectProject] = useState(undefined)
@@ -172,13 +172,14 @@ const Resume = ({
     <ProjectList>
       {projects.map((project, index) => (
         <Project
+          theme={theme}
           chevronPosition={chevronPosition}
           onClick={() => selectProject(selectedProjectIndex === index ? undefined : index)}
           odd={index % 2}
           key={project.name}
           isOpen={selectedProjectIndex === index}
           project={project}
-          color={colors.visualizations[index]}
+          color={theme.palette.colors.visualizations[index]}
         />
       ))}
     </ProjectList>
