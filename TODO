@@ -1,8 +1,13 @@
-Project details on Resume
-Animations on Resume
+Fix open menu on safari
+Fix size on claires mobile
+Size of about on mobile iPhone SE in chrome emulator
+Name about differently?
+Storybook story icon
+KVK on contact + link
+Downloadable CV
+github medium linkedin
+text for blockport + rfh
 
-Semantic tags
-
-favicon
-
-preact
+Technically:
+ - Margins and paddings on component instead of theme.spacing
+ - preact

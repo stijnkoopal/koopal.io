@@ -66,22 +66,22 @@ const Contact = ({ theme: { palette } }) => {
   return (
     <VerticallyCenter>
       <ContactContainer>
-        <Header>Awesomeness</Header>
-        <SubHeader mt={[2, 3]}>in just a click away.</SubHeader>
+        <Header>Reaching out</Header>
+        <SubHeader mt={[2, 3]}>is just a click away.</SubHeader>
 
         <ContactMethods mt={[4, 5]}>
-          <ContactMethod as="a" href="mailto:stijn@koopal.io" title="Mail me!">
+          <ContactMethod as="a" href={`maillto:${resume.basics.email}`} title="Mail me!">
             <Icon src="/static/logos/envelope.svg" alt="Email"
                   backgroundColor={palette.colors.visualizations[1]}/>
             <Title>Email</Title>
-            <Value>stijn@koopal.io</Value>
+            <Value>{resume.basics.email}</Value>
           </ContactMethod>
 
-          <ContactMethod as="a" href="tel:+31634950752" title="Call me!">
+          <ContactMethod as="a" href={`tel:${resume.basics.phone}`} title="Call me!">
             <Icon src="/static/logos/telephone.svg" alt="Telephone"
                   backgroundColor={palette.colors.visualizations[2]}/>
             <Title>Phone</Title>
-            <Value>+31 6 349 50 752</Value>
+            <Value>{resume.basics.phone}</Value>
           </ContactMethod>
 
           <ContactMethod>
