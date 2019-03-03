@@ -37,6 +37,7 @@ const ProjectVisualization = styled(Flex)(({ isOpen, odd, backgroundColor, theme
   backgroundColor,
   padding: (isOpen ? 1 : 2) * spacing.unit,
   cursor: 'pointer',
+  zIndex: isOpen ? 2 : 1,
   transition: `all ${transitions.duration.short}ms linear`,
   '&:before': {
     content: '""',
@@ -131,7 +132,7 @@ const ProjectDescription = ({ project }) => (
 
 const Project = ({ theme: { transitions }, chevronPosition, project, odd, color, isOpen, onClick }) => {
   const visualization = (
-    <ProjectVisualization odd={odd} backgroundColor={color} onClick={onClick} isOpen={isOpen} width={['75%', '100%']}>
+    <ProjectVisualization odd={odd} backgroundColor={color} onClick={onClick} isOpen={isOpen} width={isOpen ? '100%' : ['75%', '100%']}>
       <Transition in={!isOpen} timeout={transitions.duration.short}>
         {state => {
           if (state === 'exited') return <ProjectDescription project={project} />
