@@ -123,20 +123,26 @@ const ChevronWithText = ({ children, color }) => (
 const ProjectDescription = ({ project }) => (
   <Flex flexDirection="column" p={3}>
     <h2>
-      {project.name}
+      {project.position}@{project.company}
       {project.via && ` via ${project.via}`}
     </h2>
-    <div>{project.description}</div>
+    <div>{project.summary}</div>
   </Flex>
 )
 
 const Project = ({ theme: { transitions }, chevronPosition, project, odd, color, isOpen, onClick }) => {
   const visualization = (
-    <ProjectVisualization odd={odd} backgroundColor={color} onClick={onClick} isOpen={isOpen} width={isOpen ? '100%' : ['75%', '100%']}>
+    <ProjectVisualization
+      odd={odd}
+      backgroundColor={color}
+      onClick={onClick}
+      isOpen={isOpen}
+      width={isOpen ? '100%' : ['75%', '100%']}
+    >
       <Transition in={!isOpen} timeout={transitions.duration.short}>
         {state => {
           if (state === 'exited') return <ProjectDescription project={project} />
-          else if (state === 'entered') return <Logo src={project.entityIconUrl} alt={`${project.entity} logo`} />
+          else if (state === 'entered') return <Logo src={project.entityIconUrl} alt={`${project.company} logo`} />
           return null
         }}
       </Transition>
@@ -164,7 +170,9 @@ const ProjectList = styled.div(({ theme: { spacing } }) => ({
 
 const Resume = ({ theme }) => {
   const resume = useResume()
-  const projects = resume.projects.sort((a, b) => (a.startDate < b.startDate ? 1 : -1))
+  const projects = resume.work
+    .filter(({ type }) => type === 'project')
+    .sort((a, b) => (a.startDate < b.startDate ? 1 : -1))
   const [selectedProjectIndex, selectProject] = useState(undefined)
   const chevronPosition =
     selectedProjectIndex === undefined ? 'center' : selectedProjectIndex % 2 === 0 ? 'right' : 'left'
@@ -177,7 +185,7 @@ const Resume = ({ theme }) => {
           chevronPosition={chevronPosition}
           onClick={() => selectProject(selectedProjectIndex === index ? undefined : index)}
           odd={index % 2}
-          key={project.name}
+          key={project.company + project.role}
           isOpen={selectedProjectIndex === index}
           project={project}
           color={theme.palette.colors.visualizations[index]}

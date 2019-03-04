@@ -53,16 +53,19 @@
     "express": "^4.16.4",
     "http-proxy-middleware": "^0.19.1",
     "jest": "^24.0.0",
+    "jsonresume-theme-elegant": "^1.12.1",
     "netlify-lambda": "^1.4.2",
     "next-workbox": "^1.4.1",
     "npm-check-updates": "^2.15.0",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "resume-cli": "https://github.com/randytarampi/resume-cli.git#puppeteer-v1.11.0"
   },
   "jest": {},
   "scripts": {
     "build": "yarn build:app && yarn build:lambda",
     "build:app": "NODE_ENV=production next build && next export",
     "build:lambda": "NODE_ENV=production netlify-lambda build lambda-src",
+    "build:generate-resume-pdf": "resume export ./static/resume.pdf --force --format pdf --resume=./static/resume.json",
     "build:analyze": "BUNDLE_ANALYZE=browser yarn build",
     "dependencies": "ncu",
     "dependencies:upgrade": "ncu -ua",

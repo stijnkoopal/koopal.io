@@ -40,34 +40,179 @@
   },
   "work": [
     {
-      "name": "Xebia",
+      "company": "Royal FloraHolland",
+      "position": "Backend Engineer",
+      "summary": "The Floriday platform connects growers to retail. Part of API developement using ES/CQRS.",
+      "highlights": [
+      ],
+      "keywords": [
+        "Java 10", "Axon Framework", "CQRS", "AWS", "Spring Boot"
+      ],
+      "startDate": "2018-09-01",
+      "endDate": "2019-05-01",
+      "url": "https://floriday.io",
+      "roles": [
+        "Backend developer"
+      ],
+      "entity": "Royal FloraHolland",
+      "entityIconUrl": "/static/logos/royal-flora-holland.svg",
+      "via": "Xebia",
+      "type": "project"
+    },
+    {
+      "company": "Blockport",
+      "position": "Backend Engineer",
+      "summary": "",
+      "highlights": [
+        "Scalable crypto deposits",
+        "Integrate KYC provider"
+      ],
+      "keywords": [
+        "Scala", "Akka", "Lagom", "React", "Angular", "Kubernetes", "Golang", "Rust"
+      ],
+      "startDate": "2018-07-01",
+      "endDate": "2018-09-01",
+      "url": "https://blockport.io/",
+      "roles": [
+        "Backend developer"
+      ],
+      "entity": "Blockport",
+      "entityIconUrl": "/static/logos/blockport.svg",
+      "via": "Xebia",
+      "type": "project"
+    },
+    {
+      "company": "ING",
+      "position": "Full-Stack Engineer",
+      "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financials institution. The project Stijn worked was started by the innovation department of ING, and it did just that. Stijn was part of the team that constructed a web-app and it’s infrastructure.",
+      "highlights": [
+        "Complete overhaul of Polymer frontend to very Scalable (in terms of development) app",
+        "Connecting users to the Domino app",
+        "Knowledge sharing of state of the art frontends"
+      ],
+      "keywords": [
+        "Polymer", "Scala", "Spark", "Docker", "Openshift", "Gitlab CI"
+      ],
+      "startDate": "2017-05-01",
+      "endDate": "2018-06-30",
+      "url": "",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "entity": "ING",
+      "entityIconUrl": "/static/logos/ING.svg",
+      "via": "Xebia",
+      "type": "project"
+    },
+    {
+      "company": "Alphabet",
+      "position": "Full-Stack Developer & Scrum Master",
+      "summary": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Stijn was a full-stack developer in a scrum team that was implementing features. Last few months he was part time Scrum master. ",
+      "highlights": [
+      ],
+      "keywords": [
+        "Java 8", "JEE2", "JBPM", "Jenkins 2", "Docker", "AngularJS", "Cucumber"
+      ],
+      "startDate": "2016-05-01",
+      "endDate": "2017-04-30",
+      "url": "",
+      "roles": [
+        "Scrum master", "Developer"
+      ],
+      "entity": "Alphabet",
+      "entityIconUrl": "/static/logos/alphabet.svg",
+      "via": "Ciber",
+      "type": "project"
+    },
+    {
+      "company": "Tankpas.nl",
+      "position": "Lead Engineer",
+      "summary": "Travelcard launched a concept that required a website that interfaced with their legacy landscape. The project was pressurized massively by time. Initially Stijn was a backend developer, but eventually he was responsible for the team. Few members of the team were juniors, or trainees even, he assisted and guided them where possible. ",
+      "highlights": [
+        "Connected new platform to legacy backend",
+        "Coaching of 2 juniors"
+      ],
+      "keywords": [
+        "Java 8", "JBoss Fuse", "JBoss EAP"
+      ],
+      "startDate": "2015-07-01",
+      "endDate": "2016-04-30",
+      "url": "https://tankpas.nl",
+      "roles": [
+        "Team lead", "Developer"
+      ],
+      "entity": "Travelcard",
+      "entityIconUrl": "/static/logos/travelcard.svg",
+      "via": "Ciber",
+      "type": "project"
+    },
+    {
+      "company": "Malmberg",
+      "position": "BigData Engineer",
+      "summary": "Malmberg is transforming from a publisher of traditional educational books into a publisher of electronic educational methods. Stijn started implementing a POC to setup Analytics within the organization: a solution based on Hadoop. Afterwards Stijn was part of a scrum team that implemented shared components using Vert.x",
+      "highlights": [
+      ],
+      "keywords": [
+        "Hadoop", "Java 8", "Vert.x"
+      ],
+      "startDate": "2014-06-01",
+      "endDate": "2015-06-31",
+      "url": "",
+      "roles": [
+        "Developer", "Operations"
+      ],
+      "entity": "Malmberg",
+      "entityIconUrl": "/static/logos/malmberg.svg",
+      "via": "Ciber",
+      "type": "project"
+    },
+    {
+      "company": "RWE",
+      "position": "Functional Application Engineer",
+      "summary": "",
+      "highlights": [
+      ],
+      "keywords": [
+      ],
+      "startDate": "2013-09-01",
+      "endDate": "2014-05-31",
+      "url": "",
+      "roles": [
+        "Developer", "Operations", "On-call duty"
+      ],
+      "entityIconUrl": "/static/logos/rwe.svg",
+      "via": "Ciber",
+      "type": "project"
+    },
+    {
+      "company": "Xebia",
       "location": "Hilversum",
-      "description": "Technical consultant focusing on customer-value, using bleeding edge technology",
+      "summary": "Technical consultant focusing on customer-value, using bleeding edge technology",
       "position": "Consultant",
       "url": "https://xebia.com/agile-software-development",
       "startDate": "2017-05-01",
-      "endDate": "",
-      "summary": "",
+      "endDate": "2019-05-01",
       "highlights": [
         "Proving value to customers using state-of-the-art tech"
       ],
       "tech": [
         "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust", "Lagom", "Golang", "Axon Framework"
-      ]
+      ],
+      "type": "employer"
     },
     {
-      "name": "Experis Ciber",
+      "company": "Experis Ciber",
       "location": "Eindhoven",
-      "description": "Technical consultant mostly in the field of Java and its related technologies",
+      "summary": "Technical consultant mostly in the field of Java and its related technologies",
       "position": "Consultant",
       "url": "https://www.ciber.nl/",
       "startDate": "2013-09-01",
       "endDate": "2017-04-01",
-      "summary": "",
       "highlights": [],
       "tech": [
         "Java (8)", "Angular", "JEE2", "JBoss Fuse", "JBoss EAP", "JBoss BPM Suite"
-      ]
+      ],
+      "type": "employer"
     }
   ],
   "volunteer": [],
@@ -84,7 +229,7 @@
     },
     {
       "institution": "Eindhoven University of Technology",
-      "area": "",
+      "area": "Computer Science",
       "studyType": "Bachelor",
       "startDate": "2006-09-01",
       "endDate": "2010-05-01",
@@ -94,7 +239,7 @@
     },
     {
       "institution": "Mollerlyceum Bergen op Zoom",
-      "area": "",
+      "area": "Nature & Science",
       "studyType": "VWO",
       "startDate": "2000-08-01",
       "endDate": "2006-05-01",
@@ -119,7 +264,7 @@
     {"name":  "ES / CQRS / Microservices", "level": "Master", "value": 87},
     {"name":  "Javascript / Typescript", "level": "Master", "value": 95},
     {"name":  "React", "level": "Master", "value": 91},
-    {"name":  "AWS / GC", "level": "Master", "value": 59},
+    {"name":  "AWS / GCP", "level": "Master", "value": 59},
     {"name":  "Netlify", "level": "Master", "value": 60},
     {"name":  "K8s", "level": "Master", "value": 70}
   ],
@@ -143,151 +288,5 @@
   ],
   "references": [
 
-  ],
-  "projects": [
-    {
-      "name": "Floriday",
-      "description": "The Floriday platform connects growers to retail. Part of API developement using ES/CQRS",
-      "highlights": [
-      ],
-      "keywords": [
-        "Java 10", "Axon Framework", "CQRS", "AWS", "Spring Boot"
-      ],
-      "startDate": "2018-09-01",
-      "endDate": "",
-      "url": "https://floriday.io",
-      "roles": [
-        "Backend developer"
-      ],
-      "entity": "Royal FloraHolland",
-      "entityIconUrl": "/static/logos/royal-flora-holland.svg",
-      "via": "Xebia",
-      "type": "application"
-    },
-    {
-      "name": "Productionize Blockport",
-      "description": "",
-      "highlights": [
-        "Scalable crypto deposits",
-        "Integrate KYC provider"
-      ],
-      "keywords": [
-        "Scala", "Akka", "Lagom", "React", "Angular", "Kubernetes", "Golang", "Rust"
-      ],
-      "startDate": "2018-07-01",
-      "endDate": "2018-09-01",
-      "url": "https://blockport.io/",
-      "roles": [
-        "Backend developer"
-      ],
-      "entity": "Blockport",
-      "entityIconUrl": "/static/logos/blockport.svg",
-      "via": "Xebia",
-      "type": "application"
-    },
-    {
-      "name": "Domino",
-      "description": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financials institution. The project Stijn worked was started by the innovation department of ING, and it did just that. Stijn was part of the team that constructed a web-app and it’s infrastructure.",
-      "highlights": [
-        "Complete overhaul of Polymer frontend to very Scalable (in terms of development) app",
-        "Connecting users to the Domino app",
-        "Knowledge sharing of state of the art frontends"
-      ],
-      "keywords": [
-        "Polymer", "Scala", "Spark", "Docker", "Openshift", "Gitlab CI"
-      ],
-      "startDate": "2017-05-01",
-      "endDate": "2018-06-30",
-      "url": "",
-      "roles": [
-        "Full Stack Developer"
-      ],
-      "entity": "ING",
-      "entityIconUrl": "/static/logos/ING.svg",
-      "via": "Xebia",
-      "type": "application"
-    },
-    {
-      "name": "New Alphabet Platform",
-      "description": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Stijn was a full-stack developer in a scrum team that was implementing features. Last few months he was part time Scrum master. ",
-      "highlights": [
-      ],
-      "keywords": [
-        "Java 8", "JEE2", "JBPM", "Jenkins 2", "Docker", "AngularJS", "Cucumber"
-      ],
-      "startDate": "2016-05-01",
-      "endDate": "2017-04-30",
-      "url": "",
-      "roles": [
-        "Scrum master", "Developer"
-      ],
-      "entity": "Alphabet",
-      "entityIconUrl": "/static/logos/alphabet.svg",
-      "via": "Ciber",
-      "type": "application"
-    },
-    {
-      "name": "Tankpas.nl",
-      "description": "Travelcard launched a concept that required a website that interfaced with their legacy landscape. The project was pressurized massively by time. Initially Stijn was a backend developer, but eventually he was responsible for the team. Few members of the team were juniors, or trainees even, he assisted and guided them where possible. ",
-      "highlights": [
-        "Connected new platform to legacy backend",
-        "Coaching of 2 juniors"
-      ],
-      "keywords": [
-        "Java 8", "JBoss Fuse", "JBoss EAP"
-      ],
-      "startDate": "2015-07-01",
-      "endDate": "2016-04-30",
-      "url": "https://tankpas.nl",
-      "roles": [
-        "Team lead", "Developer"
-      ],
-      "entity": "Travelcard",
-      "entityIconUrl": "/static/logos/travelcard.svg",
-      "via": "Ciber",
-      "type": "application"
-    },
-    {
-      "name": "BigData Platform",
-      "description": "Malmberg is transforming from a publisher of traditional educational books into a publisher of electronic educational methods. Stijn started implementing a POC to setup Analytics within the organization: a solution based on Hadoop. Afterwards Stijn was part of a scrum team that implemented shared components using Vert.x",
-      "highlights": [
-      ],
-      "keywords": [
-        "Hadoop", "Java 8", "Vert.x"
-      ],
-      "startDate": "2014-06-01",
-      "endDate": "2015-06-31",
-      "url": "",
-      "roles": [
-        "Developer", "Operations"
-      ],
-      "entity": "Malmberg",
-      "entityIconUrl": "/static/logos/malmberg.svg",
-      "via": "Ciber",
-      "type": "application"
-    },
-    {
-      "name": "Business as usual",
-      "description": "",
-      "highlights": [
-      ],
-      "keywords": [
-      ],
-      "startDate": "2013-09-01",
-      "endDate": "2014-05-31",
-      "url": "",
-      "roles": [
-        "Developer", "Operations", "On-call duty"
-      ],
-      "entity": "RWE",
-      "entityIconUrl": "/static/logos/rwe.svg",
-      "via": "Ciber",
-      "type": "application"
-    }
-  ],
-  "meta": {
-    "canonical": "https://koopal.io/static/resume.json",
-    "version": "1.0.0",
-    "lastModified": "2018-06-24T18:18:00"
-  }
+  ]
 }
