@@ -5,7 +5,7 @@ Source code for my [personal website](https://koopal.io).
 
 ## Install
 ```bash
-yarn
+yarn --ignore-engines
 ```
 
 ## Develop
@@ -14,7 +14,6 @@ yarn dev
 yarn lint
 yarn storybook
 ```
-
 
 ## Test
 ```bash
@@ -37,7 +36,7 @@ Dependency management
 yarn dependencies
 yarn dependences:upgrade
 # On error, run first:
-# rm -rf node_modules && yarn
+# rm -rf node_modules && yarn --ignore-engines
 ```
 
 
