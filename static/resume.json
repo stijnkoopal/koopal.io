@@ -1,12 +1,16 @@
 {
   "basics": {
     "name": "Stijn Koopal",
-    "label": "Full-Stack Software Engineer",
-    "image": "",
-    "email": "stijn@koopal.me",
-    "phone": "06 349 50 752",
-    "url": "https://koopal.me",
-    "summary": "",
+    "label": "Full Stack Software Enthusiast",
+    "motto": "Getting things live!",
+    "tags": [
+      "Software Engineer", "Full Stack", "Remote", "Bleeding Edge Tech", "Freelance", "ZZP", "Independent"
+    ],
+    "image": "https://koopal.io/static/profile-picture.jpg",
+    "email": "stijn@koopal.io",
+    "phone": "+31 (0)6 349 50 752",
+    "url": "https://koopal.io",
+    "summary": "I'm an experienced software enthusiast with hands-on experience in various languages, frameworks and platforms. Highly analytical in nature, with good communicative skills. A supportive and enthusiastic team player that thinks highly of quality, but can be pragmatic if required. I tend to use the most simple solution best fit for the situation, and try to learn as much as possible from it.\n\nThe thought of a fast, highly scalable service architecture makes me happy, as does an elegant implementation. A very well designed and maintainable frontend is key. I mostly enjoy working in a team, and building an awesome application together is very important to me.\n\nThe beautiful city of Utrecht is my home, and I tend to socialise there with friends a lot. I enjoy being outside, especially when exercising.\n\nInterested? Drop me a line!",
     "location": {
       "address": "Wethouder D.M. Plompstraat 22",
       "postalCode": "3555 BT",
@@ -20,47 +24,236 @@
         "network": "Github",
         "username": "stijn.koopal",
         "url": "https://github.com/stijnkoopal",
-        "icon": "/static/github-logo.png"
+        "icon": "/static/logos/github.svg"
       },
       {
         "key": "linkedin",
         "network": "LinkedIn",
         "username": "stijnkoopal",
         "url": "https://www.linkedin.com/in/stijnkoopal",
-        "icon": "/static/medium-logo.png"
+        "icon": "/static/logos/linkedin.svg"
       },
       {
         "key": "medium",
         "network": "Medium",
         "username": "stijn.koopal",
         "url": "https://medium.com/@stijn.koopal",
-        "icon": "/static/linkedin-logo.png"
+        "icon": "/static/logos/medium.svg"
       }
     ]
   },
   "work": [
     {
-      "name": "Xebia",
-      "location": "Hilversum",
-      "description": "",
-      "position": "",
-      "url": "",
+      "company": "Royal FloraHolland",
+      "position": "Backend Engineer",
+      "summary": "The Floriday platform connects growers to retail. Innovation has not been going on in the flower IT space for over 30 years. Stijn was part of a team responsible for sales and fulfillment side of a new platform. Besides building functionality, also getting the platform to a new level.",
+      "highlights": [
+        "Optimizing API management",
+        "Improving on CI/CD strategy",
+        "Rapid increase in growers connected"
+      ],
+      "keywords": [
+        "Java 11", "Axon Framework", "CQRS/ES", "AWS", "Spring Boot"
+      ],
+      "startDate": "2018-09-01",
+      "endDate": "2019-05-01",
+      "url": "https://floriday.io",
+      "roles": [
+        "Backend developer"
+      ],
+      "entity": "Royal FloraHolland",
+      "entityIconUrl": "/static/logos/royal-flora-holland.svg",
+      "via": "Xebia",
+      "type": "project"
+    },
+    {
+      "company": "Blockport",
+      "position": "Backend Engineer",
+      "summary": "Supporting the Blockport team with development on a reactive crypto deposit solution and securely integration KYC into application.",
+      "highlights": [
+        "Scalable crypto deposits",
+        "Integrate KYC provider"
+      ],
+      "keywords": [
+        "Scala", "Akka", "Lagom", "React", "Angular", "Kubernetes", "Golang", "Rust"
+      ],
+      "startDate": "2018-07-01",
+      "endDate": "2018-09-01",
+      "url": "https://blockport.io/",
+      "roles": [
+        "Backend developer"
+      ],
+      "entity": "Blockport",
+      "entityIconUrl": "/static/logos/blockport.svg",
+      "via": "Xebia",
+      "type": "project"
+    },
+    {
+      "company": "ING",
+      "position": "Full-Stack Engineer",
+      "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financials institution. The project Stijn worked was started by the innovation department of ING, and it did just that. Stijn was part of the team that constructed a web-app and it’s infrastructure.",
+      "highlights": [
+        "Complete overhaul of Polymer frontend to very Scalable (in terms of development) app",
+        "Connecting users to the Domino app",
+        "Knowledge sharing of state of the art frontends"
+      ],
+      "keywords": [
+        "Polymer", "Scala", "Spark", "Docker", "Openshift", "Gitlab CI"
+      ],
       "startDate": "2017-05-01",
-      "endDate": "",
+      "endDate": "2018-06-30",
+      "url": "",
+      "roles": [
+        "Full Stack Developer"
+      ],
+      "entity": "ING",
+      "entityIconUrl": "/static/logos/ING.svg",
+      "via": "Xebia",
+      "type": "project"
+    },
+    {
+      "company": "Alphabet",
+      "position": "Full-Stack Developer & Scrum Master",
+      "summary": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Stijn was a full-stack developer in a scrum team that was implementing features. Last few months he was part time Scrum master. ",
+      "highlights": [
+        "Scrum master in a scrum of scrums setup",
+        "Generating application code for business flows and models"
+      ],
+      "keywords": [
+        "Java 8", "JEE2", "JBPM", "Jenkins 2", "Docker", "AngularJS", "Cucumber"
+      ],
+      "startDate": "2016-05-01",
+      "endDate": "2017-04-30",
+      "url": "",
+      "roles": [
+        "Scrum master", "Developer"
+      ],
+      "entity": "Alphabet",
+      "entityIconUrl": "/static/logos/alphabet.svg",
+      "via": "Ciber",
+      "type": "project"
+    },
+    {
+      "company": "Tankpas.nl",
+      "position": "Lead Engineer",
+      "summary": "Travelcard launched a concept that required a website that interfaced with their legacy landscape. The project was pressurized massively by time. Initially Stijn was a backend developer, but eventually he was responsible for the team. Few members of the team were juniors, or trainees even, he assisted and guided them where possible. ",
+      "highlights": [
+        "Connected new platform to a legacy backend",
+        "Coaching of 2 juniors"
+      ],
+      "keywords": [
+        "Java 8", "JBoss Fuse", "JBoss EAP"
+      ],
+      "startDate": "2015-07-01",
+      "endDate": "2016-04-30",
+      "url": "https://tankpas.nl",
+      "roles": [
+        "Team lead", "Developer"
+      ],
+      "entity": "Travelcard",
+      "entityIconUrl": "/static/logos/travelcard.svg",
+      "via": "Ciber",
+      "type": "project"
+    },
+    {
+      "company": "Malmberg",
+      "position": "BigData Engineer",
+      "summary": "Malmberg is transforming from a publisher of traditional educational books into a publisher of electronic educational methods. Stijn started implementing a POC to setup Analytics within the organization: a solution based on Hadoop. Afterwards Stijn was part of a scrum team that implemented shared components using Vert.x",
+      "highlights": [
+        "Connecting data of over 10 applications",
+        "Building a support library on Vert.x that other projects could use to expose analytics"
+      ],
+      "keywords": [
+        "Hadoop", "Java 8", "Vert.x"
+      ],
+      "startDate": "2014-06-01",
+      "endDate": "2015-06-31",
+      "url": "",
+      "roles": [
+        "Developer", "Operations"
+      ],
+      "entity": "Malmberg",
+      "entityIconUrl": "/static/logos/malmberg.svg",
+      "via": "Ciber",
+      "type": "project"
+    },
+    {
+      "company": "RWE",
+      "position": "Functional Application Engineer",
       "summary": "",
       "highlights": [
-
-      ]
+      ],
+      "keywords": [
+      ],
+      "startDate": "2013-09-01",
+      "endDate": "2014-05-31",
+      "url": "",
+      "roles": [
+        "Developer", "Operations", "On-call duty"
+      ],
+      "entityIconUrl": "/static/logos/rwe.svg",
+      "via": "Ciber",
+      "type": "project"
+    },
+    {
+      "company": "Xebia",
+      "location": "Hilversum",
+      "summary": "Technical consultant focusing on customer-value, using bleeding edge technology",
+      "position": "Consultant",
+      "url": "https://xebia.com/agile-software-development",
+      "startDate": "2017-05-01",
+      "endDate": "2019-05-01",
+      "highlights": [
+        "Proving value to customers using state-of-the-art tech"
+      ],
+      "tech": [
+        "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust", "Lagom", "Golang", "Axon Framework"
+      ],
+      "type": "employer"
+    },
+    {
+      "company": "Experis Ciber",
+      "location": "Eindhoven",
+      "summary": "Technical consultant mostly in the field of Java and its related technologies",
+      "position": "Consultant",
+      "url": "https://www.ciber.nl/",
+      "startDate": "2013-09-01",
+      "endDate": "2017-04-01",
+      "highlights": [],
+      "tech": [
+        "Java (8)", "Angular", "JEE2", "JBoss Fuse", "JBoss EAP", "JBoss BPM Suite"
+      ],
+      "type": "employer"
     }
   ],
   "volunteer": [],
   "education": [
     {
       "institution": "Eindhoven University of Technology",
-      "area": "",
+      "area": "Computer Science & Engineering",
+      "studyType": "Master",
+      "startDate": "2010-09-01",
+      "endDate": "2013-03-01",
+      "gpa": "",
+      "courses": [
+      ]
+    },
+    {
+      "institution": "Eindhoven University of Technology",
+      "area": "Computer Science",
       "studyType": "Bachelor",
       "startDate": "2006-09-01",
-      "endDate": "",
+      "endDate": "2010-05-01",
+      "gpa": "",
+      "courses": [
+      ]
+    },
+    {
+      "institution": "Mollerlyceum Bergen op Zoom",
+      "area": "Nature & Science",
+      "studyType": "VWO",
+      "startDate": "2000-08-01",
+      "endDate": "2006-05-01",
       "gpa": "",
       "courses": [
       ]
@@ -73,19 +266,18 @@
       "publisher": "TU/e",
       "releaseDate": "2013-03-08",
       "url": "http://alexandria.tue.nl/extra1/afstversl/wsk-i/koopal2013.pdf",
-      "summary": ""
+      "description": "Modelling how water flows on landscapes in order to predict floods and other environmental phenomena, has always been of major importance in hydrology and ecological sciences. Today, flow modelling on landscapes is performed in a computer-based environment using digital representations of real-world terrains. One of the most popular digital terrain representations are the so-called Triangulated Irregular Networks (TINs) which are piecewise linear surfaces that consist of triangles. A natural way to model water flow on a surface is to assume that, at any point on the surface, water follows the direction of steepest descent (DSD). However, even this simple flow model has been proven computationally infeasible when applied on TINs. On the other hand, there exist many methods that compute flow paths on TINs approximately, that is without following strictly the DSD on the surface. Such methods do not suffer from the computational problems of the exact flow model. However, flow structures that are produced using these methods may provide a poor approximation of the structures that would be generated by the exact flow model. In this thesis we present various approximate algorithms for computing an important type of flow structure on TINs, namely watersheds. We evaluate these algorithms both in terms of efficiency and approximation quality in comparison to the exact flow model. We consider two different categories of methods; the first category involves methods that use exact arithmetic, and they can introduce new vertices on the TIN with coordinates of possibly large bit-size. The methods of the second category can only perform computations that use floating-point numbers. Among other results, we show that a widely used method provides the least quality of approximation in practice. We introduce methods that present a very good quality of approximation. Furthermore, we show that some methods do well on mountainous terrain whereas others do better on nearly flat terrains."
     }
   ],
   "skills": [
-    {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "Javascript"
-      ]
-    }
+    {"name":  "Java / Kotlin / Scala", "level": "Master", "value": 83},
+    {"name":  "Golang", "level": "Master", "value": 52},
+    {"name":  "ES / CQRS / Microservices", "level": "Master", "value": 87},
+    {"name":  "Javascript / Typescript", "level": "Master", "value": 95},
+    {"name":  "React", "level": "Master", "value": 91},
+    {"name":  "AWS / GCP", "level": "Master", "value": 59},
+    {"name":  "Netlify", "level": "Master", "value": 60},
+    {"name":  "K8s", "level": "Master", "value": 70}
   ],
   "languages": [
     {
@@ -98,36 +290,14 @@
     }
   ],
   "interests": [
-    {
-      "name": "",
-      "keywords": [
-
-      ]
-    }
+    {"name": "Snorkling / Diving", "value": 58},
+    {"name": "Snowboarding", "value": 99},
+    {"name": "Football", "value": 75},
+    {"name": "Cycling", "value": 32},
+    {"name": "Beach", "value": 100},
+    {"name": "Socializing, friends, beer", "value": 78}
   ],
   "references": [
 
-  ],
-  "projects": [
-    {
-      "name": "Domino",
-      "description": "",
-      "highlights": [
-      ],
-      "keywords": [
-      ],
-      "startDate": "2016-08-24",
-      "endDate": "2016-08-24",
-      "url": "",
-      "roles": [
-      ],
-      "entity": "Smoogle",
-      "type": "application"
-    }
-  ],
-  "meta": {
-    "canonical": "https://koopal.me/resume.json",
-    "version": "1.0.0",
-    "lastModified": "2018-06-24T18:18:00"
-  }
+  ]
 }

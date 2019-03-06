@@ -1,6 +1,5 @@
-const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 const withWorkbox = require('next-workbox')
-const withManifest = require('next-manifest')
 
 const bundleAnalyzerConfig = {
   analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
@@ -15,32 +14,31 @@ const bundleAnalyzerConfig = {
       reportFilename: '../bundles/client.html',
     },
   },
-};
+}
 
 const workboxConfig = {
   workbox: {
-    registerSW: true,
     importWorkboxFrom: 'local',
     precacheManifest: true,
-  }
-};
-
-const manifestConfig = {
-  manifest: {
-    icons: {
-      src: './static/pwa-icon.png',
-      cache: true,
-    },
   },
-};
+}
 
-module.exports = withManifest(withWorkbox(withBundleAnalyzer({
+const nextConfig = {
   exportPathMap() {
     return {
       '/': { page: '/' },
-    };
+      '/about': { page: '/about' },
+      '/contact': { page: '/contact' },
+      '/resume': { page: '/resume' },
+      '/wall': { page: '/wall' },
+    }
   },
+}
+
+const config = {
+  ...nextConfig,
   ...bundleAnalyzerConfig,
   ...workboxConfig,
-  ...manifestConfig,
-})));
+}
+
+module.exports = withWorkbox(withBundleAnalyzer(config))

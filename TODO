@@ -1,0 +1,10 @@
+Fix open menu on safari
+Fix size on claires mobile
+Size of about on mobile iPhone SE in chrome emulator
+Storybook story icon
+KVK on contact + link
+meta tags
+
+Technically:
+ - Margins and paddings on component instead of theme.spacing
+ - preact

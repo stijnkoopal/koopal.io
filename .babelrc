@@ -1,19 +1,19 @@
 {
   "env": {
     "development": {
-      "presets": ["next/babel"],
+      "presets": ["next/babel", "@emotion/babel-preset-css-prop"],
       "plugins": [
-        ["emotion", { "sourceMap": true, "autoLabel": true }]
+        ["emotion", { "sourceMap": true, "autoLabel": true }],
+        ["inline-import", {"extensions": [".css"]}]
       ]
     },
     "production": {
-      "presets": ["next/babel"],
+      "presets": ["next/babel", "@emotion/babel-preset-css-prop"],
       "plugins": [
-        ["emotion", { "hoist": true }]
+        ["emotion", { "hoist": true }],
+        ["inline-import", {"extensions": [".css"]}]
       ]
-    },
-    "test": {
-      "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]]
     }
-  }
+  },
+  "plugins": ["transform-class-properties"]
 }

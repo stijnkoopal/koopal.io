@@ -8,5 +8,6 @@ coverage
 bundles
 functions
 lambda
-static/manifest
 static/workbox
+.DS_Store
+static/resume.pdf
