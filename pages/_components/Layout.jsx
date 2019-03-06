@@ -55,7 +55,7 @@ const KoopalMeLogo = styled.img({
 KoopalMeLogo.defaultProps = {
   src: '/static/koopal.io.svg',
   alt: 'K',
-  title: 'Go to home page'
+  title: 'Go to home page',
 }
 
 const LogoText = styled(Box)(({ theme: { palette, typography } }) => ({
@@ -64,7 +64,7 @@ const LogoText = styled(Box)(({ theme: { palette, typography } }) => ({
   overflow: 'hidden',
 }))
 
-const StijnKoopalAnchor = styled(Flex)(({ theme: { palette, spacing } }) => ({
+const HomeAnchor = styled(Flex)(({ theme: { palette, spacing } }) => ({
   justifyContent: 'flex-end',
   alignItems: 'center',
   textDecoration: 'none',
@@ -73,27 +73,26 @@ const StijnKoopalAnchor = styled(Flex)(({ theme: { palette, spacing } }) => ({
 })).withComponent('a')
 
 const StijnKoopal = () => (
-  <StijnKoopalAnchor href="/">
+  <HomeAnchor href="/">
     <LogoText width={[0, 1]}>Stijn</LogoText>
     <KoopalMeLogo />
     <LogoText width={[0, 1]}>oopal</LogoText>
-  </StijnKoopalAnchor>
+  </HomeAnchor>
 )
 
-const globalStyles = ({ typography }) =>
-  css({
-    '*': {
-      ...typography,
-    },
-    'body, body > div:first-of-type, #__next': {
-      width: '100%',
-      height: 'calc(var(--vh, 1vh) * 100)',
-      margin: 0,
-    },
-    html: {
-      ...typography.body1,
-    },
-  })
+const globalStyles = ({ typography }) => ({
+  '*': {
+    ...typography,
+  },
+  'body, body > div:first-of-type, #__next': {
+    width: '100%',
+    height: 'calc(var(--vh, 1vh) * 100)',
+    margin: 0,
+  },
+  html: {
+    ...typography.body1,
+  },
+})
 
 // By: https://www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property/
 const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
@@ -118,11 +117,11 @@ const SocialButton = styled(Box)({
   height: 0,
   paddingBottom: '100%',
   '&:hover': {
-    opacity: 0.7
+    opacity: 0.7,
   },
   '&:last-child': {
     marginBottom: 0,
-  }
+  },
 }).withComponent('a')
 
 const socialButtonsStyle = theme => ({
