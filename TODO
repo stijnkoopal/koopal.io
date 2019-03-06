@@ -4,9 +4,9 @@ Size of about on mobile iPhone SE in chrome emulator
 Name about differently?
 Storybook story icon
 KVK on contact + link
-Downloadable CV
 github medium linkedin
 text for blockport + rfh
+meta tags
 
 Technically:
  - Margins and paddings on component instead of theme.spacing

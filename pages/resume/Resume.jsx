@@ -168,6 +168,23 @@ const ProjectList = styled.div(({ theme: { spacing } }) => ({
   paddingBottom: spacing.unit * 3,
 }))
 
+const DownloadResume = styled(Flex)(({ theme: { typography, spacing } }) => ({
+  ...typography.body1,
+  border: '1px solid white',
+  background: 'transparent',
+  alignContent: 'center',
+  padding: 0,
+  width: 12 * spacing.unit,
+  height: 3 * spacing.unit,
+  textAlign: 'center',
+  alignItems: 'center',
+  justifyContent: 'center',
+  margin: '0 auto',
+  marginBottom: spacing.unit,
+  textTransform: 'uppercase',
+  textDecoration: 'none',
+})).withComponent('a')
+
 const Resume = ({ theme }) => {
   const resume = useResume()
   const projects = resume.work
@@ -178,20 +195,32 @@ const Resume = ({ theme }) => {
     selectedProjectIndex === undefined ? 'center' : selectedProjectIndex % 2 === 0 ? 'right' : 'left'
 
   return (
-    <ProjectList>
-      {projects.map((project, index) => (
-        <Project
-          theme={theme}
-          chevronPosition={chevronPosition}
-          onClick={() => selectProject(selectedProjectIndex === index ? undefined : index)}
-          odd={index % 2}
-          key={project.company + project.role}
-          isOpen={selectedProjectIndex === index}
-          project={project}
-          color={theme.palette.colors.visualizations[index]}
-        />
-      ))}
-    </ProjectList>
+    <>
+      <ProjectList>
+        {projects.map((project, index) => (
+          <Project
+            theme={theme}
+            chevronPosition={chevronPosition}
+            onClick={() => selectProject(selectedProjectIndex === index ? undefined : index)}
+            odd={index % 2}
+            key={project.company + project.role}
+            isOpen={selectedProjectIndex === index}
+            project={project}
+            color={theme.palette.colors.visualizations[index]}
+          />
+        ))}
+      </ProjectList>
+
+      <DownloadResume
+        target="_blank"
+        rel="noopener noreferrer"
+        href="/static/resume.pdf"
+        alt="Download"
+        title="Download a (generated) PDF version of my resume"
+      >
+        Download
+      </DownloadResume>
+    </>
   )
 }
 
