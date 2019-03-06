@@ -6,13 +6,14 @@ import {themeShape} from '../wall/prop-types'
 
 const MetaTags = ({ theme: { palette } }) => {
   const resume = useResume()
+  const skills = resume.skills.map(skill => skill.name).join(', ')
   return (
     <>
       <Head>
         <title>{`${resume.basics.name} | ${resume.basics.label}`}</title>
 
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <meta name="description" content={`${resume.basics.name}; I am: a ${resume.basics.label}; ${resume.basics.motto}; Skills: ${skills}`} />
+        <meta name="keywords" content={`${resume.basics.tags.join(', ')}, ${resume.basics.label}, ${resume.basics.motto}, ${skills}`} />
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="manifest" href="/static/manifest/manifest.json" />

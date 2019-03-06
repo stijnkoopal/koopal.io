@@ -2,6 +2,10 @@
   "basics": {
     "name": "Stijn Koopal",
     "label": "Full Stack Software Enthusiast",
+    "motto": "Getting things live!",
+    "tags": [
+      "Software Engineer", "Full Stack", "Remote", "Bleeding Edge Tech", "Freelance", "ZZP", "Independent"
+    ],
     "image": "https://koopal.io/static/profile-picture.jpg",
     "email": "stijn@koopal.io",
     "phone": "+31 (0)6 349 50 752",
