@@ -10,6 +10,7 @@ import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
 import Stars from './Stars'
 import { themeShape } from '../wall/prop-types'
+import useResume from './useResume'
 
 // `vh` unit on mobile devices include the url bar. This is unwanted behaviour, fix it with:
 // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
@@ -72,7 +73,7 @@ const StijnKoopalAnchor = styled(Flex)(({ theme: { palette, spacing } }) => ({
 const StijnKoopal = () => (
   <StijnKoopalAnchor href="/">
     <LogoText width={[0, 1]}>Stijn</LogoText>
-    <KoopalMeLogo/>
+    <KoopalMeLogo />
     <LogoText width={[0, 1]}>oopal</LogoText>
   </StijnKoopalAnchor>
 )
@@ -110,27 +111,71 @@ const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
   },
 }))
 
+const SocialButton = styled(Box)({
+  width: '100%',
+  height: 0,
+  paddingBottom: '100%',
+  '&:hover': {
+    opacity: 0.7
+  },
+  '&:last-child': {
+    marginBottom: 0,
+  }
+}).withComponent('a')
+
+const socialButtonsStyle = theme => ({
+  flexDirection: 'column',
+  position: 'fixed',
+  left: '0',
+  top: '50%',
+  transform: 'translate(0, -50%)',
+  width: '40px',
+  background: theme.palette.colors.secondary,
+  opacity: 0.8,
+  borderTopRightRadius: '8px',
+  borderBottomRightRadius: '8px',
+  zIndex: 1100,
+})
+
+const SocialButtons = () => {
+  const resume = useResume()
+  return (
+    <Flex p="1" css={socialButtonsStyle}>
+      {resume.basics.profiles.map(profile => (
+        <SocialButton my="1" key={profile.key} href={profile.url} target="_blank" rel="noopener noreferrer">
+          <img src={profile.icon} alt={profile.network} title={`Open my ${profile.network} profile`} />
+        </SocialButton>
+      ))}
+    </Flex>
+  )
+}
+
 const Layout = ({ children, theme }) => {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <>
       <Head>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
-        <Global styles={globalStyles(theme)}/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+        <Global styles={globalStyles(theme)} />
       </Head>
 
-      <FixedBackground/>
+      <FixedBackground />
       <Header showOnlyMenuIcon={menuOpen} px={[3, 4]}>
-        <MenuIcon isOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}/>
-        <StijnKoopal/>
+        <MenuIcon isOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
+        <StijnKoopal />
       </Header>
-      <Menu pageWrapId="page-wrap" outerContainerId="__next" isOpen={menuOpen}
-            onStateChange={({ isOpen }) => setMenuOpen(isOpen)}/>
+      <Menu
+        pageWrapId="page-wrap"
+        outerContainerId="__next"
+        isOpen={menuOpen}
+        onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
+      />
 
-      <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small"/>
-      <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium"
-             starSize="medium"/>
-      <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="large"/>
+      <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small" />
+      <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium" starSize="medium" />
+      <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="large" />
+
+      <SocialButtons />
 
       <Main mx="auto" width={[1, 1 / 2]} p={[2, 3]} id="page-wrap">
         {children}

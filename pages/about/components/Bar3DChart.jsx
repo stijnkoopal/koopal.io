@@ -296,6 +296,7 @@ class Bar3DChart extends React.Component {
     return (
       <Container ref={elem => (this.container = elem)}>
         <svg
+          style={{overflow: 'visible'}}
           width={INITIAL_SVG_WIDTH}
           height={INITIAL_SVG_HEIGHT}
           viewBox={`0 0 ${INITIAL_SVG_WIDTH} ${INITIAL_SVG_HEIGHT}`}

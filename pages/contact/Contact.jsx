@@ -16,6 +16,9 @@ const ContactMethod = styled(Flex)(({ theme: { typography } }) => ({
   flexDirection: 'column',
   textAlign: 'center',
   width: '200px',
+  '&:hover': {
+    opacity: 0.7,
+  }
 }))
 
 const IconCircle = styled(Flex)(({ color, theme: { spacing } }) => ({
