@@ -3,7 +3,7 @@ import Document, { Head, Main, NextScript } from 'next/document'
 import pureCss from 'purecss/build/base-min.css'
 import ServiceWorker from 'next-workbox/service-worker'
 
-const GA_TRACKING_ID = 'UA-119842493-1'
+const GA_TRACKING_ID = 'UA-135619895-1'
 
 export default class extends Document {
   renderGoogleAnalytics = isProduction =>
