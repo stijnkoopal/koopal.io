@@ -44,9 +44,9 @@ TypeWriter.propTypes = {
 const Home = () => (
   <Container flexDirection="column" alignItems="center" justifyContent="center">
     <TypeWriter avgTypingDelay={30} stdTypingDelay={0}>
-      Hi! My name is Stijn.
+      Hi! I'm Stijn.
       <br />
-      I'm an independent Full Stack Software Engineer.
+      An Independent Full Stack Software Engineer.
     </TypeWriter>
     <ConstrainedMiniMe />
   </Container>
