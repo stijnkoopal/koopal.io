@@ -26,7 +26,7 @@ const MenuItemText = styled(Flex)(({ theme: { typography } }) => ({
   ...typography.headline,
 }))
 
-const menuStyles = ({ palette: { background } }) => ({
+const menuStyles = ({
   bmBurgerButton: {
     position: 'relative',
     width: '64px',
@@ -37,7 +37,6 @@ const menuStyles = ({ palette: { background } }) => ({
     display: 'none',
   },
   bmMenu: {
-    // background: background.default,
     fontSize: '2em',
   },
   bmItemList: {
@@ -87,7 +86,7 @@ const Menu = ({ pageWrapId, outerContainerId, theme, isOpen, onStateChange }) =>
     <RotateMenu
       width="100%"
       right
-      styles={menuStyles(theme)}
+      styles={menuStyles}
       pageWrapId={pageWrapId}
       outerContainerId={outerContainerId}
       isOpen={isOpen}
