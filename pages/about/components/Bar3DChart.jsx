@@ -264,7 +264,7 @@ class Bar3DChart extends React.Component {
           'transform',
           d => `rotate(315, ${rotateAround[0] + SCALE * d.centroid.x}, ${rotateAround[1] + SCALE * d.centroid.y})`,
         )
-        .attr('style', 'font-size: 2rem')
+        .attr('style', 'font-size: 52')
         .attr('x', d => rotateAround[0] + SCALE * d.centroid.x)
         .attr('y', d => rotateAround[1] + SCALE * d.centroid.y)
         .text(d => d.label)

@@ -12,11 +12,12 @@ const Container = styled(Flex)({
   padding: '0.5em',
 })
 
-const ConstrainedMiniMe = styled(MiniMe)({
+const ConstrainedMiniMe = styled(Flex)({
   marginTop: '24px',
-  height: '302px',
+  maxHeight: '302px',
+  height: '30vh',
   display: 'block',
-})
+}).withComponent(MiniMe)
 
 const blink = keyframes`
   from, to { opacity: 1 }
@@ -45,9 +46,8 @@ const Home = () => (
     <TypeWriter avgTypingDelay={30} stdTypingDelay={0}>
       Hi! My name is Stijn.
       <br />
-      I'm a Full-Stack Software Engineer.
+      I'm a independent Full Stack Software Engineer.
     </TypeWriter>
-
     <ConstrainedMiniMe />
   </Container>
 )

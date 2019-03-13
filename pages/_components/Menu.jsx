@@ -69,7 +69,7 @@ const LinkWrap = props => {
 
 const menuItems = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'Who am I?' },
+  { href: '/about', label: 'This is me' },
   { href: '/resume', label: 'Resume' },
   { href: '/wall', label: 'Wall' },
   { href: '/contact', label: 'Contact' },

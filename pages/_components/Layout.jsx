@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
 import { withRouter } from 'next/router'
-import { css, Global } from '@emotion/core'
+import { Global } from '@emotion/core'
 import Head from 'next/head'
 import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
@@ -72,7 +72,7 @@ const HomeAnchor = styled(Flex)(({ theme: { palette, spacing } }) => ({
   width: 18 * spacing.unit,
 })).withComponent('a')
 
-const StijnKoopal = () => (
+const Logo = () => (
   <HomeAnchor href="/">
     <LogoText width={[0, 1]}>Stijn</LogoText>
     <KoopalMeLogo />
@@ -91,6 +91,7 @@ const globalStyles = ({ typography }) => ({
   },
   html: {
     ...typography.body1,
+    minHeight: '337px',
   },
 })
 
@@ -163,7 +164,7 @@ const Layout = ({ children, theme }) => {
       <FixedBackground />
       <Header showOnlyMenuIcon={menuOpen} px={[3, 4]}>
         <MenuIcon isOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
-        <StijnKoopal />
+        <Logo />
       </Header>
       <Menu
         pageWrapId="page-wrap"
@@ -178,7 +179,7 @@ const Layout = ({ children, theme }) => {
 
       <SocialButtons />
 
-      <Main mx="auto" width={[1, 1 / 2]} p={[2, 3]} id="page-wrap">
+      <Main mx="auto" width={[1, 0.75, 0.5]} p={[2, 3]} id="page-wrap">
         {children}
       </Main>
     </>

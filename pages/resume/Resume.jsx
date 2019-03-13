@@ -32,7 +32,6 @@ const ConnectionLine = styled.div(({ color }) => ({
 const ProjectVisualization = styled(Flex)(({ isOpen, odd, backgroundColor, theme: { spacing, transitions } }) => ({
   position: 'relative',
   borderRadius: isOpen ? '5%' : '50%',
-  maxWidth: isOpen ? '9999px' : '200px',
   margin: odd ? `0 0 0 ${spacing.unit}px` : `0 ${spacing.unit}px 0 0`,
   backgroundColor,
   padding: (isOpen ? 1 : 2) * spacing.unit,
@@ -42,7 +41,8 @@ const ProjectVisualization = styled(Flex)(({ isOpen, odd, backgroundColor, theme
   '&:before': {
     content: '""',
     display: 'block',
-    paddingTop: '100%',
+    paddingTop: isOpen ? '50%' : '100%',
+    transition: `all ${transitions.duration.short}ms linear`,
   },
   '& > img': {
     position: 'absolute',
@@ -137,7 +137,7 @@ const Project = ({ theme: { transitions }, chevronPosition, project, odd, color,
       backgroundColor={color}
       onClick={onClick}
       isOpen={isOpen}
-      width={isOpen ? '100%' : ['75%', '100%']}
+      width={isOpen ? '100%' : ['28vw', '20vw', '12vw']}
     >
       <Transition in={!isOpen} timeout={transitions.duration.short}>
         {state => {

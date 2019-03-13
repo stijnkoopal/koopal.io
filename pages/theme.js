@@ -82,7 +82,7 @@ const theme = {
       fill: text.primary,
     },
     display1: {
-      fontSize: '2.125rem',
+      fontSize: '2rem',
       fontWeight: 400,
       fontFamily,
       lineHeight: '1.20588em',
