@@ -46,7 +46,7 @@ const Home = () => (
     <TypeWriter avgTypingDelay={30} stdTypingDelay={0}>
       Hi! My name is Stijn.
       <br />
-      I'm a independent Full Stack Software Engineer.
+      I'm an independent Full Stack Software Engineer.
     </TypeWriter>
     <ConstrainedMiniMe />
   </Container>
