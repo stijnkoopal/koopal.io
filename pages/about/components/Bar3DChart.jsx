@@ -260,7 +260,7 @@ class Bar3DChart extends React.Component {
         .enter()
         .append('text')
         .attr('class', 'text')
-        .attr('dy', '-.7em')
+        .attr('dy', '0.35em')
         .attr('text-anchor', 'start')
         .attr('x', d => rotateAround[0] + SCALE * d.centroid.x)
         .attr('y', d => rotateAround[1] + SCALE * d.centroid.y)
@@ -270,9 +270,9 @@ class Bar3DChart extends React.Component {
         .classed('_3d', true)
         .attr(
           'transform',
-          d => `rotate(315, ${rotateAround[0] + SCALE * d.centroid.x}, ${rotateAround[1] + SCALE * d.centroid.y})`,
+          d => `rotate(270, ${rotateAround[0] + SCALE * d.centroid.x}, ${rotateAround[1] + SCALE * d.centroid.y})`,
         )
-        .attr('style', 'font-size: 52')
+        .attr('style', 'font-size: 42')
         .attr('x', d => rotateAround[0] + SCALE * d.centroid.x)
         .attr('y', d => rotateAround[1] + SCALE * d.centroid.y)
         .text(d => d.label)

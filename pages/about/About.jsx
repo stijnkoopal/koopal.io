@@ -47,7 +47,7 @@ const Arrow = styled(Box)(({ right, theme: { spacing, palette } }) => {
 }).withComponent('button')
 
 const AboutContainer = styled(Flex)(() => ({
-  width: '70%',
+  width: '80%',
   margin: '0 auto',
   height: '100%',
 }))
