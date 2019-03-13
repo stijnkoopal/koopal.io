@@ -87,11 +87,11 @@ const Contact = ({ theme: { palette } }) => {
             <Value>{resume.basics.phone}</Value>
           </ContactMethod>
 
-          <ContactMethod>
+          <ContactMethod as="a" href={`https://www.kvk.nl/zoeken/?source=all&q=${resume.basics.chamberOfCommerceNumber}`} target="_blank" rel="noopener noreferrer">
             <Icon src="/static/logos/home-location.svg" alt="Home"
                   backgroundColor={palette.colors.visualizations[0]}/>
             <Title>KVK</Title>
-            <Value>???????</Value>
+            <Value>{resume.basics.chamberOfCommerceNumber}</Value>
           </ContactMethod>
         </ContactMethods>
       </ContactContainer>
