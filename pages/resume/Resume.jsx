@@ -214,7 +214,7 @@ const Resume = ({ theme }) => {
       <DownloadResume
         target="_blank"
         rel="noopener noreferrer"
-        href="/static/resume.pdf"
+        href="/static/resume-stijn-koopal.pdf"
         alt="Download"
         title="Download a (generated) PDF version of my resume"
       >
