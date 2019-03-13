@@ -1,6 +1,5 @@
 Fix size on claires mobile
 Storybook story icon
-KVK on contact + link
 
 Technically:
  - Margins and paddings on component instead of theme.spacing
