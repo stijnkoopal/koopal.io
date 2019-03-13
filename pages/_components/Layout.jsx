@@ -16,7 +16,7 @@ import useResume from './useResume'
 // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 if (typeof window !== 'undefined') {
   const setVh = () => {
-    let vh = window.innerHeight * 0.01
+    const vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
   }
   window.addEventListener('resize', setVh)
@@ -32,7 +32,7 @@ const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
   alignItems: 'center',
   top: 0,
   width: '100%',
-  position: showOnlyMenuIcon ? 'relative' : 'sticky',
+  position: 'relative',
 })).withComponent('header')
 
 const MenuIcon = styled(MenuBurgerIcon)({
@@ -43,7 +43,7 @@ const MenuIcon = styled(MenuBurgerIcon)({
 
 const Main = styled(Box)(({ theme: { spacing } }) => ({
   maxWidth: '1400px',
-  height: `calc(100% - ${headerHeight(spacing)}px)`,
+  height: '100%',
   position: 'relative',
   zIndex: 1,
 })).withComponent('main')
@@ -169,12 +169,6 @@ const Layout = ({ children, theme }) => {
         <MenuIcon isOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
         <Logo />
       </Header>
-      <Menu
-        pageWrapId="page-wrap"
-        outerContainerId="__next"
-        isOpen={menuOpen}
-        onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
-      />
 
       <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small" />
       <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium" starSize="medium" />
@@ -182,9 +176,18 @@ const Layout = ({ children, theme }) => {
 
       <SocialButtons />
 
-      <Main mx="auto" width={[1, 0.75, 0.5]} p={[2, 3]} id="page-wrap">
-        {children}
-      </Main>
+      <Flex id="stacking-context-fix-on-safari" css={{height: '100%', position: 'relative', transform: 'rotate(0deg)', paddingTop: headerHeight(theme.spacing) , marginTop: -headerHeight(theme.spacing)}}>
+        <Menu
+          pageWrapId="page-wrap"
+          outerContainerId="__next"
+          isOpen={menuOpen}
+          onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
+        />
+
+        <Main mx="auto" width={[1, 0.75, 0.5]} p={[2, 3]} id="page-wrap">
+          {children}
+        </Main>
+      </Flex>
     </>
   )
 }
