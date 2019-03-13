@@ -16,7 +16,7 @@ import useResume from './useResume'
 // https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
 if (typeof window !== 'undefined') {
   const setVh = () => {
-    let vh = window.innerHeight * 0.01
+    const vh = window.innerHeight * 0.01
     document.documentElement.style.setProperty('--vh', `${vh}px`)
   }
   window.addEventListener('resize', setVh)
@@ -32,7 +32,7 @@ const Header = styled(Flex)(({ showOnlyMenuIcon, theme: { spacing } }) => ({
   alignItems: 'center',
   top: 0,
   width: '100%',
-  position: showOnlyMenuIcon ? 'relative' : 'sticky',
+  position: 'relative',
 })).withComponent('header')
 
 const MenuIcon = styled(MenuBurgerIcon)({
@@ -169,18 +169,18 @@ const Layout = ({ children, theme }) => {
         <MenuIcon isOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
         <Logo />
       </Header>
-      <Menu
-        pageWrapId="page-wrap"
-        outerContainerId="__next"
-        isOpen={menuOpen}
-        onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
-      />
 
       <Stars seed={new Date().getMinutes()} numberOfStars={200} speed="fast" starSize="small" />
       <Stars seed={new Date().getMinutes() + 1} numberOfStars={200} speed="medium" starSize="medium" />
       <Stars seed={new Date().getMinutes() + 2} numberOfStars={20} speed="slow" starSize="large" />
 
       <SocialButtons />
+
+      <Menu
+        pageWrapId="page-wrap"
+        isOpen={menuOpen}
+        onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
+      />
 
       <Main mx="auto" width={[1, 0.75, 0.5]} p={[2, 3]} id="page-wrap">
         {children}

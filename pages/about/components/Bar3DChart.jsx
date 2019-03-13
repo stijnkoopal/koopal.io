@@ -293,8 +293,9 @@ class Bar3DChart extends React.Component {
 
   render() {
     // We need a container element for responsiveness, svg's size is updated with window.on('resize')
+    const { className } = this.props
     return (
-      <Container ref={elem => (this.container = elem)}>
+      <Container className={className} ref={elem => (this.container = elem)}>
         <svg
           style={{overflow: 'visible'}}
           width={INITIAL_SVG_WIDTH}
@@ -312,6 +313,7 @@ class Bar3DChart extends React.Component {
 }
 
 Bar3DChart.propTypes = {
+  className: PropTypes.string,
   barWidth: PropTypes.number,
   barDepth: PropTypes.number,
   spaceBetweenBarsX: PropTypes.number,
@@ -324,6 +326,7 @@ Bar3DChart.propTypes = {
 }
 
 Bar3DChart.defaultProps = {
+  className: '',
   barWidth: 2,
   barDepth: 2,
   spaceBetweenBarsX: 1,

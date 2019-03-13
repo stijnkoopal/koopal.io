@@ -37,7 +37,7 @@ const menuStyles = ({ palette: { background } }) => ({
     display: 'none',
   },
   bmMenu: {
-    background: background.default,
+    // background: background.default,
     fontSize: '2em',
   },
   bmItemList: {

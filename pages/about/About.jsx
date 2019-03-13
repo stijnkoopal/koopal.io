@@ -19,7 +19,7 @@ const PageSelectors = styled(Flex)(({ theme: { spacing } }) => ({
   bottom: 4 * spacing.unit,
   width: 100,
   left: '50%',
-  marginLeft: -50,
+  transform: 'translate(-50%, 0)',
 }))
 
 const chartData = (resume, type) => {
