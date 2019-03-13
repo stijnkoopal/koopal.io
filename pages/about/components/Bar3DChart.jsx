@@ -213,7 +213,6 @@ class Bar3DChart extends React.Component {
         .append('g')
         .attr('class', 'cube')
         .attr('fill', d => d.color)
-        .attr('stroke', 'white')
         .classed('_3d', true)
         .merge(cubes)
         .sort(cubes3D.sort)
@@ -227,11 +226,20 @@ class Bar3DChart extends React.Component {
         .selectAll('path.face')
         .data(d => d.faces, d => d.face)
 
+      const faceOpacities = {
+        front: 0.85,
+        back: 0.3,
+        left: 0.3,
+        right: 0.6,
+        bottom: 0.3,
+        top: 1,
+      }
+
       faces
         .enter()
         .append('path')
         .attr('class', 'face')
-        .attr('fill-opacity', 0.95)
+        .attr('fill-opacity', d => faceOpacities[d.face])
         .classed('_3d', true)
         .merge(faces)
         .attr('d', cubes3D.draw)
@@ -297,15 +305,15 @@ class Bar3DChart extends React.Component {
     return (
       <Container className={className} ref={elem => (this.container = elem)}>
         <svg
-          style={{overflow: 'visible'}}
+          style={{ overflow: 'visible' }}
           width={INITIAL_SVG_WIDTH}
           height={INITIAL_SVG_HEIGHT}
           viewBox={`0 0 ${INITIAL_SVG_WIDTH} ${INITIAL_SVG_HEIGHT}`}
           ref={elem => (this.svg = elem)}
           preserveAspectRatio="xMidYMid meet"
         >
-          <g className="grid"/>
-          <g className="cubes"/>
+          <g className="grid" />
+          <g className="cubes" />
         </svg>
       </Container>
     )

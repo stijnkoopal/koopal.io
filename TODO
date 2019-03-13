@@ -1,5 +1,5 @@
-Fix size on claires mobile
 Storybook story icon
+
 
 Technically:
  - Margins and paddings on component instead of theme.spacing
