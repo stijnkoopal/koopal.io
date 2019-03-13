@@ -74,7 +74,7 @@ const menuItems = [
   { href: '/contact', label: 'Contact' },
 ]
 
-const Menu = ({ pageWrapId, outerContainerId, theme, isOpen, onStateChange }) => {
+const Menu = ({ pageWrapId, theme, isOpen, onStateChange }) => {
   useEffect(() => {
     const closeMenu = () => onStateChange({ isOpen: false })
 
@@ -88,7 +88,6 @@ const Menu = ({ pageWrapId, outerContainerId, theme, isOpen, onStateChange }) =>
       right
       styles={menuStyles}
       pageWrapId={pageWrapId}
-      outerContainerId={outerContainerId}
       isOpen={isOpen}
       onStateChange={onStateChange}
       customBurgerIcon={undefined}
@@ -107,7 +106,6 @@ const Menu = ({ pageWrapId, outerContainerId, theme, isOpen, onStateChange }) =>
 
 Menu.propTypes = {
   pageWrapId: PropTypes.string.isRequired,
-  outerContainerId: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
   onStateChange: PropTypes.func,
   theme: themeShape.isRequired,
