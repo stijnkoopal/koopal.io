@@ -43,7 +43,7 @@ const MenuIcon = styled(MenuBurgerIcon)({
 
 const Main = styled(Box)(({ theme: { spacing } }) => ({
   maxWidth: '1400px',
-  height: '100%',
+  height: `calc(100% - ${headerHeight(spacing)}px)`,
   position: 'relative',
   zIndex: 1,
 })).withComponent('main')
@@ -176,18 +176,15 @@ const Layout = ({ children, theme }) => {
 
       <SocialButtons />
 
-      <Flex id="stacking-context-fix-on-safari" css={{height: '100%', position: 'relative', transform: 'rotate(0deg)', paddingTop: headerHeight(theme.spacing) , marginTop: -headerHeight(theme.spacing)}}>
-        <Menu
-          pageWrapId="page-wrap"
-          outerContainerId="__next"
-          isOpen={menuOpen}
-          onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
-        />
+      <Menu
+        pageWrapId="page-wrap"
+        isOpen={menuOpen}
+        onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
+      />
 
-        <Main mx="auto" width={[1, 0.75, 0.5]} p={[2, 3]} id="page-wrap">
-          {children}
-        </Main>
-      </Flex>
+      <Main mx="auto" width={[1, 0.75, 0.5]} p={[2, 3]} id="page-wrap">
+        {children}
+      </Main>
     </>
   )
 }
