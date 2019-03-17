@@ -6,8 +6,8 @@ import ServiceWorker from 'next-workbox/service-worker'
 const GA_TRACKING_ID = 'UA-135619895-1'
 
 export default class extends Document {
-  renderGoogleAnalytics = isProduction =>
-    !isProduction ? null : (
+  renderGoogleAnalytics = () =>
+    process.env.NODE_ENV !== 'production' ? null : (
       <React.Fragment>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
         <script
@@ -24,11 +24,10 @@ export default class extends Document {
     )
 
   render() {
-    const { isProduction } = this.props
     return (
       <html lang="en">
         <Head>
-          {this.renderGoogleAnalytics(isProduction)}
+          {this.renderGoogleAnalytics()}
 
           <style dangerouslySetInnerHTML={{ __html: pureCss }} />
         </Head>
