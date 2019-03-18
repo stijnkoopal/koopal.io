@@ -10,4 +10,4 @@ functions
 lambda
 static/workbox
 .DS_Store
-static/resume.pdf
+static/resume*.pdf
