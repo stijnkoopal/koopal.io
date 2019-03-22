@@ -11,3 +11,5 @@ lambda
 static/workbox
 .DS_Store
 static/resume*.pdf
+static/*.css
+static/*.html
