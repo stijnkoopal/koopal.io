@@ -49,11 +49,12 @@
     {
       "company": "Royal FloraHolland",
       "position": "Backend Engineer",
-      "summary": "The Floriday platform connects growers to retail. Innovation has not been going on in the flower IT space for over 30 years. Stijn was part of a team responsible for sales and fulfillment side of a new platform. Besides building functionality, also getting the platform to a new level.",
+      "summary": "The Floriday platform connects growers to retail. Innovation has not been going on in the flower IT space for over 30 years. Stijn was part of a team responsible for the sales and fulfillment side of a new platform. Besides building functionality, he helped getting the platform to a new level.",
       "highlights": [
         "Optimizing API management",
         "Improving on CI/CD strategy",
-        "Rapid increase in growers connected"
+        "Rapid increase in growers connected",
+        "Java 11, Axon Framework, CQRS/ES, AWS, Spring Boot"
       ],
       "keywords": [
         "Java 11", "Axon Framework", "CQRS/ES", "AWS", "Spring Boot"
@@ -75,10 +76,11 @@
       "summary": "Supporting the Blockport team with development on a reactive crypto deposit solution and securely integration KYC into application.",
       "highlights": [
         "Scalable crypto deposits",
-        "Integrate KYC provider"
+        "Integrate KYC provider",
+        "Scala, Akka, Lagom, React, K8s, Golang, GCP"
       ],
       "keywords": [
-        "Scala", "Akka", "Lagom", "React", "Angular", "Kubernetes", "Golang", "Rust"
+        "Scala", "Akka", "Lagom", "React", "K8s", "Golang", "GCP"
       ],
       "startDate": "2018-07-01",
       "endDate": "2018-09-01",
@@ -94,11 +96,12 @@
     {
       "company": "ING",
       "position": "Full-Stack Engineer",
-      "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financials institution. The project Stijn worked was started by the innovation department of ING, and it did just that. Stijn was part of the team that constructed a web-app and it’s infrastructure.",
+      "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financial institution. The project Stijn worked was started by the innovation department of ING, and it did just that. Stijn was part of the team that constructed a web-app and it’s infrastructure.",
       "highlights": [
         "Complete overhaul of Polymer frontend to very Scalable (in terms of development) app",
         "Connecting users to the Domino app",
-        "Knowledge sharing of state of the art frontends"
+        "Knowledge sharing of state of the art frontends",
+        "Polymer, Scala, Spark, Docker, Openshift, Gitlab CI"
       ],
       "keywords": [
         "Polymer", "Scala", "Spark", "Docker", "Openshift", "Gitlab CI"
@@ -120,7 +123,8 @@
       "summary": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Stijn was a full-stack developer in a scrum team that was implementing features. Last few months he was part time Scrum master. ",
       "highlights": [
         "Scrum master in a scrum of scrums setup",
-        "Generating application code for business flows and models"
+        "Generating application code for business flows and models",
+        "Java 8, JEE2, JBPM, Jenkins 2, Docker, AngularJS, Cucumber"
       ],
       "keywords": [
         "Java 8", "JEE2", "JBPM", "Jenkins 2", "Docker", "AngularJS", "Cucumber"
@@ -142,7 +146,8 @@
       "summary": "Travelcard launched a concept that required a website that interfaced with their legacy landscape. The project was pressurized massively by time. Initially Stijn was a backend developer, but eventually he was responsible for the team. Few members of the team were juniors, or trainees even, he assisted and guided them where possible. ",
       "highlights": [
         "Connected new platform to a legacy backend",
-        "Coaching of 2 juniors"
+        "Coaching of 2 juniors",
+        "Java 8, JBoss Fuse, JBoss EAP"
       ],
       "keywords": [
         "Java 8", "JBoss Fuse", "JBoss EAP"
@@ -164,7 +169,8 @@
       "summary": "Malmberg is transforming from a publisher of traditional educational books into a publisher of electronic educational methods. Stijn started implementing a POC to setup Analytics within the organization: a solution based on Hadoop. Afterwards Stijn was part of a scrum team that implemented shared components using Vert.x",
       "highlights": [
         "Connecting data of over 10 applications",
-        "Building a support library on Vert.x that other projects could use to expose analytics"
+        "Building a support library on Vert.x that other projects could use to expose analytics",
+        "Hadoop", "Java 8", "Vert.x"
       ],
       "keywords": [
         "Hadoop", "Java 8", "Vert.x"
@@ -209,7 +215,7 @@
       "highlights": [
         "Proving value to customers using state-of-the-art tech"
       ],
-      "tech": [
+      "keywords": [
         "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust", "Lagom", "Golang", "Axon Framework"
       ],
       "type": "employer"
@@ -223,7 +229,7 @@
       "startDate": "2013-09-01",
       "endDate": "2017-04-01",
       "highlights": [],
-      "tech": [
+      "keywords": [
         "Java (8)", "Angular", "JEE2", "JBoss Fuse", "JBoss EAP", "JBoss BPM Suite"
       ],
       "type": "employer"
