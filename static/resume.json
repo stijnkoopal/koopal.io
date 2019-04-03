@@ -113,7 +113,7 @@
       "position": "Full-Stack Engineer",
       "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financial institution. The Domino project was started by the innovation department of ING, and it did just that. Was part of the team that constructed a web-app and it’s infrastructure.",
       "highlights": [
-        "Complete overhaul of Polymer frontend to very Scalable (in terms of development) app",
+        "Complete overhaul of Polymer frontend to a very scalable (in terms of development) app",
         "Connecting users to the Domino app",
         "Knowledge sharing of state of the art frontends",
         "Polymer, Scala, Spark, Docker, Openshift, Gitlab CI"
@@ -135,7 +135,7 @@
     {
       "company": "Alphabet (via Ciber)",
       "position": "Full-Stack Developer & Scrum Master",
-      "summary": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Was a full-stack developer in a scrum team that was implementing features. Last few months he was part time Scrum master.",
+      "summary": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Was a full-stack developer in a scrum team that was implementing features. Last few months part time Scrum master.",
       "highlights": [
         "Scrum master in a scrum of scrums setup",
         "Generating application code for business flows and models",
