@@ -53,14 +53,13 @@
     "netlify-lambda": "1.4.3",
     "next-workbox": "1.4.1",
     "npm-check-updates": "3.1.1",
-    "phantomjs": "^2.1.7",
     "prettier": "1.16.4"
   },
   "scripts": {
     "build": "yarn build:generate-resume-pdf && yarn build:app && yarn build:lambda",
     "build:app": "NODE_ENV=production next build && next export",
     "build:lambda": "NODE_ENV=production netlify-lambda build lambda-src",
-    "build:generate-resume-pdf": "export PATH=\"$PATH:node_modules/.bin\" && node_modules/.bin/hackmyresume build static/resume.json TO ./static/resume-stijn-koopal.pdf --pdf phantom -t node_modules/jsonresume-theme-flat",
+    "build:generate-resume-pdf": "python3 -m venv ./venv && . ./venv/bin/activate && pip install -r weasyprint-requirements.txt && export PATH=\"$PATH:node_modules/.bin\" && node_modules/.bin/hackmyresume build static/resume.json TO ./static/resume-stijn-koopal.pdf --pdf weasyprint -t node_modules/jsonresume-theme-flat && deactivate",
     "build:analyze": "BUNDLE_ANALYZE=browser yarn build",
     "dependencies": "ncu",
     "dependencies:upgrade": "ncu -ua",

@@ -47,9 +47,24 @@
   },
   "work": [
     {
-      "company": "Royal FloraHolland",
+      "company": "Koopal.io",
+      "location": "Utrecht",
+      "summary": "Independent Full Stack Software Engineer",
+      "position": "Owner",
+      "url": "https://koopal.io",
+      "startDate": "2019-05-01",
+      "endDate": "present",
+      "highlights": [
+        "Proving value to customers using state-of-the-art tech"
+      ],
+      "keywords": [
+       ],
+      "type": "owner"
+    },
+    {
+      "company": "Royal FloraHolland (via Xebia)",
       "position": "Backend Engineer",
-      "summary": "The Floriday platform connects growers to retail. Innovation has not been going on in the flower IT space for over 30 years. Stijn was part of a team responsible for the sales and fulfillment side of a new platform. Besides building functionality, he helped getting the platform to a new level.",
+      "summary": "The Floriday platform connects growers to retail. Innovation has not been going on in the flower IT space for over 20 years. Was part of a team responsible for the sales and fulfillment side of a new platform. Besides building functionality, I helped getting the platform to a new level.",
       "highlights": [
         "Optimizing API management",
         "Improving on CI/CD strategy",
@@ -71,7 +86,7 @@
       "type": "project"
     },
     {
-      "company": "Blockport",
+      "company": "Blockport (via Xebia)",
       "position": "Backend Engineer",
       "summary": "Supporting the Blockport team with development on a reactive crypto deposit solution and securely integration KYC into application.",
       "highlights": [
@@ -94,9 +109,9 @@
       "type": "project"
     },
     {
-      "company": "ING",
+      "company": "ING (via Xebia)",
       "position": "Full-Stack Engineer",
-      "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financial institution. The project Stijn worked was started by the innovation department of ING, and it did just that. Stijn was part of the team that constructed a web-app and it’s infrastructure.",
+      "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financial institution. The Domino project was started by the innovation department of ING, and it did just that. Was part of the team that constructed a web-app and it’s infrastructure.",
       "highlights": [
         "Complete overhaul of Polymer frontend to very Scalable (in terms of development) app",
         "Connecting users to the Domino app",
@@ -118,9 +133,9 @@
       "type": "project"
     },
     {
-      "company": "Alphabet",
+      "company": "Alphabet (via Ciber)",
       "position": "Full-Stack Developer & Scrum Master",
-      "summary": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Stijn was a full-stack developer in a scrum team that was implementing features. Last few months he was part time Scrum master. ",
+      "summary": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Was a full-stack developer in a scrum team that was implementing features. Last few months he was part time Scrum master.",
       "highlights": [
         "Scrum master in a scrum of scrums setup",
         "Generating application code for business flows and models",
@@ -141,9 +156,9 @@
       "type": "project"
     },
     {
-      "company": "Tankpas.nl",
+      "company": "Tankpas.nl (via Ciber)",
       "position": "Lead Engineer",
-      "summary": "Travelcard launched a concept that required a website that interfaced with their legacy landscape. The project was pressurized massively by time. Initially Stijn was a backend developer, but eventually he was responsible for the team. Few members of the team were juniors, or trainees even, he assisted and guided them where possible. ",
+      "summary": "Travelcard launched a concept that required a website that interfaced with their legacy landscape. The project was pressurized massively by time. Initially I was a backend developer, but eventually was responsible for the team. Few members of the team were juniors, or trainees even, I assisted and guided them where possible. ",
       "highlights": [
         "Connected new platform to a legacy backend",
         "Coaching of 2 juniors",
@@ -164,9 +179,9 @@
       "type": "project"
     },
     {
-      "company": "Malmberg",
+      "company": "Malmberg (via Ciber)",
       "position": "BigData Engineer",
-      "summary": "Malmberg is transforming from a publisher of traditional educational books into a publisher of electronic educational methods. Stijn started implementing a POC to setup Analytics within the organization: a solution based on Hadoop. Afterwards Stijn was part of a scrum team that implemented shared components using Vert.x",
+      "summary": "Malmberg is transforming from a publisher of traditional educational books into a publisher of electronic educational methods. Started implementing a POC to setup Analytics within the organization: a solution based on Hadoop. Next I was part of a scrum team that implemented shared components using Vert.x",
       "highlights": [
         "Connecting data of over 10 applications",
         "Building a support library on Vert.x that other projects could use to expose analytics",
@@ -187,7 +202,7 @@
       "type": "project"
     },
     {
-      "company": "RWE",
+      "company": "RWE (via Ciber)",
       "position": "Functional Application Engineer",
       "summary": "",
       "highlights": [

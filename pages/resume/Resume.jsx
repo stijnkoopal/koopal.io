@@ -124,7 +124,6 @@ const ProjectDescription = ({ project }) => (
   <Flex flexDirection="column" p={3}>
     <h2>
       {project.position}@{project.company}
-      {project.via && ` via ${project.via}`}
     </h2>
     <div>{project.summary}</div>
   </Flex>

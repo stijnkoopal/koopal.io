@@ -13,3 +13,4 @@ static/workbox
 static/resume*.pdf
 static/*.css
 static/*.html
+venv
