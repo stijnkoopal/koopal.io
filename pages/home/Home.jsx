@@ -4,7 +4,8 @@ import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
 import Typist from 'react-typist'
 import MiniMe from './components/MiniMe'
-import {themeShape} from '../wall/prop-types'
+import { themeShape } from '../wall/prop-types'
+import useResume from '../_components/useResume'
 
 const Container = styled(Flex)({
   height: '100%',
@@ -41,15 +42,19 @@ TypeWriter.propTypes = {
   theme: themeShape,
 }
 
-const Home = () => (
-  <Container flexDirection="column" alignItems="center" justifyContent="center">
-    <TypeWriter avgTypingDelay={30} stdTypingDelay={0}>
-      Hi! I'm Stijn.
-      <br />
-      An Independent Full Stack Software Engineer.
-    </TypeWriter>
-    <ConstrainedMiniMe />
-  </Container>
-)
+const Home = () => {
+  const { basics: { label } } = useResume()
+
+  return (
+    <Container flexDirection="column" alignItems="center" justifyContent="center">
+      <TypeWriter avgTypingDelay={30} stdTypingDelay={0}>
+        Hi! I'm Stijn.
+        <br />
+        An { label }.
+      </TypeWriter>
+      <ConstrainedMiniMe />
+    </Container>
+  )
+}
 
 export default Home
