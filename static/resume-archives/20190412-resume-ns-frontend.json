@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Stijn Koopal",
-    "label": "Independent Full Stack Software Craftsman",
+    "label": "Independent Full Stack Frontend Engineer",
     "motto": "Getting things live!",
     "tags": [
       "Software Engineer", "Full Stack", "Remote", "Bleeding Edge Tech", "Freelance", "ZZP", "Independent"
@@ -13,7 +13,7 @@
     "email": "stijn@koopal.io",
     "phone": "+31 6 349 50 752",
     "url": "https://koopal.io",
-    "summary": "I'm an experienced software enthusiast with hands-on experience in various languages, frameworks and platforms. Highly analytical in nature, with good communicative skills. A supportive and enthusiastic team player that thinks highly of quality, but can be pragmatic if required. I tend to use the most simple solution best fit for the situation, and try to learn as much as possible from it.\n\nThe thought of a fast, highly scalable service architecture makes me happy, as does an elegant implementation. A very well designed and maintainable frontend is key. I mostly enjoy working in a team, and building an awesome application together is very important to me.\n\nThe beautiful city of Utrecht is my home, and I tend to socialise there with friends a lot. I enjoy being outside, especially when exercising.\n\nInterested? Drop me a line!",
+    "summary": "I'm an experienced software enthusiast with hands-on experience in various languages, frameworks and platforms. Highly analytical in nature, with good communicative skills. A supportive and enthusiastic team player that thinks highly of quality, but can be pragmatic if required. I tend to use the most simple solution best fit for the situation, and try to learn as much as possible from it.\n\nThe thought of a fast, highly scalable service architecture makes me happy, as does an elegant implementation. A very well designed and maintainable frontend is key. \n\nI mostly enjoy working in a team, and building an awesome application together is very important to me.\n\nThe beautiful city of Utrecht is my home, and I tend to socialise there with friends a lot. I enjoy being outside, especially when exercising.",
     "location": {
       "address": "Wethouder D.M. Plompstraat 22",
       "postalCode": "3555 BT",
@@ -65,22 +65,22 @@
     },
     {
       "company": "Royal FloraHolland (via Xebia)",
-      "position": "Backend Engineer",
+      "position": "Full-Stack Engineer",
       "summary": "The Floriday platform connects growers to retail. Innovation has not been going on in the flower IT space for over 20 years. Was part of a team responsible for the sales and fulfillment side of a new platform. Besides building functionality, I helped getting the platform to a new level.",
       "highlights": [
         "Optimizing API management",
         "Improving on CI/CD strategy",
         "Rapid increase in growers connected",
-        "Kotlin, Java 11, Axon Framework, CQRS/ES, AWS, Spring Boot"
+        "React, Java 11, Kotlin Axon Framework, CQRS/ES, AWS, Spring Boot"
       ],
       "keywords": [
-        "Kotlin", "Java 11", "Axon Framework", "CQRS/ES", "AWS", "Spring Boot"
+        "React", "Java 11", "Kotlin", "Axon Framework", "CQRS/ES", "AWS", "Spring Boot"
       ],
       "startDate": "2018-09-01",
       "endDate": "2019-05-01",
       "url": "https://floriday.io",
       "roles": [
-        "Backend developer"
+        "Full-Stack Egineer"
       ],
       "entity": "Royal FloraHolland",
       "entityIconUrl": "/static/logos/royal-flora-holland.svg",
@@ -89,21 +89,22 @@
     },
     {
       "company": "Blockport (via Xebia)",
-      "position": "Backend Engineer",
-      "summary": "Supporting the Blockport team with development on a reactive crypto deposit solution and securely integration KYC into application.",
+      "position": "Full-Stack Engineer",
+      "summary": "Setup a frontend for administrative tasks. Supporting the Blockport team with development on a reactive crypto deposit solution and secure integration of a KYC provider.",
       "highlights": [
+        "Setup a frontend for administrative tasks",
         "Scalable crypto deposits",
         "Integrate KYC provider",
-        "Scala, Akka, Lagom, React, K8s, Golang, GCP"
+        "React, Material-UI, Scala, K8s, Golang, GCP"
       ],
       "keywords": [
-        "Scala", "Akka", "Lagom", "React", "K8s", "Golang", "GCP"
+        "React", "Material-UI", "Scala", "K8s", "Golang", "GCP"
       ],
       "startDate": "2018-07-01",
       "endDate": "2018-09-01",
       "url": "https://blockport.io/",
       "roles": [
-        "Backend developer"
+        "Full-Stack Engineer"
       ],
       "entity": "Blockport",
       "entityIconUrl": "/static/logos/blockport.svg",
@@ -112,22 +113,22 @@
     },
     {
       "company": "ING (via Xebia)",
-      "position": "Full-Stack Engineer",
-      "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financial institution. The Domino project was started by the innovation department of ING, and it did just that. Was part of the team that constructed a web-app and it’s infrastructure.",
+      "position": "Frontend Engineer",
+      "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financial institution. The Domino project was started by the innovation department of ING, and it did just that. Was the lead on the webapp that served charts and tables of data.",
       "highlights": [
         "Complete overhaul of Polymer frontend to a very scalable (in terms of development) app",
         "Connecting users to the Domino app",
         "Knowledge sharing of state of the art frontends",
-        "Polymer, Scala, Spark, Docker, Openshift, Gitlab CI"
+        "Polymer 3 with webpack, HTML5/CSS3, D3.js, Redux, Scala"
       ],
       "keywords": [
-        "Polymer", "Scala", "Spark", "Docker", "Openshift", "Gitlab CI"
+        "Polymer 3 with webpack", "HTML5/CSS3", "D3.js", "Redux", "Scala"
       ],
       "startDate": "2017-05-01",
       "endDate": "2018-06-30",
       "url": "",
       "roles": [
-        "Full Stack Developer"
+        "Frontend Developer"
       ],
       "entity": "ING",
       "entityIconUrl": "/static/logos/ING.svg",
@@ -141,10 +142,10 @@
       "highlights": [
         "Scrum master in a scrum of scrums setup",
         "Generating application code for business flows and models",
-        "Java 8, JEE2, JBPM, Jenkins 2, Docker, AngularJS, Cucumber"
+        "Angular, Cucumber, Java 8, JEE2, JBPM, Jenkins 2, Docker"
       ],
       "keywords": [
-        "Java 8", "JEE2", "JBPM", "Jenkins 2", "Docker", "AngularJS", "Cucumber"
+        "Angular", "Cucumber" ,"Java 8", "JEE2", "JBPM", "Jenkins 2", "Docker"
       ],
       "startDate": "2016-05-01",
       "endDate": "2017-04-30",
@@ -231,10 +232,10 @@
       "endDate": "2019-05-01",
       "highlights": [
         "Proving value to customers using state-of-the-art tech",
-        "Scala, Akka, React, Polymer, Spark, Kotlin, Rust, Lagom, Golang, Axon Framework"
+        "React, JAM stack, Scala, Akka, React, Polymer, Spark, Kotlin, Lagom, Golang, Axon Framework"
       ],
       "keywords": [
-        "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust", "Lagom", "Golang", "Axon Framework"
+        "React", "JAM stack", "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust", "Lagom", "Golang", "Axon Framework"
       ],
       "type": "employer"
     },
@@ -249,6 +250,23 @@
       "highlights": [],
       "keywords": [
         "Java (8)", "Angular", "JEE2", "JBoss Fuse", "JBoss EAP", "JBoss BPM Suite"
+      ],
+      "type": "employer"
+    },
+    {
+      "company": "JouwWeb",
+      "location": "Eindhoven",
+      "summary": "Developer and architect on a website builder",
+      "position": "Consultant",
+      "url": "https://www.ciber.nl/",
+      "startDate": "2013-03-01",
+      "endDate": "2013-09-01",
+      "highlights": [
+        "Rebuilding of JouwWeb v1",
+        "React, jQuery, CSS3, HTML, PHP"
+      ],
+      "keywords": [
+        "React, jQuery, CSS3, HTML, PHP"
       ],
       "type": "employer"
     }
@@ -297,11 +315,12 @@
     }
   ],
   "skills": [
+    {"name":  "ES6 / Typescript", "level": "Master", "value": 95},
+    {"name":  "React", "level": "Master", "value": 91},
+    {"name":  "HTML5 / CSS3", "level": "Master", "value": 92},
     {"name":  "Java / Kotlin / Scala", "level": "Master", "value": 83},
     {"name":  "Golang", "level": "Master", "value": 52},
     {"name":  "ES / CQRS / Microservices", "level": "Master", "value": 87},
-    {"name":  "Javascript / Typescript", "level": "Master", "value": 95},
-    {"name":  "React", "level": "Master", "value": 91},
     {"name":  "AWS / GCP", "level": "Master", "value": 59},
     {"name":  "Netlify", "level": "Master", "value": 60},
     {"name":  "K8s", "level": "Master", "value": 70}
@@ -315,16 +334,5 @@
       "language": "English",
       "fluency": "Fluent"
     }
-  ],
-  "interests": [
-    {"name": "Snorkling / Diving", "value": 58},
-    {"name": "Snowboarding", "value": 99},
-    {"name": "Football", "value": 75},
-    {"name": "Cycling", "value": 32},
-    {"name": "Beach", "value": 100},
-    {"name": "Socializing, friends, beer", "value": 78}
-  ],
-  "references": [
-
   ]
 }
