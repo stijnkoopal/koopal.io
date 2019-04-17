@@ -187,7 +187,7 @@
       "highlights": [
         "Connecting data of over 10 applications",
         "Building a support library on Vert.x that other projects could use to expose analytics",
-        "Hadoop", "Java 8", "Vert.x"
+        "Hadoop, Java 8, Vert.x"
       ],
       "keywords": [
         "Hadoop", "Java 8", "Vert.x"
@@ -231,10 +231,10 @@
       "endDate": "2019-05-01",
       "highlights": [
         "Proving value to customers using state-of-the-art tech",
-        "Scala, Akka, React, Polymer, Spark, Kotlin, Rust, Lagom, Golang, Axon Framework"
+        "Scala, Akka, React, Polymer, Spark, Kotlin, Lagom, Golang, Axon Framework"
       ],
       "keywords": [
-        "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Rust", "Lagom", "Golang", "Axon Framework"
+        "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Lagom", "Golang", "Axon Framework"
       ],
       "type": "employer"
     },
