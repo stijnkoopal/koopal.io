@@ -6,6 +6,7 @@ import Typist from 'react-typist'
 import MiniMe from './components/MiniMe'
 import { themeShape } from '../wall/prop-types'
 import useResume from '../_components/useResume'
+import Layout from '../_components/Layout'
 
 const Container = styled(Flex)({
   height: '100%',
@@ -46,14 +47,16 @@ const Home = () => {
   const { basics: { label } } = useResume()
 
   return (
-    <Container flexDirection="column" alignItems="center" justifyContent="center">
-      <TypeWriter avgTypingDelay={30} stdTypingDelay={0}>
-        Hi! I'm Stijn.
-        <br />
-        An { label }.
-      </TypeWriter>
-      <ConstrainedMiniMe />
-    </Container>
+    <Layout>
+      <Container flexDirection="column" alignItems="center" justifyContent="center">
+        <TypeWriter avgTypingDelay={30} stdTypingDelay={0}>
+          Hi! I'm Stijn.
+          <br />
+          An { label }.
+        </TypeWriter>
+        <ConstrainedMiniMe />
+      </Container>
+    </Layout>
   )
 }
 

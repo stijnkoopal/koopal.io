@@ -11,6 +11,8 @@
     "bankAccountNumber": "NL72KNAB0258670061",
     "image": "https://koopal.io/static/profile-picture.jpg",
     "email": "stijn@koopal.io",
+    "logo": "https://koopal.io/static/koopal.io.svg",
+    "logo-dark": "https://koopal.io/static/koopal.io-dark.svg",
     "phone": "+31 6 349 50 752",
     "url": "https://koopal.io",
     "summary": "I'm an experienced software enthusiast with hands-on experience in various languages, frameworks and platforms. Highly analytical in nature, with good communicative skills. A supportive and enthusiastic team player that thinks highly of quality, but can be pragmatic if required. I tend to use the most simple solution best fit for the situation, and try to learn as much as possible from it.\n\nThe thought of a fast, highly scalable service architecture makes me happy, as does an elegant implementation. A very well designed and maintainable frontend is key. I mostly enjoy working in a team, and building an awesome application together is very important to me.\n\nThe beautiful city of Utrecht is my home, and I tend to socialise there with friends a lot. I enjoy being outside, especially when exercising.\n\nInterested? Drop me a line!",
@@ -297,14 +299,23 @@
     }
   ],
   "skills": [
-    {"name":  "Java / Kotlin / Scala", "level": "Master", "value": 83},
-    {"name":  "Golang", "level": "Master", "value": 52},
-    {"name":  "ES / CQRS / Microservices", "level": "Master", "value": 87},
-    {"name":  "Javascript / Typescript", "level": "Master", "value": 95},
-    {"name":  "React", "level": "Master", "value": 91},
-    {"name":  "AWS / GCP", "level": "Master", "value": 59},
-    {"name":  "Netlify", "level": "Master", "value": 60},
-    {"name":  "K8s", "level": "Master", "value": 70}
+    {"name":  "Java / Kotlin / Scala", "level": "Master", "value": 83,
+      "category": "Backend Languages"
+    },
+    {"name":  "Golang", "level": "Master", "value": 52,
+      "category": "Backend Languages"
+    },
+    {"name":  "ES2018 / Typescript", "level": "Master", "value": 95, "category":  "Frontend Languages"},
+    {"name":  "ES / CQRS / Services Architecture", "level": "Master", "value": 87, "category":  "Concepts"},
+    {"name":  "Spring Boot, Akka, Play, Axon, Vert.x", "level": "Master", "value": 0, "category": "Frameworks"},
+    {"name":  "AWS / GCP", "level": "Master", "value": 59, "category":  "Platforms"},
+    {"name":  "Netlify", "level": "Master", "value": 60, "category": "Platforms"},
+    {"name":  "K8s", "level": "Master", "value": 70, "category":  "Platforms"},
+    {"name":  "Kafka", "level": "Master", "value": 0, "category":  "Platforms"},
+    {"name":  "React / Polymer", "level": "Master", "value": 91, "category": "Frameworks"},
+    {"name":  "D3.js", "level": "Master", "value": 0, "category": "Frameworks"},
+    {"name":  "Scrum, Kanban, MVP, Continuous Delivery", "level": "Master", "value": 0, "category": "Agile"}
+
   ],
   "languages": [
     {

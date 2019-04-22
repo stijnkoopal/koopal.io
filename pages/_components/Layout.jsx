@@ -97,7 +97,7 @@ const globalStyles = ({ typography }) => ({
 })
 
 // By: https://www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property/
-const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
+export const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
   zIndex: -1,
   position: 'relative',
   '&::before': {
@@ -111,6 +111,7 @@ const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
     backgroundSize: 'cover',
     willChange: 'transform',
     zIndex: -1,
+    '-webkit-print-color-adjust': 'exact',
   },
 }))
 

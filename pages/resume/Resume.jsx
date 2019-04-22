@@ -5,6 +5,7 @@ import { withTheme } from 'emotion-theming'
 import { Transition } from 'react-transition-group'
 import Color from 'color'
 import useResume from '../_components/useResume'
+import Layout from '../_components/Layout'
 
 const formatDate = date =>
   date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
@@ -194,7 +195,7 @@ const Resume = ({ theme }) => {
     selectedProjectIndex === undefined ? 'center' : selectedProjectIndex % 2 === 0 ? 'right' : 'left'
 
   return (
-    <>
+    <Layout>
       <ProjectList>
         {projects.map((project, index) => (
           <Project
@@ -211,15 +212,12 @@ const Resume = ({ theme }) => {
       </ProjectList>
 
       <DownloadResume
-        target="_blank"
-        rel="noopener noreferrer"
-        href="/static/resume-stijn-koopal.pdf"
-        alt="Download"
-        title="Download a (generated) PDF version of my resume"
+        href="/resume-summary"
+        alt="Summary"
       >
-        Download
+        Summary
       </DownloadResume>
-    </>
+    </Layout>
   )
 }
 

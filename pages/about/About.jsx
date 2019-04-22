@@ -3,6 +3,7 @@ import { Box, Flex } from '@rebass/grid/emotion'
 import styled from '@emotion/styled'
 import Bar3DChart from './components/Bar3DChart'
 import useResume from '../_components/useResume'
+import Layout from '../_components/Layout'
 
 const PageIndicator = styled(Box)(({ active, theme: { palette, spacing } }) => ({
   borderRadius: '50%',
@@ -23,7 +24,7 @@ const PageSelectors = styled(Flex)(({ theme: { spacing } }) => ({
 }))
 
 const chartData = (resume, type) => {
-  if (type === 'skills') return [resume.skills.map(({ name, value }) => ({ label: name, value }))]
+  if (type === 'skills') return [resume.skills.filter(({ value }) => value > 0).map(({ name, value }) => ({ label: name, value }))]
   return [resume.interests.map(({ name, value }) => ({ label: name, value }))]
 }
 
@@ -57,21 +58,23 @@ const About = () => {
   const resume = useResume()
 
   return (
-    <AboutContainer>
-      <Bar3DChart data={chartData(resume, activeChart)}/>
+    <Layout>
+      <AboutContainer>
+        <Bar3DChart data={chartData(resume, activeChart)}/>
 
-      <Arrow onClick={() => setActiveChart(activeChart === 'skills' ? 'personal' : 'skills')}/>
+        <Arrow onClick={() => setActiveChart(activeChart === 'skills' ? 'personal' : 'skills')}/>
 
-      <PageSelectors>
-        {['skills', 'personal'].map(type => (
-          <PageIndicator key={type} active={activeChart === type}
-                         onClick={() => setActiveChart(type)}/>
-        ))}
-      </PageSelectors>
+        <PageSelectors>
+          {['skills', 'personal'].map(type => (
+            <PageIndicator key={type} active={activeChart === type}
+                           onClick={() => setActiveChart(type)}/>
+          ))}
+        </PageSelectors>
 
-      <Arrow right
-             onClick={() => setActiveChart(activeChart === 'skills' ? 'personal' : 'skills')}/>
-    </AboutContainer>
+        <Arrow right
+               onClick={() => setActiveChart(activeChart === 'skills' ? 'personal' : 'skills')}/>
+      </AboutContainer>
+    </Layout>
   )
 }
 

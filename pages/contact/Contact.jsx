@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { withTheme } from 'emotion-theming'
 import { Box, Flex } from '@rebass/grid/emotion'
 import useResume from '../_components/useResume'
+import Layout from '../_components/Layout'
 
 const ContactMethods = styled(Flex)(() => ({
   justifyContent: 'space-around',
@@ -67,35 +68,37 @@ const VerticallyCenter = styled(Flex)({
 const Contact = ({ theme: { palette } }) => {
   const resume = useResume()
   return (
-    <VerticallyCenter>
-      <ContactContainer>
-        <Header>Reaching out</Header>
-        <SubHeader mt={[2, 3]}>is just a click away.</SubHeader>
+    <Layout>
+      <VerticallyCenter>
+        <ContactContainer>
+          <Header>Reaching out</Header>
+          <SubHeader mt={[2, 3]}>is just a click away.</SubHeader>
 
-        <ContactMethods mt={[4, 5]}>
-          <ContactMethod as="a" href={`maillto:${resume.basics.email}`} title="Mail me!">
-            <Icon src="/static/logos/envelope.svg" alt="Email"
-                  backgroundColor={palette.colors.visualizations[1]}/>
-            <Title>Email</Title>
-            <Value>{resume.basics.email}</Value>
-          </ContactMethod>
+          <ContactMethods mt={[4, 5]}>
+            <ContactMethod as="a" href={`maillto:${resume.basics.email}`} title="Mail me!">
+              <Icon src="/static/logos/envelope.svg" alt="Email"
+                    backgroundColor={palette.colors.visualizations[1]}/>
+              <Title>Email</Title>
+              <Value>{resume.basics.email}</Value>
+            </ContactMethod>
 
-          <ContactMethod as="a" href={`tel:${resume.basics.phone}`} title="Call me!">
-            <Icon src="/static/logos/telephone.svg" alt="Telephone"
-                  backgroundColor={palette.colors.visualizations[2]}/>
-            <Title>Phone</Title>
-            <Value>{resume.basics.phone}</Value>
-          </ContactMethod>
+            <ContactMethod as="a" href={`tel:${resume.basics.phone}`} title="Call me!">
+              <Icon src="/static/logos/telephone.svg" alt="Telephone"
+                    backgroundColor={palette.colors.visualizations[2]}/>
+              <Title>Phone</Title>
+              <Value>{resume.basics.phone}</Value>
+            </ContactMethod>
 
-          <ContactMethod as="a" href={`https://www.kvk.nl/zoeken/?source=all&q=${resume.basics.chamberOfCommerceNumber}`} target="_blank" rel="noopener noreferrer">
-            <Icon src="/static/logos/home-location.svg" alt="Home"
-                  backgroundColor={palette.colors.visualizations[0]}/>
-            <Title>KVK</Title>
-            <Value>{resume.basics.chamberOfCommerceNumber}</Value>
-          </ContactMethod>
-        </ContactMethods>
-      </ContactContainer>
-    </VerticallyCenter>
+            <ContactMethod as="a" href={`https://www.kvk.nl/zoeken/?source=all&q=${resume.basics.chamberOfCommerceNumber}`} target="_blank" rel="noopener noreferrer">
+              <Icon src="/static/logos/home-location.svg" alt="Home"
+                    backgroundColor={palette.colors.visualizations[0]}/>
+              <Title>KVK</Title>
+              <Value>{resume.basics.chamberOfCommerceNumber}</Value>
+            </ContactMethod>
+          </ContactMethods>
+        </ContactContainer>
+      </VerticallyCenter>
+    </Layout>
   )
 }
 

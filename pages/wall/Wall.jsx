@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import { LatestBlogPosts, BlogPost, EmptyBlogPost } from './components/LatestBlogPosts'
 import fetchMediumPosts from './services/fetchMediumPosts.api'
+import Layout from '../_components/Layout'
 
 const renderError = error => <div>{[error.message]}</div>
 
@@ -39,14 +40,14 @@ const Wall = () => {
     : uniquePreconnectUrls(posts)
 
   return (
-    <>
+    <Layout>
       <Head>
         {preconnectUrls.map(url => (
           <link key={url} rel="preconnect" href={url} />
         ))}
       </Head>
       <LatestBlogPosts>{blogPosts}</LatestBlogPosts>
-    </>
+    </Layout>
   )
 }
 

@@ -2,7 +2,6 @@ import App, { Container } from 'next/app'
 import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
 import MetaTags from './_components/MetaTags'
-import Layout from './_components/Layout'
 import curiousLittleMouse from './_services/curiousLittleMouse'
 import logSource from './_services/logSource'
 import theme from './theme'
@@ -32,12 +31,10 @@ class MyApp extends App {
     return (
       <Container>
         <ThemeProvider theme={theme}>
-          <Layout>
-            <MetaTags />
-            {/* <React.StrictMode> */}
-            <Component {...pageProps} />
-            {/* </React.StrictMode> */}
-          </Layout>
+          <MetaTags />
+          {/* <React.StrictMode> */}
+          <Component {...pageProps} />
+          {/* </React.StrictMode> */}
         </ThemeProvider>
       </Container>
     )
