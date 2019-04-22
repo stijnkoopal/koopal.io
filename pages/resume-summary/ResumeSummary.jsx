@@ -85,16 +85,34 @@ const profilePictureContainerCss = css({
   overflow: 'hidden',
 })
 
+const profileCss = theme => css({
+  alignItems: 'center',
+  textDecoration: 'none',
+  ...theme.typography.body2,
+})
+
 const LogoWithText = () => {
   const resume = useResume()
   return (
-    <Flex>
-      <img style={{ width: '104px' }} src={resume.basics.logo} alt={resume.basics.name} />
+    <Flex flexDirection="column">
+      <Flex>
+        <img style={{ width: '104px' }} src={resume.basics.logo} alt={resume.basics.name} />
 
-      <Flex ml={3} flexDirection="column" justifyContent="center">
-        <Name>{resume.basics.name}</Name>
-        <Title>{resume.basics.label}</Title>
-        <Website>{resume.basics.email}</Website>
+        <Flex ml={3} flexDirection="column" justifyContent="center">
+          <Name>{resume.basics.name}</Name>
+          <Title>{resume.basics.label}</Title>
+          <Website>{resume.basics.email}</Website>
+        </Flex>
+      </Flex>
+
+      <Flex flexDirection="row" alignItems="center">
+      {
+        resume.basics.profiles.map(profile => (
+          <Flex as="a" mr={4} key={profile.key} href={profile.url} css={profileCss}>
+            <img alt={profile.key} style={{width:'16px', marginRight: '4px'}} src={profile.icon} /> {profile.username}
+          </Flex>
+        ))
+      }
       </Flex>
     </Flex>
   )
