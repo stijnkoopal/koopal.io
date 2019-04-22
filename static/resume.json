@@ -68,7 +68,7 @@
     {
       "company": "Royal FloraHolland (via Xebia)",
       "position": "Backend Engineer",
-      "summary": "The Floriday platform connects growers to retail. Innovation has not been going on in the flower IT space for over 20 years. Was part of a team responsible for the sales and fulfillment side of a new platform. Besides building functionality, I helped getting the platform to a new level.",
+      "summary": "The Floriday platform connects growers to retail. Was part of an agile team responsible for the sales and fulfillment side of a new platform. Besides building functionality in different Kotlin and Java services, helped getting the platform to a new architectural level using services from AWS.",
       "highlights": [
         "Optimizing API management",
         "Improving on CI/CD strategy",
@@ -92,7 +92,7 @@
     {
       "company": "Blockport (via Xebia)",
       "position": "Backend Engineer",
-      "summary": "Supporting the Blockport team with development on a reactive crypto deposit solution and securely integration KYC into application.",
+      "summary": "Supporting the Blockport team with development on a reactive crypto deposit solution using Kafka Streams and securely integration KYC into their application.",
       "highlights": [
         "Scalable crypto deposits",
         "Integrate KYC provider",
@@ -115,7 +115,7 @@
     {
       "company": "ING (via Xebia)",
       "position": "Full-Stack Engineer",
-      "summary": "Analyzing a network of companies based on transaction data gives very useful insights in risks and opportunities for a financial institution. The Domino project was started by the innovation department of ING, and it did just that. Was part of the team that constructed a web-app and it’s infrastructure.",
+      "summary": "Frontend lead on an internal web-app, it had to be rebuild from scratch using state of the art Polymer 3 and Redux. On the backend, integrating LDAP and optimizing CI/CD infrastructure (Openshift, Gitlab) and improving data pipelines (Spark).",
       "highlights": [
         "Complete overhaul of Polymer frontend to a very scalable (in terms of development) app",
         "Connecting users to the Domino app",
@@ -139,7 +139,7 @@
     {
       "company": "Alphabet (via Ciber)",
       "position": "Full-Stack Developer & Scrum Master",
-      "summary": "Alphabet is a leasing company that currently is undergoing transformation from traditional leasing to mobility. For that reason their entire application landscape is rebuild from scratch and is to be rolled out in 16 countries. Was a full-stack developer in a scrum team that was implementing features. Last few months part time Scrum master.",
+      "summary": "Full-stack developer on a scrum team developing a model driven architecture (POC). Building on Java EE services and Angular frontends. Last few months part time Scrum master in a scrum of scrums setup.",
       "highlights": [
         "Scrum master in a scrum of scrums setup",
         "Generating application code for business flows and models",
@@ -162,7 +162,7 @@
     {
       "company": "Tankpas.nl (via Ciber)",
       "position": "Lead Engineer",
-      "summary": "Travelcard launched a concept that required a website that interfaced with their legacy landscape. The project was pressurized massively by time. Initially I was a backend developer, but eventually was responsible for the team. Few members of the team were juniors, or trainees even, I assisted and guided them where possible. ",
+      "summary": "A project massively pressurized by time, initially was a backend developer (JBoss Fuse). Eventually responsible for the team as team lead.",
       "highlights": [
         "Connected new platform to a legacy backend",
         "Coaching of 2 juniors",
@@ -185,7 +185,7 @@
     {
       "company": "Malmberg (via Ciber)",
       "position": "BigData Engineer",
-      "summary": "Malmberg is transforming from a publisher of traditional educational books into a publisher of electronic educational methods. Started implementing a POC to setup Analytics within the organization: a solution based on Hadoop. Next I was part of a scrum team that implemented shared components using Vert.x",
+      "summary": "Lead on implementing a POC to setup Analytics within Malmberg: a solution based on Hadoop. Also, part of a scrum team that implemented shared components using Vert.x",
       "highlights": [
         "Connecting data of over 10 applications",
         "Building a support library on Vert.x that other projects could use to expose analytics",
