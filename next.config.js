@@ -30,6 +30,7 @@ const nextConfig = {
       '/about': { page: '/about' },
       '/contact': { page: '/contact' },
       '/resume': { page: '/resume' },
+      '/resume-summary': { page: '/resume-summary' },
       '/wall': { page: '/wall' },
     }
   },
