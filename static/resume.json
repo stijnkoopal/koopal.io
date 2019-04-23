@@ -124,11 +124,11 @@
     {
       "company": "ING (via Xebia)",
       "position": "Full-Stack Engineer",
-      "summary": "Frontend lead on an internal web-app, it had to be rebuild from scratch using state of the art Polymer 3 and Redux. On the backend, integrating LDAP and optimizing CI/CD infrastructure (Openshift, Gitlab) and improving data pipelines (Spark).",
+      "summary": "Frontend lead on an internal web-app, it had to be rebuild from scratch using state-of-the-art Polymer 3 and Redux. On the backend, integrating LDAP and optimizing CI/CD infrastructure (Openshift, Gitlab) and improving data pipelines (Spark).",
       "highlights": [
         "Complete overhaul of Polymer frontend to a very scalable (in terms of development) app",
         "Connecting users to the Domino app",
-        "Knowledge sharing of state of the art frontends",
+        "Knowledge sharing of state-of-the-art frontends",
         "Polymer, Scala, Spark, Docker, Openshift, Gitlab CI"
       ],
       "keywords": [

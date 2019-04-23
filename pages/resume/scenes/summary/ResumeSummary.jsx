@@ -113,7 +113,7 @@ const ResumeSummary = () => {
       <LeftConnectedBlock>
         <h1>Most Recent Experience</h1>
 
-        {recentExperiences.slice(0, 5).map(experience => (
+        {recentExperiences.slice(0, 6).map(experience => (
           <Box key={experience.startDate}>
             <Flex as="h4" mb={0} mt={2}>{experience.company}, {formatDate(experience.startDate)} - {formatDate(experience.endDate)}</Flex>
 
