@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
-import { css } from '@emotion/core'
 import { withTheme } from 'emotion-theming'
-import useResume from '../_components/useResume'
-import { FixedBackground } from '../_components/Layout'
+import useResume from '../../../_components/useResume'
+import { FixedBackground } from '../../../_components/Layout'
+import PrintableHeader from '../../components/PrintableHeader'
 
 const formatDate = date =>
   date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
@@ -19,10 +19,10 @@ const LeftConnectedBlock = styled(Box)(({ theme: { typography, spacing, palette:
   h1: {
     ...typography.heading,
     fontSize: '1.25em',
-    margin: `${spacing.unit}px 0`,
+    margin: `${spacing.unit / 2}px 0`,
   },
   p: {
-    margin: `${spacing.unit}px 0`,
+    margin: `${spacing.unit / 2}px 0`,
   },
   a: {
     textDecoration: 'none',
@@ -32,10 +32,10 @@ const LeftConnectedBlock = styled(Box)(({ theme: { typography, spacing, palette:
 
 LeftConnectedBlock.defaultProps = {
   mt: 4,
-  mr: 5,
-  py: 3,
-  pl: 6,
-  pr: 5,
+  mr: [2, 5],
+  py: 2,
+  pl: [3, 6],
+  pr: [2, 5],
 }
 
 const HorizontalDescriptionList = styled('dl')(() => ({
@@ -56,92 +56,7 @@ const HorizontalDescriptionList = styled('dl')(() => ({
   },
 }))
 
-const Name = styled('h1')(({ theme: { typography, palette: { colors } } }) => ({
-  ...typography.headline,
-  color: colors.grey[200],
-  textTransform: 'uppercase',
-  margin: 0,
-}))
-
-const Title = styled('h2')(({ theme: { typography } }) => ({
-  ...typography.title,
-  color: '#e1f0dc',
-  margin: 0,
-}))
-
-const Website = styled('h3')(({ theme: { typography } }) => ({
-  ...typography.subheading,
-  color: '#dde3e3',
-  margin: 0,
-}))
-
-const profilePictureContainerCss = css({
-  background: 'linear-gradient(to right, #e3ddd8, #fefefe)',
-  textAlign: 'center',
-  borderRadius: '50%',
-  width: '150px',
-  height: '150px',
-  border: '5px solid white',
-  overflow: 'hidden',
-})
-
-const profileCss = theme => css({
-  alignItems: 'center',
-  textDecoration: 'none',
-  ...theme.typography.body2,
-})
-
-const LogoWithText = () => {
-  const resume = useResume()
-  return (
-    <Flex flexDirection="column">
-      <Flex>
-        <img style={{ width: '104px' }} src={resume.basics.logo} alt={resume.basics.name} />
-
-        <Flex ml={3} flexDirection="column" justifyContent="center">
-          <Name>{resume.basics.name}</Name>
-          <Title>{resume.basics.label}</Title>
-          <Website>{resume.basics.email}</Website>
-        </Flex>
-      </Flex>
-
-      <Flex flexDirection="row" alignItems="center">
-      {
-        resume.basics.profiles.map(profile => (
-          <Flex as="a" mr={4} key={profile.key} href={profile.url} css={profileCss}>
-            <img alt={profile.key} style={{width:'16px', marginRight: '4px'}} src={profile.icon} /> {profile.username}
-          </Flex>
-        ))
-      }
-      </Flex>
-    </Flex>
-  )
-}
-
-const HeaderContainer = styled(Flex)(({ onlyPrint }) => ({
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  height: '154px',
-  display: onlyPrint ? 'none' : 'flex',
-  '@media print': {
-    display: 'flex',
-  },
-  '-webkit-print-color-adjust': 'exact',
-}))
-
-const Header = ({ onlyPrint = false }) => {
-  const resume = useResume()
-  return (
-    <HeaderContainer m={3} onlyPrint={onlyPrint}>
-      <LogoWithText />
-      <Box css={profilePictureContainerCss}>
-        <img style={{ width: '80%' }} src={resume.basics.image} alt={resume.basics.name} />
-      </Box>
-    </HeaderContainer>
-  )
-}
-
-const ResumeSummary = ({ theme }) => {
+const ResumeSummary = () => {
   const resume = useResume()
 
   const summaryAsHtml = resume.basics.summary.replace(/\n/g, '<br/>')
@@ -157,16 +72,30 @@ const ResumeSummary = ({ theme }) => {
   const recentExperiences = resume.work.filter(({ type }) => type === 'project')
 
   return (
-    <FixedBackground style={{ zIndex: 1 }}>
-      <Header />
+    <FixedBackground css={{ zIndex: 1 }}>
+      <PrintableHeader />
 
       <LeftConnectedBlock>
-        <h1>About me</h1>
+        <h1>Profile</h1>
 
         <span dangerouslySetInnerHTML={{ __html: summaryAsHtml }} />
       </LeftConnectedBlock>
 
-      <LeftConnectedBlock style={{ pageBreakAfter: 'always' }}>
+      <LeftConnectedBlock>
+        <h1>About me</h1>
+        <HorizontalDescriptionList>
+          <dt>Focus area</dt>
+          <dd>{resume.basics.focusArea}</dd>
+          <dt>Availability</dt>
+          <dd>{resume.basics.availability.join(', ')}</dd>
+          <dt>Languages</dt>
+          <dd>{resume.languages.map(l => l.language).join(', ')}</dd>
+          <dt>Birthday</dt>
+          <dd>{resume.basics.birthDay.year}</dd>
+        </HorizontalDescriptionList>
+      </LeftConnectedBlock>
+
+      <LeftConnectedBlock css={{ pageBreakAfter: 'always' }}>
         <h1>Technical Summary</h1>
 
         <HorizontalDescriptionList>
@@ -179,7 +108,7 @@ const ResumeSummary = ({ theme }) => {
         </HorizontalDescriptionList>
       </LeftConnectedBlock>
 
-      <Header onlyPrint="true" />
+      <PrintableHeader onlyPrint="true" />
 
       <LeftConnectedBlock>
         <h1>Most Recent Experience</h1>

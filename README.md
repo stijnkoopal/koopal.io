@@ -25,13 +25,6 @@ yarn test
 yarn build
 ```
 
-## Build resume pdf locally
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-yarn build:generate-resume-pdf
-```
-
 ## Other commands
 Analyze bundles
 ```bash

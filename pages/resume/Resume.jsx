@@ -168,13 +168,13 @@ const ProjectList = styled.div(({ theme: { spacing } }) => ({
   paddingBottom: spacing.unit * 3,
 }))
 
-const DownloadResume = styled(Flex)(({ theme: { typography, spacing } }) => ({
+const Button = styled(Flex)(({ theme: { typography, spacing } }) => ({
   ...typography.body1,
   border: '1px solid white',
   background: 'transparent',
   alignContent: 'center',
   padding: 0,
-  width: 12 * spacing.unit,
+  width: 20 * spacing.unit,
   height: 3 * spacing.unit,
   textAlign: 'center',
   alignItems: 'center',
@@ -211,12 +211,19 @@ const Resume = ({ theme }) => {
         ))}
       </ProjectList>
 
-      <DownloadResume
-        href="/resume-summary"
+      <Button
+        href="/resume/summary"
         alt="Summary"
       >
-        Summary
-      </DownloadResume>
+        Printable Summary
+      </Button>
+
+      <Button
+        href="/resume/detailed"
+        alt="Detailed"
+      >
+        Printable Full
+      </Button>
     </Layout>
   )
 }
