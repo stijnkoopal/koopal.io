@@ -10,17 +10,20 @@ const formatDate = date =>
   date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
 
 const ConnectedBlock = styled(Box)(({ theme: { typography, spacing, palette: { colors } } }) => ({
-  ...typography.body2,
+  ...typography.body1,
   color: colors.grey[800],
   background: colors.grey[200],
   pageBreakInside: 'avoid',
   h1: {
     ...typography.heading,
     fontSize: '1.25em',
-    margin: `${spacing.unit / 2}px 0`,
+    margin: `${spacing.unit}px 0`,
   },
   p: {
     margin: `${spacing.unit}px 0`,
+  },
+  div: {
+    paddingBottom: spacing.unit,
   },
   a: {
     textDecoration: 'none',
@@ -40,7 +43,7 @@ const FullBlock = styled(ConnectedBlock)({
 FullBlock.defaultProps = {
   mt: 3,
   py: 2,
-  pl: 4,
+  pl: [2, 4],
   pr: 3,
 }
 
@@ -72,7 +75,9 @@ RightConnectedBlock.defaultProps = {
   width: [1, 0.5]
 }
 
-const HorizontalDescriptionList = styled('dl')(() => ({
+const HorizontalDescriptionList = styled('dl')(({ theme: { typography, palette: { colors } }}) => ({
+  ...typography.body2,
+  color: colors.grey[800],
   '&:after': {
     content: '""',
     display: 'table',
@@ -200,11 +205,11 @@ const ResumeDetailed = () => {
           <HorizontalDescriptionList>
             <dt>Web</dt>
             <dd>
-              <a href={`tel:${resume.basics.url}`}>{resume.basics.url}</a>
+              <a href={resume.basics.url}>{resume.basics.url}</a>
             </dd>
             <dt>Mail</dt>
             <dd>
-              <a href={`tel:${resume.basics.email}`}>{resume.basics.email}</a>
+              <a href={`mailto:${resume.basics.email}`}>{resume.basics.email}</a>
             </dd>
             <dt>Phone</dt>
             <dd>
@@ -213,6 +218,10 @@ const ResumeDetailed = () => {
             <dt>Address</dt>
             <dd>
               {resume.basics.location.address}, {resume.basics.location.city}
+            </dd>
+            <dt>KVK</dt>
+            <dd>
+              <a href={`https://www.kvk.nl/zoeken/?source=all&q=${resume.basics.chamberOfCommerceNumber}`} target="_blank" rel="noopener noreferrer">{resume.basics.chamberOfCommerceNumber}</a>
             </dd>
           </HorizontalDescriptionList>
         </RightConnectedBlock>

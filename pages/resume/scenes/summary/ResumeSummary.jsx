@@ -10,7 +10,7 @@ const formatDate = date =>
   date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
 
 const LeftConnectedBlock = styled(Box)(({ theme: { typography, spacing, palette: { colors } } }) => ({
-  ...typography.body2,
+  ...typography.body1,
   color: colors.grey[800],
   background: colors.grey[200],
   borderTopRightRadius: spacing.unit * 4,
