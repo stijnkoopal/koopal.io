@@ -38,7 +38,9 @@ LeftConnectedBlock.defaultProps = {
   pr: [2, 5],
 }
 
-const HorizontalDescriptionList = styled('dl')(() => ({
+const HorizontalDescriptionList = styled('dl')(({ theme: { typography, palette: { colors } } }) => ({
+  ...typography.body2,
+  color: colors.grey[800],
   '&:after': {
     content: '""',
     display: 'table',
@@ -55,6 +57,16 @@ const HorizontalDescriptionList = styled('dl')(() => ({
     width: '60%',
   },
 }))
+
+const Experience = experience => (
+  <Box key={experience.startDate} mb={2}>
+    <Flex as="h4" mb={0} mt={2}>
+      {experience.company}, {formatDate(experience.startDate)} - {formatDate(experience.endDate)}
+    </Flex>
+
+    <Box mt={0}>{experience.summary}</Box>
+  </Box>
+)
 
 const ResumeSummary = () => {
   const resume = useResume()
@@ -113,15 +125,7 @@ const ResumeSummary = () => {
       <LeftConnectedBlock>
         <h1>Most Recent Experience</h1>
 
-        {recentExperiences.slice(0, 6).map(experience => (
-          <Box key={experience.startDate}>
-            <Flex as="h4" mb={0} mt={2}>{experience.company}, {formatDate(experience.startDate)} - {formatDate(experience.endDate)}</Flex>
-
-            <Box mt={0}>
-            {experience.summary}
-            </Box>
-          </Box>
-        ))}
+        {recentExperiences.slice(0, 6).map(Experience)}
       </LeftConnectedBlock>
 
       <LeftConnectedBlock>
