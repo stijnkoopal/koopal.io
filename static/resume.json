@@ -303,6 +303,13 @@
       "studyType": "certification",
       "startDate": "2017-01-01",
       "endDate": "2017-02-01"
+    },
+    {
+      "institution": "Google",
+      "area": "Professional Cloud Architect",
+      "studyType": "certification",
+      "startDate": "2019-04-25",
+      "endDate": "2019-04-25"
     }
   ],
   "awards": [],
