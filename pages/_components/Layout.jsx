@@ -152,6 +152,9 @@ const SocialButtons = () => {
           <img src={profile.icon} alt={profile.network} title={`Open my ${profile.network} profile`} />
         </SocialButton>
       ))}
+      <SocialButton my="1" key="tos" href={resume.basics.termsAndConditions} target="_blank" rel="noopener noreferrer">
+        <img src="/static/terms-and-conditions.svg" alt="Terms and Conditions" title="Terms and Conditions" />
+      </SocialButton>
     </Flex>
   )
 }
