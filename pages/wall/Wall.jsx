@@ -3,8 +3,14 @@ import Head from 'next/head'
 import { LatestBlogPosts, BlogPost, EmptyBlogPost } from './components/LatestBlogPosts'
 import fetchMediumPosts from './services/fetchMediumPosts.api'
 import Layout from '../_components/Layout'
+import { withTheme } from 'emotion-theming'
+import { Flex } from '@rebass/grid/emotion'
 
-const renderError = error => <div>{[error.message]}</div>
+const ErrorNotification = withTheme(({ theme: { typography }, error }) => (
+  <Flex css={{ ...typography.body1, justifyContent: 'center' }}>
+    {error}
+  </Flex>
+))
 
 const uniquePreconnectUrls = posts => [
   ...new Set(
@@ -24,14 +30,11 @@ const Wall = () => {
       .catch(e => setFetchState({ posts: [], isLoading: false, error: e }))
   }, [])
 
-  if (error) {
-    return renderError(error)
-  }
-
   const keys = Array(3)
     .fill(0)
     .map((_, i) => String.fromCharCode(65 + i))
-  const blogPosts = isLoading
+
+  const blogPosts = isLoading || error
     ? keys.map(key => <EmptyBlogPost key={key} uniqueKey={key} />)
     : posts.map(post => <BlogPost key={post.id} post={post} />)
 
@@ -46,7 +49,8 @@ const Wall = () => {
           <link key={url} rel="preconnect" href={url} />
         ))}
       </Head>
-      <LatestBlogPosts>{blogPosts}</LatestBlogPosts>
+      {error && <ErrorNotification error={error.message}></ErrorNotification>}
+      {!error && <LatestBlogPosts>{blogPosts}</LatestBlogPosts>}
     </Layout>
   )
 }

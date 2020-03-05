@@ -102,9 +102,9 @@ export const BlogPost = ({ post }) => (
     <Content>
       <Title>{post.title}</Title>
       <PublishingDate>{formatDateTime(post.updatedAt)}</PublishingDate>
-      <Summary>{post.content.subtitle}</Summary>
+      <Summary>{post.content}</Summary>
       <Footer>
-        <Claps numberOfClaps={post.virtuals.totalClapCount} />
+        <Claps numberOfClaps={'?'} />
         <TellMeMore px={2} href={post.blogUrl} target="_blank" rel="noopener noreferrer">
           Tell me more!
         </TellMeMore>

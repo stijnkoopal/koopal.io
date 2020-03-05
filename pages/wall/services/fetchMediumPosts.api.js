@@ -5,7 +5,9 @@ const baseUrl = () => window.location.origin
 
 const fetchMediumPosts = async () => {
   const response = await fetchWithTimeout(`${baseUrl()}/.netlify/functions/fetchMediumPosts`)
-  return response.json()
+  const posts = await response.json()
+
+  return posts
 }
 
 export default fetchMediumPosts

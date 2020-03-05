@@ -39,7 +39,7 @@ const Stars = styled(Box)(({ numberOfStars, speed, starSize, seed }) => ({
   background: 'transparent',
   boxShadow: starsBoxShadow(seedrandom(seed), numberOfStars, 'rgba(255, 255, 255, 0.6)'),
   animation: `${starsKeyframe} ${starAnimationSpeeds[speed]}s linear infinite`,
-})).withComponent('stars')
+})).withComponent('div')
 
 Stars.propTypes = {
   numberOfStars: PropTypes.number,

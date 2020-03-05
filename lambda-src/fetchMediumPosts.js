@@ -4,15 +4,7 @@ import resume from '../static/resume.json'
 
 const findMediumProfile = profile => profile.network === 'Medium'
 const mediumUsername = resume.basics.profiles.filter(findMediumProfile)[0].username
-const mediumUserBase = `https://medium.com/@${mediumUsername}`
-const latestBlogPostsUrl = `${mediumUserBase}/latest?format=json`
-
-const blogPostUrl = ({ uniqueSlug }) => `${mediumUserBase}/${uniqueSlug}`
-const blogImageUrl = ({
-  virtuals: {
-    previewImage: { imageId },
-  },
-}) => `https://cdn-images-1.medium.com/max/800/${imageId}`
+const latestBlogPostsUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUsername}`
 
 const respond = (statusCode, jsonBody) => ({
   statusCode,
@@ -24,16 +16,19 @@ const respond = (statusCode, jsonBody) => ({
 export const handler = async () => {
   const mediumResponse = await fetch(latestBlogPostsUrl)
   if (!mediumResponse.ok) {
-    return respond(503, { error: 'Unable to reach medium' })
+    return respond(503, { error: 'Unable to reach medium', response: {status: mediumResponse.status, url: mediumResponse.url} })
   }
 
-  const responseText = await mediumResponse.text()
-  const json = JSON.parse(responseText.replace('])}while(1);</x>', ''))
-  const posts = Object.values(json.payload.references.Post).map(post => ({
-    ...post,
-    blogUrl: post.mediumUrl || blogPostUrl(post),
-    imageUrl: blogImageUrl(post),
-  }))
+  const responseJson = await mediumResponse.json()
+  const posts = responseJson.items
+    .filter(post => post.categories.length > 0)
+    .map(post => ({
+      id: post.guid,
+      title: post.title,
+      updatedAt: post.pubDate,
+      blogUrl: post.link,
+      imageUrl: post.thumbnail,
+    }))
 
   return respond(200, posts)
 }
