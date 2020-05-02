@@ -59,6 +59,27 @@
   },
   "work": [
     {
+      "company": "ZorgDomein",
+      "location": "Breukelen",
+      "summary": "ZorgDomein is a platform that connects healthcare requesters to healthcare providers. Was the team lead of an agile team focussed on the supplier side of the platform. Besides building new functionality, was part of the solution design for several major features. Also, helped getting the CI/CD pipeline to the next level.",
+      "position": "Full-Stack Team Lead",
+      "url": "https://zorgdomein.nl",
+      "startDate": "2019-05-01",
+      "endDate": "present",
+      "highlights": [
+        "Optimize buildstreet, resulting in ease of development",
+        "Performance improvements on Angular frontend, greatly improved experience",
+        "Implementation Covid-19 reporting"
+      ],
+      "keywords": [
+        "Scala", "CQRS/ES", "Kubernetes", "Angular"
+      ],
+      "entity": "ZorgDomein",
+      "entityIconUrl": "/static/logos/zorgdomein.svg",
+      "via": "koopal.io",
+      "type": "project"
+    },
+    {
       "company": "Koopal.io",
       "location": "Utrecht",
       "summary": "Independent Full Stack Software Engineer",
@@ -332,12 +353,12 @@
     },
     {"name":  "ES2018 / Typescript", "level": "Master", "value": 95, "category":  "Frontend Languages"},
     {"name":  "ES / CQRS / Services Architecture", "level": "Master", "value": 87, "category":  "Concepts"},
-    {"name":  "Spring Boot, Akka, Play, Axon, Vert.x", "level": "Master", "value": 0, "category": "Frameworks"},
+    {"name":  "Spring Boot, Akka (Persistence, Streaming), Play, Axon, Vert.x", "level": "Master", "value": 0, "category": "Frameworks"},
     {"name":  "AWS / GCP", "level": "Master", "value": 59, "category":  "Platforms"},
     {"name":  "Netlify", "level": "Master", "value": 60, "category": "Platforms"},
     {"name":  "K8s", "level": "Master", "value": 70, "category":  "Platforms"},
     {"name":  "Kafka", "level": "Master", "value": 0, "category":  "Platforms"},
-    {"name":  "React / Polymer", "level": "Master", "value": 91, "category": "Frameworks"},
+    {"name":  "React / Polymer / Angular", "level": "Master", "value": 91, "category": "Frameworks"},
     {"name":  "D3.js", "level": "Master", "value": 0, "category": "Frameworks"},
     {"name":  "Scrum, Kanban, MVP, Continuous Delivery", "level": "Master", "value": 0, "category": "Agile"}
 

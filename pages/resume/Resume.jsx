@@ -8,7 +8,7 @@ import useResume from '../_components/useResume'
 import Layout from '../_components/Layout'
 
 const formatDate = date =>
-  date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
+  date && date !== 'present' ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
 
 const Logo = styled.img({
   width: '80%',

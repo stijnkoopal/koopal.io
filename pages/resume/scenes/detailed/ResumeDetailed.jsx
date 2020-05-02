@@ -7,7 +7,7 @@ import { FixedBackground } from '../../../_components/Layout'
 import PrintableHeader from '../../components/PrintableHeader'
 
 const formatDate = date =>
-  date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
+  date && date !== 'present' ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
 
 const ConnectedBlock = styled(Box)(({ theme: { typography, spacing, palette: { colors } } }) => ({
   ...typography.body1,
@@ -100,7 +100,9 @@ const Experience = (experience) => (
     <Flex as="h4" mb={0} mt={2}>
       {experience.company}, {formatDate(experience.startDate)} - {formatDate(experience.endDate)}
     </Flex>
-
+    <Flex as="h6" mb={0} mt={0}>
+      {experience.position}
+    </Flex>
     <Box mt={0}>{experience.summary}</Box>
   </Box>
 )
