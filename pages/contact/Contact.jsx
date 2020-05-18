@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
-import { withTheme } from 'emotion-theming'
 import { Box, Flex } from '@rebass/grid/emotion'
-import useResume from '../_components/useResume'
+import { withTheme } from 'emotion-theming'
+import PropTypes from 'prop-types'
+import React from 'react'
 import Layout from '../_components/Layout'
+import useResume from '../_components/useResume'
 
 const ContactMethods = styled(Flex)(() => ({
   justifyContent: 'space-around',
@@ -75,7 +75,7 @@ const Contact = ({ theme: { palette } }) => {
           <SubHeader mt={[2, 3]}>is just a click away.</SubHeader>
 
           <ContactMethods mt={[4, 5]}>
-            <ContactMethod as="a" href={`maillto:${resume.basics.email}`} title="Mail me!">
+            <ContactMethod as="a" href={`mailto:${resume.basics.email}`} title="Mail me!">
               <Icon src="/static/logos/envelope.svg" alt="Email"
                     backgroundColor={palette.colors.visualizations[1]}/>
               <Title>Email</Title>

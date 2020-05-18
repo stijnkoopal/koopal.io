@@ -12,7 +12,7 @@ const giphyURL = encodeURI(`${giphy.baseURL}${giphy.type}?api_key=${giphy.key}&t
 
 export default function() {
   console.log("Ah you are a curious little mouse aren't ya!")
-  console.log('Drop me a line;) stijn.koopal@gmail.com')
+  console.log('Drop me a line;) stijn@koopal.io')
 
   return fetch(giphyURL)
     .then(r => r.json())
