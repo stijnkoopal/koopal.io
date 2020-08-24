@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const express = require('express')
 const next = require('next')
-const proxyMiddleware = require('http-proxy-middleware')
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 const devProxy = {
   '/.netlify/functions': {
@@ -24,7 +24,7 @@ app
     // Set up the proxy.
     if (dev && devProxy) {
       Object.keys(devProxy).forEach(context => {
-        server.use(proxyMiddleware(context, devProxy[context]))
+        server.use(createProxyMiddleware(context, devProxy[context]))
       })
     }
 

@@ -16,7 +16,11 @@ const bundleAnalyzerConfig = {
   },
 }
 
+
 const workboxConfig = {
+  generateBuildId: async () => {
+    return 'koopal-io';
+  },
   workbox: {
     importWorkboxFrom: 'local',
     precacheManifest: true,

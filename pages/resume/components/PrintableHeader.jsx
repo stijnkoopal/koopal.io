@@ -1,8 +1,8 @@
-import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import useResume from '../../_components/useResume'
+import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/dist/emotion'
 import React from 'react'
+import useResume from '../../_components/useResume'
 
 const Name = styled('h1')(({ theme: { typography, palette: { colors } } }) => ({
   ...typography.headline,
@@ -72,7 +72,7 @@ const HeaderContainer = styled(Flex)(({ onlyPrint }) => ({
   '@media print': {
     display: 'flex',
   },
-  '-webkit-print-color-adjust': 'exact',
+  'WebkitPrintColorAdjust': 'exact',
 }))
 
 const PrintableHeader = ({ className, onlyPrint = false }) => {

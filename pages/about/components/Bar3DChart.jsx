@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { _3d } from 'd3-3d'
-import { drag } from 'd3-drag'
-import { event, select } from 'd3-selection'
-import 'd3-transition'
-import { withTheme } from 'emotion-theming'
 import styled from '@emotion/styled'
 import { Box } from '@rebass/grid/emotion'
+import { _3d } from 'd3-3d'
+import { drag } from 'd3-drag'
+import { select } from 'd3-selection'
+import 'd3-transition'
+import { withTheme } from 'emotion-theming'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 const INITIAL_SVG_WIDTH = 960
 const INITIAL_SVG_HEIGHT = 500
@@ -161,7 +161,7 @@ class Bar3DChart extends React.Component {
       let mx, my, mouseX, mouseY
 
       return drag()
-        .on('drag', () => {
+        .on('drag', (event) => {
           mouseX = mouseX || 0
           mouseY = mouseY || 0
           const beta = ((event.x - mx + mouseX) * Math.PI) / 230
@@ -169,11 +169,11 @@ class Bar3DChart extends React.Component {
 
           updateFn(alpha, beta)
         })
-        .on('start', () => {
+        .on('start', (event) => {
           mx = event.x
           my = event.y
         })
-        .on('end', () => {
+        .on('end', (event) => {
           mouseX = event.x - mx + mouseX
           mouseY = event.y - my + mouseY
         })

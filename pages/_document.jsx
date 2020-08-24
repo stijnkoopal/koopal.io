@@ -1,7 +1,6 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import pureCss from 'purecss/build/base-min.css'
-import ServiceWorker from 'next-workbox/service-worker'
 
 const GA_TRACKING_ID = 'UA-135619895-1'
 
@@ -34,7 +33,6 @@ export default class extends Document {
         <body>
           <Main />
           <NextScript />
-          <ServiceWorker src="/static/workbox/sw.js" scope="/" unregister={process.env.NODE_ENV !== 'production'} />
         </body>
       </html>
     )

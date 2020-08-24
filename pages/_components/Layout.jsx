@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import { Global } from '@emotion/core'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
-import { withRouter } from 'next/router'
-import { Global } from '@emotion/core'
 import Head from 'next/head'
+import { withRouter } from 'next/router'
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { themeShape } from '../wall/prop-types'
 import Menu from './Menu'
 import MenuBurgerIcon from './MenuBurgerIcon'
 import Stars from './Stars'
-import { themeShape } from '../wall/prop-types'
 import useResume from './useResume'
 
 // `vh` unit on mobile devices include the url bar. This is unwanted behaviour, fix it with:
@@ -111,7 +111,7 @@ export const FixedBackground = styled(Box)(({ theme: { palette } }) => ({
     backgroundSize: 'cover',
     willChange: 'transform',
     zIndex: -1,
-    '-webkit-print-color-adjust': 'exact',
+    'WebkitPrintColorAdjust': 'exact',
   },
 }))
 
@@ -165,9 +165,9 @@ const Layout = ({ children, theme }) => {
     <>
       <Head>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-        <Global styles={globalStyles(theme)} />
       </Head>
 
+      <Global styles={globalStyles(theme)} />
       <FixedBackground />
       <Header showOnlyMenuIcon={menuOpen} px={[3, 4]}>
         <MenuIcon isOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
@@ -180,11 +180,7 @@ const Layout = ({ children, theme }) => {
 
       <SocialButtons />
 
-      <Menu
-        pageWrapId="page-wrap"
-        isOpen={menuOpen}
-        onStateChange={({ isOpen }) => setMenuOpen(isOpen)}
-      />
+      <Menu pageWrapId="page-wrap" isOpen={menuOpen} onStateChange={({ isOpen }) => setMenuOpen(isOpen)} />
 
       <Main mx="auto" width={[1, 0.75, 0.5]} p={[2, 3]} id="page-wrap">
         {children}

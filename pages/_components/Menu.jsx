@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
-import { Flex } from '@rebass/grid/emotion'
-import RotateMenu from 'react-burger-menu/lib/menus/pushRotate'
-import Link from 'next/link'
 import styled from '@emotion/styled'
-import PropTypes from 'prop-types'
+import { Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
+import Link from 'next/link'
 import Router from 'next/router'
+import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
+import RotateMenu from 'react-burger-menu/lib/menus/pushRotate'
 import { themeShape } from '../wall/prop-types'
 
 const MenuItem = styled(Flex)({
@@ -94,7 +94,7 @@ const Menu = ({ pageWrapId, theme, isOpen, onStateChange }) => {
       customCrossIcon={false}
     >
       {menuItems.map(({ href, label }) => (
-        <LinkWrap key={href} prefetch href={href}>
+        <LinkWrap key={href} href={href}>
           <MenuItem>
             <MenuItemText>{label}</MenuItemText>
           </MenuItem>

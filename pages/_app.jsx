@@ -1,10 +1,10 @@
-import App, { Container } from 'next/app'
-import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
+import App from 'next/app'
+import React from 'react'
+import theme from './theme'
 import MetaTags from './_components/MetaTags'
 import curiousLittleMouse from './_services/curiousLittleMouse'
 import logSource from './_services/logSource'
-import theme from './theme'
 
 const environment = process.env.NODE_ENV
 const isProduction = process.env.NODE_ENV === 'production'
@@ -29,14 +29,12 @@ class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <Container>
-        <ThemeProvider theme={theme}>
-          <MetaTags />
-          {/* <React.StrictMode> */}
-          <Component {...pageProps} />
-          {/* </React.StrictMode> */}
-        </ThemeProvider>
-      </Container>
+      <ThemeProvider theme={theme}>
+        <MetaTags />
+        {/* <React.StrictMode> */}
+        <Component {...pageProps} />
+        {/* </React.StrictMode> */}
+      </ThemeProvider>
     )
   }
 }
