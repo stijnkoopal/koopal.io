@@ -16,7 +16,11 @@ const bundleAnalyzerConfig = {
   },
 }
 
-const workboxConfig = {}
+const workboxConfig = {
+  generateBuildId: async () => {
+    return 'koopal-io'
+  },
+}
 
 const nextConfig = {
   exportPathMap() {
