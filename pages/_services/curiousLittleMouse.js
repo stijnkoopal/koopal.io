@@ -18,10 +18,12 @@ export default function() {
     .then(r => r.json())
     .then(json => json.data)
     .then(data => {
-      console.log('/giphy curious little mouse')
-      console.log(
-        '%c       ',
-        `font-size: ${data.image_height}px; background: url(${data.image_original_url}) no-repeat;`,
-      )
+      if (data) {
+        console.log('/giphy curious little mouse')
+        console.log(
+          '%c       ',
+          `font-size: ${data.image_height}px; background: url(${data.image_original_url}) no-repeat;`,
+        )
+      }
     })
 }
