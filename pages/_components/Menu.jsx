@@ -6,7 +6,7 @@ import Router from 'next/router'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import RotateMenu from 'react-burger-menu/lib/menus/pushRotate'
-import { themeShape } from '../wall/prop-types'
+import { themeShape } from '../../lib/prop-types'
 
 const MenuItem = styled(Flex)({
   alignItems: 'center',

@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Facebook } from 'react-content-loader'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
-import { blogPostShape } from '../prop-types'
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Facebook } from 'react-content-loader'
+import { blogPostShape } from '../../../lib/prop-types'
 
 export const EmptyBlogPost = ({ uniqueKey }) => <Facebook uniquekey={uniqueKey} />
 EmptyBlogPost.propTypes = {
@@ -127,7 +127,7 @@ const BlogList = styled(Box)(({ theme: { spacing } }) => ({
   },
 })).withComponent('ul')
 
-export const LatestBlogPosts = ({ children }) => (
+const LatestBlogPosts = ({ children }) => (
   <BlogList>
     {React.Children.map(
       children,
@@ -142,3 +142,5 @@ export const LatestBlogPosts = ({ children }) => (
 LatestBlogPosts.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+export default LatestBlogPosts

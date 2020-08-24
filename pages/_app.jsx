@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'emotion-theming'
 import App from 'next/app'
 import React from 'react'
-import theme from './theme'
+import theme from '../lib/theme'
 import MetaTags from './_components/MetaTags'
 import curiousLittleMouse from './_services/curiousLittleMouse'
 import logSource from './_services/logSource'

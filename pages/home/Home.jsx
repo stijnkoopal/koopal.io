@@ -1,12 +1,12 @@
-import React from 'react'
-import { Flex } from '@rebass/grid/emotion'
-import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
+import styled from '@emotion/styled'
+import { Flex } from '@rebass/grid/emotion'
+import React from 'react'
 import Typist from 'react-typist'
-import MiniMe from './components/MiniMe'
-import { themeShape } from '../wall/prop-types'
-import useResume from '../_components/useResume'
+import { themeShape } from '../../lib/prop-types'
 import Layout from '../_components/Layout'
+import useResume from '../_components/useResume'
+import MiniMe from './components/MiniMe'
 
 const Container = styled(Flex)({
   height: '100%',

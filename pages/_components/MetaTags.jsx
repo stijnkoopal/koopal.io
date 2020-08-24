@@ -1,8 +1,8 @@
-import React from 'react'
-import Head from 'next/head'
 import { withTheme } from 'emotion-theming'
+import Head from 'next/head'
+import React from 'react'
+import { themeShape } from '../../lib/prop-types'
 import useResume from './useResume'
-import {themeShape} from '../wall/prop-types'
 
 const MetaTags = ({ theme: { palette } }) => {
   const resume = useResume()

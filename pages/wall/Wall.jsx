@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import Head from 'next/head'
-import { LatestBlogPosts, BlogPost, EmptyBlogPost } from './components/LatestBlogPosts'
-import fetchMediumPosts from './services/fetchMediumPosts.api'
-import Layout from '../_components/Layout'
-import { withTheme } from 'emotion-theming'
 import { Flex } from '@rebass/grid/emotion'
+import { withTheme } from 'emotion-theming'
+import Head from 'next/head'
+import React, { useEffect, useState } from 'react'
+import Layout from '../_components/Layout'
+import LatestBlogPosts, { BlogPost, EmptyBlogPost } from './components/LatestBlogPosts'
+import fetchMediumPosts from './services/fetchMediumPosts.api'
 
 const ErrorNotification = withTheme(({ theme: { typography }, error }) => (
   <Flex css={{ ...typography.body1, justifyContent: 'center' }}>
