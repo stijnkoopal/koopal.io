@@ -1,13 +1,13 @@
-import React from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
 import { withTheme } from 'emotion-theming'
-import useResume from '../../../_components/useResume'
+import React from 'react'
 import { FixedBackground } from '../../../_components/Layout'
+import useResume from '../../../_components/useResume'
 import PrintableHeader from '../../components/PrintableHeader'
 
-const formatDate = date =>
-  date ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
+const formatDate = (date) =>
+  date ? `'` + new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
 
 const LeftConnectedBlock = styled(Box)(({ theme: { typography, spacing, palette: { colors } } }) => ({
   ...typography.body1,
@@ -58,13 +58,22 @@ const HorizontalDescriptionList = styled('dl')(({ theme: { typography, palette: 
   },
 }))
 
-const Experience = experience => (
+const Keywords = styled('span')(({ theme: { typography, palette: { colors } } }) => ({
+  ...typography.caption,
+  color: colors.grey[800],
+  fontStyle: 'italic',
+  display: 'block',
+}))
+
+const Experience = (experience) => (
   <Box key={experience.startDate} mb={2}>
     <Flex as="h4" mb={0} mt={2}>
       {experience.company}, {formatDate(experience.startDate)} - {formatDate(experience.endDate)}
     </Flex>
 
-    <Box mt={0}>{experience.summary}</Box>
+    <Box mt={0}>
+      {experience.summary} <Keywords>{experience.keywords.join(', ')}</Keywords>
+    </Box>
   </Box>
 )
 
@@ -101,7 +110,7 @@ const ResumeSummary = () => {
           <dt>Availability</dt>
           <dd>{resume.basics.availability.join(', ')}</dd>
           <dt>Languages</dt>
-          <dd>{resume.languages.map(l => l.language).join(', ')}</dd>
+          <dd>{resume.languages.map((l) => l.language).join(', ')}</dd>
           <dt>Birthday</dt>
           <dd>{resume.basics.birthDay.year}</dd>
         </HorizontalDescriptionList>
@@ -111,7 +120,7 @@ const ResumeSummary = () => {
         <h1>Technical Summary</h1>
 
         <HorizontalDescriptionList>
-          {Object.keys(groupedLanguages).map(category => (
+          {Object.keys(groupedLanguages).map((category) => (
             <React.Fragment key={category}>
               <dt>{category}</dt>
               <dd>{groupedLanguages[category].join(', ')}</dd>
@@ -125,7 +134,7 @@ const ResumeSummary = () => {
       <LeftConnectedBlock>
         <h1>Most Recent Experience</h1>
 
-        {recentExperiences.slice(0, 6).map(Experience)}
+        {recentExperiences.slice(0, 10).map(Experience)}
       </LeftConnectedBlock>
 
       <LeftConnectedBlock>

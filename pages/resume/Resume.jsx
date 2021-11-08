@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/grid/emotion'
-import { withTheme } from 'emotion-theming'
-import { Transition } from 'react-transition-group'
 import Color from 'color'
-import useResume from '../_components/useResume'
+import { withTheme } from 'emotion-theming'
+import React, { useState } from 'react'
+import { Transition } from 'react-transition-group'
 import Layout from '../_components/Layout'
+import useResume from '../_components/useResume'
 
-const formatDate = date =>
-  date && date !== 'present' ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' }) : 'present'
+const formatDate = (date) =>
+  date && date !== 'present'
+    ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' })
+    : 'present'
 
 const Logo = styled.img({
   width: '80%',
@@ -109,11 +111,7 @@ const VerticalChevronText = styled(Box)(({ color }) => ({
   color,
 }))
 
-const darkenColor = color =>
-  Color(color)
-    .darken(0.4)
-    .rgb()
-    .toString()
+const darkenColor = (color) => Color(color).darken(0.4).rgb().toString()
 
 const ChevronWithText = ({ children, color }) => (
   <Chevron color={color} px={2}>
@@ -140,7 +138,7 @@ const Project = ({ theme: { transitions }, chevronPosition, project, odd, color,
       width={isOpen ? '100%' : ['28vw', '20vw', '12vw']}
     >
       <Transition in={!isOpen} timeout={transitions.duration.short}>
-        {state => {
+        {(state) => {
           if (state === 'exited') return <ProjectDescription project={project} />
           else if (state === 'entered') return <Logo src={project.entityIconUrl} alt={`${project.company} logo`} />
           return null
@@ -206,22 +204,16 @@ const Resume = ({ theme }) => {
             key={project.company + project.role}
             isOpen={selectedProjectIndex === index}
             project={project}
-            color={theme.palette.colors.visualizations[index]}
+            color={project.color || theme.palette.colors.visualizations[index]}
           />
         ))}
       </ProjectList>
 
-      <Button
-        href="/resume/summary"
-        alt="Summary"
-      >
+      <Button href="/resume/summary" alt="Summary">
         Printable Summary
       </Button>
 
-      <Button
-        href="/resume/detailed"
-        alt="Detailed"
-      >
+      <Button href="/resume/detailed" alt="Detailed">
         Printable Full
       </Button>
     </Layout>

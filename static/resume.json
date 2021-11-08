@@ -3,9 +3,7 @@
     "name": "Stijn Koopal MSc.",
     "label": "Independent Full Stack Software Craftsman",
     "motto": "Getting things live!",
-    "tags": [
-      "Software Engineer", "Full Stack", "Remote", "Bleeding Edge Tech", "Freelance", "ZZP", "Independent"
-    ],
+    "tags": ["Software Engineer", "Full Stack", "Remote", "Bleeding Edge Tech", "Freelance", "ZZP", "Independent"],
     "chamberOfCommerceNumber": "74258648",
     "taxNumber": "NL001793381B56",
     "bankAccountNumber": "NL41BUNQ2034505360",
@@ -23,11 +21,11 @@
       "month": 2,
       "day": 1
     },
-    "summary": "I'm an experienced software enthusiast with hands-on experience in various languages, frameworks and platforms. Highly analytical in nature, with good communication skills. A supportive and enthusiastic team player that thinks highly of quality, but can be pragmatic if required. I tend to use the most simple solution best fit for the situation, and try to learn as much as possible from it.\n\nThe thought of a fast, highly scalable service architecture makes me happy, as does an elegant implementation. A very well designed and maintainable frontend is key. I mostly enjoy working in a team, and building an awesome application together is very important to me.\n\nThe beautiful city of Utrecht is my home, and I tend to socialise there with friends a lot. I enjoy being outside, especially when exercising.\n\nInterested? Drop me a line!",
-    "shortSummary": "Experienced full stack software engineer (JVM languages, Golang, React) with an agile mindset. Apt experience with Cloud and CI/CD, focusing on quality and architectural simplicity. Whatever it takes to provide customer value.",
+    "summary": "I'm an experienced software enthusiast with hands-on experience in various languages, frameworks and platforms. Highly analytical in nature, with good communication skills. A supportive and enthusiastic team player that thinks highly of quality, but can be pragmatic if required. I tend to use the simplest solution best fit for the situation, keeping in mind the full architectural context of the application.\n\nThe thought of a fast, highly scalable and decoupled service architecture makes me happy, as does an elegant implementation. A very well-designed and maintainable frontend is key. I mostly enjoy working in a team, and building an awesome application together is very important to me.\n\nThe beautiful city of Utrecht is my home, and I tend to socialize there with friends a lot. I enjoy being outside, especially when exercising.\n\nInterested? Drop me a line!",
+    "shortSummary": "Experienced full stack software engineer (JVM languages, Golang, React/Angular) with an agile mindset. Apt experience with Cloud and CI/CD, focusing on quality and architectural simplicity. Whatever it takes to provide customer value.",
     "location": {
-      "address": "Wethouder D.M. Plompstraat 22",
-      "postalCode": "3555 BT",
+      "address": "Bemuurde Weerd W.Z. 1",
+      "postalCode": "3513 BH",
       "city": "Utrecht",
       "countryCode": "NL",
       "region": "Utrecht"
@@ -59,21 +57,50 @@
   },
   "work": [
     {
+      "company": "DHL Parcel",
+      "location": "Utrecht",
+      "summary": "DHL Parcel is increasing their market position by optimizing the receiver experience. Am helping out with integrating new parties, expanding the app and facilitating more fine-grained estimations and interactions with parcels",
+      "position": "Full-Stack Engineer",
+      "url": "https://dhlparcel.nl",
+      "startDate": "2021-09-20",
+      "endDate": "",
+      "highlights": [],
+      "keywords": ["Scala", "ZIO", "Kafka", "React"],
+      "entity": "DHL Parcel",
+      "entityIconUrl": "/static/logos/dhl-parcel.svg",
+      "via": "koopal.io",
+      "type": "project",
+      "color": "#ffcb01"
+    },
+    {
+      "company": "Knights Analytics",
+      "location": "Utrecht",
+      "summary": "Graph driven insights are the future of data analytics. Knights enables companies to access untapped insights by unifying their complex data into a simple yet powerful, centralised knowledge store. Bootstrapped the UI that visualizes data.",
+      "position": "Frontend Engineer",
+      "url": "https://knightsanalytics.com",
+      "startDate": "2021-07-02",
+      "endDate": "",
+      "highlights": [],
+      "keywords": ["React", "Gatsby", "GraphQL"],
+      "entity": "Knights Analytics",
+      "entityIconUrl": "/static/logos/knights-analytics.webp",
+      "via": "koopal.io",
+      "type": "project"
+    },
+    {
       "company": "ZorgDomein",
       "location": "Breukelen",
-      "summary": "ZorgDomein is a platform that connects healthcare requesters to healthcare providers. Was the team lead of an agile team focussed on the supplier side of the platform. Besides building new functionality, was part of the solution design for several major features. Also, helped getting the CI/CD pipeline to the next level.",
+      "summary": "ZorgDomein is a platform that connects healthcare professionals to healthcare providers. Was the team lead of an agile team focussed on the supplier side of the platform. Besides building new functionality, was part of the solution design for several major features. Also, helped getting the CI/CD pipeline to the next level.",
       "position": "Full-Stack Team Lead",
       "url": "https://zorgdomein.nl",
       "startDate": "2019-05-01",
-      "endDate": "present",
+      "endDate": "2021-08-13",
       "highlights": [
         "Optimize buildstreet, resulting in ease of development",
         "Performance improvements on Angular frontend, greatly improved experience",
         "Implementation Covid-19 reporting"
       ],
-      "keywords": [
-        "Scala", "CQRS/ES", "Kubernetes", "Angular"
-      ],
+      "keywords": ["Scala", "CQRS/ES", "K8s", "Kafka", "Angular"],
       "entity": "ZorgDomein",
       "entityIconUrl": "/static/logos/zorgdomein.svg",
       "via": "koopal.io",
@@ -91,9 +118,7 @@
         "Proving value to customers using state-of-the-art tech",
         "JAM stack: NextJS (React) with EmotionJS, HTML5/CSS3, Netlify"
       ],
-      "keywords": [
-        "JAM stack: NextJS (React) with EmotionJS, HTML5/CSS3, Netlify"
-       ],
+      "keywords": ["JAM stack: NextJS (React) with EmotionJS, HTML5/CSS3, Netlify"],
       "type": "owner"
     },
     {
@@ -106,15 +131,11 @@
         "Rapid increase in growers connected",
         "Kotlin, Java 11, Axon Framework, CQRS/ES, AWS, Spring Boot"
       ],
-      "keywords": [
-        "Kotlin", "Java 11", "Axon Framework", "CQRS/ES", "AWS", "Spring Boot"
-      ],
+      "keywords": ["Kotlin", "Java 11", "Axon Framework", "CQRS/ES", "AWS", "Spring Boot"],
       "startDate": "2018-09-01",
       "endDate": "2019-05-01",
       "url": "https://floriday.io",
-      "roles": [
-        "Backend developer"
-      ],
+      "roles": ["Backend developer"],
       "entity": "Royal FloraHolland",
       "entityIconUrl": "/static/logos/royal-flora-holland.svg",
       "via": "Xebia",
@@ -129,15 +150,11 @@
         "Integrate KYC provider",
         "Scala, Akka, Lagom, React, K8s, Golang, GCP"
       ],
-      "keywords": [
-        "Scala", "Akka", "Lagom", "React", "K8s", "Golang", "GCP"
-      ],
+      "keywords": ["Scala", "Akka", "Lagom", "React", "K8s", "Golang", "GCP"],
       "startDate": "2018-07-01",
       "endDate": "2018-09-01",
       "url": "https://blockport.io/",
-      "roles": [
-        "Backend developer"
-      ],
+      "roles": ["Backend developer"],
       "entity": "Blockport",
       "entityIconUrl": "/static/logos/blockport.svg",
       "via": "Xebia",
@@ -153,15 +170,11 @@
         "Knowledge sharing of state-of-the-art frontends",
         "Polymer, Scala, Spark, Docker, Openshift, Gitlab CI"
       ],
-      "keywords": [
-        "Polymer", "Scala", "Spark", "Docker", "Openshift", "Gitlab CI"
-      ],
+      "keywords": ["Polymer", "Scala", "Spark", "Openshift", "Gitlab CI"],
       "startDate": "2017-05-01",
       "endDate": "2018-06-30",
       "url": "",
-      "roles": [
-        "Full Stack Developer"
-      ],
+      "roles": ["Full Stack Developer"],
       "entity": "ING",
       "entityIconUrl": "/static/logos/ING.svg",
       "via": "Xebia",
@@ -176,15 +189,11 @@
         "Generating application code for business flows and models",
         "Java 8, JEE2, JBPM, Jenkins 2, Docker, AngularJS, Cucumber"
       ],
-      "keywords": [
-        "Java 8", "JEE2", "JBPM", "Jenkins 2", "Docker", "AngularJS", "Cucumber"
-      ],
+      "keywords": ["Java 8", "JEE2", "JBPM", "Jenkins 2", "Docker", "AngularJS", "Cucumber"],
       "startDate": "2016-05-01",
       "endDate": "2017-04-30",
       "url": "",
-      "roles": [
-        "Scrum master", "Developer"
-      ],
+      "roles": ["Scrum master", "Developer"],
       "entity": "Alphabet",
       "entityIconUrl": "/static/logos/alphabet.svg",
       "via": "Ciber",
@@ -199,15 +208,11 @@
         "Coaching of 2 juniors",
         "Java 8, JBoss Fuse, JBoss EAP"
       ],
-      "keywords": [
-        "Java 8", "JBoss Fuse", "JBoss EAP"
-      ],
+      "keywords": ["Java 8", "JBoss Fuse", "JBoss EAP"],
       "startDate": "2015-07-01",
       "endDate": "2016-04-30",
       "url": "https://tankpas.nl",
-      "roles": [
-        "Team lead", "Developer"
-      ],
+      "roles": ["Team lead", "Developer"],
       "entity": "Travelcard",
       "entityIconUrl": "/static/logos/travelcard.svg",
       "via": "Ciber",
@@ -222,15 +227,11 @@
         "Building a support library on Vert.x that other projects could use to expose analytics",
         "Hadoop, Java 8, Vert.x"
       ],
-      "keywords": [
-        "Hadoop", "Java 8", "Vert.x"
-      ],
+      "keywords": ["Hadoop", "Java 8", "Vert.x"],
       "startDate": "2014-06-01",
       "endDate": "2015-06-30",
       "url": "",
-      "roles": [
-        "Developer", "Operations"
-      ],
+      "roles": ["Developer", "Operations"],
       "entity": "Malmberg",
       "entityIconUrl": "/static/logos/malmberg.svg",
       "via": "Ciber",
@@ -240,16 +241,12 @@
       "company": "RWE (via Ciber)",
       "position": "Functional Application Engineer",
       "summary": "Functional Application Engineer maintaining and improving a legacy Java backend + UI. With weekly on-call duties.",
-      "highlights": [
-      ],
-      "keywords": [
-      ],
+      "highlights": [],
+      "keywords": [],
       "startDate": "2013-09-01",
       "endDate": "2014-05-31",
       "url": "",
-      "roles": [
-        "Developer", "Operations", "On-call duty"
-      ],
+      "roles": ["Developer", "Operations", "On-call duty"],
       "entityIconUrl": "/static/logos/rwe.svg",
       "via": "Ciber",
       "type": "project"
@@ -266,9 +263,7 @@
         "Proving value to customers using state-of-the-art tech",
         "Scala, Akka, React, Polymer, Spark, Kotlin, Lagom, Golang, Axon Framework"
       ],
-      "keywords": [
-        "Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Lagom", "Golang", "Axon Framework"
-      ],
+      "keywords": ["Scala", "Akka", "React", "Polymer", "Spark", "Kotlin", "Lagom", "Golang", "Axon Framework"],
       "type": "employer"
     },
     {
@@ -280,9 +275,7 @@
       "startDate": "2013-09-01",
       "endDate": "2017-04-01",
       "highlights": [],
-      "keywords": [
-        "Java (8)", "Angular", "JEE2", "JBoss Fuse", "JBoss EAP", "JBoss BPM Suite"
-      ],
+      "keywords": ["Java (8)", "Angular", "JEE2", "JBoss Fuse", "JBoss EAP", "JBoss BPM Suite"],
       "type": "employer"
     }
   ],
@@ -295,8 +288,7 @@
       "startDate": "2010-09-01",
       "endDate": "2013-03-01",
       "gpa": "",
-      "courses": [
-      ]
+      "courses": []
     },
     {
       "institution": "Cloudera",
@@ -345,23 +337,23 @@
     }
   ],
   "skills": [
-    {"name":  "Java / Kotlin / Scala", "level": "Master", "value": 83,
-      "category": "Backend Languages"
+    { "name": "Scala / Kotlin / Java", "level": "Master", "value": 83, "category": "Backend Languages" },
+    { "name": "Golang", "level": "Master", "value": 52, "category": "Backend Languages" },
+    { "name": "Typescript / ES2021", "level": "Master", "value": 95, "category": "Frontend Languages" },
+    { "name": "ES / CQRS / Services Architecture", "level": "Master", "value": 87, "category": "Concepts" },
+    {
+      "name": "Spring Boot, Akka (Persistence, Streaming), Play, Axon, Vert.x",
+      "level": "Master",
+      "value": 0,
+      "category": "Frameworks"
     },
-    {"name":  "Golang", "level": "Master", "value": 52,
-      "category": "Backend Languages"
-    },
-    {"name":  "ES2018 / Typescript", "level": "Master", "value": 95, "category":  "Frontend Languages"},
-    {"name":  "ES / CQRS / Services Architecture", "level": "Master", "value": 87, "category":  "Concepts"},
-    {"name":  "Spring Boot, Akka (Persistence, Streaming), Play, Axon, Vert.x", "level": "Master", "value": 0, "category": "Frameworks"},
-    {"name":  "AWS / GCP", "level": "Master", "value": 59, "category":  "Platforms"},
-    {"name":  "Netlify", "level": "Master", "value": 60, "category": "Platforms"},
-    {"name":  "K8s", "level": "Master", "value": 70, "category":  "Platforms"},
-    {"name":  "Kafka", "level": "Master", "value": 0, "category":  "Platforms"},
-    {"name":  "React / Polymer / Angular", "level": "Master", "value": 91, "category": "Frameworks"},
-    {"name":  "D3.js", "level": "Master", "value": 0, "category": "Frameworks"},
-    {"name":  "Scrum, Kanban, MVP, Continuous Delivery", "level": "Master", "value": 0, "category": "Agile"}
-
+    { "name": "AWS / GCP", "level": "Master", "value": 59, "category": "Platforms" },
+    { "name": "Netlify", "level": "Master", "value": 60, "category": "Platforms" },
+    { "name": "K8s", "level": "Master", "value": 70, "category": "Platforms" },
+    { "name": "Kafka", "level": "Master", "value": 0, "category": "Platforms" },
+    { "name": "React / Polymer / Angular", "level": "Master", "value": 91, "category": "Frameworks" },
+    { "name": "D3.js", "level": "Master", "value": 0, "category": "Frameworks" },
+    { "name": "Scrum, Kanban, MVP, Continuous Delivery", "level": "Master", "value": 0, "category": "Agile" }
   ],
   "languages": [
     {
@@ -374,14 +366,12 @@
     }
   ],
   "interests": [
-    {"name": "Snorkling / Diving", "value": 58},
-    {"name": "Snowboarding", "value": 99},
-    {"name": "Football", "value": 75},
-    {"name": "Cycling", "value": 32},
-    {"name": "Beach", "value": 100},
-    {"name": "Socializing, friends, beer", "value": 78}
+    { "name": "Snorkling / Diving", "value": 58 },
+    { "name": "Snowboarding", "value": 99 },
+    { "name": "Football", "value": 75 },
+    { "name": "Cycling", "value": 32 },
+    { "name": "Beach", "value": 100 },
+    { "name": "Socializing, friends, beer", "value": 78 }
   ],
-  "references": [
-
-  ]
+  "references": []
 }
