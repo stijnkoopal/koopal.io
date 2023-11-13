@@ -57,6 +57,23 @@
   },
   "work": [
     {
+      "color": "#f5f3e4",
+      "company": "Knights Analytics",
+      "location": "Utrecht",
+      "summary": "Bootstrapped a UI and underlying graphql API for a no code solution.",
+      "position": "Frontend Engineer",
+      "url": "https://knightsanalytics.com",
+      "startDate": "2023-11-01",
+      "endDate": "",
+      "highlights": [],
+      "keywords": ["React", "Typescript", "GraphQL", "golang"],
+      "entity": "Knights Analytics",
+      "entityIconUrl": "/static/logos/knights-analytics.png",
+      "logoSize": "smaller",
+      "via": "koopal.io",
+      "type": "project"
+    },
+    {
       "company": "DHL Parcel",
       "location": "Utrecht",
       "summary": "DHL Parcel is increasing their market position by optimizing the receiver experience. Am helping out with integrating new parties, expanding the app and facilitating more fine-grained estimations and interactions with parcels",
@@ -73,17 +90,19 @@
       "color": "#ffcb01"
     },
     {
-      "company": "Knights Analytics",
+      "color": "#f5f3e4"
+,      "company": "Knights Analytics",
       "location": "Utrecht",
       "summary": "Graph driven insights are the future of data analytics. Knights enables companies to access untapped insights by unifying their complex data into a simple yet powerful, centralised knowledge store. Bootstrapped the UI that visualizes data.",
       "position": "Frontend Engineer",
       "url": "https://knightsanalytics.com",
       "startDate": "2021-07-02",
-      "endDate": "",
+      "endDate": "2021-12-24",
       "highlights": [],
       "keywords": ["React", "Gatsby", "GraphQL"],
       "entity": "Knights Analytics",
-      "entityIconUrl": "/static/logos/knights-analytics.webp",
+      "entityIconUrl": "/static/logos/knights-analytics.png",
+      "logoSize": "smaller",
       "via": "koopal.io",
       "type": "project"
     },
@@ -339,18 +358,20 @@
   "skills": [
     { "name": "Scala / Kotlin / Java", "level": "Master", "value": 83, "category": "Backend Languages" },
     { "name": "Golang", "level": "Master", "value": 52, "category": "Backend Languages" },
-    { "name": "Typescript / ES2021", "level": "Master", "value": 95, "category": "Frontend Languages" },
+    { "name": "Typescript / ES2023", "level": "Master", "value": 95, "category": "Frontend Languages" },
     { "name": "ES / CQRS / Services Architecture", "level": "Master", "value": 87, "category": "Concepts" },
     {
-      "name": "Spring Boot, Akka (Persistence, Streaming), Play, Axon, Vert.x",
+      "name": "Spring Boot, Akka (Persistence, Streaming), Play, Axon, Vert.x, ZIO2",
       "level": "Master",
       "value": 0,
       "category": "Frameworks"
     },
-    { "name": "AWS / GCP", "level": "Master", "value": 59, "category": "Platforms" },
+    { "name": "AWS / GCP / Azure", "level": "Master", "value": 59, "category": "Platforms" },
     { "name": "Netlify", "level": "Master", "value": 60, "category": "Platforms" },
     { "name": "K8s", "level": "Master", "value": 70, "category": "Platforms" },
-    { "name": "Kafka", "level": "Master", "value": 0, "category": "Platforms" },
+    { "name": "Kafka", "level": "Master", "value": 60, "category": "Platforms" },
+    { "name": "ElasticSearch", "level": "Master", "value": 60, "category": "Platforms" },
+    { "name": "Cassandra", "level": "Master", "value": 60, "category": "Platforms" },
     { "name": "React / Polymer / Angular", "level": "Master", "value": 91, "category": "Frameworks" },
     { "name": "D3.js", "level": "Master", "value": 0, "category": "Frameworks" },
     { "name": "Scrum, Kanban, MVP, Continuous Delivery", "level": "Master", "value": 0, "category": "Agile" }

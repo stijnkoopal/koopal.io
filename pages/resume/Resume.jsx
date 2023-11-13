@@ -12,12 +12,12 @@ const formatDate = (date) =>
     ? new Date(date).toLocaleDateString('en-US', { year: '2-digit', month: 'short' })
     : 'present'
 
-const Logo = styled.img({
-  width: '80%',
+const Logo = styled.img(({ project }) => ({
+  width: project.logoSize === 'smaller' ? '50%' : '80%',
   left: '50%',
   top: '50%',
   transform: 'translate(-50%, -50%)',
-})
+}))
 
 const ProjectDates = styled(Box)(({ color, odd }) => ({
   color,
@@ -140,7 +140,7 @@ const Project = ({ theme: { transitions }, chevronPosition, project, odd, color,
       <Transition in={!isOpen} timeout={transitions.duration.short}>
         {(state) => {
           if (state === 'exited') return <ProjectDescription project={project} />
-          else if (state === 'entered') return <Logo src={project.entityIconUrl} alt={`${project.company} logo`} />
+          else if (state === 'entered') return <Logo src={project.entityIconUrl} alt={`${project.company} logo`} project={project} />
           return null
         }}
       </Transition>

@@ -10,7 +10,7 @@ const giphy = {
 
 const giphyURL = encodeURI(`${giphy.baseURL}${giphy.type}?api_key=${giphy.key}&tag=${giphy.tag}&rating=${giphy.rating}`)
 
-export default function() {
+export default function curiousLittleMouse() {
   console.log("Ah you are a curious little mouse aren't ya!")
   console.log('Drop me a line;) stijn@koopal.io')
 
